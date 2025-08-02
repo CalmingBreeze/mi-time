@@ -1,0 +1,16 @@
+{% if practice %}
+    <p>{{practice}}</p>
+
+    {% if massages %}
+        </p>Available massages :</p>
+        <ul>
+        {% for massage in massages %}
+            <li>{{massage}}</li>
+        {% endfor %}
+        </ul>
+    {% endif %}
+
+    {% if openings %}
+    
+    {% endif %}
+{% endif %}
