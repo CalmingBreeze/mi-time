@@ -1,0 +1,34 @@
+{% extends "core/components/base.html" %}
+
+{% block title %}Mi-time : nos salons{% endblock %}
+
+{% block menulist %}
+    <li><a href="{% url 'index' %}">Accueil</a></li>
+    <li><a href="{% url 'massages' %}">Les massages</a></li>
+    {% if practices|length == 1 %}
+    <li><a href="{% url 'practices' %}">Le salon</a></li>
+    {% elif practices|length > 1 %}
+    <li><a href="{% url 'practices' %}">Les salons</a></li>
+    <ul>
+        {% for practice in practices %}
+        <li><a href="{% url 'practice' practice_slug=practice.slug %}">Les salons</a></li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+    <li><a href="{% url 'legal' %}">Mentions légales</a></li>
+{% endblock %}
+
+{% block content %}
+    <header>
+        {% if practices|length == 1 %}
+        <h1>Mi-Time : Le salon !</h1>
+        {% elif practices|length > 1 %}
+        <h1>Mi-Time : Nos salons !</h1>
+        {% endif %}
+    </header>
+    <section>
+        {% for practice in practices %}
+        <p><a href="{% url 'practice' practice_slug=practice.slug %}">{{practice}}</a></p>
+        {% endfor %}
+    </section>
+{% endblock %}

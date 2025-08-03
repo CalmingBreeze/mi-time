@@ -14,20 +14,31 @@
 {% endblock %}
 
 {% block content %}
-    {% if practice %}
-        {{practice}}
-    {% endif %}
+    {% load static %}
 
+    <header>
+        <h1>{{practice.name}}</h1>
+    </header>
     {% if massages %}
-        </p>Massages disponibles :</p>
-        <ul>
+    <p>Nos massages :</p>
+    <section class="tiles">
         {% for massage in massages %}
-            <li>{{massage}}</li>
+        <article class="style{{ forloop.counter}}">
+            <span class="image">
+                <img src="{% static 'core/img/privilege-crop.png' %}" alt="" />
+            </span>
+            <a href="https://calendly.com/reservation-mi-time/le-privilege">
+                <h2>{{massage.name}}</h2>
+                <div class="content">
+                    <p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p></p>
+                </div>
+            </a>
+        </article>
         {% endfor %}
-        </ul>
+    </section>
     {% endif %}
-
-    {% if openings %}
+    {% if practice.opening %}
+        {{ practice.opening.getTimeTable }}
+    {% endif %}
     
-    {% endif %}
 {% endblock %}

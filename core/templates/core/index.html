@@ -3,14 +3,26 @@
 {% block title %}Page principale{% endblock %}
 
 {% block content %}
+    {% load static %}
     <header>
-        <h1>Mi-Time : Mireille prend soin de vous ! Block update !</h1>
+        <h1>Mi-Time : Mireille prend soin de vous !</h1>
     </header>
-{% endblock %}
-
-{% block menulist %}
-    <li><a href="index.html">Accueil</a></li>
-    <li><a href="massages.html">Les massages</a></li>
-    <li><a href="salon.html">Le salon</a></li>
-    <li><a href="mentions-legales.html">Mentions légales</a></li>
+    {% if massages %}
+    <p>Nos massages :</p>
+    <section class="tiles">
+        {% for massage in massages %}
+        <article class="style{{ forloop.counter}}">
+            <span class="image">
+                <img src="{% static 'core/img/privilege-crop.png' %}" alt="" />
+            </span>
+            <a href="https://calendly.com/reservation-mi-time/le-privilege">
+                <h2>{{massage.name}}</h2>
+                <div class="content">
+                    <p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p></p>
+                </div>
+            </a>
+        </article>
+        {% endfor %}
+    </section>
+    {% endif %}
 {% endblock %}
