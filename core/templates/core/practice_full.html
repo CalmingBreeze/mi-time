@@ -1,0 +1,33 @@
+{% extends "core/components/base.html" %}
+
+{% block title %}Mi-time {{practice.name}}{% endblock %}
+
+{% block menulist %}
+    <li><a href="{% url 'index' %}">Accueil</a></li>
+    <li><a href="{% url 'massages' %}">Les massages</a></li>
+    {% if practices|length == 1 %}
+    <li><a href="{% url 'practices' %}">Le salon</a></li>
+    {% elif practices|length > 1 %}
+    <li><a href="{% url 'practices' %}">Les salons</a></li>
+    {% endif %}
+    <li><a href="{% url 'legal' %}">Mentions légales</a></li>
+{% endblock %}
+
+{% block content %}
+    {% if practice %}
+        {{practice}}
+    {% endif %}
+
+    {% if massages %}
+        </p>Massages disponibles :</p>
+        <ul>
+        {% for massage in massages %}
+            <li>{{massage}}</li>
+        {% endfor %}
+        </ul>
+    {% endif %}
+
+    {% if openings %}
+    
+    {% endif %}
+{% endblock %}

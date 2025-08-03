@@ -1,1 +1,16 @@
-Test INDEX template
+{% extends "core/components/base.html" %}
+
+{% block title %}Page principale{% endblock %}
+
+{% block content %}
+    <header>
+        <h1>Mi-Time : Mireille prend soin de vous ! Block update !</h1>
+    </header>
+{% endblock %}
+
+{% block menulist %}
+    <li><a href="index.html">Accueil</a></li>
+    <li><a href="massages.html">Les massages</a></li>
+    <li><a href="salon.html">Le salon</a></li>
+    <li><a href="mentions-legales.html">Mentions légales</a></li>
+{% endblock %}

@@ -1,0 +1,29 @@
+:root {
+    --c1: #cba590;
+    --c2: #6495ed;
+    --c3: #6495ed;
+}
+
+body {
+    /*background-color: #cba590;*/
+    margin: 0;
+}
+
+/* Fonts */
+@font-face {
+    font-family: "Garet";
+    src: url("../fonts/Garet-Book.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Garet";
+    src: url("../fonts/Garet-Heavy.woff2") format("woff2");
+    font-weight: bold;
+}
+
+/* Tool Classes */
+
+.center {
+}
+
+/* Usual css */
