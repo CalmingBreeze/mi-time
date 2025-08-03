@@ -1,5 +1,14 @@
 {% if massage %}
     <p>{{massage}}</p>
+
+    {% if practices %}
+        <p>Available in :</p>
+        <ul>
+            {% for practice in practices %}
+                <li>{{practice}}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
 {% else %}
     Error ! No massage data.
 {% endif %}
