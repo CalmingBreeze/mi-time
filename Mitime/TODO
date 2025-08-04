@@ -1,3 +1,23 @@
 1 SITEMAP
 2 Upload image massages
+2 GMAP instead of address
 4 Style %12 in templates practice_full + massage list
+4 i18n practice full days (fix noop)
+
+{% for day, hours in practice.opening.getTimeTable %}
+<tr>
+    <th scope="row">{{day}}</th>
+    {% if hours[0] %}
+    <td>{{hours[0]}}</td>
+    <td>{{hours[1]}}</td>
+    {% else %}
+    <td colspan="2">X</td>
+    {% endif %}
+    {% if hours[2] %}
+    <td>{{hours[2]}}</td>
+    <td>{{hours[3]}}</td>
+    {% else %}
+    <td colspan="2">X</td>
+    {% endif %}
+</tr>
+{% endfor %} 

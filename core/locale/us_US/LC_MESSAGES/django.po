@@ -1,0 +1,146 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-08-04 15:16+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: .\core\models.py:12
+msgctxt "Model object"
+msgid "Price of the massage"
+msgstr ""
+
+#: .\core\models.py:13
+msgctxt "Model object"
+msgid "Duration of the Massage (HH:MM:SS)"
+msgstr ""
+
+#: .\core\models.py:17
+msgctxt "Model object"
+msgid "SEO URL Normalization"
+msgstr ""
+
+#: .\core\models.py:32
+msgctxt "Model object"
+msgid "address"
+msgstr ""
+
+#: .\core\models.py:33
+msgctxt "Model object"
+msgid "addresses"
+msgstr ""
+
+#: .\core\models.py:41
+msgctxt "Model object"
+msgid "Postal code"
+msgstr ""
+
+#: .\core\models.py:42
+msgctxt "Model object"
+msgid "City"
+msgstr ""
+
+#: .\core\models.py:43
+msgctxt "Model object"
+msgid "Country"
+msgstr ""
+
+#: .\core\models.py:53
+msgctxt "Model object"
+msgid "opening"
+msgstr ""
+
+#: .\core\models.py:54
+msgctxt "Model object"
+msgid "openings"
+msgstr ""
+
+#: .\core\models.py:60 .\core\models.py:65 .\core\models.py:70
+#: .\core\models.py:75 .\core\models.py:80 .\core\models.py:85
+#: .\core\models.py:90
+msgctxt "Model object"
+msgid "Opening"
+msgstr ""
+
+#: .\core\models.py:61 .\core\models.py:66 .\core\models.py:71
+#: .\core\models.py:76 .\core\models.py:81 .\core\models.py:86
+#: .\core\models.py:91
+msgctxt "Model object"
+msgid "Lunchbreak"
+msgstr ""
+
+#: .\core\models.py:62 .\core\models.py:67 .\core\models.py:72
+#: .\core\models.py:77 .\core\models.py:82 .\core\models.py:87
+#: .\core\models.py:92
+msgctxt "Model object"
+msgid "End of the Lunchbreak"
+msgstr ""
+
+#: .\core\models.py:63 .\core\models.py:68 .\core\models.py:73
+#: .\core\models.py:78 .\core\models.py:83 .\core\models.py:88
+#: .\core\models.py:93
+msgctxt "Model object"
+msgid "Closing"
+msgstr ""
+
+#: .\core\models.py:97
+msgid "monday"
+msgstr ""
+
+#: .\core\models.py:98
+msgid "tuesday"
+msgstr ""
+
+#: .\core\models.py:99
+msgid "wednesday"
+msgstr ""
+
+#: .\core\models.py:100
+msgid "thursday"
+msgstr ""
+
+#: .\core\models.py:101
+msgid "friday"
+msgstr ""
+
+#: .\core\models.py:102
+msgid "saturday"
+msgstr ""
+
+#: .\core\models.py:103
+msgid "sunday"
+msgstr ""
+
+#: .\core\models.py:116
+msgctxt "Model object"
+msgid "Google Site url"
+msgstr ""
+
+#: .\core\models.py:117
+msgctxt "Model object"
+msgid "SEO Url Normalization"
+msgstr ""
+
+#: .\core\templates\core\practice_full.html:49
+msgid "Availabilities"
+msgstr ""
+
+#: .\core\templates\core\practice_full.html:55
+msgid "morning"
+msgstr ""
+
+#: .\core\templates\core\practice_full.html:56
+msgid "afternoon"
+msgstr ""

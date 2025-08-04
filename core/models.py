@@ -1,6 +1,7 @@
 from django.db import models
-from django.template.defaultfilters import slugify
 from django.urls import reverse
+from django.template.defaultfilters import slugify
+from django.utils.translation import pgettext_lazy
 import datetime
 
 # Create your models here.
@@ -8,12 +9,12 @@ class Massage(models.Model):
     name = models.CharField(max_length=100)
     pub_date = models.DateTimeField(auto_now_add=True)
     edit_date = models.DateTimeField(auto_now=True)
-    price = models.DecimalField(max_digits=7, decimal_places=2, help_text="Price of the massage")
-    duration = models.DurationField(help_text="Duration of the Massage (in HH:MM:SS format)", default=datetime.time(1))
+    price = models.DecimalField(max_digits=7, decimal_places=2, help_text=pgettext_lazy("Model object", "Price of the massage"))
+    duration = models.DurationField(help_text=pgettext_lazy("Model object", "Duration of the Massage (HH:MM:SS)"), default=datetime.time(1))
     text1 = models.TextField()
     text2 = models.TextField(blank=True)
     text3 = models.TextField(blank=True)
-    slug = models.SlugField(max_length=100, null=False, unique=True, help_text="SEO Url Normalization")
+    slug = models.SlugField(max_length=100, null=False, unique=True, help_text=pgettext_lazy("Model object", "SEO URL Normalization"))
 
     def __str__(self):
         return str(self.name)
@@ -28,7 +29,8 @@ class Massage(models.Model):
 
 class Address(models.Model):
     class Meta:
-        verbose_name_plural = "addresses"
+        verbose_name = pgettext_lazy("Model object", "address")
+        verbose_name_plural = pgettext_lazy("Model object", "addresses")
 
     name = models.CharField(max_length=100)
     pub_date = models.DateTimeField(auto_now_add=True)
@@ -36,55 +38,70 @@ class Address(models.Model):
     address1 = models.CharField(max_length=255)
     address2 = models.CharField(max_length=255, blank=True)
     address3 = models.CharField(max_length=255, blank=True)
-    postal_code = models.CharField(max_length=255, help_text="Postal code of the address")
-    city = models.CharField(max_length=255, help_text="City of the address")
-    country = models.CharField(max_length=255, help_text="Country of the address")
-    
+    postal_code = models.CharField(max_length=255, help_text=pgettext_lazy("Model object", "Postal code"))
+    city = models.CharField(max_length=255, help_text=pgettext_lazy("Model object", "City"))
+    country = models.CharField(max_length=255, help_text=pgettext_lazy("Model object", "Country"))
+
+    def formatAddress(self):
+        return 
+
     def __str__(self):
         return str(self.name)
     
 class Openings(models.Model):
     class Meta:
-        verbose_name_plural = "openings"
+        verbose_name = pgettext_lazy("Model object", "opening")
+        verbose_name_plural = ("Model object", "openings")
     
     name = models.CharField(max_length=100)
     pub_date = models.DateTimeField(auto_now_add=True)
     edit_date = models.DateTimeField(auto_now=True)
 
-    monday_open = models.TimeField(blank=True, null=True, help_text="Monday opening hour, HH:MM:SS", default=datetime.time(10, 00))
-    monday_pause_start = models.TimeField(blank=True, null=True, help_text="Monday start of the Lunchbreak, HH:MM:SS", default=datetime.time(13, 00))
-    monday_pause_end = models.TimeField(blank=True, null=True, help_text="Monday end of the Lunchbreak, HH:MM:SS", default=datetime.time(15, 00))
-    monday_close = models.TimeField(blank=True, null=True, help_text="Monday closing hour, HH:MM:SS", default=datetime.time(18, 00))
+    monday_open = models.TimeField(blank=True, null=True, help_text=pgettext_lazy("Model object", "Opening")+" (HH:MM:SS)", default=datetime.time(10, 00))
+    monday_pause_start = models.TimeField(blank=True, null=True, help_text=pgettext_lazy("Model object", "Lunchbreak")+" (HH:MM:SS)", default=datetime.time(13, 00))
+    monday_pause_end = models.TimeField(blank=True, null=True, help_text=pgettext_lazy("Model object", "End of the Lunchbreak")+" (HH:MM:SS)", default=datetime.time(15, 00))
+    monday_close = models.TimeField(blank=True, null=True, help_text=pgettext_lazy("Model object", "Closing")+" (HH:MM:SS)", default=datetime.time(18, 00))
 
-    tuesday_open = models.TimeField(blank=True, null=True, help_text="Tuesday opening hour, HH:MM:SS", default=datetime.time(10, 00))
-    tuesday_pause_start = models.TimeField(blank=True, null=True, help_text="Tuesday start of the Lunchbreak, HH:MM:SS", default=datetime.time(13, 00))
-    tuesday_pause_end = models.TimeField(blank=True, null=True, help_text="Tuesday end of the Lunchbreak, HH:MM:SS", default=datetime.time(15, 00))
-    tuesday_close = models.TimeField(blank=True, null=True, help_text="Tuesday closing hour, HH:MM:SS", default=datetime.time(18, 00))
+    tuesday_open = models.TimeField(blank=True, null=True, help_text=pgettext_lazy("Model object", "Opening")+" (HH:MM:SS)", default=datetime.time(10, 00))
+    tuesday_pause_start = models.TimeField(blank=True, null=True, help_text=pgettext_lazy("Model object", "Lunchbreak")+" (HH:MM:SS)", default=datetime.time(13, 00))
+    tuesday_pause_end = models.TimeField(blank=True, null=True, help_text=pgettext_lazy("Model object", "End of the Lunchbreak")+" (HH:MM:SS)", default=datetime.time(15, 00))
+    tuesday_close = models.TimeField(blank=True, null=True, help_text=pgettext_lazy("Model object", "Closing")+" (HH:MM:SS)", default=datetime.time(18, 00))
 
-    wednesday_open = models.TimeField(blank=True, null=True, help_text="Wednesday opening hour, HH:MM:SS", default=datetime.time(10, 00))
-    wednesday_pause_start = models.TimeField(blank=True, null=True, help_text="Wednesday start of the Lunchbreak, HH:MM:SS", default=datetime.time(13, 00))
-    wednesday_pause_end = models.TimeField(blank=True, null=True, help_text="Wednesday end of the Lunchbreak, HH:MM:SS", default=datetime.time(15, 00))
-    wednesday_close = models.TimeField(blank=True, null=True, help_text="Wednesday closing hour, HH:MM:SS", default=datetime.time(18, 00))
+    wednesday_open = models.TimeField(blank=True, null=True, help_text=pgettext_lazy("Model object", "Opening")+" (HH:MM:SS)", default=datetime.time(10, 00))
+    wednesday_pause_start = models.TimeField(blank=True, null=True, help_text=pgettext_lazy("Model object", "Lunchbreak")+" (HH:MM:SS)", default=datetime.time(13, 00))
+    wednesday_pause_end = models.TimeField(blank=True, null=True, help_text=pgettext_lazy("Model object", "End of the Lunchbreak")+" (HH:MM:SS)", default=datetime.time(15, 00))
+    wednesday_close = models.TimeField(blank=True, null=True, help_text=pgettext_lazy("Model object", "Closing")+" (HH:MM:SS)", default=datetime.time(18, 00))
 
-    thursday_open = models.TimeField(blank=True, null=True, help_text="Thursday opening hour, HH:MM:SS", default=datetime.time(10, 00))
-    thursday_pause_start = models.TimeField(blank=True, null=True, help_text="Thursday start of the Lunchbreak, HH:MM:SS", default=datetime.time(13, 00))
-    thursday_pause_end = models.TimeField(blank=True, null=True, help_text="Thursday end of the Lunchbreak, HH:MM:SS", default=datetime.time(15, 00))
-    thursday_close = models.TimeField(blank=True, null=True, help_text="Thursday closing hour, HH:MM:SS", default=datetime.time(18, 00))
+    thursday_open = models.TimeField(blank=True, null=True, help_text=pgettext_lazy("Model object", "Opening")+" (HH:MM:SS)", default=datetime.time(10, 00))
+    thursday_pause_start = models.TimeField(blank=True, null=True, help_text=pgettext_lazy("Model object", "Lunchbreak")+" (HH:MM:SS)", default=datetime.time(13, 00))
+    thursday_pause_end = models.TimeField(blank=True, null=True, help_text=pgettext_lazy("Model object", "End of the Lunchbreak")+" (HH:MM:SS)", default=datetime.time(15, 00))
+    thursday_close = models.TimeField(blank=True, null=True, help_text=pgettext_lazy("Model object", "Closing")+" (HH:MM:SS)", default=datetime.time(18, 00))
 
-    friday_open = models.TimeField(blank=True, null=True, help_text="Friday opening hour, HH:MM:SS", default=datetime.time(10, 00))
-    friday_pause_start = models.TimeField(blank=True, null=True, help_text="Friday start of the Lunchbreak, HH:MM:SS", default=datetime.time(13, 00))
-    friday_pause_end = models.TimeField(blank=True, null=True, help_text="Friday end of the Lunchbreak, HH:MM:SS", default=datetime.time(15, 00))
-    friday_close = models.TimeField(blank=True, null=True, help_text="Friday closing hour, HH:MM:SS", default=datetime.time(18, 00))
+    friday_open = models.TimeField(blank=True, null=True, help_text=pgettext_lazy("Model object", "Opening")+" (HH:MM:SS)", default=datetime.time(10, 00))
+    friday_pause_start = models.TimeField(blank=True, null=True, help_text=pgettext_lazy("Model object", "Lunchbreak")+" (HH:MM:SS)", default=datetime.time(13, 00))
+    friday_pause_end = models.TimeField(blank=True, null=True, help_text=pgettext_lazy("Model object", "End of the Lunchbreak")+" (HH:MM:SS)", default=datetime.time(15, 00))
+    friday_close = models.TimeField(blank=True, null=True, help_text=pgettext_lazy("Model object", "Closing")+" (HH:MM:SS)", default=datetime.time(18, 00))
 
-    saturday_open = models.TimeField(blank=True, null=True, help_text="Saturday opening hour, HH:MM:SS", default=datetime.time(10, 00))
-    saturday_pause_start = models.TimeField(blank=True, null=True, help_text="Saturday start of the Lunchbreak, HH:MM:SS", default=datetime.time(13, 00))
-    saturday_pause_end = models.TimeField(blank=True, null=True, help_text="Saturday end of the Lunchbreak, HH:MM:SS", default=datetime.time(15, 00))
-    saturday_close = models.TimeField(blank=True, null=True, help_text="Saturday closing hour, HH:MM:SS", default=datetime.time(18, 00))
+    saturday_open = models.TimeField(blank=True, null=True, help_text=pgettext_lazy("Model object", "Opening")+" (HH:MM:SS)", default=datetime.time(10, 00))
+    saturday_pause_start = models.TimeField(blank=True, null=True, help_text=pgettext_lazy("Model object", "Lunchbreak")+" (HH:MM:SS)", default=datetime.time(13, 00))
+    saturday_pause_end = models.TimeField(blank=True, null=True, help_text=pgettext_lazy("Model object", "End of the Lunchbreak")+" (HH:MM:SS)", default=datetime.time(15, 00))
+    saturday_close = models.TimeField(blank=True, null=True, help_text=pgettext_lazy("Model object", "Closing")+" (HH:MM:SS)", default=datetime.time(18, 00))
 
-    sunday_open = models.TimeField(blank=True, null=True, help_text="Sunday opening hour, HH:MM:SS", default=datetime.time(10, 00))
-    sunday_pause_start = models.TimeField(blank=True, null=True, help_text="Sunday start of the Lunchbreak, HH:MM:SS", default=datetime.time(13, 00))
-    sunday_pause_end = models.TimeField(blank=True, null=True, help_text="Sunday end of the Lunchbreak, HH:MM:SS", default=datetime.time(15, 00))
-    sunday_close = models.TimeField(blank=True, null=True, help_text="Sunday closing hour, HH:MM:SS", default=datetime.time(18, 00))
+    sunday_open = models.TimeField(blank=True, null=True, help_text=pgettext_lazy("Model object", "Opening")+" (HH:MM:SS)", default=datetime.time(10, 00))
+    sunday_pause_start = models.TimeField(blank=True, null=True, help_text=pgettext_lazy("Model object", "Lunchbreak")+" (HH:MM:SS)", default=datetime.time(13, 00))
+    sunday_pause_end = models.TimeField(blank=True, null=True, help_text=pgettext_lazy("Model object", "End of the Lunchbreak")+" (HH:MM:SS)", default=datetime.time(15, 00))
+    sunday_close = models.TimeField(blank=True, null=True, help_text=pgettext_lazy("Model object", "Closing")+" (HH:MM:SS)", default=datetime.time(18, 00))
+
+    def getTimeTable(self):
+        return {
+            pgettext_lazy("Model object", 'monday'): [self.monday_open,self.monday_pause_start,self.monday_pause_end,self.monday_close],
+            pgettext_lazy("Model object", 'tuesday'): [self.tuesday_open,self.tuesday_pause_start,self.tuesday_pause_end,self.tuesday_close],
+            pgettext_lazy("Model object", 'wednesday'): [self.wednesday_open,self.wednesday_pause_start,self.wednesday_pause_end,self.wednesday_close],
+            pgettext_lazy("Model object", 'thursday'): [self.thursday_open,self.thursday_pause_start,self.thursday_pause_end,self.thursday_close],
+            pgettext_lazy("Model object", 'friday'): [self.friday_open,self.friday_pause_start,self.friday_pause_end,self.friday_close],
+            pgettext_lazy("Model object", 'saturday'): [self.saturday_open,self.saturday_pause_start,self.saturday_pause_end,self.saturday_close],
+            pgettext_lazy("Model object", 'sunday'): [self.sunday_open,self.sunday_pause_start,self.sunday_pause_end,self.sunday_close]
+        }
 
     def __str__(self):
         return str(self.name)
@@ -96,8 +113,8 @@ class Practice(models.Model):
     text1 = models.TextField()
     text2 = models.TextField(blank=True)
     text3 = models.TextField(blank=True)
-    googlesite_url = models.URLField(blank=True, help_text="Google Site url")
-    slug = models.SlugField(max_length=100, null=False, unique=True, help_text="SEO Url Normalization")
+    googlesite_url = models.URLField(blank=True, help_text=pgettext_lazy("Model object", "Google Site url"))
+    slug = models.SlugField(max_length=100, null=False, unique=True, help_text=pgettext_lazy("Model object", "SEO Url Normalization"))
 
     address = models.OneToOneField(
         Address,
