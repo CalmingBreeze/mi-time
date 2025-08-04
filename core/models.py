@@ -4,7 +4,6 @@ from django.template.defaultfilters import slugify
 from django.utils.translation import pgettext_lazy
 import datetime
 
-# Create your models here.
 class Massage(models.Model):
     name = models.CharField(max_length=100)
     pub_date = models.DateTimeField(auto_now_add=True)
@@ -42,16 +41,21 @@ class Address(models.Model):
     city = models.CharField(max_length=255, help_text=pgettext_lazy("Model object", "City"))
     country = models.CharField(max_length=255, help_text=pgettext_lazy("Model object", "Country"))
 
-    def formatAddress(self):
-        return 
+    def getFormatedAddress(self):
+        address = self.address1
+        if self.address2:
+            address += ', '+self.address2
+        if self.address3:
+            address += ', '+self.address3
+        return address+', '+self.postal_code+' '+self.city+', '+self.country.upper()
 
     def __str__(self):
         return str(self.name)
     
 class Openings(models.Model):
     class Meta:
-        verbose_name = pgettext_lazy("Model object", "opening")
-        verbose_name_plural = ("Model object", "openings")
+        verbose_name = pgettext_lazy("Model object class", "opening")
+        verbose_name_plural = pgettext_lazy("Model object class", "openings")
     
     name = models.CharField(max_length=100)
     pub_date = models.DateTimeField(auto_now_add=True)
@@ -107,6 +111,9 @@ class Openings(models.Model):
         return str(self.name)
     
 class Practice(models.Model):
+    class Meta:
+        verbose_name = pgettext_lazy("Model object", "practice")
+        verbose_name_plural = pgettext_lazy("Model object", "practices")
     name = models.CharField(max_length=100)
     pub_date = models.DateTimeField(auto_now_add=True)
     edit_date = models.DateTimeField(auto_now=True)

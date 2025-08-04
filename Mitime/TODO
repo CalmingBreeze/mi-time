@@ -2,7 +2,6 @@
 2 Upload image massages
 2 GMAP instead of address
 4 Style %12 in templates practice_full + massage list
-4 i18n practice full days (fix noop)
 
 {% for day, hours in practice.opening.getTimeTable %}
 <tr>

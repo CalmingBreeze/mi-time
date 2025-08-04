@@ -21,10 +21,7 @@
     </header>
     {% if practice.address %}
     <section>
-        Nous sommes situés au {{practice.address.address1}}
-        {% if practice.address.address2 %},{{practice.address.address2}}{% endif %}
-        {% if practice.address.address3 %},{{practice.address.address3}}{% endif %}
-        ,{{practice.address.postal_code}} {{practice.address.city}}
+        {{practice.address.getFormatedAddress}}
     </section>
     {% endif %}
     {% if massages %}
@@ -46,7 +43,7 @@
     </section>
     {% endif %}
     {% if practice.opening %}
-    <h2>{% translate "Availabilities" noop %} :</h2>
+    <h2>{% translate "Availabilities" %} :</h2>
     <section>
         <table>
             <thead>
