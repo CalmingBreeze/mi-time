@@ -33,7 +33,7 @@ def practiceBySlug(request, practice_slug):
     return render(request, "core/practice_full.html", context)   
 
 def massages(request):
-    massages = Massage.objects.order_by("duration")
+    massages = Massage.objects.order_by("priority")
 
     context = {"massages" : massages}
     return render(request, "core/massage_list.html", context)

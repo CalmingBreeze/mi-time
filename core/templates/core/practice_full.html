@@ -17,9 +17,9 @@
     <h2>Nos Massages :</h2>
     <section class="tiles">
         {% for massage in massages %}
-        <article class="style{{ forloop.counter}}">
+        <article class='{{massage.highlighted|yesno:"highlighted,default"}}'>
             <span class="image">
-                <img src="{% static 'core/img/privilege-crop.png' %}" alt="" />
+                <img src="{{massage.cover.url}}" alt="{{massage.name}}" />
             </span>
             <a href="https://calendly.com/reservation-mi-time/le-privilege">
                 <h2>{{massage.name}}</h2>
