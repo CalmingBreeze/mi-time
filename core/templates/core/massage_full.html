@@ -1,14 +1,35 @@
-{% if massage %}
-    <p>{{massage}}</p>
+{% extends "core/components/base.html" %}
+{% load i18n %}
+{% load static %}
 
-    {% if practices %}
-        <p>Available in :</p>
-        <ul>
-            {% for practice in practices %}
-                <li>{{practice}}</li>
-            {% endfor %}
-        </ul>
+{% block title %}Mi-time {{massage.name}}{% endblock %}
+
+{% block content %}
+    <header>
+        <h1>{{massage.name}}</h1>
+    </header>
+    {% if massage %}
+    <section>
+        <h2>{{massage.name}}</h2>
+
+        <p>{{massage.text1}}</p>
+
+        {% if massage.text2 %}
+        <p>{{massage.text2}}</p>
+        {% endif %}
+
+        {% if massage.text3 %}
+        <p>{{massage.text3}}</p>
+        {% endif %}
+
+        {% if massage.practice_set %}
+            <p>{% translate "This massage is available at" %} :</p>
+            <ul>
+                {% for practice in massage.practice_set.all %}
+                    <li>{{practice}}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
     {% endif %}
-{% else %}
-    Error ! No massage data.
-{% endif %}
+    </section>
+{% endblock %}

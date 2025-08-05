@@ -10,7 +10,8 @@
 		$gutter: _size(gutter);
 
 		@include padding(5em, 0, (0, 0, 3em, 0));
-		background-color: _palette(bg-alt);
+		background-color: _palette(footer-bg);
+        color: _palette(footer-ft);
 
 		> .inner {
 			@include vendor('display', 'flex');

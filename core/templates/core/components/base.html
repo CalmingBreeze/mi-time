@@ -1,13 +1,12 @@
 <!doctype html>
 <html lang="">
     {% load static %}
+    {% load i18n %}
     <!-- Head -->
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>{% block title %}Mi'time massages{% endblock %}</title>
-        <!-- link rel="stylesheet" href="assets/css/boiler-style.css" -->
-        <!-- link rel="stylesheet" href="assets/css/mi-style.css" -->
         <link rel="stylesheet" href="{% static 'core/assets/css/main.css' %}">
         <noscript><link rel="stylesheet" href="{% static 'core/assets/css/noscript.css' %}" /></noscript>
         <meta name="description" content="">
@@ -30,21 +29,33 @@
             <!-- Header-->
             <header id="header">
                 <div class="inner">
-                    <!-- Logo -->
-                    <a href="/" class="logo">
-                        <span class="symbol">
-                            <img src="img/logo-crop.png" alt="" />
-                        </span>
-                        <span class="title">Mi'Time</span>
-                    </a>
-                    <!-- Nav -->
-                    <nav>
-                        <ul>
-                            <li>
-                                <a href="#menu">Menu</a>
-                            </li>
-                        </ul>
-                    </nav>
+                    <div id="topmenu">
+                        <!-- Logo -->
+                        <a href="/" class="logo">
+                            <span class="symbol">
+                                <img src="img/logo-crop.png" alt="" />
+                            </span>
+                            <span class="title">Mi'Time</span>
+                        </a>
+                        <!-- Nav -->
+                        <div class="infobloc responsivehide">
+                            Sur RDV les Mercredi, Vendredi et Samedis
+                        </div>
+                        <div class="infobloc responsivehide">
+                            Tel: XX.XX.XX.XX.XX 
+                        </div>
+                        <!-- Nav -->
+                        <nav>
+                            <ul>
+                                <li>
+                                    <a href="#" onclick="Calendly.initPopupWidget({ url: 'https://calendly.com/reservation-mi-time' });"><span class="responsivehide">Prendre </span>RDV</a>
+                                </li>
+                                <li>
+                                    <a href="#menu">Menu</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
                 </div>
             </header>
 
@@ -53,14 +64,12 @@
                 <h2>Menu</h2>
                 <ul>
                     {% block menulist %}
-                        <li><a href="{% url 'index' %}">Accueil</a></li>
-                        <li><a href="{% url 'massages' %}">Les massages</a></li>
-                        {% if practices|length == 1 %}
-                        <li><a href="{% url 'practices' %}">Le salon</a></li>
-                        {% elif practices|length > 1 %}
-                        <li><a href="{% url 'practices' %}">Les salons</a></li>
-                        {% endif %}
-                        <li><a href="{% url 'legal' %}">Mentions légales</a></li>
+                        <li><a href="{% url 'index' %}">{% translate "Home" context "Menu link" %}</a></li>
+                        <li><a href="{% url 'massages' %}">{% translate "Massages" context "Menu link" %}</a></li>
+                        {% url 'practice' practices.first.slug as url_s %} 
+                        {% url 'practices' as url_p %}
+                        <li><a href="{%if practices|length > 1 %}{{url_p}}{% else %}{{url_s}}{% endif %}">{% blocktranslate count nbp=practices|length context "Menu Link" %}practice{% plural %}practices{% endblocktranslate %}</a></li>
+                        <li><a href="{% url 'legal' %}">{% translate "Legal" context "Menu link" %}</a></li>
                     {% endblock %}
                 </ul>
             </nav>
@@ -132,4 +141,11 @@
         <script src="{% static 'core/assets/js/breakpoints.min.js' %}"></script>
         <script src="{% static 'core/assets/js/util.js' %}"></script>
         <script src="{% static 'core/assets/js/main.js' %}"></script>
+        <!-- Début de widget de badge Calendly -->
+        <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+        <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+        <!-- Fin de widget de badge Calendly -->
+
+
     </body>
+</html>

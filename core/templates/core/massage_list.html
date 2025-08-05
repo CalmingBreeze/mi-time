@@ -2,17 +2,6 @@
 
 {% block title %}Mi-time {{practice.name}}{% endblock %}
 
-{% block menulist %}
-    <li><a href="{% url 'index' %}">Accueil</a></li>
-    <li><a href="{% url 'massages' %}">Les massages</a></li>
-    {% if practices|length == 1 %}
-    <li><a href="{% url 'practices' %}">Le salon</a></li>
-    {% elif practices|length > 1 %}
-    <li><a href="{% url 'practices' %}">Les salons</a></li>
-    {% endif %}
-    <li><a href="{% url 'legal' %}">Mentions légales</a></li>
-{% endblock %}
-
 {% block content %}
     {% load static %}
 

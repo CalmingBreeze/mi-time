@@ -7,23 +7,38 @@
 /* Header */
 
 	#header {
-		@include padding(5em, 0, (3em, 0, -5em, 0));
+		@include padding(5em, 0, (0, 0, -5em, 0));
+        background-color: _palette(header-bg);
+        color: _palette(header-ft);
+        position: fixed;
+        width: 100%;
+        z-index: _misc(z-index-base);
+
+        #topmenu {
+            position: fixed;
+            top: 1em;
+            z-index: _misc(z-index-base);
+            line-height: 3em;
+        }
 
 		.logo {
-			display: block;
+			display: inline-block;
 			border-bottom: 0;
 			color: inherit;
 			font-weight: _font(weight-bold);
 			letter-spacing: _font(letter-spacing);
-			margin: 0 0 (_size(element-margin) * 1.25) 0;
+			margin: 0;
 			text-decoration: none;
 			text-transform: uppercase;
-			display: inline-block;
 
 			> * {
 				display: inline-block;
 				vertical-align: middle;
 			}
+
+            .title {
+                font-size: 2em;
+            }
 
 			.symbol {
 				margin-right: 0.65em;
@@ -36,11 +51,16 @@
 			}
 		}
 
+        .infobloc {
+            display: inline-block;
+            margin-left: 2em;
+            font-weight: _font(weight-bold-alt);
+        }
+
 		nav {
 			position: fixed;
 			right: 2em;
-			top: 2em;
-			z-index: _misc(z-index-base);
+			top: 1em;
 
 			ul {
 				@include vendor('display', 'flex');
@@ -52,17 +72,18 @@
 				li {
 					display: block;
 					padding: 0;
+                    margin-left: 1em;
 
 					a {
 						display: block;
 						position: relative;
 						height: 3em;
 						line-height: 3em;
-						padding: 0 1.5em;
+						padding: 0 1.2em;
 						background-color: transparentize(_palette(bg), 0.5);
 						border-radius: _size(border-radius);
 						border: 0;
-						font-size: 0.8em;
+						font-size: 1em;
 						font-weight: _font(weight-bold);
 						letter-spacing: _font(letter-spacing);
 						text-transform: uppercase;
@@ -72,7 +93,6 @@
 						-webkit-tap-highlight-color: transparent;
 						width: 4em;
 						text-indent: 4em;
-						font-size: 1em;
 						overflow: hidden;
 						padding: 0;
 						white-space: nowrap;
@@ -117,6 +137,10 @@
 
 		@include breakpoint('<=small') {
 			@include padding(3em, 0, (1em, 0, -3em, 0));
+
+            .responsivehide {
+                display: none
+            }
 
 			nav {
 				right: 0.5em;
