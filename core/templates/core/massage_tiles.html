@@ -1,0 +1,12 @@
+{% load static %}
+{% load i18n %}
+<section class="tiles">
+    {% for massage in massages %}
+    <article class='{{massage.highlighted|yesno:"highlighted,default"}}'>
+        <span" class="image">
+            <img src="{{massage.tcover.url}}" alt="{{massage.name}}" />
+        </span>
+        <a href="{% url 'massage' massage_slug=massage.slug %}"><span class="title">{{massage.name}}</span></a>
+    </article>
+    {% endfor %}
+</section>

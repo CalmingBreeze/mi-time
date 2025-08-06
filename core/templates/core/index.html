@@ -5,24 +5,9 @@
 {% block content %}
     {% load static %}
     <header>
-        <h1>Mi-Time : Mireille prend soin de vous !</h1>
+        <h1>Mireille prend soin de vous, et vous propose :</h1>
     </header>
     {% if massages %}
-    <p>Nos massages :</p>
-    <section class="tiles">
-        {% for massage in massages %}
-        <article class='{{massage.highlighted|yesno:"highlighted,default"}}'>
-            <span class="image">
-                <img src="{{massage.cover.url}}" alt="{{massage.name}}" />
-            </span>
-            <a href="https://calendly.com/reservation-mi-time/le-privilege">
-                <h2>{{massage.name}}</h2>
-                <div class="content">
-                    <p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p></p>
-                </div>
-            </a>
-        </article>
-        {% endfor %}
-    </section>
+    {% include "core/massage_tiles.html" %}
     {% endif %}
 {% endblock %}

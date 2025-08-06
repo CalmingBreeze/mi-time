@@ -22,7 +22,7 @@
         <p>{{massage.text3}}</p>
         {% endif %}
 
-        {% if massage.practice_set %}
+        {% if massage.practice_set.count > 0 %}
             <p>{% translate "This massage is available at" %} :</p>
             <ul>
                 {% for practice in massage.practice_set.all %}
