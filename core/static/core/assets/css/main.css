@@ -1,4 +1,3 @@
-@import 'fontawesome-all.min.css';
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,700,900");
 /*
 	Phantom by HTML5 UP
@@ -1419,7 +1418,7 @@ header p {
   text-rendering: auto;
   line-height: 1;
   text-transform: none !important;
-  font-family: "Font Awesome 5 Free";
+  font-family: "Font Awesome 7 Free";
   font-weight: 400;
 }
 .icon > .label {
@@ -1427,12 +1426,13 @@ header p {
 }
 .icon:before {
   line-height: inherit;
+  content: var(--fa);
 }
 .icon.solid:before {
   font-weight: 900;
 }
 .icon.brands:before {
-  font-family: "Font Awesome 5 Brands";
+  font-family: "Font Awesome 7 Brands";
 }
 .icon.style2 {
   -moz-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out;
@@ -1791,7 +1791,7 @@ input[type=radio] + label:before {
   text-rendering: auto;
   line-height: 1;
   text-transform: none !important;
-  font-family: "Font Awesome 5 Free";
+  font-family: "Font Awesome 7 Free";
   font-weight: 900;
 }
 input[type=checkbox] + label:before,

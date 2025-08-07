@@ -17,6 +17,7 @@
 
 		&:before {
 			line-height: inherit;
+            content: var(--fa);
 		}
 
 		&.solid {
@@ -27,7 +28,7 @@
 
 		&.brands {
 			&:before {
-				font-family: 'Font Awesome 5 Brands';
+				font-family: 'Font Awesome 7 Brands';
 			}
 		}
 

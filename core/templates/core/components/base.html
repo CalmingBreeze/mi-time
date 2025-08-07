@@ -8,7 +8,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>{% block title %}Mi'time massages{% endblock %}</title>
         <link rel="stylesheet" href="{% static 'core/assets/css/main.css' %}">
+        <link rel="stylesheet" href="{% static 'core/assets/css/fontawesome/fontawesome.css' %}">
+        <link rel="stylesheet" href="{% static 'core/assets/css/fontawesome/solid.css' %}">
+        <link rel="stylesheet" href="{% static 'core/assets/css/fontawesome/brands.css' %}">
         <noscript><link rel="stylesheet" href="{% static 'core/assets/css/noscript.css' %}" /></noscript>
+
         <meta name="description" content="">
 
         <meta property="og:title" content="">
@@ -42,13 +46,13 @@
                             Sur RDV les Mercredi, Vendredi et Samedis
                         </div>
                         <div class="infobloc responsivehide">
-                            Tel: XX.XX.XX.XX.XX 
+                            <i class="fa-solid fa-phone"></i> 07.83.39.06.80 
                         </div>
                         <!-- Nav -->
                         <nav>
                             <ul>
                                 <li>
-                                    <a href="#" onclick="Calendly.initPopupWidget({ url: 'https://calendly.com/reservation-mi-time' });"><span class="responsivehide">Prendre </span>RDV</a>
+                                    <a href="#book" onclick="Calendly.initPopupWidget({ url: 'https://calendly.com/reservation-mi-time' });"><span class="responsivehide">Prendre </span>RDV</a>
                                 </li>
                                 <li>
                                     <a href="#menu">Menu</a>
