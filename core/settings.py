@@ -1,1 +1,0 @@
-TEMPLATES[0]['OPTIONS']['context_processors'].append("custom_app.context_processors.practices_processor")

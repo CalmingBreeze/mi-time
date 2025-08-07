@@ -1434,6 +1434,9 @@ header p {
 .icon.brands:before {
   font-family: "Font Awesome 7 Brands";
 }
+.icon.iconified:before {
+  padding-right: 0.65em;
+}
 .icon.style2 {
   -moz-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out;
   -webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out;
@@ -2075,7 +2078,7 @@ button:disabled,
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   position: relative;
-  margin: -2.5em 0 0 -2.5em;
+  margin: -2.5em 0 2.5em -2.5em;
 }
 .tiles article {
   -moz-transition: -moz-transform 0.5s ease, opacity 0.5s ease;
@@ -2206,9 +2209,6 @@ body:not(.is-touch) .tiles article:hover > .image:after {
 body:not(.is-touch) .tiles article:hover .content {
   opacity: 1;
 }
-* + .tiles {
-  margin-top: 2em;
-}
 body.is-preload .tiles article {
   -moz-transform: scale(0.9);
   -webkit-transform: scale(0.9);
@@ -2277,9 +2277,6 @@ body.is-touch .tiles article .content {
   top: 0;
   z-index: 9000;
   padding: 0.5em 0 0.1em 0;
-}
-#header #topmenu .icon::before {
-  padding-right: 0.65em;
 }
 #header .logo {
   display: inline-block;

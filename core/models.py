@@ -4,6 +4,11 @@ from django.template.defaultfilters import slugify
 from django.utils.translation import pgettext_lazy
 import datetime
 
+class Siteconfig(models.Model):
+    name = models.CharField(max_length=100)
+    pub_date = models.DateTimeField(auto_now_add=True)
+    edit_date = models.DateTimeField(auto_now=True)
+
 class Massage(models.Model):
     name = models.CharField(max_length=100)
     pub_date = models.DateTimeField(auto_now_add=True)

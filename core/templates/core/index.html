@@ -5,9 +5,24 @@
 {% block content %}
     {% load static %}
     <header>
-        <h1>Mireille prend soin de vous, et vous propose :</h1>
+        <h2>Mireille prend soin de vous, et vous propose :</h2>
     </header>
     {% if massages %}
-    {% include "core/massage_tiles.html" %}
+        {% include "core/components/massage_tiles.html" %}
+    {% endif %}
+    {%if practices.count > 1 %}
+    {% else %}
+        {% with main_practice=practices.first %}
+        <section>
+            <h2>Le salon</h2>
+            <h3>{{main_practice.name}}</h3>
+            
+            <p><span class="icon solid fa-location-dot iconified">{{main_practice.address.getFormatedAddress}}</span></p>
+            <p>
+                Nous Trouver : <br/>
+                <iframe width="600" height="400" style="border:0" load="lazy" allowfullscreen src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJq6r61gCvthIR8dDe1ByN884&key={{gmap_api_key}}"></iframe>
+            </p>
+        </section>
+        {% endwith %}
     {% endif %}
 {% endblock %}

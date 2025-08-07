@@ -1,0 +1,33 @@
+<h2>{% translate "Availabilities" %} :</h2>
+<section>
+    <table>
+        <thead>
+            <tr>
+                <th></th>
+                {% translate "morning" as mrng %}
+                {% translate "afternoon" as aftrn %}
+                <th scope="col" colspan="2">{{ mrng|title }}</th>
+                <th scope="col" colspan="2">{{ aftrn|title }}</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for day, hours in practice.opening.getTimeTable.items %}
+                <tr>
+                    <th scope="row">{{day|title}}</th>
+                    {% if hours.0 %}
+                    <td>{{hours.0|date:"H\hi"}}</td>
+                    <td>{{hours.1|date:"H\hi"}}</td>
+                    {% else %}
+                    <td colspan="2"></td>
+                    {% endif %}
+                    {% if hours.2 %}
+                    <td>{{hours.2|date:"H\hi"}}</td>
+                    <td>{{hours.3|date:"H\hi"}}</td>
+                    {% else %}
+                    <td colspan="2"></td>
+                    {% endif %}
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</section>

@@ -15,7 +15,7 @@
 		@include vendor('display', 'flex');
 		@include vendor('flex-wrap', 'wrap');
 		position: relative;
-		margin: ($gutter * -1) 0 0 ($gutter * -1);
+		margin: ($gutter * -1) 0 $gutter ($gutter * -1);
 
 		article {
 			@include vendor('transition', (
@@ -149,10 +149,6 @@
 					}
 				}
 			}
-		}
-
-		* + & {
-			margin-top: _size(element-margin);
 		}
 
 		body.is-preload & {

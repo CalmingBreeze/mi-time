@@ -32,6 +32,10 @@
 			}
 		}
 
+        &.iconified:before {
+            padding-right: .65em;
+        }
+
 		&.style1 {
 		}
 
