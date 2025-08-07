@@ -9,7 +9,7 @@
 	#footer {
 		$gutter: _size(gutter);
 
-		@include padding(5em, 0, (0, 0, 3em, 0));
+		@include padding(3em, 0, (0, 0, 0, 0));
 		background-color: _palette(footer-bg);
         color: _palette(footer-ft);
 
@@ -35,7 +35,7 @@
 			.copyright {
 				width: 100%;
 				padding: 0;
-				margin-top: 5em;
+				margin-top: 3em;
 				list-style: none;
 				font-size: 0.8em;
 				color: transparentize(_palette(fg), 0.5);

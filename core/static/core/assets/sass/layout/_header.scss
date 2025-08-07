@@ -16,9 +16,13 @@
 
         #topmenu {
             position: fixed;
-            top: 1em;
+            top: 0;
             z-index: _misc(z-index-base);
-            line-height: 3em;
+            @include padding(.5em, 0, (0, 0, 0, 0));
+
+            .icon::before {
+                padding-right: .65em;
+            }
         }
 
 		.logo {
@@ -30,30 +34,23 @@
 			margin: 0;
 			text-decoration: none;
 			text-transform: uppercase;
+            font-size: 2em;
 
 			> * {
 				display: inline-block;
 				vertical-align: middle;
 			}
 
-            .title {
-                font-size: 2em;
+            img {
+                display: block;
+                width: 2em;
+                height: 2em;
             }
-
-			.symbol {
-				margin-right: 0.65em;
-
-				img {
-					display: block;
-					width: 2em;
-					height: 2em;
-				}
-			}
 		}
 
         .infobloc {
             display: inline-block;
-            margin-left: 2em;
+            margin-left: 2.5em;
             font-weight: _font(weight-bold-alt);
         }
 
@@ -80,6 +77,7 @@
 						height: 3em;
 						line-height: 3em;
 						padding: 0 1.2em;
+                        color: _palette(header-ft);
 						background-color: transparentize(_palette(bg), 0.5);
 						border-radius: _size(border-radius);
 						border: 0;
@@ -117,7 +115,7 @@
 						}
 
 						&:after {
-							background-image: svg-url('<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" preserveAspectRatio="none"><style>line { stroke-width: 8px; stroke: #{_palette(fg)}; }</style><line x1="0" y1="25" x2="100" y2="25" /><line x1="0" y1="50" x2="100" y2="50" /><line x1="0" y1="75" x2="100" y2="75" /></svg>');
+							background-image: svg-url('<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" preserveAspectRatio="none"><style>line { stroke-width: 8px; stroke: #{_palette(header-ft)}; }</style><line x1="0" y1="25" x2="100" y2="25" /><line x1="0" y1="50" x2="100" y2="50" /><line x1="0" y1="75" x2="100" y2="75" /></svg>');
 							opacity: 1;
 						}
 
@@ -135,8 +133,16 @@
 			}
 		}
 
+        @include breakpoint('<=medium') {
+            
+        }
+
 		@include breakpoint('<=small') {
 			@include padding(3em, 0, (1em, 0, -3em, 0));
+
+            .logo {
+                font-size: 1.5em;
+            }
 
             .responsivehide {
                 display: none
