@@ -1,4 +1,92 @@
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,700,900");
+.carousel-wrapper {
+  width: 400px;
+  height: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.carousel-container {
+  width: 400px;
+  height: 250px;
+  overflow: hidden;
+  margin: 0 auto;
+  border-radius: 4px;
+}
+
+.carousel {
+  display: flex;
+  width: 1200px;
+  animation: sliding 12s infinite;
+}
+.carousel img {
+  width: 400px;
+  height: 250px;
+  background-size: cover;
+  background-position: center;
+}
+.carousel:hover {
+  animation-play-state: paused;
+}
+
+@keyframes sliding {
+  30% {
+    transform: translateX(0);
+  }
+  35% {
+    transform: translateX(-400px);
+  }
+  65% {
+    transform: translateX(-400px);
+  }
+  70% {
+    transform: translateX(-800px);
+  }
+  98% {
+    transform: translateX(-800px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@media screen and (max-width: 768px) {
+  .carousel-wrapper {
+    width: 312px;
+    height: 210px;
+  }
+  .carousel-container {
+    width: 240px;
+    height: 150px;
+  }
+  .carousel {
+    width: 720px;
+  }
+  .carousel > div {
+    width: 240px;
+    height: 150px;
+  }
+  @keyframes sliding {
+    30% {
+      transform: translateX(0);
+    }
+    35% {
+      transform: translateX(-240px);
+    }
+    65% {
+      transform: translateX(-240px);
+    }
+    70% {
+      transform: translateX(-480px);
+    }
+    98% {
+      transform: translateX(-480px);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+}
 /*
 	Phantom by HTML5 UP
 	html5up.net | @ajlkn
@@ -184,19 +272,19 @@ h2 a, h3 a, h4 a, h5 a, h6 a {
 }
 
 h2 {
-  font-size: 1.1em;
+  font-size: 1.8em;
 }
 
 h3 {
-  font-size: 1em;
+  font-size: 1.5em;
 }
 
 h4 {
-  font-size: 0.8em;
+  font-size: 1.2em;
 }
 
 h5 {
-  font-size: 0.8em;
+  font-size: 1em;
 }
 
 h6 {
@@ -2566,12 +2654,31 @@ body.is-menu-visible #menu .close {
 /* Main */
 #main {
   background-color: #ffffff;
-  padding: 8em 0 9em 0;
+  padding: 8em 0 1em 0;
 }
 @media screen and (max-width: 736px) {
   #main {
-    padding: 7em 0 9em 0;
+    padding: 7em 0 1em 0;
   }
+}
+
+iframe {
+  max-width: 100%;
+}
+
+section {
+  margin-bottom: 3em;
+}
+
+.practice-description {
+  display: flex;
+  flex-wrap: wrap;
+}
+.practice-description .richtext {
+  max-width: 62%;
+}
+.practice-description .carousel-wrapper {
+  margin-left: 2.5em;
 }
 
 /* Footer */

@@ -1,12 +1,20 @@
 {% load static %}
 {% load i18n %}
-<section class="tiles">
-    {% for massage in massages %}
-    <article class='{{massage.highlighted|yesno:"highlighted,default"}}'>
-        <span" class="image">
-            <img src="{{massage.tcover.url}}" alt="{{massage.name}}" />
-        </span>
-        <a href="{% url 'massage' massage_slug=massage.slug %}"><span class="title">{{massage.name}}</span></a>
-    </article>
-    {% endfor %}
+
+<section>
+    {% if massages %}
+        <h{{h_val|default:"2"}}>{{section_title}}</h{{h_val|default:"2"}}>
+        <div class="tiles">
+        {% for massage in massages %}
+        <article class='{{massage.highlighted|yesno:"highlighted,default"}}'>
+            <span" class="image">
+                <img src="{{massage.tcover.url}}" alt="{{massage.name}}" />
+            </span>
+            <a href="{% url 'massage' massage_slug=massage.slug %}"><span class="title">{{massage.name}}</span></a>
+        </article>
+        {% endfor %}
+        </div>
+    {% else %}
+    <p>La carte est cours de réalisation. N'hésitez pas à revenir très bientôt.</p>
+    {% endif %}
 </section>

@@ -1,19 +1,24 @@
-1 SITEMAP
-2 Upload image massages
-2 GMAP instead of address
-4 Style %12 in templates practice_full + massage list
 
+2 Upload image massages
+4 Style %12 in templates practice_full + massage list
 
 Starting project
 Create media repo / delete dev one
 collect static and such
 upload imgs for massage and get default.
-verify priority
-
-canonical !!
+verify priority for massage and practice object
 
 TEST Tablet breakpoint for tiles
 replace source sans pro googlefont link in sass phantom
 reponsive margin-top content for fixed menu
-
+placeholder Tcover massage
 title hierarchy
+
+Deployment check :
+Title
+canonical + seo
+Sitemap.xml
+meta description + title
+darkmode fix css for CK
+translations
+RGPD !

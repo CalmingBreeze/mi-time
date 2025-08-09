@@ -8,9 +8,31 @@
 
 	#main {
         background-color: _palette(bg);
-		@include padding(8em, 0, (0, 0, 3em, 0));
+		@include padding(8em, 0, (0, 0, -5em, 0));
 
 		@include breakpoint('<=small') {
-			@include padding(8em, 0, (-1em, 0, 3em, 0));
+			@include padding(8em, 0, (-1em, 0, -5em, 0));
 		}
 	}
+
+    iframe  {
+        max-width: 100%;
+    }
+
+    section {
+        margin-bottom: 3em;
+    }
+
+    .practice-description {
+        display: flex;
+        flex-wrap: wrap;
+
+        .richtext {
+            max-width: 62%;
+        }
+
+        .carousel-wrapper {
+            margin-left: _size(gutter);
+        }
+
+    }

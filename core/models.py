@@ -1,4 +1,5 @@
 from django.db import models
+from django_ckeditor_5.fields import CKEditor5Field
 from django.urls import reverse
 from django.template.defaultfilters import slugify
 from django.utils.translation import pgettext_lazy
@@ -19,9 +20,9 @@ class Massage(models.Model):
     highlighted = models.BooleanField(default=False, help_text=pgettext_lazy("Model Object", "Different tile background color when listed"))
     price = models.DecimalField(max_digits=7, decimal_places=2, help_text=pgettext_lazy("Model object", "Price of the massage"))
     duration = models.DurationField(help_text=pgettext_lazy("Model object", "Duration of the Massage (HH:MM:SS)"), default=datetime.time(1))
-    text1 = models.TextField()
-    text2 = models.TextField(blank=True)
-    text3 = models.TextField(blank=True)
+    text1 = CKEditor5Field('Text', config_name='extends')
+    text2 = CKEditor5Field('Text', config_name='extends',blank=True)
+    text3 = CKEditor5Field('Text', config_name='extends',blank=True)
     img1 = models.ImageField(upload_to='img/',blank=True, null=True, help_text=pgettext_lazy("Model object", "An image to illustrate the massage"))
     img2 = models.ImageField(upload_to='img/',blank=True, null=True, help_text=pgettext_lazy("Model object", "An image to illustrate the massage"))
     img3 = models.ImageField(upload_to='img/',blank=True, null=True, help_text=pgettext_lazy("Model object", "An image to illustrate the massage"))
@@ -130,9 +131,9 @@ class Practice(models.Model):
     name = models.CharField(max_length=100)
     pub_date = models.DateTimeField(auto_now_add=True)
     edit_date = models.DateTimeField(auto_now=True)
-    text1 = models.TextField()
-    text2 = models.TextField(blank=True)
-    text3 = models.TextField(blank=True)
+    text1 = CKEditor5Field('Text', config_name='extends')
+    text2 = CKEditor5Field('Text', config_name='extends',blank=True)
+    text3 = CKEditor5Field('Text', config_name='extends',blank=True)
     googlesite_url = models.URLField(blank=True, help_text=pgettext_lazy("Model object", "Google Site url"))
     slug = models.SlugField(max_length=100, null=False, unique=True, help_text=pgettext_lazy("Model object", "SEO Url Normalization"))
     cover = models.ImageField(upload_to='img/',blank=True, null=True, help_text=pgettext_lazy("Model object", "The cover image used when listed"))
