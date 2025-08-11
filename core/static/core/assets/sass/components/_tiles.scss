@@ -31,12 +31,15 @@
 				position: relative;
 				display: block;
 				width: 100%;
-				border-radius: _size(border-radius);
 				overflow: hidden;
+				border-radius: _size(border-radius);
+
 
 				img {
 					display: block;
 					width: 100%;
+                    border-radius: 10px;
+                    border: 8px solid _palette(tile-title);
 				}
 
 				&:before {
@@ -54,6 +57,9 @@
 					height: 100%;
 					opacity: 0.5;
 					z-index: 1;
+                    background-color: rgba(0,0,0,0.5);
+                    border-radius: _size(tiles-border-radius),
+                    
 				}
 
 				&:after {
@@ -90,16 +96,18 @@
 				text-align: center;
 				text-decoration: none;
 				z-index: 3;
+                
 
                 .title {
-                    color: _palette(fg-accent);
+                    color: _palette(tile-title);
                     font-weight: _font(weight-bold);
                     font-size: 1.2em;
                     letter-spacing: _font(letter-spacing);
                     text-transform: uppercase;
                     padding: .5em 1em;
                     border-radius: 4px;
-                    background-color: rgba(0,0,0,.2);
+                    background-color:_palette(tile-tag);
+                    border: 1px solid _palette(tile-title);
                 }
 
 				> :last-child {
@@ -136,7 +144,7 @@
 
 						&:before {
 							background-color: _palette(bg-accent);
-							opacity: 0.35;
+							opacity: 0;
 						}
 
 						&:after {
@@ -164,6 +172,10 @@
 					max-height: 15em;
 					opacity: 1;
 				}
+
+                .image::before {
+                    background-color: inherit;   
+                }
 			}
 		}
 

@@ -195,7 +195,7 @@ body.is-preload *, body.is-preload *:before, body.is-preload *:after {
 
 /* Type */
 body, input, select, textarea {
-  color: #DEB6AB;
+  color: #9E7F5E;
   font-family: "Source Sans Pro", Helvetica, sans-serif;
   font-size: 16pt;
   font-weight: 300;
@@ -2185,12 +2185,14 @@ button:disabled,
   position: relative;
   display: block;
   width: 100%;
-  border-radius: 4px;
   overflow: hidden;
+  border-radius: 4px;
 }
 .tiles article > .image img {
   display: block;
   width: 100%;
+  border-radius: 10px;
+  border: 8px solid #F9DEB2;
 }
 .tiles article > .image:before {
   pointer-events: none;
@@ -2207,6 +2209,8 @@ button:disabled,
   height: 100%;
   opacity: 0.5;
   z-index: 1;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 8px;
 }
 .tiles article > .image:after {
   pointer-events: none;
@@ -2257,14 +2261,15 @@ button:disabled,
   z-index: 3;
 }
 .tiles article a .title {
-  color: #ffffff;
+  color: #F9DEB2;
   font-weight: 900;
   font-size: 1.2em;
   letter-spacing: 0.35em;
   text-transform: uppercase;
   padding: 0.5em 1em;
   border-radius: 4px;
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: rgba(127, 186, 180, 0.8);
+  border: 1px solid #F9DEB2;
 }
 .tiles article a > :last-child {
   margin: 0;
@@ -2275,12 +2280,6 @@ button:disabled,
 .tiles article a h2 {
   margin: 0;
 }
-.tiles article.default > .image:before {
-  background-color: #F8ECD1;
-}
-.tiles article.highlighted > .image:before {
-  background-color: #AC7D88;
-}
 body:not(.is-touch) .tiles article:hover {
   -moz-transform: scale(1.1);
   -webkit-transform: scale(1.1);
@@ -2289,7 +2288,7 @@ body:not(.is-touch) .tiles article:hover {
 }
 body:not(.is-touch) .tiles article:hover > .image:before {
   background-color: #333333;
-  opacity: 0.35;
+  opacity: 0;
 }
 body:not(.is-touch) .tiles article:hover > .image:after {
   opacity: 0;
@@ -2307,6 +2306,9 @@ body.is-preload .tiles article {
 body.is-touch .tiles article .content {
   max-height: 15em;
   opacity: 1;
+}
+body.is-touch .tiles article .image::before {
+  background-color: inherit;
 }
 @media screen and (max-width: 1280px) {
   .tiles {
@@ -2354,8 +2356,8 @@ body.is-touch .tiles article .content {
 /* Header */
 #header {
   padding: 5em 0 0.1em 0;
-  background-color: #A46977;
-  color: #e8eCDB;
+  background-color: #0C354D;
+  color: #F9DEB2;
   position: fixed;
   width: 100%;
   z-index: 9000;
@@ -2382,9 +2384,8 @@ body.is-touch .tiles article .content {
   vertical-align: middle;
 }
 #header .logo img {
-  display: block;
-  width: 2em;
-  height: 2em;
+  display: inline-block;
+  max-height: 2em;
 }
 #header .infobloc {
   display: inline-block;
@@ -2420,7 +2421,7 @@ body.is-touch .tiles article .content {
   height: 3em;
   line-height: 3em;
   padding: 0 1.2em;
-  color: #e8eCDB;
+  color: #F9DEB2;
   background-color: rgba(255, 255, 255, 0.5);
   border-radius: 4px;
   border: 0;
@@ -2458,7 +2459,7 @@ body.is-touch .tiles article .content {
   opacity: 0;
 }
 #header nav ul li a[href="#menu"]:after {
-  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cstyle%3Eline %7B stroke-width: 8px%3B stroke: %23e8eCDB%3B %7D%3C/style%3E%3Cline x1='0' y1='25' x2='100' y2='25' /%3E%3Cline x1='0' y1='50' x2='100' y2='50' /%3E%3Cline x1='0' y1='75' x2='100' y2='75' /%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cstyle%3Eline %7B stroke-width: 8px%3B stroke: %23F9DEB2%3B %7D%3C/style%3E%3Cline x1='0' y1='25' x2='100' y2='25' /%3E%3Cline x1='0' y1='50' x2='100' y2='50' /%3E%3Cline x1='0' y1='75' x2='100' y2='75' /%3E%3C/svg%3E");
   opacity: 1;
 }
 #header nav ul li a[href="#menu"]:hover:before {
@@ -2511,8 +2512,8 @@ body.is-touch .tiles article .content {
   max-width: 80%;
   height: 100%;
   -webkit-overflow-scrolling: touch;
-  background: #A46977;
-  color: #ffffff;
+  background: #0C354D;
+  color: #F9DEB2;
   cursor: default;
   visibility: hidden;
   z-index: 9002;
@@ -2684,8 +2685,8 @@ section {
 /* Footer */
 #footer {
   padding: 3em 0 1em 0;
-  background-color: #DEB6AB;
-  color: #585858;
+  background-color: #7FBAB4;
+  color: #0C354D;
 }
 #footer > .inner {
   display: -moz-flex;
@@ -2718,7 +2719,6 @@ section {
   margin-top: 3em;
   list-style: none;
   font-size: 0.8em;
-  color: rgba(88, 88, 88, 0.5);
 }
 #footer > .inner .copyright a {
   color: inherit;

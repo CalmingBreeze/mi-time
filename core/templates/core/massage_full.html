@@ -12,14 +12,14 @@
     <section>
         <h2>{{massage.name}}</h2>
 
-        <p>{{massage.text1}}</p>
+        <p>{{massage.text1|safe}}</p>
 
         {% if massage.text2 %}
-        <p>{{massage.text2}}</p>
+        <p>{{massage.text2|safe}}</p>
         {% endif %}
 
         {% if massage.text3 %}
-        <p>{{massage.text3}}</p>
+        <p>{{massage.text3|safe}}</p>
         {% endif %}
 
         {% if massage.practice_set.count > 0 %}

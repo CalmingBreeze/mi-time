@@ -29,7 +29,7 @@ DEBUG = config("DEBUG", default=False, cast=bool)
 
 GMAP_API_KEY = config("GMAP_API_KEY")
 
-ALLOWED_HOSTS = ["localhost", "mi-time.fr"]
+ALLOWED_HOSTS = ["localhost", "127.0.0.1", "mi-time.fr"]
 
 
 # Application definition
