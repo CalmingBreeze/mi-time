@@ -18,7 +18,7 @@
                 <div class="richtext">
                     {{main_practice.text1|safe}}
                 </div>
-                <div class="carousel-wrapper">
+                <div class="carousel-wrapper bordered">
                     <div class="carousel-container">
                         <div class="carousel">
                             <img class="image-one" src="https://images.unsplash.com/photo-1480936600919-bffa6b7ecf1e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" />
@@ -32,7 +32,7 @@
         <section>
             <!--<p><span class="icon solid fa-location-dot iconified">{{main_practice.address.getFormatedAddress}}</span></p>-->
             <h3>Venir au salon : </h3>
-            <iframe width="1176" height="400" style="border:0" load="lazy" allowfullscreen src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJq6r61gCvthIR8dDe1ByN884&key={{gmap_api_key}}"></iframe>
+            <iframe class="bordered" width="1176" height="400" load="lazy" allowfullscreen src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJq6r61gCvthIR8dDe1ByN884&key={{gmap_api_key}}"></iframe>
         </section>
         {% endwith %}
     {% endif %}

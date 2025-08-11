@@ -23,12 +23,22 @@
         margin-bottom: 3em;
     }
 
+    .bordered {
+        border: _size(tiles-border-width) solid _palette(border);
+        border-radius: _size(tiles-border-radius);
+    }
+
+    .carousel-wrapper.bordered {
+        width: calc(400px + 2 *_size(tiles-border-width));
+        height: calc(250px + 2 * _size(tiles-border-width));
+    }
+
     .practice-description {
         display: flex;
         flex-wrap: wrap;
 
         .richtext {
-            max-width: 62%;
+            max-width: 60%;
         }
 
         .carousel-wrapper {

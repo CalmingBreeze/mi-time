@@ -108,6 +108,23 @@
                     border-radius: 4px;
                     background-color:_palette(tile-tag);
                     border: 1px solid _palette(tile-title);
+                    
+                    position: relative;
+                    padding: .2em 1.2em 1.2em;
+
+                    span {
+                        letter-spacing: 0;
+                        position: absolute;
+                        display: inline-block;
+                        top: 2em;
+                        left: 0;
+                        width: 100%;
+                        font-size: .8em;
+
+                        &:before {
+                            padding-right: .35em;
+                        }
+                    }
                 }
 
 				> :last-child {

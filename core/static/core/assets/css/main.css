@@ -11,7 +11,7 @@
   width: 400px;
   height: 250px;
   overflow: hidden;
-  margin: 0 auto;
+  margin: auto;
   border-radius: 4px;
 }
 
@@ -317,7 +317,7 @@ sup {
 }
 
 blockquote {
-  border-left: solid 4px #c9c9c9;
+  border-left: solid 4px #F9DEB2;
   font-style: italic;
   margin: 0 0 2em 0;
   padding: 0.5em 0 0.5em 2em;
@@ -326,7 +326,7 @@ blockquote {
 code {
   background: rgba(144, 144, 144, 0.075);
   border-radius: 4px;
-  border: solid 1px #c9c9c9;
+  border: solid 1px #F9DEB2;
   font-family: "Courier New", monospace;
   font-size: 0.9em;
   margin: 0 0.25em;
@@ -348,7 +348,7 @@ pre code {
 
 hr {
   border: 0;
-  border-bottom: solid 1px #c9c9c9;
+  border-bottom: solid 1px #F9DEB2;
   margin: 2em 0;
 }
 hr.major {
@@ -1531,7 +1531,7 @@ header p {
   -ms-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out;
   transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out;
   background-color: transparent;
-  border: solid 1px #c9c9c9;
+  border: solid 1px #F9DEB2;
   border-radius: 4px;
   width: 2.65em;
   height: 2.65em;
@@ -1574,7 +1574,7 @@ ul.alt {
   padding-left: 0;
 }
 ul.alt li {
-  border-top: solid 1px #c9c9c9;
+  border-top: solid 1px #F9DEB2;
   padding: 0.5em 0;
 }
 ul.alt li:first-child {
@@ -1790,7 +1790,7 @@ textarea {
   background-color: transparent;
   border: none;
   border-radius: 0;
-  border-bottom: solid 1px #c9c9c9;
+  border-bottom: solid 1px #F9DEB2;
   color: inherit;
   display: block;
   outline: 0;
@@ -1817,7 +1817,7 @@ textarea:focus {
 }
 
 select {
-  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' preserveAspectRatio='none' viewBox='0 0 40 40'%3E%3Cpath d='M9.4,12.3l10.4,10.4l10.4-10.4c0.2-0.2,0.5-0.4,0.9-0.4c0.3,0,0.6,0.1,0.9,0.4l3.3,3.3c0.2,0.2,0.4,0.5,0.4,0.9 c0,0.4-0.1,0.6-0.4,0.9L20.7,31.9c-0.2,0.2-0.5,0.4-0.9,0.4c-0.3,0-0.6-0.1-0.9-0.4L4.3,17.3c-0.2-0.2-0.4-0.5-0.4-0.9 c0-0.4,0.1-0.6,0.4-0.9l3.3-3.3c0.2-0.2,0.5-0.4,0.9-0.4S9.1,12.1,9.4,12.3z' fill='%23c9c9c9' /%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' preserveAspectRatio='none' viewBox='0 0 40 40'%3E%3Cpath d='M9.4,12.3l10.4,10.4l10.4-10.4c0.2-0.2,0.5-0.4,0.9-0.4c0.3,0,0.6,0.1,0.9,0.4l3.3,3.3c0.2,0.2,0.4,0.5,0.4,0.9 c0,0.4-0.1,0.6-0.4,0.9L20.7,31.9c-0.2,0.2-0.5,0.4-0.9,0.4c-0.3,0-0.6-0.1-0.9-0.4L4.3,17.3c-0.2-0.2-0.4-0.5-0.4-0.9 c0-0.4,0.1-0.6,0.4-0.9l3.3-3.3c0.2-0.2,0.5-0.4,0.9-0.4S9.1,12.1,9.4,12.3z' fill='%23F9DEB2' /%3E%3C/svg%3E");
   background-size: 1.25rem;
   background-repeat: no-repeat;
   background-position: calc(100% - 1rem) center;
@@ -1888,7 +1888,7 @@ input[type=radio] + label:before {
 input[type=checkbox] + label:before,
 input[type=radio] + label:before {
   border-radius: 4px;
-  border: solid 1px #c9c9c9;
+  border: solid 1px #F9DEB2;
   content: "";
   display: inline-block;
   font-size: 0.8em;
@@ -1924,7 +1924,7 @@ input[type=radio] + label:before {
 /* Box */
 .box {
   border-radius: 4px;
-  border: solid 1px #c9c9c9;
+  border: solid 1px #F9DEB2;
   margin-bottom: 2em;
   padding: 1.5em;
 }
@@ -1999,7 +1999,7 @@ table {
   width: 100%;
 }
 table tbody tr {
-  border: solid 1px #c9c9c9;
+  border: solid 1px #F9DEB2;
   border-left: 0;
   border-right: 0;
 }
@@ -2016,16 +2016,16 @@ table th {
   text-align: left;
 }
 table thead {
-  border-bottom: solid 2px #c9c9c9;
+  border-bottom: solid 2px #F9DEB2;
 }
 table tfoot {
-  border-top: solid 2px #c9c9c9;
+  border-top: solid 2px #F9DEB2;
 }
 table.alt {
   border-collapse: separate;
 }
 table.alt tbody tr td {
-  border: solid 1px #c9c9c9;
+  border: solid 1px #F9DEB2;
   border-left-width: 0;
   border-top-width: 0;
 }
@@ -2270,6 +2270,20 @@ button:disabled,
   border-radius: 4px;
   background-color: rgba(127, 186, 180, 0.8);
   border: 1px solid #F9DEB2;
+  position: relative;
+  padding: 0.2em 1.2em 1.2em;
+}
+.tiles article a .title span {
+  letter-spacing: 0;
+  position: absolute;
+  display: inline-block;
+  top: 2em;
+  left: 0;
+  width: 100%;
+  font-size: 0.8em;
+}
+.tiles article a .title span:before {
+  padding-right: 0.35em;
 }
 .tiles article a > :last-child {
   margin: 0;
@@ -2671,12 +2685,22 @@ section {
   margin-bottom: 3em;
 }
 
+.bordered {
+  border: 8px solid #F9DEB2;
+  border-radius: 8px;
+}
+
+.carousel-wrapper.bordered {
+  width: 416px;
+  height: 266px;
+}
+
 .practice-description {
   display: flex;
   flex-wrap: wrap;
 }
 .practice-description .richtext {
-  max-width: 62%;
+  max-width: 60%;
 }
 .practice-description .carousel-wrapper {
   margin-left: 2.5em;

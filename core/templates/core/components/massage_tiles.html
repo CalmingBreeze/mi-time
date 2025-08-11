@@ -1,5 +1,6 @@
 {% load static %}
 {% load i18n %}
+{% load duration %}
 
 <section>
     {% if massages %}
@@ -10,7 +11,14 @@
             <span" class="image">
                 <img src="{{massage.tcover.url}}" alt="{{massage.name}}" />
             </span>
-            <a href="{% url 'massage' massage_slug=massage.slug %}"><span class="title">{{massage.name}}</span></a>
+            <a href="{% url 'massage' massage_slug=massage.slug %}">
+                <span class="title">
+                    {{massage.name}}
+                    <span class="icon regular fa-clock">
+                        {{massage.duration|duration}}
+                    </span>
+                </span>
+            </a>
         </article>
         {% endfor %}
         </div>
