@@ -6,11 +6,8 @@
     {% load static %}
     {% load i18n %}
 
-    <header>
-        <h1>{{practice.name}}</h1>
-    </header>
     {% if massages %}
-    {% include "core/components/massage_tiles.html" %}
+    {% include "core/components/massage_tiles.html" with section_title="Nos massages disponibles :" h_val=1%}
     {% endif %}
     
 {% endblock %}
