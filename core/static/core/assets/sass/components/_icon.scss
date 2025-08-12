@@ -65,7 +65,7 @@
 			}
 
 			&:active {
-				background-color: transparentize(_palette(accent1), 0.9);
+                background-color: color.adjust(_palette(accent1), $alpha: -0.9);
 			}
 		}
 	}

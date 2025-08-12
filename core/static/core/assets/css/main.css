@@ -1745,7 +1745,7 @@ form > .fields > .field.half {
   width: calc(50% - 0.75em);
 }
 form > .fields > .field.third {
-  width: calc(100%/3 - 0.5em);
+  width: calc(33.3333333333% - 0.5em);
 }
 form > .fields > .field.quarter {
   width: calc(25% - 0.375em);
@@ -1847,8 +1847,7 @@ textarea {
   min-height: 3.75em;
 }
 
-input[type=checkbox],
-input[type=radio] {
+input[type=checkbox], input[type=radio] {
   -moz-appearance: none;
   -webkit-appearance: none;
   -ms-appearance: none;
@@ -1860,8 +1859,7 @@ input[type=radio] {
   width: 1em;
   z-index: -1;
 }
-input[type=checkbox] + label,
-input[type=radio] + label {
+input[type=checkbox] + label, input[type=radio] + label {
   text-decoration: none;
   color: #585858;
   cursor: pointer;
@@ -1872,8 +1870,7 @@ input[type=radio] + label {
   padding-right: 0.75em;
   position: relative;
 }
-input[type=checkbox] + label:before,
-input[type=radio] + label:before {
+input[type=checkbox] + label:before, input[type=radio] + label:before {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   display: inline-block;
@@ -1885,8 +1882,7 @@ input[type=radio] + label:before {
   font-family: "Font Awesome 7 Free";
   font-weight: 900;
 }
-input[type=checkbox] + label:before,
-input[type=radio] + label:before {
+input[type=checkbox] + label:before, input[type=radio] + label:before {
   border-radius: 4px;
   border: solid 1px #F9DEB2;
   content: "";
@@ -1900,15 +1896,13 @@ input[type=radio] + label:before {
   top: 0;
   width: 2.25em;
 }
-input[type=checkbox]:checked + label:before,
-input[type=radio]:checked + label:before {
+input[type=checkbox]:checked + label:before, input[type=radio]:checked + label:before {
   background: #585858;
   border-color: #585858;
   color: #ffffff;
   content: "\f00c";
 }
-input[type=checkbox]:focus + label:before,
-input[type=radio]:focus + label:before {
+input[type=checkbox]:focus + label:before, input[type=radio]:focus + label:before {
   border-color: #0d1e32;
   box-shadow: 0 0 0 1px #0d1e32;
 }
@@ -2700,10 +2694,18 @@ section {
   flex-wrap: wrap;
 }
 .practice-description .richtext {
+  text-align: justify;
   max-width: 60%;
 }
 .practice-description .carousel-wrapper {
   margin-left: 2.5em;
+}
+
+table.openings thead {
+  text-align: center;
+}
+table.openings tbody tr th {
+  border-right: 5px solid rgb(158, 127, 94);
 }
 
 /* Footer */

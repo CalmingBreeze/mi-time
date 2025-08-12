@@ -46,7 +46,7 @@
 
 				> li {
 					padding: 0;
-					border-top: solid 1px transparentize(_palette(bg), 0.85);
+					border-top: solid 1px color.adjust(_palette(bg), $alpha: -0.85);
 
 					a {
 						display: block;

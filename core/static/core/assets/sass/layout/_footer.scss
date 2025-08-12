@@ -45,7 +45,7 @@
 
 				li {
 					display: inline-block;
-					border-left: solid 1px transparentize(_palette(fg), 0.85);
+                    border-left: solid 1px color.adjust(_palette(fg), $alpha: -0.85);
 					line-height: 1;
 					padding: 0 0 0 1em;
 					margin: 0 0 0 1em;

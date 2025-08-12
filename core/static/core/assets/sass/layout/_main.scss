@@ -38,6 +38,7 @@
         flex-wrap: wrap;
 
         .richtext {
+            text-align: justify;
             max-width: 60%;
         }
 
@@ -45,4 +46,14 @@
             margin-left: _size(gutter);
         }
 
+    }
+
+    table.openings {
+        thead {
+            text-align: center;
+        }
+        
+        tbody tr th {
+            border-right: 5px solid rgb(158, 127, 94);
+        }
     }
