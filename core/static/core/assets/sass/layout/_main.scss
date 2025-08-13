@@ -43,10 +43,16 @@
             max-width: 60%;
         }
 
-        .carousel-wrapper {
-            
-        }
+        //.carousel-wrapper {
+        //    
+        //}
 
+    }
+
+    .openings-and-map {
+        display: flex;
+        flex-wrap: wrap;
+        gap: _size(gutter);
     }
 
     table.openings {

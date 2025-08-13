@@ -1,9 +1,0 @@
-{% load i18n %}
-
-<section>
-    <!--<p><span class="icon solid fa-location-dot iconified">{{main_practice.address.getFormatedAddress}}</span></p>-->
-    {% translate "Our location :" context "Practice map block" as default_title %}
-    <h{{h_val|default:"2"}}>{{section_title|default:default_title}}</h{{h_val|default:"2"}}>
-
-    <iframe class="bordered" width="1176" height="400" load="lazy" allowfullscreen src="https://www.google.com/maps/embed/v1/place?q=place_id:{{block_practice.address.place_id|default:'ChIJsZ3dJQevthIRAuiUKHRWh60'}}&key={{gmap_api_key}}"></iframe>
-</section>

@@ -3,10 +3,9 @@
 <section>
     {% translate "Our practice :" context "Practice detail block" as default_title %}
     <h{{h_val|default:"2"}}>{{section_title|default:default_title}}</h{{h_val|default:"2"}}>
-    <h3>{{block_practice.name}}</h3>
     <div class="practice-description">
         <div class="richtext">
-            {{block_practice.text1|safe}}
+            {{practice_object.text1|safe}}
         </div>
         <div class="carousel-wrapper bordered">
             <div class="carousel-container">

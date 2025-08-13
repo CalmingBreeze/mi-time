@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-13 16:15+0200\n"
+"POT-Creation-Date: 2025-08-13 17:08+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -223,18 +223,22 @@ msgctxt "Practice map block"
 msgid "Our location :"
 msgstr "Se rendre au salon :"
 
+#: .\core\templates\core\components\practice_map.html:13
+#: .\core\templates\core\components\practice_openings.html:9
+msgctxt "Practice openings block"
+msgid "morning"
+msgstr "matin"
+
+#: .\core\templates\core\components\practice_map.html:14
+#: .\core\templates\core\components\practice_openings.html:10
+msgctxt "Practice openings block"
+msgid "afternoon"
+msgstr "après-midi"
+
 #: .\core\templates\core\components\practice_openings.html:3
 msgctxt "Practice openings block"
 msgid "Availabilities :"
 msgstr "Nos Horaires de Rendez-vous"
-
-#: .\core\templates\core\components\practice_openings.html:9
-msgid "morning"
-msgstr "matin"
-
-#: .\core\templates\core\components\practice_openings.html:10
-msgid "afternoon"
-msgstr "après-midi"
 
 #: .\core\templates\core\index.html:9
 msgctxt "Main page"
@@ -245,7 +249,7 @@ msgstr "Mireille prend soin  de vous, et vous propose :"
 msgid "This massage is available at"
 msgstr "Ce massage est disponible au"
 
-#: .\core\templates\core\practice_full.html:21
+#: .\core\templates\core\practice_full.html:18
 msgctxt "Practice Full massage block title"
 msgid "Available massages :"
 msgstr "Massages disponibles :"

@@ -12,10 +12,10 @@
     {%if practices.count > 1 %}
         <!-- Multiple practice case -->
     {% else %}
-        {% with block_practice=practices.first %}
+        {% with practice_object=practices.first %}
             {% include "core/components/practice_detail.html" %}
-            <!-- GMAP Embbed-->
-            {% include "core/components/practice_map.html" %}
+            <!-- GMAP Embbed + Openings -->
+            {% include "core/components/practice_infos.html" %}
         {% endwith %}
     {% endif %}
 {% endblock %}

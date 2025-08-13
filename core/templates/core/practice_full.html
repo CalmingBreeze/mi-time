@@ -5,21 +5,16 @@
 {% block title %}Mi-time {{practice.name}}{% endblock %}
 
 {% block content %}
-    <header>
-        <h1>{{practice.name}}</h1>
-    </header>
-    {% if practice.address %}
-    <section>
-        {{practice.address.getFormatedAddress}}
-    </section>
-    {% endif %}
-    {% if practice.opening %}
-        {% include "core/components/practice_openings.html" with h_val=2 %}
-    {% endif %}
+    {% with practice_object=practices.first %}
+        {% if practice.address %}
+            {% include "core/components/practice_detail.html" with section_title=practice.name h_val=1  %}
+            {% include "core/components/practice_infos.html" %}
+        {% endif %}
 
-    {% if massages %}
-        {% translate "Available massages :" context "Practice Full massage block title" as block_title%}
-        {% include "core/components/massage_tiles.html" with section_title=block_title h_val=2 %}
-    {% endif %}
+        {% if massages %}
+            {% translate "Available massages :" context "Practice Full massage block title" as block_title%}
+            {% include "core/components/massage_tiles.html" with section_title=block_title h_val=2 %}
+        {% endif %}
+    {% endwith %}
     
 {% endblock %}

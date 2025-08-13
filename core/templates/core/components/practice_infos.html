@@ -1,0 +1,39 @@
+{% load i18n %}
+
+<section>
+    <!--<p><span class="icon solid fa-location-dot iconified">{{main_practice.address.getFormatedAddress}}</span></p>-->
+    {% translate "Our location :" context "Practice map block" as default_title %}
+    <h{{h_val|default:"2"}}>{{section_title|default:default_title}}</h{{h_val|default:"2"}}>
+    
+    <div class="openings-and-map">
+        <table class="openings">
+            <thead>
+                <tr>
+                    <th></th>
+                    {% translate "morning" context "Practice openings block" as mrng %}
+                    {% translate "afternoon" context "Practice openings block" as aftrn %}
+                    <th scope="col">{{ mrng|title }}</th>
+                    <th scope="col">{{ aftrn|title }}</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for day, hours in practice_object.opening.getTimeTable.items %}
+                    <tr>
+                        <th scope="row">{{day|title}}</th>
+                        {% if hours.0 == None %}
+                        <td class="bordered-right">-</td>
+                        {% else %}
+                        <td class="bordered-right">{{hours.0|date:"H\hi"}} - {{hours.1|date:"H\hi"}}</td>
+                        {% endif %}
+                        {% if hours.2  == None %}
+                        <td class="bordered-right">-</td>
+                        {% else %}
+                        <td class="bordered-right">{{hours.2|date:"H\hi"}} - {{hours.3|date:"H\hi"}}</td>
+                        {% endif %}
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <iframe class="bordered" width="768" height="400" load="lazy" allowfullscreen src="https://www.google.com/maps/embed/v1/place?q=place_id:{{practice_object.address.place_id|default:'ChIJsZ3dJQevthIRAuiUKHRWh60'}}&key={{gmap_api_key}}"></iframe>
+    </div>
+</section>
