@@ -4,36 +4,18 @@
 
 {% block content %}
     {% load static %}
+    {% load i18n %}
 
-
-    {% include "core/components/massage_tiles.html" with section_title="Mireille prend soin de vous, et vous propose :" h_val=1 %}
+    {% translate "Our available massages :" context "Main page" as main_title %}
+    {% include "core/components/massage_tiles.html" with section_title=main_title h_val=1 %}
 
     {%if practices.count > 1 %}
+        <!-- Multiple practice case -->
     {% else %}
-        {% with main_practice=practices.first %}
-        <section>
-            <h2>Le salon</h2>
-            <h3>{{main_practice.name}}</h3>
-            <div class="practice-description">
-                <div class="richtext">
-                    {{main_practice.text1|safe}}
-                </div>
-                <div class="carousel-wrapper bordered">
-                    <div class="carousel-container">
-                        <div class="carousel">
-                            <img class="image-one" src="https://images.unsplash.com/photo-1480936600919-bffa6b7ecf1e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" />
-                            <img class="image-two" src="https://images.unsplash.com/photo-1475053081036-c8eb31d187b3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" />
-                            <img class="image-three" src="https://images.unsplash.com/photo-1475053081036-c8eb31d187b3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" />
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section>
-            <!--<p><span class="icon solid fa-location-dot iconified">{{main_practice.address.getFormatedAddress}}</span></p>-->
-            <h3>Venir au salon : </h3>
-            <iframe class="bordered" width="1176" height="400" load="lazy" allowfullscreen src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJq6r61gCvthIR8dDe1ByN884&key={{gmap_api_key}}"></iframe>
-        </section>
+        {% with block_practice=practices.first %}
+            {% include "core/components/practice_detail.html" %}
+            <!-- GMAP Embbed-->
+            {% include "core/components/practice_map.html" %}
         {% endwith %}
     {% endif %}
 {% endblock %}

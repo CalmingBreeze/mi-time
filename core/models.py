@@ -54,6 +54,7 @@ class Address(models.Model):
     postal_code = models.CharField(max_length=255, help_text=pgettext_lazy("Model object", "Postal code"))
     city = models.CharField(max_length=255, help_text=pgettext_lazy("Model object", "City"))
     country = models.CharField(max_length=255, help_text=pgettext_lazy("Model object", "Country"))
+    place_id = models.CharField(max_length=255, blank=True, help_text=pgettext_lazy("Model object", "Place id encoded by google map for this address"))
 
     def getFormatedAddress(self):
         address = self.address1

@@ -36,6 +36,7 @@
     .practice-description {
         display: flex;
         flex-wrap: wrap;
+        gap: _size(gutter);
 
         .richtext {
             text-align: justify;
@@ -43,17 +44,35 @@
         }
 
         .carousel-wrapper {
-            margin-left: _size(gutter);
+            
         }
 
     }
 
     table.openings {
+        max-width: 360px;
+
         thead {
-            text-align: center;
+            th {
+                text-align: center;
+                &:first-child {
+                    width: 6em;
+                }
+            }
         }
-        
-        tbody tr th {
-            border-right: 5px solid rgb(158, 127, 94);
+
+        tbody { 
+            th {
+                border-right: 1px solid _palette(tile-title);
+            }
+        }
+
+        td {
+            padding: 0.5em 0.5em;
+        }
+
+        .bordered-right {
+            border-right: 1px solid _palette(tile-title);
+            text-align: center;
         }
     }

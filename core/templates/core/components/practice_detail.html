@@ -1,0 +1,21 @@
+{% load i18n %}
+
+<section>
+    {% translate "Our practice :" context "Practice detail block" as default_title %}
+    <h{{h_val|default:"2"}}>{{section_title|default:default_title}}</h{{h_val|default:"2"}}>
+    <h3>{{block_practice.name}}</h3>
+    <div class="practice-description">
+        <div class="richtext">
+            {{block_practice.text1|safe}}
+        </div>
+        <div class="carousel-wrapper bordered">
+            <div class="carousel-container">
+                <div class="carousel">
+                    <img class="image-one" src="https://images.unsplash.com/photo-1480936600919-bffa6b7ecf1e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" />
+                    <img class="image-two" src="https://images.unsplash.com/photo-1475053081036-c8eb31d187b3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" />
+                    <img class="image-three" src="https://images.unsplash.com/photo-1475053081036-c8eb31d187b3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" />
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -2692,20 +2692,30 @@ section {
 .practice-description {
   display: flex;
   flex-wrap: wrap;
+  gap: 2.5em;
 }
 .practice-description .richtext {
   text-align: justify;
   max-width: 60%;
 }
-.practice-description .carousel-wrapper {
-  margin-left: 2.5em;
+table.openings {
+  max-width: 360px;
 }
-
-table.openings thead {
+table.openings thead th {
   text-align: center;
 }
-table.openings tbody tr th {
-  border-right: 5px solid rgb(158, 127, 94);
+table.openings thead th:first-child {
+  width: 6em;
+}
+table.openings tbody th {
+  border-right: 1px solid #F9DEB2;
+}
+table.openings td {
+  padding: 0.5em 0.5em;
+}
+table.openings .bordered-right {
+  border-right: 1px solid #F9DEB2;
+  text-align: center;
 }
 
 /* Footer */
