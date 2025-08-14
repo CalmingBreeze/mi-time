@@ -5,11 +5,6 @@ from django.template.defaultfilters import slugify
 from django.utils.translation import pgettext_lazy
 import datetime
 
-class Siteconfig(models.Model):
-    name = models.CharField(max_length=100)
-    pub_date = models.DateTimeField(auto_now_add=True)
-    edit_date = models.DateTimeField(auto_now=True)
-
 class Massage(models.Model):
     name = models.CharField(max_length=100)
     pub_date = models.DateTimeField(auto_now_add=True)
@@ -170,4 +165,40 @@ class Practice(models.Model):
         if not self.slug:
             self.slug = slugify(self.name)
         return super().save(*args, **kwargs)
+    
+class Page(models.Model):
+    class Meta:
+        verbose_name = pgettext_lazy("Model object", "Page")
+        verbose_name_plural = pgettext_lazy("Model object", "Pages")
+    name = models.CharField(max_length=100)
+    pub_date = models.DateTimeField(auto_now_add=True)
+    edit_date = models.DateTimeField(auto_now=True)
+    content = CKEditor5Field('Text', config_name='extends', blank=True, help_text=pgettext_lazy("Model object", "Content of the page"))
+    slug = models.SlugField(max_length=100, null=False, unique=True, help_text=pgettext_lazy("Model object", "SEO Url Normalization"))
 
+    def __str__(self):
+        return str(self.name)
+
+    def get_absolute_url(self):
+        return reverse("page", kwargs={"page_slug": self.slug})
+    
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            self.slug = slugify(self.name)
+        return super().save(*args, **kwargs)
+
+class SiteConfig(models.Model):
+    class Meta:
+        verbose_name = pgettext_lazy("Model object", "Global Site Config")
+    name = models.CharField(max_length=100)
+    pub_date = models.DateTimeField(auto_now_add=True)
+    edit_date = models.DateTimeField(auto_now=True)
+    site_email = models.CharField(max_length=255, blank=True, help_text=pgettext_lazy("Model object", "Email for contacts forms"))
+    header_mobile = models.CharField(max_length=255, blank=True, help_text=pgettext_lazy("Model object", "Mobile number in header"))
+    header_openings = models.CharField(max_length=255, blank=True, help_text=pgettext_lazy("Model object", "Oopening time text in header"))
+    fb = models.CharField(max_length=255, blank=True, help_text=pgettext_lazy("Model object", "Facebook Account"))
+    instagram = models.CharField(max_length=255, blank=True, help_text=pgettext_lazy("Model object", "Instagram Account"))
+    copyright = models.CharField(max_length=255, blank=True, help_text=pgettext_lazy("Model object", "Copyright content in the footer"))
+    
+    def __str__(self):
+        return str(self.name)

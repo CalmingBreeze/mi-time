@@ -4,6 +4,7 @@ from django.template import loader
 
 from .models import Practice
 from .models import Massage
+from .models import Page
 
 # Create your views here.
 
@@ -13,9 +14,10 @@ def index(request):
     context = {"practices" : practices, "massages" : massages}
     return render(request, "core/index.html", context)
 
-def legal(request):
-    context = {}
-    return render(request, "core/legal.html", context)
+def pages(request, page_slug):
+    page = get_object_or_404(Page, slug=page_slug)
+    context = {"page" : page}
+    return render(request, "core/page.html", context)
 
 def practices(request):
     practices = Practice.objects.order_by("pub_date")

@@ -17,9 +17,12 @@ title hierarchy
 Deployment check :
 Title
 canonical + seo
-Sitemap.xml
+page 500, 404
+créer les pages (mentions, CGV, a propos ?)
+rempli site config (tel mail message header + socials)
+vérifier Sitemap.xml
 meta description + title
-darkmode fix css for CK
+vérifier darkmode fix css for CK 
 translations
 RGPD !
 Allowed Hosts

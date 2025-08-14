@@ -1,0 +1,9 @@
+{% extends "core/components/base.html" %}
+
+{% block title %}{{page.name}}{% endblock %}
+
+{% block content %}
+    <header>
+        {{page.content|safe}}
+    </header>
+{% endblock %}
