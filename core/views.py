@@ -8,10 +8,11 @@ from .models import Page
 
 # Create your views here.
 
-def index(request):
+def home(request):
     practices = Practice.objects.order_by("pub_date")
     massages = Massage.objects.order_by("-duration")
-    context = {"practices" : practices, "massages" : massages}
+    page = Page.objects.filter(custom_viewname = "home").first()
+    context = {"page": page, "practices" : practices, "massages" : massages}
     return render(request, "core/index.html", context)
 
 def pages(request, page_slug):
@@ -21,7 +22,8 @@ def pages(request, page_slug):
 
 def practices(request):
     practices = Practice.objects.order_by("pub_date")
-    context = {"practices" : practices}
+    page = Page.objects.filter(custom_viewname = "practices").first()
+    context = {"page" : page, "practices" : practices}
     return render(request, "core/practice_list.html", context)    
 
 def practiceBySlug(request, practice_slug):
@@ -36,8 +38,8 @@ def practiceBySlug(request, practice_slug):
 
 def massages(request):
     massages = Massage.objects.order_by("priority")
-
-    context = {"massages" : massages}
+    page = Page.objects.filter(custom_viewname = "practices").first()
+    context = {"page" : page, "massages" : massages}
     return render(request, "core/massage_list.html", context)
 
 def massageBySlug(request, massage_slug):

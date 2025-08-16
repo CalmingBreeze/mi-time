@@ -9,6 +9,9 @@ class Massage(models.Model):
     name = models.CharField(max_length=100)
     pub_date = models.DateTimeField(auto_now_add=True)
     edit_date = models.DateTimeField(auto_now=True)
+    meta_title = models.CharField(max_length=100, null=False, unique=True, help_text=pgettext_lazy("Model object", "SEO Meta Title (50->70)"))
+    meta_description = models.CharField(max_length=255, null=False, unique=True, help_text=pgettext_lazy("Model object", "SEO Meta Description (90->160)"))
+    meta_Keywords = models.CharField(max_length=255, null=True, help_text=pgettext_lazy("Model object", "SEO Meta Keyword (max 10)"))
     priority = models.PositiveIntegerField(default=1,help_text=pgettext_lazy("Model object", "Order index when listing, 1 is first, X last"))
     tcover = models.ImageField(upload_to='img/',blank=True, null=True, help_text=pgettext_lazy("Model object", "The cover image used in tiles when listed. 353*326"))
     calendlyURL = models.CharField(default="https://calendly.com/reservation-mi-time", blank=True, help_text=pgettext_lazy("Model object", "Full URL to calendly appointment event"))
@@ -18,9 +21,12 @@ class Massage(models.Model):
     text1 = CKEditor5Field('Text', config_name='extends')
     text2 = CKEditor5Field('Text', config_name='extends',blank=True)
     text3 = CKEditor5Field('Text', config_name='extends',blank=True)
-    img1 = models.ImageField(upload_to='img/',blank=True, null=True, help_text=pgettext_lazy("Model object", "An image to illustrate the massage"))
+    img1 = models.ImageField(upload_to='img/', blank=True, null=True, help_text=pgettext_lazy("Model object", "An image to illustrate the massage"))
+    img1_alt = models.CharField(max_length=255, blank=True, null=True, help_text=pgettext_lazy("Model object", "SEO Img Alt"))
     img2 = models.ImageField(upload_to='img/',blank=True, null=True, help_text=pgettext_lazy("Model object", "An image to illustrate the massage"))
+    img2_alt = models.CharField(max_length=255, blank=True, null=True, help_text=pgettext_lazy("Model object", "SEO Img Alt"))
     img3 = models.ImageField(upload_to='img/',blank=True, null=True, help_text=pgettext_lazy("Model object", "An image to illustrate the massage"))
+    img3_alt = models.CharField(max_length=255, blank=True, null=True, help_text=pgettext_lazy("Model object", "SEO Img Alt"))
 
     slug = models.SlugField(max_length=100, null=False, unique=True, help_text=pgettext_lazy("Model object", "SEO URL Normalization"))
 
@@ -127,6 +133,9 @@ class Practice(models.Model):
     name = models.CharField(max_length=100)
     pub_date = models.DateTimeField(auto_now_add=True)
     edit_date = models.DateTimeField(auto_now=True)
+    meta_title = models.CharField(max_length=100, null=False, unique=True, help_text=pgettext_lazy("Model object", "SEO Meta Title (50->70)"))
+    meta_description = models.CharField(max_length=255, null=False, unique=True, help_text=pgettext_lazy("Model object", "SEO Meta Description (90->160)"))
+    meta_Keywords = models.CharField(max_length=255, null=True, help_text=pgettext_lazy("Model object", "SEO Meta Keyword (max 10)"))
     text1 = CKEditor5Field('Text', config_name='extends')
     text2 = CKEditor5Field('Text', config_name='extends',blank=True)
     text3 = CKEditor5Field('Text', config_name='extends',blank=True)
@@ -134,10 +143,15 @@ class Practice(models.Model):
     slug = models.SlugField(max_length=100, null=False, unique=True, help_text=pgettext_lazy("Model object", "SEO Url Normalization"))
     cover = models.ImageField(upload_to='img/',blank=True, null=True, help_text=pgettext_lazy("Model object", "The cover image used when listed"))
     img1 = models.ImageField(upload_to='img/',blank=True, null=True, help_text=pgettext_lazy("Model object", "An image to illustrate the practice"))
+    img1_alt = models.CharField(max_length=255, blank=True, null=True, help_text=pgettext_lazy("Model object", "SEO Img Alt"))
     img2 = models.ImageField(upload_to='img/',blank=True, null=True, help_text=pgettext_lazy("Model object", "An image to illustrate the practice"))
+    img2_alt = models.CharField(max_length=255, blank=True, null=True, help_text=pgettext_lazy("Model object", "SEO Img Alt"))
     img3 = models.ImageField(upload_to='img/',blank=True, null=True, help_text=pgettext_lazy("Model object", "An image to illustrate the practice"))
+    img3_alt = models.CharField(max_length=255, blank=True, null=True, help_text=pgettext_lazy("Model object", "SEO Img Alt"))
     img4 = models.ImageField(upload_to='img/',blank=True, null=True, help_text=pgettext_lazy("Model object", "An image to illustrate the practice"))
+    img4_alt = models.CharField(max_length=255, blank=True, null=True, help_text=pgettext_lazy("Model object", "SEO Img Alt"))
     img5 = models.ImageField(upload_to='img/',blank=True, null=True, help_text=pgettext_lazy("Model object", "An image to illustrate the practice"))
+    img5_alt = models.CharField(max_length=255, blank=True, null=True, help_text=pgettext_lazy("Model object", "SEO Img Alt"))
 
     address = models.OneToOneField(
         Address,
@@ -173,8 +187,13 @@ class Page(models.Model):
     name = models.CharField(max_length=100)
     pub_date = models.DateTimeField(auto_now_add=True)
     edit_date = models.DateTimeField(auto_now=True)
+    meta_title = models.CharField(max_length=100, null=False, unique=True, help_text=pgettext_lazy("Model object", "SEO Meta Title (50->70)"))
+    meta_description = models.CharField(max_length=255, null=False, unique=True, help_text=pgettext_lazy("Model object", "SEO Meta Description (90->160)"))
+    meta_keywords = models.CharField(max_length=255, null=True, help_text=pgettext_lazy("Model object", "SEO Meta Keyword (max 10)"))
     content = CKEditor5Field('Text', config_name='extends', blank=True, help_text=pgettext_lazy("Model object", "Content of the page"))
     slug = models.SlugField(max_length=100, null=False, unique=True, help_text=pgettext_lazy("Model object", "SEO Url Normalization"))
+    custom_viewname = models.CharField(max_length=100, null=True, blank=True, help_text=pgettext_lazy("Model object", "Link custom view to its meta datas"))
+    # is_home = models.BooleanField(null=False, default=False, help_text=pgettext_lazy("Model object", "Is it the homepage ? (only 1 should be)"))
 
     def __str__(self):
         return str(self.name)
@@ -196,9 +215,10 @@ class SiteConfig(models.Model):
     site_email = models.CharField(max_length=255, blank=True, help_text=pgettext_lazy("Model object", "Email for contacts forms"))
     header_mobile = models.CharField(max_length=255, blank=True, help_text=pgettext_lazy("Model object", "Mobile number in header"))
     header_openings = models.CharField(max_length=255, blank=True, help_text=pgettext_lazy("Model object", "Oopening time text in header"))
-    fb = models.CharField(max_length=255, blank=True, help_text=pgettext_lazy("Model object", "Facebook Account"))
+    facebook = models.CharField(max_length=255, blank=True, help_text=pgettext_lazy("Model object", "Facebook Account"))
     instagram = models.CharField(max_length=255, blank=True, help_text=pgettext_lazy("Model object", "Instagram Account"))
     copyright = models.CharField(max_length=255, blank=True, help_text=pgettext_lazy("Model object", "Copyright content in the footer"))
+    design = models.CharField(max_length=255, blank=True, help_text=pgettext_lazy("Model object", "Design credit content in the footer"))
     
     def __str__(self):
         return str(self.name)

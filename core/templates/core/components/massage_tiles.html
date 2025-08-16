@@ -1,6 +1,6 @@
 {% load static %}
 {% load i18n %}
-{% load duration %}
+{% load core_extras %}
 
 <section>
     {% if massages %}
@@ -23,6 +23,6 @@
         {% endfor %}
         </div>
     {% else %}
-    <p>La carte est cours de réalisation. N'hésitez pas à revenir très bientôt.</p>
+    <p>{% translate "We are currently polishing our offer. Come back soon to see what we have cooked for you !" context "Massage Tiles" %}</p>
     {% endif %}
 </section>

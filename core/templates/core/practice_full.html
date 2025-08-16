@@ -2,10 +2,12 @@
 {% load i18n %}
 {% load static %}
 
-{% block title %}Mi-time {{practice.name}}{% endblock %}
+{% block meta_title %}{{practice.meta_title}}{% endblock %}
+{% block meta_description %}{{practice.meta_description}}{% endblock %}
+{% block meta_keywords %}{{practice.meta_keywords}}{% endblock %}
 
 {% block content %}
-    {% with practice_object=practices.first %}
+    {% with practice_object=practice %}
         {% if practice.address %}
             {% include "core/components/practice_detail.html" with section_title=practice.name h_val=1  %}
             {% include "core/components/practice_infos.html" %}

@@ -1,9 +1,11 @@
 {% extends "core/components/base.html" %}
 {% load i18n %}
 {% load static %}
-{% load duration %}
+{% load conf_extras %}
 
-{% block title %}Mi-time {{massage.name}}{% endblock %}
+{% block meta_title %}{{massage.meta_title}}{% endblock %}
+{% block meta_description %}{{massage.meta_description}}{% endblock %}
+{% block meta_keywords %}{{massage.meta_keywords}}{% endblock %}
 
 {% block content %}
     {% if massage %}

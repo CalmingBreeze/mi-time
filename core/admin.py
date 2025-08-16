@@ -65,15 +65,15 @@ admin_site = MitimeAdmin(name="miadmin")
 admin_site.register(SiteConfig)
 
 class PageAdmin(admin.ModelAdmin):
-    prepopulated_fields = {"slug" : ("name",)}
+    prepopulated_fields = {"slug" : ("name",), "meta_title" : ("name",)}
 admin_site.register(Page, PageAdmin)
 
 class MassageAdmin(admin.ModelAdmin):
-    prepopulated_fields = {"slug" : ("name",)}
+    prepopulated_fields = {"slug" : ("name",), "meta_title" : ("name",)}
 admin_site.register(Massage, MassageAdmin)
 
 class PracticeAdmin(admin.ModelAdmin):
-    prepopulated_fields = {"slug" : ("name",)}
+    prepopulated_fields = {"slug" : ("name",), "meta_title" : ("name",)}
 admin_site.register(Practice, PracticeAdmin)
 
 admin_site.register(Address)

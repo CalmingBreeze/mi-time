@@ -1,6 +1,8 @@
 {% extends "core/components/base.html" %}
 
-{% block title %}Mi-time {{practice.name}}{% endblock %}
+{% block meta_title %}{{practice.meta_title}}{% endblock %}
+{% block meta_description %}{{practice.meta_description}}{% endblock %}
+{% block meta_keywords %}{{practice.meta_keywords}}{% endblock %}
 
 {% block content %}
     {% load static %}

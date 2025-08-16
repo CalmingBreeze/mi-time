@@ -4,12 +4,11 @@ from django.conf.urls.static import static
 from . import views
 
 from django.contrib.sitemaps.views import sitemap
-from core.sitemap import PracticeSitemap, MassageSitemap, PageSitemap
+from core.sitemap import StaticViewSitemap, PracticeSitemap, MassageSitemap, PageSitemap
 from core.admin import admin_site
 
 urlpatterns = [
-    path("", views.index, name="index"),
-    #path("mentions-legales", views.legal, name="legal"),
+    path("", views.home, name="home"),
     path("<slug:page_slug>", views.pages, name="page"),
     path("salons/", views.practices, name="practices"),
     path("salon/<slug:practice_slug>/", views.practiceBySlug, name="practice"),
@@ -27,7 +26,7 @@ urlpatterns += [
     path(
         "sitemap.xml",
         sitemap,
-        {"sitemaps": {'pages' : PageSitemap, 'practices' : PracticeSitemap, 'massages' : MassageSitemap}},
+        {"sitemaps": {'statics': StaticViewSitemap, 'massages' : MassageSitemap, 'practices' : PracticeSitemap,'pages' : PageSitemap}},
         name="django.contrib.sitemaps.views.sitemap",
     )
 ]

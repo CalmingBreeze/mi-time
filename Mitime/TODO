@@ -10,18 +10,30 @@ verify priority for massage and practice object
 
 TEST Tablet breakpoint for tiles
 replace source sans pro googlefont link in sass phantom
-reponsive margin-top content for fixed menu
-placeholder Tcover massage
-title hierarchy
+placeholder image, (tiles, practice place)
+
+SEO check :
+h1-6 hierarchy
+url-rewrite : mots clefs.
+title: -> 50-70 chars idéal unique (pas de dupe, pas nécessairement le nom de marque/site)
+meta description -> 90-160 chars, pas de duplication entre les pages, pas de date, pas caps lock ni trop de chiffres, plus multilingue
+h1 -> première balise 80 chars , pas vide !
+h2 -> comptent aussi, mais moins
+img -> alt + title
+a -> idéal au moins 5 liens internes
+robots.txt
+La densité de l’expression clé ???? 1 à 2% max, 
+taille du texte au moins 500 mots, + de 1500 top.
+canonical !
 
 Deployment check :
-Title
-canonical + seo
+sitemap home
+seo
 page 500, 404
 créer les pages (mentions, CGV, a propos ?)
-rempli site config (tel mail message header + socials)
-vérifier Sitemap.xml
-meta description + title
+vérifier Sitemap.xml ? home ?
+
+title
 vérifier darkmode fix css for CK 
 translations
 RGPD !

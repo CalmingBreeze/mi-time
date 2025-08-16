@@ -2,11 +2,16 @@
 <html lang="">
     {% load static %}
     {% load i18n %}
+    {% load core_extras %}
     <!-- Head -->
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>{% block title %}Mi'time massages{% endblock %}</title>
+        <!-- SEO -->
+        <title>{% block meta_title %}Mi'time massages{% endblock %}</title>
+        <meta name="description" content="{% block meta_description %}Prenez le temps pour vous! Réservez votre rendez vous avec Mireille pour une moment unique de détente et d'apaisement.{% endblock %}">
+        <meta name="keywords" content="{% block meta_keywords %}Massage, Montpellier, Mireille, Espace Pitôt{% endblock %}">
+
         <link rel="stylesheet" href="{% static 'core/assets/css/main.css' %}">
         <link rel="stylesheet" href="{% static 'core/assets/css/fontawesome/fontawesome.css' %}">
         <link rel="stylesheet" href="{% static 'core/assets/css/fontawesome/solid.css' %}">
@@ -44,14 +49,14 @@
                         <!-- Logo -->
                         <a href="/" class="logo">
                             <!-- <span class="title">Mi'Time</span> -->
-                            <img src="{% static 'core/img/logo-mitime.png' %}" />
+                            <img src="{% static 'core/img/logo-mitime.png' %}" alt="Logo" />
                         </a>
                         <!-- Nav -->
                          <div class="infobloc responsivehide">
-                            <span class="icon solid fa-phone iconified">07 83 39 06 80</span>
+                            <span class="icon solid fa-phone iconified">{{siteconfig.header_mobile|phone_format:'spaced'}}</span>
                         </div>
                         <div class="infobloc responsivehide">
-                            <span class="icon solid fa-calendar-days iconified">Mercredis, Vendredis et Samedis</span>
+                            <span class="icon solid fa-calendar-days iconified">{{siteconfig.header_openings}}</span>
                         </div>
                         <!-- Nav -->
                         <nav>
@@ -73,12 +78,12 @@
                 <h3>Menu</h3>
                 <ul>
                     {% block menulist %}
-                        <li><a href="{% url 'index' %}">{% translate "Home" context "Menu link" %}</a></li>
+                        <li><a href="{% url 'home' %}">{% translate "Home" context "Menu link" %}</a></li>
                         <li><a href="{% url 'massages' %}">{% translate "Massages" context "Menu link" %}</a></li>
                         {% url 'practice' practices.first.slug as url_s %} 
                         {% url 'practices' as url_p %}
                         <li><a href="{%if practices|length > 1 %}{{url_p}}{% else %}{{url_s}}{% endif %}">{% blocktranslate count nbp=practices|length context "Menu Link" %}practice{% plural %}practices{% endblocktranslate %}</a></li>
-                        <li><a href="{% url 'pages' page_slug='mentions-legales' %}">{% translate "Legal" context "Menu link" %}</a></li>
+                        <li><a href="{% url 'page' page_slug='mentions-legales' %}">{% translate "Legal" context "Menu link" %}</a></li>
                     {% endblock %}
                 </ul>
             </nav>
@@ -120,18 +125,17 @@
                     <section>
                         <h4>Réseaux</h4>
                         <ul class="icons">
-                            <li><a href="#" class="icon brands style2 fa-twitter"><span class="label">Twitter</span></a></li>
-                            <li><a href="#" class="icon brands style2 fa-facebook-f"><span class="label">Facebook</span></a></li>
-                            <li><a href="#" class="icon brands style2 fa-instagram"><span class="label">Instagram</span></a></li>
+                            <li><a href="{{siteconfig.facebook|default:'#'}}" class="icon brands style2 fa-facebook-f"><span class="label">Facebook</span></a></li>
+                            <li><a href="{{siteconfig.instagram|default:'#'}}" class="icon brands style2 fa-instagram"><span class="label">Instagram</span></a></li>
                         </ul>
                         <h4>Contact</h4>
                         <ul class="icons">
-                            <li><a href="#" class="icon solid style2 fa-phone"><span class="label">Phone</span></a></li>
-                            <li><a href="#" class="icon solid style2 fa-envelope"><span class="label">Email</span></a></li>
+                            <li><a href="tel:{{siteconfig.header_mobile|phone_format:'i18n'|default:'#'}}" class="icon solid style2 fa-phone"><span class="label">Phone</span></a></li>
+                            <li><a href="mailto:{{siteconfig.site_email|default:'#'}}" class="icon solid style2 fa-envelope"><span class="label">Email</span></a></li>
                         </ul>
                     </section>
                     <ul class="copyright">
-                        <li>&copy; Mi'time. Tout droits reservés</li><li>Design: ALL</li>
+                        <li>{{siteconfig.copyright|default:"© 2025"}}</li><li>{{siteconfig.design|safe}}</li>
                     </ul>
                     {% endblock %}
                 </div>

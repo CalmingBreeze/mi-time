@@ -59,3 +59,18 @@ def duration( duration ):
     return 'None'
 
 register.filter("duration", duration)
+
+def format_mobile_number(val, style):
+    match style:
+        case "dotted":
+            separator = "."
+            return "".join(val[0:2]+separator+val[2:4]+separator+val[4:6]+separator+val[6:8]+separator+val[8:10])
+        case "spaced":
+            separator = " "
+            return "".join(val[0:2]+separator+val[2:4]+separator+val[4:6]+separator+val[6:8]+separator+val[8:10])
+        case "i18n":
+            return "+33"+val[1:]
+        case _:
+            return val
+
+register.filter("phone_format", format_mobile_number)
