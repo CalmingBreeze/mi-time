@@ -2671,6 +2671,10 @@ body.is-menu-visible #menu .close {
   }
 }
 
+.server-error-code {
+  min-height: 22vh;
+}
+
 iframe {
   max-width: 100%;
 }

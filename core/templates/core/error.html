@@ -1,0 +1,24 @@
+{% extends "core/components/base.html" %}
+
+{% load i18n %}
+{% load static %}
+{% load core_extras %}
+
+{% block headerinfos %}
+{% endblock %}
+
+{% block bookbutton %}
+{% endblock %}
+
+{% block menulist %}
+    <li><a href="{% url 'home' %}">{% translate "Go back to the homepage" context "Error Pages" %}</a></li>
+{% endblock %}
+
+{% block content %}
+    <div class="server-error-code">
+        Error {{exception|default:"exception is not specified"}} : {{error_msg|default:""}}
+        <br/>
+        <br/>
+        <a href="{% url 'home' %}">{% translate "Go back to the homepage" context "Error Pages" %}</a>
+    </div>
+{% endblock %}

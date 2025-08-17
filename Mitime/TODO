@@ -29,18 +29,14 @@ taille du texte au moins 500 mots, + de 1500 top.
 canonical !
 
 Deployment check :
-sitemap home
 seo
-page 500, 404
+page 500, 404, 403, 401, 400 -> Tester prod
 créer les pages (mentions, CGV, a propos ?)
-vérifier Sitemap.xml ? home ?
 
 title
-vérifier darkmode fix css for CK 
 translations
 RGPD !
 Allowed Hosts
 
 paragraphe produit + allergenes
 page mireille
-durée sur les noms

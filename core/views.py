@@ -6,7 +6,19 @@ from .models import Practice
 from .models import Massage
 from .models import Page
 
-# Create your views here.
+
+# Handle custom error views
+def err500_view(request):
+    print("err500_view")
+    return render(request, "core/error.html", {"request" : request, "exception": "500", "error_msg": "Internal Server Error"})
+def err404_view(request, exception):
+    return render(request, "core/error.html", {"request" : request, "exception": "404", "error_msg": "Not Found"})
+def err403_view(request, exception):
+    return render(request, "core/error.html", {"request" : request, "exception": "403", "error_msg": "Forbidden"})
+def err401_view(request, exception):
+    return render(request, "core/error.html", {"request" : request, "exception": "401", "error_msg": "Unauthorized"})
+def err400_view(request, exception):
+    return render(request, "core/error.html", {"request" : request, "exception": "400", "error_msg": "Bad Request"})
 
 def home(request):
     practices = Practice.objects.order_by("pub_date")

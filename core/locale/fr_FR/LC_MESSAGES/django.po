@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-17 10:10+0200\n"
+"POT-Creation-Date: 2025-08-17 11:01+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -278,27 +278,40 @@ msgctxt "Model object"
 msgid "Design credit content in the footer"
 msgstr ""
 
-#: .\core\templates\core\components\base.html:89
-msgctxt "Menu link"
-msgid "Home"
-msgstr "Accueil"
+#: .\core\templates\core\components\base.html:65
+msgctxt "Header"
+msgid "Book now"
+msgstr "<span class=\"responsivehide\">Prendre </span>RDV"
 
-#: .\core\templates\core\components\base.html:90
-msgctxt "Menu link"
-msgid "Massages"
-msgstr "Massages"
+#: .\core\templates\core\components\base.html:68
+msgctxt "Header"
+msgid "Menu"
+msgstr "Menu"
 
-#: .\core\templates\core\components\base.html:93
-msgctxt "Menu Link"
-msgid "practice"
-msgid_plural "practices"
-msgstr[0] "Le Salon"
-msgstr[1] "Les Salons"
-
-#: .\core\templates\core\components\base.html:94
+#: .\core\templates\core\components\base.html:84
 msgctxt "Menu link"
-msgid "Legal"
-msgstr "Mentions légales"
+msgid "Practice"
+msgstr "Salon"
+
+#: .\core\templates\core\components\base.html:128
+msgctxt "Footer"
+msgid "Socials"
+msgstr "Réseaux"
+
+#: .\core\templates\core\components\base.html:133
+msgctxt "Footer"
+msgid "Contact"
+msgstr "Contact"
+
+#: .\core\templates\core\components\base.html:135
+msgctxt "Footer"
+msgid "Phone"
+msgstr "Téléphone"
+
+#: .\core\templates\core\components\base.html:136
+msgctxt "Footer"
+msgid "Email"
+msgstr "Email"
 
 #: .\core\templates\core\components\massage_tiles.html:26
 msgctxt "Massage Tiles"
@@ -344,6 +357,11 @@ msgstr "Mireille prend soin  de vous, et vous propose :"
 #: .\core\templates\core\massage_full.html:33
 msgid "This massage is available at"
 msgstr "Ce massage est disponible au"
+
+#: .\core\templates\core\massage_list.html:12
+msgctxt "Massage List"
+msgid "Our available massages :"
+msgstr "Mireille prend soin  de vous, et vous propose :"
 
 #: .\core\templates\core\practice_full.html:17
 msgctxt "Practice Full massage block title"

@@ -7,6 +7,8 @@ from django.contrib.sitemaps.views import sitemap
 from core.sitemap import StaticViewSitemap, PracticeSitemap, MassageSitemap, PageSitemap
 from core.admin import admin_site
 
+from django.http import Http404
+
 urlpatterns = [
     path("", views.home, name="home"),
     path("<slug:page_slug>", views.pages, name="page"),
