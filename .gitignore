@@ -27,7 +27,7 @@ share/python-wheels/
 MANIFEST
 
 # Django Media Dev 
-media/img/*
+media/*
 static/*
 
 # PyInstaller
