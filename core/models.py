@@ -5,6 +5,9 @@ from django.template.defaultfilters import slugify
 from django.utils.translation import pgettext_lazy
 import datetime
 
+from imagekit.models import ImageSpecField
+from imagekit.processors import ResizeToFill
+
 class Massage(models.Model):
     name = models.CharField(max_length=100)
     pub_date = models.DateTimeField(auto_now_add=True)
@@ -23,10 +26,22 @@ class Massage(models.Model):
     text3 = CKEditor5Field('Text', config_name='extends',blank=True)
     img1 = models.ImageField(upload_to='img/', blank=True, null=True, help_text=pgettext_lazy("Model object", "An image to illustrate the massage"))
     img1_alt = models.CharField(max_length=255, blank=True, null=True, help_text=pgettext_lazy("Model object", "SEO Img Alt"))
+    img1_resized = ImageSpecField(source='img1',
+                                      processors=[ResizeToFill(400, 250)],
+                                      format='JPEG',
+                                      options={'quality': 60})
     img2 = models.ImageField(upload_to='img/',blank=True, null=True, help_text=pgettext_lazy("Model object", "An image to illustrate the massage"))
     img2_alt = models.CharField(max_length=255, blank=True, null=True, help_text=pgettext_lazy("Model object", "SEO Img Alt"))
+    img2_resized = ImageSpecField(source='img2',
+                                      processors=[ResizeToFill(400, 250)],
+                                      format='JPEG',
+                                      options={'quality': 60})
     img3 = models.ImageField(upload_to='img/',blank=True, null=True, help_text=pgettext_lazy("Model object", "An image to illustrate the massage"))
     img3_alt = models.CharField(max_length=255, blank=True, null=True, help_text=pgettext_lazy("Model object", "SEO Img Alt"))
+    img3_resized = ImageSpecField(source='img3',
+                                      processors=[ResizeToFill(400, 250)],
+                                      format='JPEG',
+                                      options={'quality': 60})
 
     slug = models.SlugField(max_length=100, null=False, unique=True, help_text=pgettext_lazy("Model object", "SEO URL Normalization"))
 
@@ -144,14 +159,34 @@ class Practice(models.Model):
     cover = models.ImageField(upload_to='img/',blank=True, null=True, help_text=pgettext_lazy("Model object", "The cover image used when listed"))
     img1 = models.ImageField(upload_to='img/',blank=True, null=True, help_text=pgettext_lazy("Model object", "An image to illustrate the practice"))
     img1_alt = models.CharField(max_length=255, blank=True, null=True, help_text=pgettext_lazy("Model object", "SEO Img Alt"))
+    img1_diapo = ImageSpecField(source='img1',
+                                      processors=[ResizeToFill(400, 250)],
+                                      format='JPEG',
+                                      options={'quality': 60})
     img2 = models.ImageField(upload_to='img/',blank=True, null=True, help_text=pgettext_lazy("Model object", "An image to illustrate the practice"))
     img2_alt = models.CharField(max_length=255, blank=True, null=True, help_text=pgettext_lazy("Model object", "SEO Img Alt"))
+    img2_diapo = ImageSpecField(source='img2',
+                                      processors=[ResizeToFill(400, 250)],
+                                      format='JPEG',
+                                      options={'quality': 60})
     img3 = models.ImageField(upload_to='img/',blank=True, null=True, help_text=pgettext_lazy("Model object", "An image to illustrate the practice"))
     img3_alt = models.CharField(max_length=255, blank=True, null=True, help_text=pgettext_lazy("Model object", "SEO Img Alt"))
+    img3_diapo = ImageSpecField(source='img3',
+                                      processors=[ResizeToFill(400, 250)],
+                                      format='JPEG',
+                                      options={'quality': 60})
     img4 = models.ImageField(upload_to='img/',blank=True, null=True, help_text=pgettext_lazy("Model object", "An image to illustrate the practice"))
     img4_alt = models.CharField(max_length=255, blank=True, null=True, help_text=pgettext_lazy("Model object", "SEO Img Alt"))
+    img4_diapo = ImageSpecField(source='img4',
+                                      processors=[ResizeToFill(400, 250)],
+                                      format='JPEG',
+                                      options={'quality': 60})
     img5 = models.ImageField(upload_to='img/',blank=True, null=True, help_text=pgettext_lazy("Model object", "An image to illustrate the practice"))
     img5_alt = models.CharField(max_length=255, blank=True, null=True, help_text=pgettext_lazy("Model object", "SEO Img Alt"))
+    img5_diapo = ImageSpecField(source='img5',
+                                      processors=[ResizeToFill(400, 250)],
+                                      format='JPEG',
+                                      options={'quality': 60})
 
     address = models.OneToOneField(
         Address,
@@ -174,6 +209,16 @@ class Practice(models.Model):
     
     def get_absolute_url(self):
         return reverse("practice", kwargs={"practice_slug": self.slug})
+    
+    def get_diapos(self):
+        diapos = {}
+        for i in range (1,6):
+            a_id = 'img' + str(i)
+            if getattr(self, a_id) and getattr(self, a_id+'_diapo'):
+                diapos[a_id] = {'alt': getattr(self, a_id+'_alt'), 'diapo': getattr(self, a_id+'_diapo').url}
+        
+        print(diapos)
+        return diapos
     
     def save(self, *args, **kwargs):
         if not self.slug:

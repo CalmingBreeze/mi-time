@@ -35,8 +35,6 @@ ALLOWED_HOSTS = ["localhost", "127.0.0.1", "mi-time.fr"]
 # Application definition
 
 INSTALLED_APPS = [
-    'django_ckeditor_5',
-    'core.apps.CoreConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -44,6 +42,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.sitemaps',
+    'core.apps.CoreConfig',
+    'django_ckeditor_5',
+    'imagekit'
 ]
 
 MIDDLEWARE = [
