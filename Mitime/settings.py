@@ -75,7 +75,7 @@ TEMPLATES = [
 
 # App CORE custom context processors
 TEMPLATES[0]['OPTIONS']['context_processors'].append("core.context_processors.siteconfig_processor")
-TEMPLATES[0]['OPTIONS']['context_processors'].append("core.context_processors.practices_processor")
+TEMPLATES[0]['OPTIONS']['context_processors'].append("core.context_processors.menu_processor")
 TEMPLATES[0]['OPTIONS']['context_processors'].append("core.context_processors.gmap_api_key_processor")
 
 WSGI_APPLICATION = 'Mitime.wsgi.application'

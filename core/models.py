@@ -191,9 +191,9 @@ class Page(models.Model):
     meta_description = models.CharField(max_length=255, null=False, unique=True, help_text=pgettext_lazy("Model object", "SEO Meta Description (90->160)"))
     meta_keywords = models.CharField(max_length=255, null=True, help_text=pgettext_lazy("Model object", "SEO Meta Keyword (max 10)"))
     content = CKEditor5Field('Text', config_name='extends', blank=True, help_text=pgettext_lazy("Model object", "Content of the page"))
-    slug = models.SlugField(max_length=100, null=False, unique=True, help_text=pgettext_lazy("Model object", "SEO Url Normalization"))
     custom_viewname = models.CharField(max_length=100, null=True, blank=True, help_text=pgettext_lazy("Model object", "Link custom view to its meta datas"))
-    # is_home = models.BooleanField(null=False, default=False, help_text=pgettext_lazy("Model object", "Is it the homepage ? (only 1 should be)"))
+    menu_position = models.SmallIntegerField(null=True, blank=True, help_text=pgettext_lazy("Model object", "Position of the item in the menu (empties won't be displayed)"))
+    slug = models.SlugField(max_length=100, null=False, unique=True, help_text=pgettext_lazy("Model object", "SEO Url Normalization"))
 
     def __str__(self):
         return str(self.name)

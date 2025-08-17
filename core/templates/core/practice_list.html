@@ -1,17 +1,13 @@
 {% extends "core/components/base.html" %}
 
+{% load i18n %}
+
 {% block meta_title %}{{page.meta_title}}{% endblock %}
 {% block meta_description %}{{page.meta_description}}{% endblock %}
 {% block meta_keywords %}{{page.meta_keywords}}{% endblock %}
 
 {% block content %}
-    <header>
-        {% if practices|length == 1 %}
-        <h1>Mi-Time : Le salon !</h1>
-        {% elif practices|length > 1 %}
-        <h1>Mi-Time : Nos salons !</h1>
-        {% endif %}
-    </header>
+    <h1>{% translate "My practices :" context "Practice List" %}</h1>
     <section>
         {% for practice in practices %}
         <p><a href="{% url 'practice' practice_slug=practice.slug %}">{{practice}}</a></p>

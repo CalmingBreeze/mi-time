@@ -78,12 +78,20 @@
                 <h3>Menu</h3>
                 <ul>
                     {% block menulist %}
+                        {% for page_item in menu_pages %}
+                            {% if page_item.custom_viewname %}
+                            <li><a href="{% url page_item.custom_viewname %}">{% translate page_item.name context "Menu link" %}</a></li>
+                            {% else %}
+                            <li><a href="{% url 'page' page_slug=page_item.slug %}">{% translate page_item.name context "Menu link" %}</a></li>
+                            {% endif %}
+                        {% endfor %}
+                        <!-- 
                         <li><a href="{% url 'home' %}">{% translate "Home" context "Menu link" %}</a></li>
                         <li><a href="{% url 'massages' %}">{% translate "Massages" context "Menu link" %}</a></li>
                         {% url 'practice' practices.first.slug as url_s %} 
                         {% url 'practices' as url_p %}
                         <li><a href="{%if practices|length > 1 %}{{url_p}}{% else %}{{url_s}}{% endif %}">{% blocktranslate count nbp=practices|length context "Menu Link" %}practice{% plural %}practices{% endblocktranslate %}</a></li>
-                        <li><a href="{% url 'page' page_slug='mentions-legales' %}">{% translate "Legal" context "Menu link" %}</a></li>
+                        <li><a href="{% url 'page' page_slug='mentions-legales' %}">{% translate "Legal" context "Menu link" %}</a></li> -->
                     {% endblock %}
                 </ul>
             </nav>

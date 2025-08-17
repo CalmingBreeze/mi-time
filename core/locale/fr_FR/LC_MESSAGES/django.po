@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-16 18:09+0200\n"
+"POT-Creation-Date: 2025-08-17 10:10+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -107,7 +107,7 @@ msgstr "Pays"
 #: .\core\models.py:58
 msgctxt "Model object"
 msgid "Place id encoded by google map for this address"
-msgstr ""
+msgstr "Valeur du place_id selon google"
 
 #: .\core\models.py:73
 msgctxt "Model object class"
@@ -197,7 +197,7 @@ msgctxt "Model object"
 msgid "Google Site url"
 msgstr "Url du Google Site"
 
-#: .\core\models.py:143 .\core\models.py:194
+#: .\core\models.py:143 .\core\models.py:196
 msgctxt "Model object"
 msgid "SEO Url Normalization"
 msgstr "Url finale (SEO)"
@@ -216,82 +216,86 @@ msgstr "Photo du salon"
 #: .\core\models.py:185
 msgctxt "Model object"
 msgid "Page"
-msgstr ""
+msgstr "Page"
 
 #: .\core\models.py:186
-#, fuzzy
-#| msgctxt "Menu link"
-#| msgid "Massages"
 msgctxt "Model object"
 msgid "Pages"
-msgstr "Massages"
+msgstr "Pages"
 
 #: .\core\models.py:193
-#, fuzzy
-#| msgctxt "Model object"
-#| msgid "Price of the massage"
 msgctxt "Model object"
 msgid "Content of the page"
-msgstr "Prix du massage"
+msgstr "Contenu de la page"
 
-#: .\core\models.py:209
+#: .\core\models.py:194
+msgctxt "Model object"
+msgid "Link custom view to its meta datas"
+msgstr "Lien vers une vue personnalisée"
+
+#: .\core\models.py:195
+msgctxt "Model object"
+msgid "Position of the item in the menu (empties won't be displayed)"
+msgstr "Ordre des pages dans le menu (si vide, n'apparaîtra pas)"
+
+#: .\core\models.py:211
 msgctxt "Model object"
 msgid "Global Site Config"
 msgstr ""
 
-#: .\core\models.py:213
+#: .\core\models.py:215
 msgctxt "Model object"
 msgid "Email for contacts forms"
 msgstr ""
 
-#: .\core\models.py:214
+#: .\core\models.py:216
 msgctxt "Model object"
 msgid "Mobile number in header"
 msgstr ""
 
-#: .\core\models.py:215
+#: .\core\models.py:217
 msgctxt "Model object"
 msgid "Oopening time text in header"
 msgstr ""
 
-#: .\core\models.py:216
+#: .\core\models.py:218
 msgctxt "Model object"
 msgid "Facebook Account"
 msgstr ""
 
-#: .\core\models.py:217
+#: .\core\models.py:219
 msgctxt "Model object"
 msgid "Instagram Account"
 msgstr ""
 
-#: .\core\models.py:218
+#: .\core\models.py:220
 msgctxt "Model object"
 msgid "Copyright content in the footer"
 msgstr ""
 
-#: .\core\models.py:219
+#: .\core\models.py:221
 msgctxt "Model object"
 msgid "Design credit content in the footer"
 msgstr ""
 
-#: .\core\templates\core\components\base.html:77
+#: .\core\templates\core\components\base.html:89
 msgctxt "Menu link"
 msgid "Home"
 msgstr "Accueil"
 
-#: .\core\templates\core\components\base.html:78
+#: .\core\templates\core\components\base.html:90
 msgctxt "Menu link"
 msgid "Massages"
 msgstr "Massages"
 
-#: .\core\templates\core\components\base.html:81
+#: .\core\templates\core\components\base.html:93
 msgctxt "Menu Link"
 msgid "practice"
 msgid_plural "practices"
 msgstr[0] "Le Salon"
 msgstr[1] "Les Salons"
 
-#: .\core\templates\core\components\base.html:82
+#: .\core\templates\core\components\base.html:94
 msgctxt "Menu link"
 msgid "Legal"
 msgstr "Mentions légales"
@@ -301,7 +305,9 @@ msgctxt "Massage Tiles"
 msgid ""
 "We are currently polishing our offer. Come back soon to see what we have "
 "cooked for you !"
-msgstr "Bous finalisons notre offre de massage. N'hésitez pas à revenir nous voir très bientôt pour découvrir nos services."
+msgstr ""
+"Bous finalisons notre offre de massage. N'hésitez pas à revenir nous voir "
+"très bientôt pour découvrir nos services."
 
 #: .\core\templates\core\components\practice_detail.html:4
 msgctxt "Practice detail block"
@@ -330,19 +336,24 @@ msgctxt "Practice openings block"
 msgid "Availabilities :"
 msgstr "Nos Horaires de Rendez-vous"
 
-#: .\core\templates\core\index.html:9
+#: .\core\templates\core\index.html:11
 msgctxt "Main page"
 msgid "Our available massages :"
 msgstr "Mireille prend soin  de vous, et vous propose :"
 
-#: .\core\templates\core\massage_full.html:31
+#: .\core\templates\core\massage_full.html:33
 msgid "This massage is available at"
 msgstr "Ce massage est disponible au"
 
-#: .\core\templates\core\practice_full.html:15
+#: .\core\templates\core\practice_full.html:17
 msgctxt "Practice Full massage block title"
 msgid "Available massages :"
 msgstr "Massages disponibles :"
+
+#: .\core\templates\core\practice_list.html:10
+msgctxt "Practice List"
+msgid "My practices :"
+msgstr "Le salon :"
 
 #: .\core\templatetags\core_extras.py:27
 msgctxt "Duration Operator"
