@@ -28,6 +28,15 @@
 		visibility: hidden;
 		z-index: _misc(z-index-base) + 2;
 
+        .title {
+            font-size: 1.5em;
+            font-weight: _font(weight-bold);
+            line-height: 1.5;
+            margin: 0 0 (_size(element-margin) * 1) 0;
+            text-transform: uppercase;
+            letter-spacing: _font(letter-spacing);
+        }
+
 		> .inner {
 			@include vendor('transition', 'opacity #{_duration(menu)} ease');
 			-webkit-overflow-scrolling: touch;

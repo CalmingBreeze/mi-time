@@ -101,10 +101,9 @@
 
                 .title {
                     color: _palette(tile-title);
-                    font-weight: _font(weight-bold);
-                    font-size: 1.2em;
-                    letter-spacing: _font(letter-spacing);
                     text-transform: uppercase;
+                    font-weight: _font(weight-bold);
+
                     padding: .5em 1em;
                     border-radius: 4px;
                     background-color:_palette(tile-tag);
@@ -113,14 +112,21 @@
                     position: relative;
                     padding: .2em 1.2em 1.2em;
 
+
+                    h2,h3,h4 {
+                        letter-spacing: _font(letter-spacing);
+                        font-size: 1.2em;
+                        margin: 0
+                    }
+
                     span {
                         letter-spacing: 0;
                         position: absolute;
                         display: inline-block;
-                        top: 2em;
+                        top: 1.8em;
                         left: 0;
                         width: 100%;
-                        font-size: .8em;
+                        font-size: .9em;
 
                         &:before {
                             padding-right: .35em;
@@ -134,10 +140,6 @@
 
 				&:hover {
 					color: _palette(fg-accent) !important;
-				}
-
-				h2 {
-					margin: 0;
 				}
 			}
 

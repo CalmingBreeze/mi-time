@@ -49,7 +49,7 @@ def practiceBySlug(request, practice_slug):
     return render(request, "core/practice_full.html", context)   
 
 def massages(request):
-    massages = Massage.objects.order_by("priority")
+    massages = Massage.objects.order_by("priority", "-duration")
     page = Page.objects.filter(custom_viewname = "practices").first()
     context = {"page" : page, "massages" : massages}
     return render(request, "core/massage_list.html", context)
