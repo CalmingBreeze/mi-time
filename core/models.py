@@ -273,6 +273,7 @@ class SiteConfig(models.Model):
     copyright = models.CharField(max_length=255, blank=True, help_text=pgettext_lazy("Model object", "Copyright content in the footer"))
     design = models.CharField(max_length=255, blank=True, help_text=pgettext_lazy("Model object", "Design credit content in the footer"))
     placeholder_img = models.ImageField(upload_to='img/',blank=True, null=True, help_text=pgettext_lazy("Model object", "An Image displayed when the original is not found"))
+    robots_content = models.TextField(blank=True, help_text=pgettext_lazy("Model object", "Content of robots.txt"))
     
     def __str__(self):
         return str(self.name)

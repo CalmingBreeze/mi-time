@@ -5,6 +5,7 @@ from django.template import loader
 from .models import Practice
 from .models import Massage
 from .models import Page
+from .models import SiteConfig
 
 
 # Handle custom error views
@@ -28,7 +29,9 @@ def home(request):
     return render(request, "core/index.html", context)
 
 def robots(request):
-    return render(request, "core/robots.txt", content_type="text/plain")
+    site = SiteConfig.objects.first()
+    context = {'content': site.robots_content}
+    return render(request, "core/robots.txt", context, content_type="text/plain")
 
 def pages(request, page_slug):
     page = get_object_or_404(Page, slug=page_slug)
