@@ -11,6 +11,7 @@ from django.http import Http404
 
 urlpatterns = [
     path("", views.home, name="home"),
+    path("robots.txt", views.robots, name="robots"),
     path("<slug:page_slug>", views.pages, name="page"),
     path("salons/", views.practices, name="practices"),
     path("salon/<slug:practice_slug>/", views.practiceBySlug, name="practice"),

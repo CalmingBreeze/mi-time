@@ -27,6 +27,9 @@ def home(request):
     context = {"page": page, "practices" : practices, "massages" : massages}
     return render(request, "core/index.html", context)
 
+def robots(request):
+    return render(request, "core/robots.txt", content_type="text/plain")
+
 def pages(request, page_slug):
     page = get_object_or_404(Page, slug=page_slug)
     context = {"page" : page}
