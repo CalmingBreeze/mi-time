@@ -1,0 +1,16 @@
+{% extends "core/components/base.html" %}
+
+{% block meta_title %}{{page.meta_title}}{% endblock %}
+{% block meta_description %}{{page.meta_description}}{% endblock %}
+{% block meta_keywords %}{{page.meta_keywords}}{% endblock %}
+
+{% block content %}
+    {% load static %}
+    {% load i18n %}
+
+    {% if massages %}
+    {% translate "Our available massages :" context "Massage List" as main_title %}
+    {% include "core/components/massage_tiles.html" with section_title=main_title h_val=1%}
+    {% endif %}
+    
+{% endblock %}

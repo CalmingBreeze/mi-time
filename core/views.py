@@ -1,79 +1,70 @@
-from django.shortcuts import render
-from django.http import HttpResponse
+from django.shortcuts import get_object_or_404, render
+from django.http import HttpResponse, Http404
 from django.template import loader
 
 from .models import Practice
 from .models import Massage
+from .models import Page
+from .models import SiteConfig
 
-# Create your views here.
 
-def index(request):
+# Handle custom error views
+def err500_view(request):
+    print("err500_view")
+    return render(request, "core/error.html", {"request" : request, "exception": "500", "error_msg": "Internal Server Error"})
+def err404_view(request, exception):
+    return render(request, "core/error.html", {"request" : request, "exception": "404", "error_msg": "Not Found"})
+def err403_view(request, exception):
+    return render(request, "core/error.html", {"request" : request, "exception": "403", "error_msg": "Forbidden"})
+def err401_view(request, exception):
+    return render(request, "core/error.html", {"request" : request, "exception": "401", "error_msg": "Unauthorized"})
+def err400_view(request, exception):
+    return render(request, "core/error.html", {"request" : request, "exception": "400", "error_msg": "Bad Request"})
+
+def home(request):
     practices = Practice.objects.order_by("pub_date")
     massages = Massage.objects.order_by("-duration")
-    template = loader.get_template("core/index.html")
-    context = {"practices" : practices, "massages" : massages}
-    return HttpResponse(template.render(context, request))
+    page = Page.objects.filter(custom_viewname = "home").first()
+    context = {"page": page, "practices" : practices, "massages" : massages}
+    return render(request, "core/index.html", context)
+
+def robots(request):
+    site = SiteConfig.objects.first()
+    context = {'content': site.robots_content}
+    return render(request, "core/robots.txt", context, content_type="text/plain")
+
+def pages(request, page_slug):
+    page = get_object_or_404(Page, slug=page_slug)
+    context = {"page" : page}
+    return render(request, "core/page.html", context)
 
 def practices(request):
     practices = Practice.objects.order_by("pub_date")
-    template = loader.get_template("core/practice/list.html")
-    context = {"practices" : practices}
-    return HttpResponse(template.render(context, request))
-
-def practiceById(request, practice_id):
-    try:
-        practice = Practice.objects.get(pk=practice_id)
-    except Practice.DoesNotExist:
-        raise Http404("This practice does not exist")
-    
-    #get related massages
-    massages = practice.massages.all()
-
-    template = loader.get_template("core/practice/full.html")
-    context = {"practice" : practice, "massages" : massages}
-    return HttpResponse(template.render(context, request))
+    page = Page.objects.filter(custom_viewname = "practices").first()
+    context = {"page" : page, "practices" : practices}
+    return render(request, "core/practice_list.html", context)    
 
 def practiceBySlug(request, practice_slug):
-    try:
-        practice = Practice.objects.get(slug=practice_slug)
-    except Practice.DoesNotExist:
-        raise Http404("This practice does not exist")
-    
+    practice = get_object_or_404(Practice, slug=practice_slug)
+    practices = Practice.objects.order_by("pub_date")
+
     #get related massages
     massages = practice.massages.all()
 
-    template = loader.get_template("core/practice/full.html")
-    context = {"practice" : practice, "massages" : massages}
-    return HttpResponse(template.render(context, request))
+    context = {"practice" : practice, "practices" : practices, "massages" : massages}
+    return render(request, "core/practice_full.html", context)   
 
 def massages(request):
-    massages = Massage.objects.order_by("duration")
-    template = loader.get_template("core/massage/list.html")
-    context = {"massages" : massages}
-    return HttpResponse(template.render(context, request))
-
-def massageById(request, massage_id):
-    try:
-        massage = Massage.objects.get(pk=massage_id)
-    except Massage.DoesNotExist:
-        raise Http404("This massage does not exist")
-
-    #get related salon
-    #practices = {}
-
-    template = loader.get_template("core/massage/full.html")
-    context = {"massage" : massage}
-    return HttpResponse(template.render(context, request))
+    massages = Massage.objects.order_by("priority", "-duration")
+    page = Page.objects.filter(custom_viewname = "practices").first()
+    context = {"page" : page, "massages" : massages}
+    return render(request, "core/massage_list.html", context)
 
 def massageBySlug(request, massage_slug):
-    try:
-        massage = Massage.objects.get(slug=massage_slug)
-    except Massage.DoesNotExist:
-        raise Http404("This massage does not exist")
+    massage = get_object_or_404(Massage, slug=massage_slug)
 
     #get related salon
-    #practices = {}
+    practices = massage.practice_set.all()
 
-    template = loader.get_template("core/massage/full.html")
-    context = {"massage" : massage}
-    return HttpResponse(template.render(context, request))
+    context = {"massage" : massage, "practices" : practices}
+    return render(request, "core/massage_full.html", context)

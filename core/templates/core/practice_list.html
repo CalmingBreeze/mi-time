@@ -1,0 +1,16 @@
+{% extends "core/components/base.html" %}
+
+{% load i18n %}
+
+{% block meta_title %}{{page.meta_title}}{% endblock %}
+{% block meta_description %}{{page.meta_description}}{% endblock %}
+{% block meta_keywords %}{{page.meta_keywords}}{% endblock %}
+
+{% block content %}
+    <h1>{% translate "My practices :" context "Practice List" %}</h1>
+    <section>
+        {% for practice in practices %}
+        <p><a href="{% url 'practice' practice_slug=practice.slug %}">{{practice}}</a></p>
+        {% endfor %}
+    </section>
+{% endblock %}

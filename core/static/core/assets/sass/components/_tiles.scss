@@ -1,0 +1,252 @@
+///
+/// Phantom by HTML5 UP
+/// html5up.net | @ajlkn
+/// Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+///
+@use "sass:math";
+
+/* Tiles */
+
+	.tiles {
+		$gutter: _size(gutter);
+		$duration: _duration(tiles);
+        $actionDuration: _duration(tiles-action);
+		$ease: 'ease';
+
+		@include vendor('display', 'flex');
+		@include vendor('flex-wrap', 'wrap');
+		position: relative;
+		margin: ($gutter * -1) 0 $gutter ($gutter * -1);
+
+		article {
+			@include vendor('transition', (
+				'transform #{$duration} #{$ease}',
+				'opacity #{$duration} #{$ease}'
+			));
+			position: relative;
+			width: calc(#{math.div(100%,3)} - #{$gutter * 1});
+			margin: $gutter 0 0 $gutter;
+
+			> .image {
+				@include vendor('transition', 'transform #{$duration} #{$ease}');
+				position: relative;
+				display: block;
+				width: 100%;
+				overflow: hidden;
+				border-radius: _size(border-radius);
+
+
+				img {
+					display: block;
+					width: 100%;
+                    border-radius: 10px;
+                    border: 8px solid _palette(tile-title);
+				}
+
+				&:before {
+					@include vendor('pointer-events', 'none');
+					@include vendor('transition', (
+						'background-color #{$duration} #{$ease}',
+						'opacity #{$duration} #{$ease}'
+					));
+					content: '';
+					display: block;
+					position: absolute;
+					top: 0;
+					left: 0;
+					width: 100%;
+					height: 100%;
+					opacity: 0.5;
+					z-index: 1;
+                    background-color: rgba(0,0,0,0.5);
+                    border-radius: _size(tiles-border-radius),
+                    
+				}
+
+				&:after {
+					@include vendor('pointer-events', 'none');
+					@include vendor('transition', 'opacity #{$duration} #{$ease}');
+					content: '';
+					display: block;
+					position: absolute;
+					top: 0;
+					left: 0;
+					width: 100%;
+					height: 100%;
+					opacity: 0.25;
+					z-index: 2;
+				}
+			}
+
+			a {
+				@include vendor('display', 'flex');
+				@include vendor('flex-direction', 'column');
+				@include vendor('align-items', 'center');
+				@include vendor('justify-content', 'center');
+				@include vendor('transition', (
+					'background-color #{$duration} #{$ease}',
+					'transform #{$duration} #{$ease}'
+				));
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				border-bottom: 0;
+				color: _palette(fg-accent);
+				text-align: center;
+				text-decoration: none;
+				z-index: 3;
+                
+
+                .title {
+                    color: _palette(tile-title);
+                    text-transform: uppercase;
+                    font-weight: _font(weight-bold);
+
+                    padding: .5em 1em;
+                    border-radius: 4px;
+                    background-color:_palette(tile-tag);
+                    border: 1px solid _palette(tile-title);
+                    
+                    position: relative;
+                    padding: .2em 1.2em 1.2em;
+
+
+                    h2,h3,h4 {
+                        letter-spacing: _font(letter-spacing);
+                        font-size: 1.2em;
+                        margin: 0
+                    }
+
+                    span {
+                        letter-spacing: 0;
+                        position: absolute;
+                        display: inline-block;
+                        top: 1.8em;
+                        left: 0;
+                        width: 100%;
+                        font-size: .9em;
+
+                        &:before {
+                            padding-right: .35em;
+                        }
+                    }
+                }
+
+				> :last-child {
+					margin: 0;
+				}
+
+				&:hover {
+					color: _palette(fg-accent) !important;
+				}
+			}
+
+			&.default {
+				> .image:before {
+					background-color: _palette(c4);
+				}
+			}
+
+			&.highlighted {
+				> .image:before {
+					background-color: _palette(c2);
+				}
+			}
+
+			body:not(.is-touch) & {
+				&:hover {
+                    @include vendor('transform', 'scale(1.1)');
+
+					> .image {
+						
+
+						&:before {
+							background-color: _palette(bg-accent);
+							opacity: 0;
+						}
+
+						&:after {
+							opacity: 0;
+						}
+					}
+
+					.content {
+						opacity: 1;
+					}
+				}
+			}
+		}
+
+		body.is-preload & {
+			article {
+				@include vendor('transform', 'scale(0.9)');
+				opacity: 0;
+			}
+		}
+
+		body.is-touch & {
+			article {
+				.content {
+					max-height: 15em;
+					opacity: 1;
+				}
+
+                .image::before {
+                    background-color: inherit;   
+                }
+			}
+		}
+
+		@include breakpoint('<=large') {
+			$gutter: _size(gutter) * 0.5;
+
+			margin: ($gutter * -1) 0 0 ($gutter * -1);
+
+			article {
+				width: calc(#{math.div(100%,3)} - #{$gutter * 1});
+				margin: $gutter 0 0 $gutter;
+			}
+		}
+
+		@include breakpoint('<=medium') {
+			$gutter: _size(gutter);
+
+			margin: ($gutter * -1) 0 0 ($gutter * -1);
+
+			article {
+				width: calc(#{math.div(100%,2)} - #{$gutter * 1});
+				margin: $gutter 0 0 $gutter;
+			}
+		}
+
+		@include breakpoint('<=small') {
+			$gutter: _size(gutter) * 0.5;
+
+			margin: ($gutter * -1) 0 0 ($gutter * -1);
+
+			article {
+				width: calc(#{math.div(100%,2)} - #{$gutter * 1});
+				margin: $gutter 0 0 $gutter;
+
+				&:hover {
+					> .image {
+						@include vendor('transform', 'scale(1.0)');
+					}
+				}
+			}
+		}
+
+		@include breakpoint('<=xsmall') {
+			$gutter: _size(gutter) * 0.5;
+
+			margin: 0;
+
+			article {
+				width: 100%;
+				margin: $gutter 0 0 0;
+			}
+		}
+	}
+

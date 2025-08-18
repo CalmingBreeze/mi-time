@@ -1,0 +1,60 @@
+
+2 Upload image massages
+4 Style %12 in templates practice_full + massage list
+
+Starting project
+Create media repo / delete dev one
+collect static and such
+upload imgs for massage and get default.
+verify priority for massage and practice object
+
+TEST Tablet breakpoint for tiles
+replace source sans pro googlefont link in sass phantom
+placeholder image, (tiles, practice place)
+
+OPTIMIZE :
+image lazy loading
+fallback image
+
+SEO check :
+h1-6 hierarchy
+url-rewrite : mots clefs.
+title: -> 50-70 chars idéal unique (pas de dupe, pas nécessairement le nom de marque/site)
+meta description -> 90-160 chars, pas de duplication entre les pages, pas de date, pas caps lock ni trop de chiffres, plus multilingue
+h1 -> première balise 80 chars , pas vide !
+h2 -> comptent aussi, mais moins
+img -> alt + title
+a -> idéal au moins 5 liens internes
+robots.txt
+La densité de l’expression clé ???? 1 à 2% max, 
+taille du texte au moins 500 mots, + de 1500 top.
+canonical !
+
+Deployment check :
+seo
+page 500, 404, 403, 401, 400 -> Tester prod
+créer les pages (mentions, CGV, a propos ?)
+
+title
+translations
+RGPD !
+Allowed Hosts
+
+IDEAS
+paragraphe produit + allergenes
+Intensité +picto dans massage full
+zones + picto ?
+
+
+Package           Version
+----------------- -------
+asgiref           3.9.1
+Django            5.2.4
+django-ckeditor-5 0.2.18
+django-js-asset   3.1.2
+mod_wsgi          5.0.2
+pillow            11.3.0
+pip               25.2
+python-decouple   3.8
+sqlparse          0.5.3
+tzdata            2025.2

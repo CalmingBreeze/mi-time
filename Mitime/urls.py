@@ -17,7 +17,17 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import include, path
 
+handler500 = "core.views.err500_view"
+handler404 = "core.views.err404_view"
+handler403 = "core.views.err403_view"
+handler401 = "core.views.err401_view"
+handler400 = "core.views.err400_view"
+
 urlpatterns = [
     path('', include('core.urls')),
-    path('admin/', admin.site.urls),
+    # path('admin/', admin.site.urls),
+]
+
+urlpatterns += [
+    path("ckeditor5/", include('django_ckeditor_5.urls')),
 ]

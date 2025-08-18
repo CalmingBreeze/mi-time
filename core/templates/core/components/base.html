@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="fr">
+    {% load static %}
+    {% load i18n %}
+    {% load core_extras %}
+    <!-- Head -->
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- SEO -->
+        <title>{% block meta_title %}Mi'time massages{% endblock %}</title>
+        <meta name="description" content="{% block meta_description %}Prenez le temps pour vous! Réservez votre rendez vous avec Mireille pour une moment unique de détente et d'apaisement.{% endblock %}">
+        <meta name="keywords" content="{% block meta_keywords %}Massage, Montpellier, Mireille, Espace Pitôt{% endblock %}">
+
+        <link rel="stylesheet" href="{% static 'core/assets/css/main.css' %}">
+        <link rel="stylesheet" href="{% static 'core/assets/css/fontawesome/fontawesome.css' %}">
+        <link rel="stylesheet" href="{% static 'core/assets/css/fontawesome/solid.css' %}">
+        <link rel="stylesheet" href="{% static 'core/assets/css/fontawesome/regular.css' %}">
+        <link rel="stylesheet" href="{% static 'core/assets/css/fontawesome/brands.css' %}">
+        <noscript><link rel="stylesheet" href="{% static 'core/assets/css/noscript.css' %}" /></noscript>
+
+        <meta name="description" content="">
+
+        <meta property="og:title" content="">
+        <meta property="og:type" content="">
+        <meta property="og:url" content="">
+        <meta property="og:image" content="">
+        <meta property="og:image:alt" content="">
+
+        <link rel="icon" type="image/x-icon" href="{% static 'core/favicon.ico' %}">
+  
+        <!-- Modern browsers -->
+        <link rel="icon" type="image/png" sizes="32x32" href="{% static 'core/favicon-32x32.png' %}">
+        <link rel="icon" type="image/png" sizes="16x16" href="{% static 'core/favicon-16x16.png' %}">
+        
+        <!-- Mobile devices -->
+        <link rel="apple-touch-icon" sizes="180x180" href="{% static 'core/apple-touch-icon.png' %}">
+        <link rel="icon" type="image/png" sizes="192x192" href="{% static 'core/android-chrome-192x192.png' %}">
+
+        <link rel="manifest" href="site.webmanifest">
+        <meta name="theme-color" content="#fafafa">
+    </head>
+    <body>
+        <div id="wrapper">
+            <!-- Header-->
+            <header id="header">
+                <div class="inner">
+                    <div id="topmenu">
+                        <!-- Logo -->
+                        <a href="/" class="logo">
+                            <!-- <span class="title">Mi'Time</span> -->
+                            <img src="{% static 'core/img/logo-mitime.png' %}" alt="Logo" />
+                        </a>
+                        {% block headerinfos %}
+                        <!-- Nav -->
+                         <div class="infobloc responsivehide">
+                            <span class="icon solid fa-phone iconified">{{siteconfig.header_mobile|phone_format:'spaced'}}</span>
+                        </div>
+                        <div class="infobloc responsivehide">
+                            <span class="icon solid fa-calendar-days iconified">{{siteconfig.header_openings}}</span>
+                        </div>
+                        {% endblock %}
+                        <!-- Nav -->
+                        <nav>
+                            <ul>
+                                {% block bookbutton %}
+                                <li>
+                                    <a href="#book" onclick="Calendly.initPopupWidget({ url: 'https://calendly.com/reservation-mi-time' });">{% blocktranslate context "Header" %}Book now{% endblocktranslate %}</a>
+                                </li>
+                                {% endblock %}
+                                <li>
+                                    <a href="#menu">{% translate "Menu" context "Header" %}</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Menu -->
+            <nav id="menu">
+                <p class="title">Menu</p>
+                <ul>
+                    {% block menulist %}
+                        {% for page_item in menu_pages %}
+                            {% if page_item.custom_viewname %}
+                                {% comment %}<!-- Handle case where the is only one practice switch from list to full view -->{% endcomment %}
+                                {%if page_item.custom_viewname == "practices" and practices_count == 1 %}
+                                    <li><a href="{% url 'practice' practice_slug=first_practice.slug %}">{% translate 'Practice' context "Menu link" %}</a></li>
+                                {% else %}
+                                    <li><a href="{% url page_item.custom_viewname %}">{% translate page_item.name context "Menu link" %}</a></li>
+                                {%endif %}
+                            {% else %}
+                            <li><a href="{% url 'page' page_slug=page_item.slug %}">{% translate page_item.name context "Menu link" %}</a></li>
+                            {% endif %}
+                        {% endfor %}
+                    {% endblock %}
+                </ul>
+            </nav>
+
+            <!-- Main-->
+            <div id="main">
+                <div class="inner">
+                    {% block content %}
+                    {% endblock %}
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <footer id="footer">
+                <div class="inner">
+                    {% block footer %}
+                    <section>
+                        <p class="title">{% translate "Message" context "Footer" %}</p>
+                        <form method="post" action="#">
+                            <div class="fields">
+                                <div class="field half">
+                                    <input type="text" name="name" id="name" placeholder="Nom" />
+                                </div>
+                                <div class="field half">
+                                    <input type="email" name="email" id="email" placeholder="Email" />
+                                </div>
+                                <div class="field">
+                                    <textarea name="message" id="message" placeholder="Message"></textarea>
+                                </div>
+                            </div>
+                            <ul class="actions">
+                                <li><input type="submit" value="Envoyer" class="primary" /></li>
+                            </ul>
+                        </form>
+                    </section>
+                    <section>
+                        <p class="title">{% translate "Socials" context "Footer" %}</p>
+                        <ul class="icons">
+                            <li><a href="{{siteconfig.facebook|default:'#'}}" class="icon brands style2 fa-facebook-f"><span class="label">Facebook</span></a></li>
+                            <li><a href="{{siteconfig.instagram|default:'#'}}" class="icon brands style2 fa-instagram"><span class="label">Instagram</span></a></li>
+                        </ul>
+                        <p class="title">{% translate "Contact" context "Footer" %}</p>
+                        <ul class="icons">
+                            <li><a href="tel:{{siteconfig.header_mobile|phone_format:'i18n'|default:'#'}}" class="icon solid style2 fa-phone"><span class="label">{% translate "Phone" context "Footer" %}</span></a></li>
+                            <li><a href="mailto:{{siteconfig.site_email|default:'#'}}" class="icon solid style2 fa-envelope"><span class="label">{% translate "Email" context "Footer" %}</span></a></li>
+                        </ul>
+                    </section>
+                    <ul class="copyright">
+                        <li>{{siteconfig.copyright|default:"© 2025"}}</li><li>{{siteconfig.design|safe}}</li>
+                    </ul>
+                    {% endblock %}
+                </div>
+            </footer>
+        </div>
+
+        <!-- Scripts -->
+        {% load static %}
+        <script src="{% static 'core/assets/js/jquery.min.js' %}" type="text/javascript"></script>
+        <script src="{% static 'core/assets/js/browser.min.js' %}" type="text/javascript"></script>
+        <script src="{% static 'core/assets/js/breakpoints.min.js' %}" type="text/javascript"></script>
+        <script src="{% static 'core/assets/js/util.js' %}" type="text/javascript"></script>
+        <script src="{% static 'core/assets/js/main.js' %}" type="text/javascript"></script>
+        <!-- Début de widget de badge Calendly -->
+        <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+        <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+        <!-- Fin de widget de badge Calendly -->
+
+
+    </body>
+</html>

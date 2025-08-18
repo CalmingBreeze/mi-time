@@ -1,0 +1,43 @@
+{% extends "core/components/base.html" %}
+{% load i18n %}
+{% load static %}
+{% load core_extras %}
+
+{% block meta_title %}{{massage.meta_title}}{% endblock %}
+{% block meta_description %}{{massage.meta_description}}{% endblock %}
+{% block meta_keywords %}{{massage.meta_keywords}}{% endblock %}
+
+{% block content %}
+    {% if massage %}
+    <section>
+        <h1>{{massage.name}}</h1>
+        <h2>
+            <span class="icon regular fa-clock">
+                {{massage.duration|duration}}
+            </span>
+        </h2>
+        <div class="richtext">
+            <p>{{massage.text1|safe}}</p>
+
+            {% if massage.text2 %}
+            <p>{{massage.text2|safe}}</p>
+            {% endif %}
+
+            {% if massage.text3 %}
+            <p>{{massage.text3|safe}}</p>
+            {% endif %}
+        </div>
+        {% comment "Not needed for single practice" %}
+        <!-- Get practice proposing this massage -->
+        {% if massage.practice_set.count > 0 %}
+            <p>{% translate "This massage is available at" %} :</p>
+            <ul>
+                {% for practice in massage.practice_set.all %}
+                    <li>{{practice}}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+        {% endcomment %}
+    {% endif %}
+    </section>
+{% endblock %}

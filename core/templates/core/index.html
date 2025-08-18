@@ -1,1 +1,23 @@
-Test INDEX template
+{% extends "core/components/base.html" %}
+
+{% block meta_title %}{{page.meta_title}}{% endblock %}
+{% block meta_description %}{{page.meta_description}}{% endblock %}
+{% block meta_keywords %}{{page.meta_keywords}}{% endblock %}
+
+{% block content %}
+    {% load static %}
+    {% load i18n %}
+
+    {% translate "Our available massages :" context "Main page" as main_title %}
+    {% include "core/components/massage_tiles.html" with section_title=main_title h_val=1 %}
+
+    {%if practices.count > 1 %}
+        <!-- Multiple practice case -->
+    {% else %}
+        {% with practice_object=practices.first %}
+            {% include "core/components/practice_detail.html" with h_val=3 %}
+            <!-- GMAP Embbed + Openings -->
+            {% include "core/components/practice_infos.html" with h_val=3 %}
+        {% endwith %}
+    {% endif %}
+{% endblock %}
