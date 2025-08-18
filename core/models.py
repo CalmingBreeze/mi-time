@@ -16,7 +16,11 @@ class Massage(models.Model):
     meta_description = models.CharField(max_length=255, null=False, unique=True, help_text=pgettext_lazy("Model object", "SEO Meta Description (90->160)"))
     meta_Keywords = models.CharField(max_length=255, null=True, help_text=pgettext_lazy("Model object", "SEO Meta Keyword (max 10)"))
     priority = models.PositiveIntegerField(default=1,help_text=pgettext_lazy("Model object", "Order index when listing, 1 is first, X last"))
-    tcover = models.ImageField(upload_to='img/',blank=True, null=True, help_text=pgettext_lazy("Model object", "The cover image used in tiles when listed. 353*326"))
+    cover = models.ImageField(upload_to='img/',blank=True, null=True, help_text=pgettext_lazy("Model object", "The cover image used in tiles when listed."))
+    tile_thumbnail = ImageSpecField(source='cover',
+                                      processors=[ResizeToFill(353, 326)],
+                                      format='JPEG',
+                                      options={'quality': 60})
     calendlyURL = models.CharField(default="https://calendly.com/reservation-mi-time", blank=True, help_text=pgettext_lazy("Model object", "Full URL to calendly appointment event"))
     highlighted = models.BooleanField(default=False, help_text=pgettext_lazy("Model Object", "Different tile background color when listed"))
     price = models.DecimalField(max_digits=7, decimal_places=2, help_text=pgettext_lazy("Model object", "Price of the massage"))
@@ -157,6 +161,10 @@ class Practice(models.Model):
     googlesite_url = models.URLField(blank=True, help_text=pgettext_lazy("Model object", "Google Site url"))
     slug = models.SlugField(max_length=100, null=False, unique=True, help_text=pgettext_lazy("Model object", "SEO Url Normalization"))
     cover = models.ImageField(upload_to='img/',blank=True, null=True, help_text=pgettext_lazy("Model object", "The cover image used when listed"))
+    tile_thumbnail = ImageSpecField(source='cover',
+                                      processors=[ResizeToFill(353, 326)],
+                                      format='JPEG',
+                                      options={'quality': 60})
     img1 = models.ImageField(upload_to='img/',blank=True, null=True, help_text=pgettext_lazy("Model object", "An image to illustrate the practice"))
     img1_alt = models.CharField(max_length=255, blank=True, null=True, help_text=pgettext_lazy("Model object", "SEO Img Alt"))
     img1_diapo = ImageSpecField(source='img1',
@@ -264,6 +272,7 @@ class SiteConfig(models.Model):
     instagram = models.CharField(max_length=255, blank=True, help_text=pgettext_lazy("Model object", "Instagram Account"))
     copyright = models.CharField(max_length=255, blank=True, help_text=pgettext_lazy("Model object", "Copyright content in the footer"))
     design = models.CharField(max_length=255, blank=True, help_text=pgettext_lazy("Model object", "Design credit content in the footer"))
+    placeholder_img = models.ImageField(upload_to='img/',blank=True, null=True, help_text=pgettext_lazy("Model object", "An Image displayed when the original is not found"))
     
     def __str__(self):
         return str(self.name)

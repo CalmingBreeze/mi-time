@@ -1,5 +1,6 @@
 {% load static %}
 {% load i18n %}
+{% load imagekit %}
 {% load core_extras %}
 
 <section>
@@ -9,7 +10,11 @@
         {% for massage in massages %}
         <article class='{{massage.highlighted|yesno:"highlighted,default"}}'>
             <span" class="image">
-                <img src="{{massage.tcover.url}}" alt="{{massage.name}}" />
+                {% if massage.cover %}
+                    <img src="{{massage.tile_thumbnail.url}}" alt="{{massage.name}}" />
+                {% else %}
+                    {% thumbnail '353x323' siteconfig.placeholder_img %}
+                {% endif %}
             </span>
             <a href="{% url 'massage' massage_slug=massage.slug %}">
                 <span class="title">
