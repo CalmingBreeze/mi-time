@@ -31,6 +31,11 @@ GMAP_API_KEY = config("GMAP_API_KEY")
 
 ALLOWED_HOSTS = ["localhost", "127.0.0.1", ".mi-time.fr"]
 
+#SSL Force
+SECURE_SSL_REDIRECT = True
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+CSRF_COOKIE_SECURE = True
+SESSION_COOKIE_SECURE = True
 
 # Application definition
 
