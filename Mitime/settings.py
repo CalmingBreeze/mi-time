@@ -247,4 +247,4 @@ CKEDITOR_5_CONFIGS = {
 
 # Define a constant in settings.py to specify file upload permissions
 CKEDITOR_5_FILE_UPLOAD_PERMISSION = "staff"  # Possible values: "staff", "authenticated", "any"
-CKEDITOR_5_CUSTOM_CSS = 'django_ckeditor_5/darkmode_fix.css'
+CKEDITOR_5_CUSTOM_CSS = 'admin/css/darkmode_fix.css'
