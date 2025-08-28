@@ -2708,7 +2708,7 @@ section {
 }
 .practice-description .richtext {
   text-align: justify;
-  max-width: 60%;
+  flex: 1 1 320px;
 }
 
 .openings-and-map {
