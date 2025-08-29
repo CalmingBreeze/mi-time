@@ -7,6 +7,11 @@
 @use "sass:color";
 
 /* Type */
+    @font-face {
+        font-family: 'Manrope';
+        src: url('../fonts/Manrope-VariableFont_wght.ttf');
+    }
+
 
 	body, input, select, textarea {
 		color: _palette(main-ft);

@@ -9,7 +9,7 @@
     {% load i18n %}
 
     {% if massages %}
-    {% translate "Our available massages :" context "Massage List" as main_title %}
+    {% translate "Our available massages" context "Massage List" as main_title %}
     {% include "core/components/massage_tiles.html" with section_title=main_title h_val=1%}
     {% endif %}
     

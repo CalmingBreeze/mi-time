@@ -241,42 +241,37 @@ msgstr "Ordre des pages dans le menu (si vide, n'apparaîtra pas)"
 #: .\core\models.py:211
 msgctxt "Model object"
 msgid "Global Site Config"
-msgstr ""
+msgstr "Configurations globales"
 
 #: .\core\models.py:215
 msgctxt "Model object"
 msgid "Email for contacts forms"
-msgstr ""
+msgstr "Email du formulaire de contact"
 
 #: .\core\models.py:216
 msgctxt "Model object"
 msgid "Mobile number in header"
-msgstr ""
-
-#: .\core\models.py:217
-msgctxt "Model object"
-msgid "Oopening time text in header"
-msgstr ""
+msgstr "Numéro de mobile dans le bandeau supérieur"
 
 #: .\core\models.py:218
 msgctxt "Model object"
 msgid "Facebook Account"
-msgstr ""
+msgstr "Compte Facebook"
 
 #: .\core\models.py:219
 msgctxt "Model object"
 msgid "Instagram Account"
-msgstr ""
+msgstr "Compte Instagram"
 
 #: .\core\models.py:220
 msgctxt "Model object"
 msgid "Copyright content in the footer"
-msgstr ""
+msgstr "Text de copyright dans le pied de page"
 
 #: .\core\models.py:221
 msgctxt "Model object"
 msgid "Design credit content in the footer"
-msgstr ""
+msgstr "Mentions du créateur du design du site"
 
 #: .\core\templates\core\components\base.html:65
 msgctxt "Header"
@@ -319,18 +314,18 @@ msgid ""
 "We are currently polishing our offer. Come back soon to see what we have "
 "cooked for you !"
 msgstr ""
-"Bous finalisons notre offre de massage. N'hésitez pas à revenir nous voir "
+"Nous finalisons notre offre de massage. N'hésitez pas à revenir nous voir "
 "très bientôt pour découvrir nos services."
 
 #: .\core\templates\core\components\practice_detail.html:4
 msgctxt "Practice detail block"
-msgid "Our practice :"
-msgstr "Le salon :"
+msgid "Our practice"
+msgstr "Le salon"
 
 #: .\core\templates\core\components\practice_infos.html:5
 msgctxt "Practice map block"
-msgid "Our location :"
-msgstr "Se rendre au salon :"
+msgid "Our location"
+msgstr "Se rendre au salon"
 
 #: .\core\templates\core\components\practice_infos.html:13
 #: .\core\templates\core\components\practice_openings.html:9
@@ -346,13 +341,13 @@ msgstr "après-midi"
 
 #: .\core\templates\core\components\practice_openings.html:3
 msgctxt "Practice openings block"
-msgid "Availabilities :"
+msgid "Availabilities"
 msgstr "Nos Horaires de Rendez-vous"
 
 #: .\core\templates\core\index.html:11
 msgctxt "Main page"
-msgid "Our available massages :"
-msgstr "Mireille prend soin  de vous, et vous propose :"
+msgid "Our available massages"
+msgstr "Mireille prend soin  de vous, et vous propose"
 
 #: .\core\templates\core\massage_full.html:33
 msgid "This massage is available at"
@@ -360,18 +355,18 @@ msgstr "Ce massage est disponible au"
 
 #: .\core\templates\core\massage_list.html:12
 msgctxt "Massage List"
-msgid "Our available massages :"
-msgstr "Mireille prend soin  de vous, et vous propose :"
+msgid "Our available massages"
+msgstr "Mireille prend soin  de vous, et vous propose"
 
 #: .\core\templates\core\practice_full.html:17
 msgctxt "Practice Full massage block title"
-msgid "Available massages :"
-msgstr "Massages disponibles :"
+msgid "Available massages"
+msgstr "Massages disponibles"
 
 #: .\core\templates\core\practice_list.html:10
 msgctxt "Practice List"
-msgid "My practices :"
-msgstr "Le salon :"
+msgid "My practices"
+msgstr "Le salon"
 
 #: .\core\templatetags\core_extras.py:27
 msgctxt "Duration Operator"

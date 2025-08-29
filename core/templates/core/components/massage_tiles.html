@@ -5,7 +5,7 @@
 
 <section>
     {% if massages %}
-        <h{{h_val|default:"2"}}>{{section_title}}</h{{h_val|default:"2"}}>
+        <h{{h_val|default:"2"}}>{{section_title}}&nbsp;:</h{{h_val|default:"2"}}>
         <div class="tiles">
         {% for massage in massages %}
         <article class='{{massage.highlighted|yesno:"highlighted,default"}}'>

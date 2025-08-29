@@ -14,7 +14,7 @@
         {% endif %}
 
         {% if massages %}
-            {% translate "Available massages :" context "Practice Full massage block title" as block_title%}
+            {% translate "Available massages" context "Practice Full massage block title" as block_title%}
             {% include "core/components/massage_tiles.html" with section_title=block_title h_val=2 %}
         {% endif %}
     {% endwith %}

@@ -7,7 +7,7 @@
 {% block meta_keywords %}{{page.meta_keywords}}{% endblock %}
 
 {% block content %}
-    <h1>{% translate "My practices :" context "Practice List" %}</h1>
+    <h1>{% translate "My practices" context "Practice List" %}</h1>
     <section>
         {% for practice in practices %}
         <p><a href="{% url 'practice' practice_slug=practice.slug %}">{{practice}}</a></p>

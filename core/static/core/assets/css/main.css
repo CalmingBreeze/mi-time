@@ -194,9 +194,13 @@ body.is-preload *, body.is-preload *:before, body.is-preload *:after {
 }
 
 /* Type */
+@font-face {
+  font-family: "Manrope";
+  src: url("../fonts/Manrope-VariableFont_wght.ttf");
+}
 body, input, select, textarea {
   color: #9E7F5E;
-  font-family: "Source Sans Pro", Helvetica, sans-serif;
+  font-family: "Manrope", Helvetica, sans-serif;
   font-size: 16pt;
   font-weight: 300;
   line-height: 1.75;
@@ -2736,6 +2740,7 @@ table.openings .bordered-right {
 #massage-description .title-duration-wrapper h2 {
   margin-bottom: 0.2em;
   line-height: 2.3;
+  border-bottom: none;
 }
 #massage-description hr {
   margin: 0 0 1.5em;
