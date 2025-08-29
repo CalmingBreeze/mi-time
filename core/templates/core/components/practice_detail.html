@@ -2,7 +2,7 @@
 
 <section>
     {% translate "Our practice" context "Practice detail block" as default_title %}
-    <h{{h_val|default:"2"}}>{{section_title|default:default_title}}&nbsp;:</h{{h_val|default:"2"}}>
+    <h{{h_val|default:"2"}}>{{section_title|default:default_title}}</h{{h_val|default:"2"}}>
     <div class="practice-description">
         <div class="richtext">
             {{practice_object.text1|safe}}
