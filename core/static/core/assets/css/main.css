@@ -239,11 +239,11 @@ p {
 }
 
 h1 {
-  font-size: 2.75em;
+  font-size: 2.5em;
   font-weight: 700;
   line-height: 1.3;
   margin: 0 0 1em 0;
-  letter-spacing: -0.035em;
+  letter-spacing: 0.06em;
 }
 h1 a {
   color: inherit;
@@ -265,18 +265,22 @@ h2, h3, h4, h5, h6 {
   line-height: 1.5;
   margin: 0 0 2em 0;
   text-transform: uppercase;
-  letter-spacing: 0.35em;
+  letter-spacing: 0.15em;
 }
 h2 a, h3 a, h4 a, h5 a, h6 a {
   color: inherit;
 }
 
 h2 {
-  font-size: 1.8em;
+  font-size: 1.6em;
+  display: inline-block;
+  border-bottom: 2px solid #7FBAB4;
 }
 
 h3 {
   font-size: 1.5em;
+  display: inline-block;
+  border-bottom: 2px solid #7FBAB4;
 }
 
 h4 {
@@ -294,14 +298,6 @@ h6 {
 @media screen and (max-width: 980px) {
   h1 br, h2 br, h3 br, h4 br, h5 br, h6 br {
     display: none;
-  }
-}
-@media screen and (max-width: 736px) {
-  h2 {
-    font-size: 1em;
-  }
-  h3 {
-    font-size: 0.8em;
   }
 }
 sub {
@@ -350,9 +346,6 @@ hr {
   border: 0;
   border-bottom: solid 1px #F9DEB2;
   margin: 2em 0;
-}
-hr.major {
-  margin: 3em 0;
 }
 
 .align-left {
@@ -2060,10 +2053,10 @@ button,
   font-size: 0.8em;
   font-weight: 900;
   height: 3.5em;
-  letter-spacing: 0.35em;
+  letter-spacing: 0.15em;
   line-height: 3.45em;
   overflow: hidden;
-  padding: 0 1.25em 0 1.6em;
+  padding: 0 1.25em 0 1.4em;
   text-align: center;
   text-decoration: none;
   text-overflow: ellipsis;
@@ -2265,7 +2258,7 @@ button:disabled,
   padding: 0.2em 1.2em 1.2em;
 }
 .tiles article a .title h2, .tiles article a .title h3, .tiles article a .title h4 {
-  letter-spacing: 0.35em;
+  letter-spacing: 0.15em;
   font-size: 1.2em;
   margin: 0;
 }
@@ -2377,7 +2370,7 @@ body.is-touch .tiles article .image::before {
   border-bottom: 0;
   color: inherit;
   font-weight: 900;
-  letter-spacing: 0.35em;
+  letter-spacing: 0.15em;
   margin: 0;
   text-decoration: none;
   text-transform: uppercase;
@@ -2431,7 +2424,7 @@ body.is-touch .tiles article .image::before {
   border: 0;
   font-size: 1em;
   font-weight: 900;
-  letter-spacing: 0.35em;
+  letter-spacing: 0.15em;
   text-transform: uppercase;
 }
 #header nav ul li a[href="#menu"] {
@@ -2528,7 +2521,7 @@ body.is-touch .tiles article .image::before {
   line-height: 1.5;
   margin: 0 0 2em 0;
   text-transform: uppercase;
-  letter-spacing: 0.35em;
+  letter-spacing: 0.15em;
 }
 #menu > .inner {
   -moz-transition: opacity 0.45s ease;
@@ -2749,14 +2742,10 @@ table.openings .bordered-right {
   border: 1px solid #7FBAB4;
 }
 #massage-description h1 {
-  letter-spacing: 0.06em;
   margin-bottom: 0.2em;
-  font-size: 2.5em;
 }
 #massage-description h2 {
-  letter-spacing: 0.15em;
   margin-bottom: 0.5em;
-  font-size: 1.6em;
 }
 #massage-description h3 {
   letter-spacing: 0.15em;
@@ -2807,7 +2796,7 @@ table.openings .bordered-right {
   line-height: 1.5;
   margin: 0 0 2em 0;
   text-transform: uppercase;
-  letter-spacing: 0.35em;
+  letter-spacing: 0.15em;
 }
 #footer > .inner .copyright {
   width: 100%;
