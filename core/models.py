@@ -16,7 +16,8 @@ class Massage(models.Model):
     meta_description = models.CharField(max_length=255, null=False, unique=True, help_text=pgettext_lazy("Model object", "SEO Meta Description (90->160)"))
     meta_Keywords = models.CharField(max_length=255, null=True, help_text=pgettext_lazy("Model object", "SEO Meta Keyword (max 10)"))
     priority = models.PositiveIntegerField(default=1,help_text=pgettext_lazy("Model object", "Order index when listing, 1 is first, X last"))
-    cover = models.ImageField(upload_to='img/',blank=True, null=True, help_text=pgettext_lazy("Model object", "The cover image used in tiles when listed."))
+    tile_label = models.CharField(max_length=100, blank=True, null=True, help_text=pgettext_lazy("Model object", "Label displayed on the tile for list view."))
+    cover = models.ImageField(upload_to='img/', blank=True, null=True, help_text=pgettext_lazy("Model object", "The cover image used in tiles when listed."))
     tile_thumbnail = ImageSpecField(source='cover',
                                       processors=[ResizeToFill(353, 326)],
                                       format='JPEG',
@@ -26,8 +27,6 @@ class Massage(models.Model):
     price = models.DecimalField(max_digits=7, decimal_places=2, help_text=pgettext_lazy("Model object", "Price of the massage"))
     duration = models.DurationField(help_text=pgettext_lazy("Model object", "Duration of the Massage (HH:MM:SS)"), default=datetime.time(1))
     text1 = CKEditor5Field('Text', config_name='extends')
-    text2 = CKEditor5Field('Text', config_name='extends',blank=True)
-    text3 = CKEditor5Field('Text', config_name='extends',blank=True)
     img1 = models.ImageField(upload_to='img/', blank=True, null=True, help_text=pgettext_lazy("Model object", "An image to illustrate the massage"))
     img1_alt = models.CharField(max_length=255, blank=True, null=True, help_text=pgettext_lazy("Model object", "SEO Img Alt"))
     img1_resized = ImageSpecField(source='img1',

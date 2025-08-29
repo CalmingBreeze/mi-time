@@ -18,7 +18,7 @@
             </span>
             <a href="{% url 'massage' massage_slug=massage.slug %}">
                 <span class="title">
-                    <h{{h_val|default:"2"|add:"1"}}>{{massage.name}}</h{{h_val|default:"2"|add:"1"}}>
+                    <h{{h_val|default:"2"|add:"1"}}>{{massage.tile_label|default:massage.name}}</h{{h_val|default:"2"|add:"1"}}>
                     <span class="icon regular fa-clock">
                         {{massage.duration|duration}}
                     </span>

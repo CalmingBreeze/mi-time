@@ -86,3 +86,51 @@
             text-align: center;
         }
     }
+
+    #massage-description {
+        .title-duration-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+
+            h1 {
+                flex: 1 1 auto;
+            }
+
+            h2 {
+                margin-bottom: .2em;
+                line-height: 2.3;
+            }
+        }
+
+        hr {
+            margin: 0 0 1.5em;
+            border: 1px solid _palette(accent3);
+        }
+
+        h1 {
+            letter-spacing: .06em;
+            margin-bottom: .2em;
+            font-size: 2.5em;
+        }
+
+        h2 {
+            letter-spacing: .15em;
+            margin-bottom: .5em;
+            font-size: 1.6em;
+        }
+
+        h3 {
+            letter-spacing: .15em;
+            
+            padding: .2em 0;
+            display: inline-block;
+            border-bottom: 2px solid _palette(accent3);
+            margin-bottom: .8em;
+        }
+
+        p {
+            text-align: justify;
+            margin-bottom: .8em;
+        }
+    }
+

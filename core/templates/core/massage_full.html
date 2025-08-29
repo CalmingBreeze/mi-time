@@ -9,23 +9,18 @@
 
 {% block content %}
     {% if massage %}
-    <section>
-        <h1>{{massage.name}}</h1>
-        <h2>
-            <span class="icon regular fa-clock">
-                {{massage.duration|duration}}
-            </span>
-        </h2>
+    <section id="massage-description">
+        <div class="title-duration-wrapper">
+            <h1>{{massage.name}}</h1>
+            <h2>
+                <span class="icon regular fa-clock">
+                    {{massage.duration|duration}}
+                </span>
+            </h2>
+        </div>
+        <hr>
         <div class="richtext">
-            <p>{{massage.text1|safe}}</p>
-
-            {% if massage.text2 %}
-            <p>{{massage.text2|safe}}</p>
-            {% endif %}
-
-            {% if massage.text3 %}
-            <p>{{massage.text3|safe}}</p>
-            {% endif %}
+            {{massage.text1|safe}}
         </div>
         {% comment "Not needed for single practice" %}
         <!-- Get practice proposing this massage -->
