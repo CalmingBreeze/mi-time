@@ -35,7 +35,13 @@
     .carousel-wrapper.bordered {
         width: calc(400px + 2 *_size(tiles-border-width));
         height: calc(250px + 2 * _size(tiles-border-width));
+
+        @include breakpoint('<=xsmall') {
+            width: calc(320px + 2 *_size(tiles-border-width));
+            height: calc(200px + 2 * _size(tiles-border-width));
+        }
     }
+
 
     .practice-description {
         display: flex;

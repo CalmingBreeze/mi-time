@@ -53,13 +53,9 @@ $size-height: 250px;
   }
 }
 
-@media screen and (max-width: 768px) {
-  $size-width: 240px;
-  $size-height: 150px;
-  .carousel-wrapper {
-    width: $size-width * 1.3;
-    height: $size-height * 1.4;
-  }
+@media screen and (max-width: 480px) {
+  $size-width: 320px;
+  $size-height: 200px;
 
   .carousel-container {
     width: $size-width;
@@ -68,7 +64,7 @@ $size-height: 250px;
 
   .carousel {
     width: $size-width * 3;
-    > div {
+    > img {
       width: $size-width;
       height: $size-height;
     }
