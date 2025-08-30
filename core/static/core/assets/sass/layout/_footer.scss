@@ -18,36 +18,71 @@
 			@include vendor('display', 'flex');
 			@include vendor('flex-wrap', 'wrap');
 			@include vendor('flex-direction', 'row');
+            gap: 5%;
 
-			> * > :last-child {
-				margin-bottom: 0;
-			}
+            section {
+                flex: 1 1 30%;
+                text-align: justify;
+                margin-bottom: 0;
 
-			section:nth-child(1) {
-				width: calc(66% - #{$gutter});
-				margin-right: $gutter;
-			}
+                @include breakpoint('<=medium') {
+                    margin-bottom: 1em;
+                }
 
-			section:nth-child(2) {
-				width: calc(33% - #{$gutter});
-				margin-left: $gutter;
-			}
+                @include breakpoint('<=xsmall') {
+                    flex: 1 1 100%;
+                }
+
+                ul {
+                    list-style: none;
+                    padding-left: 0;
+
+                    li {
+                        padding-left: 0;
+                    }
+                }
+            }
+
+            #about-me {
+                p:nth-child(2) {
+                    margin-bottom: .5em;
+                }
+            }
+
+            #quick-nav {
+                border: 1px solid _palette(accent2);
+                border-top-width: 0;
+                border-bottom-width: 0;
+                padding: 0 3em;
+                @include breakpoint('<=medium') {
+                    border: none;
+                    padding: 0;
+                }
+            }
+
+            #contact-infos {
+                .icon::before {
+                    color: _palette(accent2)
+                }
+            }
 
             p.title {
                 font-size: 1.2em;
                 font-weight: _font(weight-bold);
                 line-height: 1.5;
-                margin: 0 0 (_size(element-margin) * 1) 0;
                 text-transform: uppercase;
                 letter-spacing: _font(letter-spacing);
+                margin-bottom: .5em;
             }
 
 			.copyright {
 				width: 100%;
 				padding: 0;
-				margin-top: 1em;
+				margin-top: 2em;
+                margin-bottom: .5em;
 				list-style: none;
 				font-size: 0.8em;
+                text-align: center;
 
 				a {
 					color: inherit;
@@ -64,84 +99,6 @@
 						border-left: 0;
 						padding-left: 0;
 						margin-left: 0;
-					}
-				}
-			}
-		}
-
-		@include breakpoint('<=large') {
-			$gutter: _size(gutter) * 0.5;
-
-			@include padding(5em, 0);
-
-			> .inner {
-				section:nth-child(1) {
-					width: calc(66% - #{$gutter});
-					margin-right: $gutter;
-				}
-
-				section:nth-child(2) {
-					width: calc(33% - #{$gutter});
-					margin-left: $gutter;
-				}
-			}
-		}
-
-		@include breakpoint('<=medium') {
-			$gutter: _size(gutter);
-
-			> .inner {
-				section:nth-child(1) {
-					width: 66%;
-					margin-right: 0;
-				}
-
-				section:nth-child(2) {
-					width: calc(33% - #{$gutter});
-					margin-left: $gutter;
-				}
-			}
-		}
-
-		@include breakpoint('<=small') {
-			@include padding(3em, 0);
-
-			> .inner {
-				@include vendor('flex-direction', 'column');
-
-				section:nth-child(1) {
-					width: 100%;
-					margin-right: 0;
-					margin: 3em 0 0 0;
-				}
-
-				section:nth-child(2) {
-					@include vendor('order', '-1');
-					width: 100%;
-					margin-left: 0;
-				}
-
-				.copyright {
-					margin-top: 3em;
-				}
-			}
-		}
-
-		@include breakpoint('<=xsmall') {
-			> .inner {
-				.copyright {
-					margin-top: 3em;
-
-					li {
-						border-left: 0;
-						padding-left: 0;
-						margin: 0.75em 0 0 0;
-						display: block;
-						line-height: inherit;
-
-						&:first-child {
-							margin-top: 0;
-						}
 					}
 				}
 			}

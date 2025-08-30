@@ -110,35 +110,40 @@
             <footer id="footer">
                 <div class="inner">
                     {% block footer %}
-                    <section>
-                        <p class="title">{% translate "Message" context "Footer" %}</p>
-                        <form method="post" action="#">
-                            <div class="fields">
-                                <div class="field half">
-                                    <input type="text" name="name" id="name" placeholder="Nom" />
-                                </div>
-                                <div class="field half">
-                                    <input type="email" name="email" id="email" placeholder="Email" />
-                                </div>
-                                <div class="field">
-                                    <textarea name="message" id="message" placeholder="Message"></textarea>
-                                </div>
-                            </div>
-                            <ul class="actions">
-                                <li><input type="submit" value="Envoyer" class="primary" /></li>
-                            </ul>
-                        </form>
-                    </section>
-                    <section>
-                        <p class="title">{% translate "Socials" context "Footer" %}</p>
-                        <ul class="icons">
-                            <li><a href="{{siteconfig.facebook|default:'#'}}" class="icon brands style2 fa-facebook-f"><span class="label">Facebook</span></a></li>
-                            <li><a href="{{siteconfig.instagram|default:'#'}}" class="icon brands style2 fa-instagram"><span class="label">Instagram</span></a></li>
+                    <section id="about-me">
+                        <p class="title">Mireille</p>
+                        <p>Masseuse professionelle à votre service, dédiée à votre bien-être personnel et corporel. (à changer?)</p>
+                        <ul>
+                            <li><a href="{{siteconfig.instagram|default:'#'}}" class="icon brands iconified fa-instagram ">@mi.time</a></li>
+                            <li><a href="{{siteconfig.facebook|default:'#'}}" class="icon brands iconified fa-facebook ">mi-time</a></li>
                         </ul>
-                        <p class="title">{% translate "Contact" context "Footer" %}</p>
-                        <ul class="icons">
-                            <li><a href="tel:{{siteconfig.header_mobile|phone_format:'i18n'|default:'#'}}" class="icon solid style2 fa-phone"><span class="label">{% translate "Phone" context "Footer" %}</span></a></li>
-                            <li><a href="mailto:{{siteconfig.site_email|default:'#'}}" class="icon solid style2 fa-envelope"><span class="label">{% translate "Email" context "Footer" %}</span></a></li>
+                    </section>
+                    <section id="quick-nav">
+                        <p class="title">{% translate "Links" context "Footer" %}</p>
+                        <ul>
+                            {% for page_item in footer_links %}
+                                {% if page_item.custom_viewname %}
+                                    {% comment %}<!-- Handle case where the is only one practice switch from list to full view -->{% endcomment %}
+                                    {%if page_item.custom_viewname == "practices" and practices_count == 1 %}
+                                        <li><a href="{% url 'practice' practice_slug=first_practice.slug %}">{% translate 'Practice' context "Menu link" %}</a></li>
+                                    {% else %}
+                                        <li><a href="{% url page_item.custom_viewname %}">{% translate page_item.name context "Menu link" %}</a></li>
+                                    {%endif %}
+                                {% else %}
+                                <li><a href="{% url 'page' page_slug=page_item.slug %}">{% translate page_item.name context "Menu link" %}</a></li>
+                                {% endif %}
+                            {% endfor %}
+                            <li><a href="#book" onclick="Calendly.initPopupWidget({ url: 'https://calendly.com/reservation-mi-time' });">{% translate 'Book an appointment' context "Menu link" %}</a></li>
+                        </ul>
+                    </section>
+                    <section id="contact-infos">
+                        <p class="title">{% translate "Informations" context "Footer" %}</p>
+                        <ul>
+                            <li><span class="icon solid fa-phone iconified">{{siteconfig.header_mobile|phone_format:'spaced'|default:'XX XX XX XX XX'}}</span></li>
+                            <li><span class="icon solid fa-at iconified">{{siteconfig.site_email|default:'mail@company.com'}}</span></li>
+                            {% if practices_count == 1 %}
+                            <li><span class="icon solid fa-location-dot iconified">{{first_practice.address.getFormatedAddress}}</span></li>
+                            {% endif %}
                         </ul>
                     </section>
                     <ul class="copyright">

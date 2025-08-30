@@ -243,6 +243,7 @@ class Page(models.Model):
     content = CKEditor5Field('Text', config_name='extends', blank=True, help_text=pgettext_lazy("Model object", "Content of the page"))
     custom_viewname = models.CharField(max_length=100, null=True, blank=True, help_text=pgettext_lazy("Model object", "Link custom view to its meta datas"))
     menu_position = models.SmallIntegerField(null=True, blank=True, help_text=pgettext_lazy("Model object", "Position of the item in the menu (empties won't be displayed)"))
+    footer_position = models.SmallIntegerField(null=True, blank=True, help_text=pgettext_lazy("Model object", "Position of the item in footer links section (empties won't be displayed)"))
     slug = models.SlugField(max_length=100, null=False, unique=True, help_text=pgettext_lazy("Model object", "SEO Url Normalization"))
 
     def __str__(self):
@@ -262,8 +263,8 @@ class SiteConfig(models.Model):
     name = models.CharField(max_length=100)
     pub_date = models.DateTimeField(auto_now_add=True)
     edit_date = models.DateTimeField(auto_now=True)
-    site_email = models.CharField(max_length=255, blank=True, help_text=pgettext_lazy("Model object", "Email for contacts forms"))
-    header_mobile = models.CharField(max_length=255, blank=True, help_text=pgettext_lazy("Model object", "Mobile number in header"))
+    site_email = models.CharField(max_length=255, blank=True, help_text=pgettext_lazy("Model object", "Email visible on the website"))
+    header_mobile = models.CharField(max_length=255, blank=True, help_text=pgettext_lazy("Model object", "Main Mobile number visible on the website"))
     header_openings = models.CharField(max_length=255, blank=True, help_text=pgettext_lazy("Model object", "Opening time text in header"))
     facebook = models.CharField(max_length=255, blank=True, help_text=pgettext_lazy("Model object", "Facebook Account"))
     instagram = models.CharField(max_length=255, blank=True, help_text=pgettext_lazy("Model object", "Instagram Account"))
