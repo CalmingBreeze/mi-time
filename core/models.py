@@ -266,6 +266,8 @@ class SiteConfig(models.Model):
     site_email = models.CharField(max_length=255, blank=True, help_text=pgettext_lazy("Model object", "Email visible on the website"))
     header_mobile = models.CharField(max_length=255, blank=True, help_text=pgettext_lazy("Model object", "Main Mobile number visible on the website"))
     header_openings = models.CharField(max_length=255, blank=True, help_text=pgettext_lazy("Model object", "Opening time text in header"))
+    footer_about_title = models.CharField(max_length=100, default="Mireille", blank=True, help_text=pgettext_lazy("Model object", "Title of the about block in footer"))
+    footer_about_text = CKEditor5Field('Text', config_name='extends', blank=True, help_text=pgettext_lazy("Model object", "Content of the about block in footer"))
     facebook = models.CharField(max_length=255, blank=True, help_text=pgettext_lazy("Model object", "Facebook Account"))
     instagram = models.CharField(max_length=255, blank=True, help_text=pgettext_lazy("Model object", "Instagram Account"))
     copyright = models.CharField(max_length=255, blank=True, help_text=pgettext_lazy("Model object", "Copyright content in the footer"))

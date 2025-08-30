@@ -111,11 +111,11 @@
                 <div class="inner">
                     {% block footer %}
                     <section id="about-me">
-                        <p class="title">Mireille</p>
-                        <p>Masseuse professionelle à votre service, dédiée à votre bien-être personnel et corporel. (à changer?)</p>
+                        <p class="title">{{siteconfig.footer_about_title|default:"Mireille"}}</p>
+                        {{siteconfig.footer_about_text|safe|default:""}}
                         <ul>
-                            {%if siteconfig.instagram %}<li><a href="{{siteconfig.instagram|default:'#'}}" class="icon brands iconified fa-instagram ">@mi.time</a></li>{% endif %}
-                            {%if siteconfig.facebook %}<li><a href="{{siteconfig.facebook|default:'#'}}" class="icon brands iconified fa-facebook ">mi-time</a></li>{% endif %}
+                            {%if siteconfig.instagram %}<li><a href="{{siteconfig.instagram|default:'#'}}" class="icon brands iconified fa-instagram ">Instagram</a></li>{% endif %}
+                            {%if siteconfig.facebook %}<li><a href="{{siteconfig.facebook|default:'#'}}" class="icon brands iconified fa-facebook ">Facebook</a></li>{% endif %}
                         </ul>
                     </section>
                     <section id="quick-nav">

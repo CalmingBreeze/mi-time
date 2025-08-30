@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-17 11:01+0200\n"
+"POT-Creation-Date: 2025-08-30 19:47+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,298 +17,330 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: .\core\models.py:12 .\core\models.py:136 .\core\models.py:190
+#: .\core\models.py:15 .\core\models.py:154 .\core\models.py:240
 msgctxt "Model object"
 msgid "SEO Meta Title (50->70)"
 msgstr "SEO Balise Meta Title (50->70 caractères)"
 
-#: .\core\models.py:13 .\core\models.py:137 .\core\models.py:191
+#: .\core\models.py:16 .\core\models.py:155 .\core\models.py:241
 msgctxt "Model object"
 msgid "SEO Meta Description (90->160)"
 msgstr "SEO Balise Meta Description (90->160 caractères)"
 
-#: .\core\models.py:14 .\core\models.py:138 .\core\models.py:192
+#: .\core\models.py:17 .\core\models.py:156 .\core\models.py:242
 msgctxt "Model object"
 msgid "SEO Meta Keyword (max 10)"
 msgstr "SEO Balise Meta Keyword (max 10 mots)"
 
-#: .\core\models.py:15
+#: .\core\models.py:18
 msgctxt "Model object"
 msgid "Order index when listing, 1 is first, X last"
 msgstr "Priorité d'affichage dans la liste."
 
-#: .\core\models.py:16
+#: .\core\models.py:19
 msgctxt "Model object"
-msgid "The cover image used in tiles when listed. 353*326"
+msgid "Label displayed on the tile for list view."
+msgstr "Nom du massage dans la vue liste"
+
+#: .\core\models.py:20
+msgctxt "Model object"
+msgid "The cover image used in tiles when listed."
 msgstr "Vignette utilisée dans l'affichage liste. 353x326 px"
 
-#: .\core\models.py:17
+#: .\core\models.py:25
 msgctxt "Model object"
 msgid "Full URL to calendly appointment event"
 msgstr ""
 
-#: .\core\models.py:18
+#: .\core\models.py:26
 msgctxt "Model Object"
 msgid "Different tile background color when listed"
 msgstr "Mettre en valeur la vignette avec une couleur de fond alternative"
 
-#: .\core\models.py:19
+#: .\core\models.py:27
 msgctxt "Model object"
 msgid "Price of the massage"
 msgstr "Prix du massage"
 
-#: .\core\models.py:20
+#: .\core\models.py:28
 msgctxt "Model object"
 msgid "Duration of the Massage (HH:MM:SS)"
 msgstr "Durée du massage (HH:MM:SS)"
 
-#: .\core\models.py:24 .\core\models.py:26 .\core\models.py:28
+#: .\core\models.py:30 .\core\models.py:36 .\core\models.py:42
 msgctxt "Model object"
 msgid "An image to illustrate the massage"
 msgstr "Image du massage"
 
-#: .\core\models.py:25 .\core\models.py:27 .\core\models.py:29
-#: .\core\models.py:146 .\core\models.py:148 .\core\models.py:150
-#: .\core\models.py:152 .\core\models.py:154
+#: .\core\models.py:31 .\core\models.py:37 .\core\models.py:43
+#: .\core\models.py:166 .\core\models.py:172 .\core\models.py:178
+#: .\core\models.py:184 .\core\models.py:190
 msgctxt "Model object"
 msgid "SEO Img Alt"
 msgstr "SEO Attribut Alt de l'image"
 
-#: .\core\models.py:31
+#: .\core\models.py:49
 msgctxt "Model object"
 msgid "SEO URL Normalization"
 msgstr "Url finale (SEO)"
 
-#: .\core\models.py:46
+#: .\core\models.py:64
 msgctxt "Model object"
 msgid "address"
 msgstr "adresses"
 
-#: .\core\models.py:47
+#: .\core\models.py:65
 msgctxt "Model object"
 msgid "addresses"
 msgstr "adresses"
 
-#: .\core\models.py:55
+#: .\core\models.py:73
 msgctxt "Model object"
 msgid "Postal code"
 msgstr "Code postal"
 
-#: .\core\models.py:56
+#: .\core\models.py:74
 msgctxt "Model object"
 msgid "City"
 msgstr "Ville"
 
-#: .\core\models.py:57
+#: .\core\models.py:75
 msgctxt "Model object"
 msgid "Country"
 msgstr "Pays"
 
-#: .\core\models.py:58
+#: .\core\models.py:76
 msgctxt "Model object"
 msgid "Place id encoded by google map for this address"
 msgstr "Valeur du place_id selon google"
 
-#: .\core\models.py:73
+#: .\core\models.py:91
 msgctxt "Model object class"
 msgid "opening"
 msgstr "Horaires"
 
-#: .\core\models.py:74
+#: .\core\models.py:92
 msgctxt "Model object class"
 msgid "openings"
 msgstr "Horaires"
 
-#: .\core\models.py:80 .\core\models.py:85 .\core\models.py:90
-#: .\core\models.py:95 .\core\models.py:100 .\core\models.py:105
-#: .\core\models.py:110
+#: .\core\models.py:98 .\core\models.py:103 .\core\models.py:108
+#: .\core\models.py:113 .\core\models.py:118 .\core\models.py:123
+#: .\core\models.py:128
 msgctxt "Model object"
 msgid "Opening"
 msgstr "Ouverture"
 
-#: .\core\models.py:81 .\core\models.py:86 .\core\models.py:91
-#: .\core\models.py:96 .\core\models.py:101 .\core\models.py:106
-#: .\core\models.py:111
+#: .\core\models.py:99 .\core\models.py:104 .\core\models.py:109
+#: .\core\models.py:114 .\core\models.py:119 .\core\models.py:124
+#: .\core\models.py:129
 msgctxt "Model object"
 msgid "Lunchbreak"
 msgstr "Pause repas"
 
-#: .\core\models.py:82 .\core\models.py:87 .\core\models.py:92
-#: .\core\models.py:97 .\core\models.py:102 .\core\models.py:107
-#: .\core\models.py:112
+#: .\core\models.py:100 .\core\models.py:105 .\core\models.py:110
+#: .\core\models.py:115 .\core\models.py:120 .\core\models.py:125
+#: .\core\models.py:130
 msgctxt "Model object"
 msgid "End of the Lunchbreak"
 msgstr "Fin de la Pause repas"
 
-#: .\core\models.py:83 .\core\models.py:88 .\core\models.py:93
-#: .\core\models.py:98 .\core\models.py:103 .\core\models.py:108
-#: .\core\models.py:113
+#: .\core\models.py:101 .\core\models.py:106 .\core\models.py:111
+#: .\core\models.py:116 .\core\models.py:121 .\core\models.py:126
+#: .\core\models.py:131
 msgctxt "Model object"
 msgid "Closing"
 msgstr "Fermeture"
 
-#: .\core\models.py:117
+#: .\core\models.py:135
 msgctxt "Model object"
 msgid "monday"
 msgstr "lundi"
 
-#: .\core\models.py:118
+#: .\core\models.py:136
 msgctxt "Model object"
 msgid "tuesday"
 msgstr "mardi"
 
-#: .\core\models.py:119
+#: .\core\models.py:137
 msgctxt "Model object"
 msgid "wednesday"
 msgstr "mercredi"
 
-#: .\core\models.py:120
+#: .\core\models.py:138
 msgctxt "Model object"
 msgid "thursday"
 msgstr "jeudi"
 
-#: .\core\models.py:121
+#: .\core\models.py:139
 msgctxt "Model object"
 msgid "friday"
 msgstr "vendredi"
 
-#: .\core\models.py:122
+#: .\core\models.py:140
 msgctxt "Model object"
 msgid "saturday"
 msgstr "samedi"
 
-#: .\core\models.py:123
+#: .\core\models.py:141
 msgctxt "Model object"
 msgid "sunday"
 msgstr "dimanche"
 
-#: .\core\models.py:131
+#: .\core\models.py:149
 msgctxt "Model object"
 msgid "practice"
 msgstr "Salon"
 
-#: .\core\models.py:132
+#: .\core\models.py:150
 msgctxt "Model object"
 msgid "practices"
 msgstr "Salons"
 
-#: .\core\models.py:142
+#: .\core\models.py:158
 msgctxt "Model object"
 msgid "Google Site url"
 msgstr "Url du Google Site"
 
-#: .\core\models.py:143 .\core\models.py:196
+#: .\core\models.py:159 .\core\models.py:247
 msgctxt "Model object"
 msgid "SEO Url Normalization"
 msgstr "Url finale (SEO)"
 
-#: .\core\models.py:144
+#: .\core\models.py:160
 msgctxt "Model object"
 msgid "The cover image used when listed"
 msgstr "Vignette utilisée dans la liste"
 
-#: .\core\models.py:145 .\core\models.py:147 .\core\models.py:149
-#: .\core\models.py:151 .\core\models.py:153
+#: .\core\models.py:165 .\core\models.py:171 .\core\models.py:177
+#: .\core\models.py:183 .\core\models.py:189
 msgctxt "Model object"
 msgid "An image to illustrate the practice"
 msgstr "Photo du salon"
 
-#: .\core\models.py:185
+#: .\core\models.py:235
 msgctxt "Model object"
 msgid "Page"
 msgstr "Page"
 
-#: .\core\models.py:186
+#: .\core\models.py:236
 msgctxt "Model object"
 msgid "Pages"
 msgstr "Pages"
 
-#: .\core\models.py:193
+#: .\core\models.py:243
 msgctxt "Model object"
 msgid "Content of the page"
 msgstr "Contenu de la page"
 
-#: .\core\models.py:194
+#: .\core\models.py:244
 msgctxt "Model object"
 msgid "Link custom view to its meta datas"
 msgstr "Lien vers une vue personnalisée"
 
-#: .\core\models.py:195
+#: .\core\models.py:245
 msgctxt "Model object"
 msgid "Position of the item in the menu (empties won't be displayed)"
 msgstr "Ordre des pages dans le menu (si vide, n'apparaîtra pas)"
 
-#: .\core\models.py:211
+#: .\core\models.py:246
+msgctxt "Model object"
+msgid ""
+"Position of the item in footer links section (empties won't be displayed)"
+msgstr "Ordre des pages dans le menu (si vide, n'apparaîtra pas)"
+
+#: .\core\models.py:262
 msgctxt "Model object"
 msgid "Global Site Config"
 msgstr "Configurations globales"
 
-#: .\core\models.py:215
+#: .\core\models.py:266
 msgctxt "Model object"
-msgid "Email for contacts forms"
-msgstr "Email du formulaire de contact"
+msgid "Email visible on the website"
+msgstr "Email principal du site"
 
-#: .\core\models.py:216
+#: .\core\models.py:267
 msgctxt "Model object"
-msgid "Mobile number in header"
+msgid "Main Mobile number visible on the website"
 msgstr "Numéro de mobile dans le bandeau supérieur"
 
-#: .\core\models.py:218
+#: .\core\models.py:268
+msgctxt "Model object"
+msgid "Opening time text in header"
+msgstr "Heure d'ouverture dans le bandeau supérieur"
+
+#: .\core\models.py:269
+msgctxt "Model object"
+msgid "Title of the about block in footer"
+msgstr "Titre du bloc à propos du footer"
+
+#: .\core\models.py:270
+msgctxt "Model object"
+msgid "Content of the about block in footer"
+msgstr "Contenu du bloc à propos du footer"
+
+#: .\core\models.py:271
 msgctxt "Model object"
 msgid "Facebook Account"
 msgstr "Compte Facebook"
 
-#: .\core\models.py:219
+#: .\core\models.py:272
 msgctxt "Model object"
 msgid "Instagram Account"
 msgstr "Compte Instagram"
 
-#: .\core\models.py:220
+#: .\core\models.py:273
 msgctxt "Model object"
 msgid "Copyright content in the footer"
 msgstr "Text de copyright dans le pied de page"
 
-#: .\core\models.py:221
+#: .\core\models.py:274
 msgctxt "Model object"
 msgid "Design credit content in the footer"
 msgstr "Mentions du créateur du design du site"
 
-#: .\core\templates\core\components\base.html:65
+#: .\core\models.py:275
+msgctxt "Model object"
+msgid "An Image displayed when the original is not found"
+msgstr "Une image affichée lorsque l'originale n'existe pas"
+
+#: .\core\models.py:276
+msgctxt "Model object"
+msgid "Content of robots.txt"
+msgstr "Contenu de robots.txt"
+
+#: .\core\templates\core\components\base.html:68
 msgctxt "Header"
 msgid "Book now"
 msgstr "<span class=\"responsivehide\">Prendre </span>RDV"
 
-#: .\core\templates\core\components\base.html:68
+#: .\core\templates\core\components\base.html:72
 msgctxt "Header"
 msgid "Menu"
 msgstr "Menu"
 
-#: .\core\templates\core\components\base.html:84
+#: .\core\templates\core\components\base.html:90
+#: .\core\templates\core\components\base.html:130
 msgctxt "Menu link"
 msgid "Practice"
 msgstr "Salon"
 
-#: .\core\templates\core\components\base.html:128
+#: .\core\templates\core\components\base.html:123
 msgctxt "Footer"
-msgid "Socials"
-msgstr "Réseaux"
+msgid "Links"
+msgstr "Navigation"
 
-#: .\core\templates\core\components\base.html:133
+#: .\core\templates\core\components\base.html:138
+msgctxt "Menu link"
+msgid "Book an appointment"
+msgstr "Prendre rendez-vous"
+
+#: .\core\templates\core\components\base.html:142
 msgctxt "Footer"
-msgid "Contact"
-msgstr "Contact"
+msgid "Informations"
+msgstr "Informations"
 
-#: .\core\templates\core\components\base.html:135
-msgctxt "Footer"
-msgid "Phone"
-msgstr "Téléphone"
-
-#: .\core\templates\core\components\base.html:136
-msgctxt "Footer"
-msgid "Email"
-msgstr "Email"
-
-#: .\core\templates\core\components\massage_tiles.html:26
+#: .\core\templates\core\components\massage_tiles.html:31
 msgctxt "Massage Tiles"
 msgid ""
 "We are currently polishing our offer. Come back soon to see what we have "
@@ -344,12 +376,17 @@ msgctxt "Practice openings block"
 msgid "Availabilities"
 msgstr "Nos Horaires de Rendez-vous"
 
+#: .\core\templates\core\error.html:14 .\core\templates\core\error.html:22
+msgctxt "Error Pages"
+msgid "Go back to the homepage"
+msgstr "Revenir à la page principale"
+
 #: .\core\templates\core\index.html:11
 msgctxt "Main page"
 msgid "Our available massages"
 msgstr "Mireille prend soin  de vous, et vous propose"
 
-#: .\core\templates\core\massage_full.html:33
+#: .\core\templates\core\massage_full.html:28
 msgid "This massage is available at"
 msgstr "Ce massage est disponible au"
 
