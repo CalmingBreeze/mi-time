@@ -2673,7 +2673,7 @@ body.is-menu-visible #menu .close {
 }
 
 iframe {
-  max-width: 100%;
+  flex: 1 1 320px;
 }
 
 section {
@@ -2812,6 +2812,9 @@ table.openings .bordered-right {
 #footer > .inner #about-me p:nth-child(2) {
   margin-bottom: 0.5em;
 }
+#footer > .inner #about-me .icon {
+  font-size: 1.5em;
+}
 #footer > .inner #quick-nav {
   border: 1px solid #F9DEB2;
   border-top-width: 0;
@@ -2825,7 +2828,7 @@ table.openings .bordered-right {
   }
 }
 #footer > .inner #contact-infos .icon::before {
-  color: #F9DEB2;
+  color: #585858;
 }
 #footer > .inner p.title {
   font-size: 1.2em;

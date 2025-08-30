@@ -20,7 +20,7 @@
     }
 
     iframe  {
-        max-width: 100%;
+        flex: 1 1 320px;
     }
 
     section {
@@ -52,11 +52,6 @@
             text-align: justify;
             flex: 1 1 320px;
         }
-
-        //.carousel-wrapper {
-        //    
-        //}
-
     }
 
     .openings-and-map {

@@ -47,6 +47,10 @@
                 p:nth-child(2) {
                     margin-bottom: .5em;
                 }
+
+                .icon {
+                    font-size: 1.5em;
+                }
             }
 
             #quick-nav {
@@ -62,7 +66,7 @@
 
             #contact-infos {
                 .icon::before {
-                    color: _palette(accent2)
+                    color: _palette(fg);
                 }
             }
 
