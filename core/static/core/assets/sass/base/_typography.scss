@@ -92,16 +92,24 @@
 		}
 	}
 
+    h1 {
+        // text-decoration: underline solid _palette(accent3) 4px;
+        // text-underline-position: under;
+        // text-underline-offset: .1em;
+    }
+
 	h2 {
 		font-size: 1.6em;
-        display: inline-block;
-        border-bottom: 2px solid _palette(accent3);
+        text-decoration: underline solid _palette(accent3) 2px;
+        text-underline-position: under;
+        text-underline-offset: .1em;
 	}
 
 	h3 {
 		font-size: 1.5em;
-        display: inline-block;
-        border-bottom: 2px solid _palette(accent3);
+        text-decoration: underline solid _palette(accent3) 1px;
+        text-underline-position: under;
+        text-underline-offset: .1em;
 	}
 
 	h4 {

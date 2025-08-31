@@ -95,12 +95,13 @@
 
             h1 {
                 flex: 1 1 auto;
+                text-decoration: none;
             }
 
             h2 {
                 margin-bottom: .2em;
                 line-height: 2.3;
-                border-bottom: none;
+                text-decoration: none;
             }
         }
 
@@ -121,9 +122,6 @@
             letter-spacing: .15em;
             
             padding: .2em 0;
-            display: inline-block;
-            border-bottom: 2px solid _palette(accent3);
-            margin-bottom: .8em;
         }
 
         p {
