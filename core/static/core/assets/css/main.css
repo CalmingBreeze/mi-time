@@ -2739,7 +2739,7 @@ table.openings .bordered-right {
   flex-wrap: wrap;
 }
 #massage-description .title-duration-wrapper h1 {
-  flex: 1 1 auto;
+  flex: 1 1 100%;
   text-decoration: none;
 }
 #massage-description .title-duration-wrapper h2 {

@@ -54,6 +54,12 @@ class Massage(models.Model):
     def get_absolute_url(self):
         return reverse("massage", kwargs={"massage_slug": self.slug})
     
+    def get_price(self):
+        print(self.price % 1)
+        if self.price % 1 != 0:
+            return self.price
+        return int(self.price)
+            
     def save(self, *args, **kwargs):
         if not self.slug:
             self.slug = slugify(self.name)

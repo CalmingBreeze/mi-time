@@ -23,7 +23,7 @@ def err400_view(request, exception):
 
 def home(request):
     practices = Practice.objects.order_by("pub_date")
-    massages = Massage.objects.order_by("-duration")
+    massages = Massage.objects.order_by("priority", "-duration")
     page = Page.objects.filter(custom_viewname = "home").first()
     context = {"page": page, "practices" : practices, "massages" : massages}
     return render(request, "core/index.html", context)
