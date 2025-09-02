@@ -2260,6 +2260,7 @@ button:disabled,
   padding: 0.2em 1.2em 1.2em;
 }
 .tiles article a .title h2, .tiles article a .title h3, .tiles article a .title h4 {
+  text-decoration: none;
   letter-spacing: 0.15em;
   font-size: 1.2em;
   margin: 0;
