@@ -157,29 +157,25 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 #
 customColorPalette = [
     {
-        'color': 'hsl(4, 90%, 58%)',
-        'label': 'Red'
+        'color': '#9E7F5E',
+        'label': 'Accent 1'
     },
     {
-        'color': 'hsl(340, 82%, 52%)',
-        'label': 'Pink'
+        'color': '#F9DEB2',
+        'label': 'Accent 1'
     },
     {
-        'color': 'hsl(291, 64%, 42%)',
-        'label': 'Purple'
+        'color': '#7FBAB4',
+        'label': 'Accent 1'
     },
     {
-        'color': 'hsl(262, 52%, 47%)',
-        'label': 'Deep Purple'
+        'color': '#0DA797',
+        'label': 'Accent 1'
     },
     {
-        'color': 'hsl(231, 48%, 48%)',
-        'label': 'Indigo'
-    },
-    {
-        'color': 'hsl(207, 90%, 54%)',
-        'label': 'Blue'
-    },
+        'color': '#0C354D',
+        'label': 'Accent 1'
+    }
 ]
 
 CKEDITOR_5_FILE_STORAGE = "path_to_storage.CustomStorage" # optional
@@ -207,6 +203,9 @@ CKEDITOR_5_CONFIGS = {
                     'insertTable',
                     ],
             'shouldNotGroupWhenFull': 'true'
+        },
+        'fontColor': {
+            'colors': customColorPalette,
         },
         'image': {
             'toolbar': ['imageTextAlternative', '|', 'imageStyle:alignLeft',
@@ -238,7 +237,7 @@ CKEDITOR_5_CONFIGS = {
                 { 'model': 'heading1', 'view': 'h1', 'title': 'Heading 1', 'class': 'ck-heading_heading1' },
                 { 'model': 'heading2', 'view': 'h2', 'title': 'Heading 2', 'class': 'ck-heading_heading2' },
                 { 'model': 'heading3', 'view': 'h3', 'title': 'Heading 3', 'class': 'ck-heading_heading3' },
-                { 'model': 'heading4', 'view': 'h4', 'title': 'Heading 4', 'class': 'ck-heading_heading3' }
+                { 'model': 'heading4', 'view': 'h4', 'title': 'Heading 4', 'class': 'ck-heading_heading4' }
             ]
         }
     },
