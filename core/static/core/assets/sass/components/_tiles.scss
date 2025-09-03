@@ -6,6 +6,9 @@
 @use "sass:math";
 
 /* Tiles */
+    #tiles h1 {
+        margin-bottom: 1em;
+    }
 
 	.tiles {
 		$gutter: _size(gutter);

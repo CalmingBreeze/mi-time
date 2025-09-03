@@ -114,8 +114,8 @@
                         <p class="title">{{siteconfig.footer_about_title|default:"Mireille"}}</p>
                         {{siteconfig.footer_about_text|safe|default:""}}
                         <ul>
-                            {%if siteconfig.instagram %}<li><a href="{{siteconfig.instagram|default:'#'}}" class="icon brands iconified fa-instagram ">Instagram</a></li>{% endif %}
-                            {%if siteconfig.facebook %}<li><a href="{{siteconfig.facebook|default:'#'}}" class="icon brands iconified fa-facebook ">Facebook</a></li>{% endif %}
+                            {%if siteconfig.instagram %}<li><a href="http://www.instagram.com/{{siteconfig.instagram|default:'#'}}/" class="icon brands iconified fa-instagram ">@{{siteconfig.instagram}}</a></li>{% endif %}
+                            {%if siteconfig.facebook %}<li><a href="http://www.facebook.com/{{siteconfig.facebook|default:'#'}}/" class="icon brands iconified fa-facebook ">{{siteconfig.facebook}}</a></li>{% endif %}
                         </ul>
                     </section>
                     <section id="quick-nav">

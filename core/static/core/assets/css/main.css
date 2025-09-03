@@ -2145,6 +2145,10 @@ button:disabled,
 }
 
 /* Tiles */
+#tiles h1 {
+  margin-bottom: 1em;
+}
+
 .tiles {
   display: -moz-flex;
   display: -webkit-flex;
