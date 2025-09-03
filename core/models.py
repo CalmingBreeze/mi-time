@@ -55,7 +55,6 @@ class Massage(models.Model):
         return reverse("massage", kwargs={"massage_slug": self.slug})
     
     def get_price(self):
-        print(self.price % 1)
         if self.price % 1 != 0:
             return self.price
         return int(self.price)
@@ -228,7 +227,6 @@ class Practice(models.Model):
             if getattr(self, a_id) and getattr(self, a_id+'_diapo'):
                 diapos[a_id] = {'alt': getattr(self, a_id+'_alt'), 'diapo': getattr(self, a_id+'_diapo').url}
         
-        print(diapos)
         return diapos
     
     def save(self, *args, **kwargs):

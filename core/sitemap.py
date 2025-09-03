@@ -4,7 +4,7 @@ from .models import Practice, Massage, Page
 
 class StaticViewSitemap(Sitemap):
     priority = 1
-    changefreq = "weekly"
+    changefreq = "daily"
 
     def items(self):
         return ["home","practices","massages"]
@@ -14,8 +14,8 @@ class StaticViewSitemap(Sitemap):
 
 
 class PracticeSitemap(Sitemap):
-    priority = 0.8
-    changefreq = "weekly"
+    priority = 0.7
+    changefreq = "monthly"
 
     def items(self):
         return Practice.objects.all()

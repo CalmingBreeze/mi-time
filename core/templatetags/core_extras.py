@@ -5,14 +5,34 @@ from django.utils.translation import npgettext
 
 register = template.Library()
 
-def duration( duration ):
+def duration( duration, format="default"):
 # """
 # Usage: {% duration timedelta %}
 # Returns seconds duration as weeks, days, hours, minutes, seconds
 # Based on core timesince/timeuntil
 # """
+    unit_params = []
+    pluralize = True
+    match format:
+        case "short":
+            pluralize = False
+            unit_params = [
+                (npgettext("Duration Operator","w","w",1), 7 * 24 * 3600),
+                (npgettext("Duration Operator","d","d",1), 24 * 3600),
+                (npgettext("Duration Operator","h","h",1), 3600),
+                (npgettext("Duration Operator","min","min",1), 60),
+                (npgettext("Duration Operator","s","s",1), 1)
+            ]
+        case "default":
+            unit_params = [
+                (npgettext("Duration Operator","week","weeks",1), 7 * 24 * 3600),
+                (npgettext("Duration Operator","day","days",1), 24 * 3600),
+                (npgettext("Duration Operator","hour","hours",1), 3600),
+                (npgettext("Duration Operator","minute","minutes",1), 60),
+                (npgettext("Duration Operator","second","seconds",1), 1)
+            ]
 
-    def seconds_in_units(seconds):
+    def seconds_in_units(seconds, unit_limits, pluralize):
     # """
     # Returns a tuple containing the most appropriate unit for the
     # number of seconds supplied and the value in that units form.
@@ -22,14 +42,6 @@ def duration( duration ):
     # """
 
         unit_totals = OrderedDict()
-
-        unit_limits = [
-                       (npgettext("Duration Operator","week","weeks",1), 7 * 24 * 3600),
-                       (npgettext("Duration Operator","day","days",1), 24 * 3600),
-                       (npgettext("Duration Operator","hour","hours",1), 3600),
-                       (npgettext("Duration Operator","minute","minutes",1), 60),
-                       (npgettext("Duration Operator","second","seconds",1), 1)
-                        ]
     
         # unit_limits = [
         #                ("week", 7 * 24 * 3600),
@@ -42,10 +54,11 @@ def duration( duration ):
         for unit_name, limit in unit_limits:
             if seconds >= limit:
                 amount = int(float(seconds) / limit)
-                # if amount != 1:
-                #     unit_name += 's' # dodgy pluralisation
-                pluralized_unit_name = npgettext("Duration Operator", '%(name)s', '%(name)ss', amount) % { "name": unit_name }
-                unit_totals[pluralized_unit_name] = amount
+                if pluralize:
+                    pluralized_unit_name = npgettext("Duration Operator", '%(name)s', '%(name)ss', amount) % { "name": unit_name }
+                    unit_totals[pluralized_unit_name] = amount
+                else :
+                    unit_totals[unit_name] = amount
                 seconds = seconds - ( amount * limit )
         return unit_totals
 
@@ -53,8 +66,8 @@ def duration( duration ):
     if duration:
         if isinstance( duration, datetime.timedelta ):
             if duration.total_seconds() > 0:
-                unit_totals = seconds_in_units( duration.total_seconds() )
-                return ', '.join([str(v)+" "+str(k) for (k,v) in unit_totals.items()])
+                unit_totals = seconds_in_units( duration.total_seconds(), unit_params, pluralize )
+                return ' '.join([str(v)+" "+str(k) for (k,v) in unit_totals.items()])
 
     return 'None'
 

@@ -10,7 +10,6 @@ from .models import SiteConfig
 
 # Handle custom error views
 def err500_view(request):
-    print("err500_view")
     return render(request, "core/error.html", {"request" : request, "exception": "500", "error_msg": "Internal Server Error"})
 def err404_view(request, exception):
     return render(request, "core/error.html", {"request" : request, "exception": "404", "error_msg": "Not Found"})
