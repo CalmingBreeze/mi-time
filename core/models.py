@@ -162,7 +162,7 @@ class Practice(models.Model):
     text1 = CKEditor5Field('Text', config_name='extends')
     googlesite_url = models.URLField(blank=True, help_text=pgettext_lazy("Model object", "Google Site url"))
     slug = models.SlugField(max_length=100, null=False, unique=True, help_text=pgettext_lazy("Model object", "SEO Url Normalization"))
-    cover = models.ImageField(upload_to='img/',blank=True, null=True, help_text=pgettext_lazy("Model object", "The cover image used when listed"))
+    cover = models.ImageField(upload_to='img/', blank=True, null=True, help_text=pgettext_lazy("Model object", "The cover image used when listed"))
     tile_thumbnail = ImageSpecField(source='cover',
                                       processors=[ResizeToFill(353, 326)],
                                       format='JPEG',
@@ -243,7 +243,8 @@ class Page(models.Model):
     edit_date = models.DateTimeField(auto_now=True)
     meta_title = models.CharField(max_length=100, null=False, unique=True, help_text=pgettext_lazy("Model object", "SEO Meta Title (50->70)"))
     meta_description = models.CharField(max_length=255, null=False, unique=True, help_text=pgettext_lazy("Model object", "SEO Meta Description (90->160)"))
-    meta_keywords = models.CharField(max_length=255, null=True, help_text=pgettext_lazy("Model object", "SEO Meta Keyword (max 10)"))
+    meta_keywords = models.CharField(max_length=255, blank=True, null=True, help_text=pgettext_lazy("Model object", "SEO Meta Keyword (max 10)"))
+    meta_robots = models.CharField(max_length=255, blank=True, null=True, help_text=pgettext_lazy("Model object", "SEO Meta Robots"))
     content = CKEditor5Field('Text', config_name='extends', blank=True, help_text=pgettext_lazy("Model object", "Content of the page"))
     custom_viewname = models.CharField(max_length=100, null=True, blank=True, help_text=pgettext_lazy("Model object", "Link custom view to its meta datas"))
     menu_position = models.SmallIntegerField(null=True, blank=True, help_text=pgettext_lazy("Model object", "Position of the item in the menu (empties won't be displayed)"))

@@ -120,13 +120,59 @@
 
         h3 {
             letter-spacing: .15em;
-            
             padding: .2em 0;
         }
 
         p {
             text-align: justify;
             margin-bottom: .8em;
+        }
+    }
+
+    #privilege {
+        .book {
+            color: _palette(tile-title);
+            text-transform: uppercase;
+            font-weight: _font(weight-bold);
+
+            padding: .5em 1em;
+            border-radius: _size(border-radius);
+            background-color:_palette(tile-tag);
+            border: 1px solid _palette(tile-title);
+        }
+
+        .offer {
+            display: flex;
+            flex-wrap: wrap;
+
+            @include breakpoint('<=small') {
+                margin-bottom: 2em;
+            }
+
+            p {
+                flex: 1 1 auto;
+                padding-top: .7em;
+                align-self: center;
+
+                .name {
+                    font-weight: _font(weight-bold);
+                    color: _palette(accent3);
+                }
+
+                .new-price {
+                    font-weight: _font(weight-bold);
+                    font-size: 1.2em;
+                    color: _palette(accent3);
+                }
+
+                .default-price {
+                    font-weight: _font(weight-bold);
+                }
+            }
+
+            a {
+                align-self: center;
+            }
         }
     }
 

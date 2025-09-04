@@ -12,7 +12,6 @@ class StaticViewSitemap(Sitemap):
     def location(self, item):
         return reverse(item)
 
-
 class PracticeSitemap(Sitemap):
     priority = 0.7
     changefreq = "monthly"

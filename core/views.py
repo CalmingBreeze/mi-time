@@ -37,6 +37,11 @@ def pages(request, page_slug):
     context = {"page" : page}
     return render(request, "core/page.html", context)
 
+def privilege(request, page_slug):
+    page = get_object_or_404(Page, slug=page_slug)
+    context = {"page" : page}
+    return render(request, "core/privilege.html", context)
+
 def practices(request):
     practices = Practice.objects.order_by("pub_date")
     page = Page.objects.filter(custom_viewname = "practices").first()

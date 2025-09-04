@@ -162,19 +162,19 @@ customColorPalette = [
     },
     {
         'color': '#F9DEB2',
-        'label': 'Accent 1'
+        'label': 'Accent 2'
     },
     {
         'color': '#7FBAB4',
-        'label': 'Accent 1'
+        'label': 'Accent 3'
     },
     {
         'color': '#0DA797',
-        'label': 'Accent 1'
+        'label': 'Accent 4'
     },
     {
         'color': '#0C354D',
-        'label': 'Accent 1'
+        'label': 'Accent 5'
     }
 ]
 

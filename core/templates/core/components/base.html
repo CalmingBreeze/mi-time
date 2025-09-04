@@ -11,6 +11,7 @@
         <title>{% block meta_title %}Mi'time massages{% endblock %}</title>
         <meta name="description" content="{% block meta_description %}Prenez le temps pour vous! Réservez votre rendez vous avec Mireille pour une moment unique de détente et d'apaisement.{% endblock %}">
         <meta name="keywords" content="{% block meta_keywords %}Massage, Montpellier, Mireille, Espace Pitôt{% endblock %}">
+        {% block meta_robots %}{% endblock %}
 
         <link rel="stylesheet" href="{% static 'core/assets/css/main.css' %}">
         <link rel="stylesheet" href="{% static 'core/assets/css/fontawesome/fontawesome.css' %}">
@@ -165,7 +166,9 @@
         <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
         <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
         <!-- Fin de widget de badge Calendly -->
+        {% block scripts %}
 
+        {% endblock %}
 
     </body>
 </html>

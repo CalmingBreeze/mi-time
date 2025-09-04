@@ -2771,6 +2771,45 @@ table.openings .bordered-right {
   margin-bottom: 0.8em;
 }
 
+#privilege .book {
+  color: #F9DEB2;
+  text-transform: uppercase;
+  font-weight: 900;
+  padding: 0.5em 1em;
+  border-radius: 4px;
+  background-color: rgba(127, 186, 180, 0.8);
+  border: 1px solid #F9DEB2;
+}
+#privilege .offer {
+  display: flex;
+  flex-wrap: wrap;
+}
+@media screen and (max-width: 736px) {
+  #privilege .offer {
+    margin-bottom: 2em;
+  }
+}
+#privilege .offer p {
+  flex: 1 1 auto;
+  padding-top: 0.7em;
+  align-self: center;
+}
+#privilege .offer p .name {
+  font-weight: 900;
+  color: #7FBAB4;
+}
+#privilege .offer p .new-price {
+  font-weight: 900;
+  font-size: 1.2em;
+  color: #7FBAB4;
+}
+#privilege .offer p .default-price {
+  font-weight: 900;
+}
+#privilege .offer a {
+  align-self: center;
+}
+
 /* Footer */
 #footer {
   padding: 3em 0 2em 0;

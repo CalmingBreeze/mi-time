@@ -107,7 +107,7 @@
                     font-weight: _font(weight-bold);
 
                     padding: .5em 1em;
-                    border-radius: 4px;
+                    border-radius: _size(border-radius);
                     background-color:_palette(tile-tag);
                     border: 1px solid _palette(tile-title);
                     
