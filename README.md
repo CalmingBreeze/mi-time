@@ -7,10 +7,10 @@ asgiref           3.9.1
 Django            5.2.4
 django-ckeditor-5 0.2.18
 django-js-asset   3.1.2
-mod_wsgi          5.0.2
 pillow            11.3.0
-pip               25.2
 python-decouple   3.8
+pip               25.2
+mod_wsgi          5.0.2
 sqlparse          0.5.3
 tzdata            2025.2
 

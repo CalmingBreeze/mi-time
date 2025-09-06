@@ -9,13 +9,13 @@
 {% block content %}
     {% with practice_object=practice %}
         {% if practice.address %}
-            {% include "core/components/practice_detail.html" with section_title=practice.name h_val=1  %}
+            {% include "core/components/practice_detail.html" with section_title=practice.name h_val=1 %}
             {% include "core/components/practice_infos.html" %}
         {% endif %}
 
         {% if massages %}
             {% translate "Available massages" context "Practice Full massage block title" as block_title%}
-            {% include "core/components/massage_tiles.html" with section_title=block_title h_val=2 %}
+            {% include "core/components/product_tiles.html" with section_title=block_title h_val=2 products=massages product_type="massage" %}
         {% endif %}
     {% endwith %}
     

@@ -10,12 +10,12 @@
 
 {% block content %}
     {% if massage %}
-    <section id="massage-description">
+    <section id="product-full-description">
         <div class="title-duration-wrapper">
             <h1>{{massage.name}}</h1>
             <h2>
                 <span class="icon regular fa-clock">
-                    {{massage.duration|duration:'short'}} - {{massage.get_price}}€
+                    {{massage.duration|duration:'short'}} - {{massage.get_display_price}}€
                 </span>
             </h2>
         </div>

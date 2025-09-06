@@ -9,7 +9,7 @@
     {% load i18n %}
 
     {% translate "Our available massages" context "Main page" as main_title %}
-    {% include "core/components/massage_tiles.html" with section_title=main_title h_val=1 %}
+    {% include "core/components/product_tiles.html" with section_title=main_title h_val=1 product=massages products=massages product_type="massage" %}
 
     {%if practices.count > 1 %}
         <!-- Multiple practice case -->

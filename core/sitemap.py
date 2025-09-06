@@ -1,16 +1,26 @@
 from django.contrib.sitemaps import Sitemap
 from django.urls import reverse
-from .models import Practice, Massage, Page
+from .models import Practice, Massage, Page, GiftCard
 
 class StaticViewSitemap(Sitemap):
     priority = 1
     changefreq = "daily"
 
     def items(self):
-        return ["home","practices","massages"]
+        return ["home","practices","massages","giftcards"]
 
     def location(self, item):
         return reverse(item)
+
+class GiftCardSitemap(Sitemap):
+    priority = 1
+    changefreq = "daily"
+
+    def items(self):
+        return GiftCard.objects.all()
+      
+    def lastmod(self, obj):
+        return obj.edit_date
 
 class PracticeSitemap(Sitemap):
     priority = 0.7

@@ -29,6 +29,22 @@ DEBUG = config("DEBUG", default=False, cast=bool)
 
 GMAP_API_KEY = config("GMAP_API_KEY")
 
+#Stripe
+STRIPE_PUBLIC_KEY = config("STRIPE_PUBLIC_KEY")
+STRIPE_SECRET_KEY = config("STRIPE_SECRET_KEY")
+STRIPE_WEBHOOK_SECRET = config("STRIPE_WEBHOOK_SECRET")
+
+#gmail workspace
+DEFAULT_FROM_EMAIL = config("DEFAULT_FROM_EMAIL")
+EMAIL_HOST = config("EMAIL_HOST")
+EMAIL_PORT= config("EMAIL_PORT")
+EMAIL_HOST_USER = config("EMAIL_HOST_USER")
+EMAIL_HOST_PASSWORD = config("EMAIL_HOST_PASSWORD")
+EMAIL_USE_TLS = config("EMAIL_USE_TLS", default=True, cast=bool)
+EMAIL_USE_SSL = config("EMAIL_USE_SSL", default=False, cast=bool)
+# EMAIL_SSL_KEYFILE = config("EMAIL_SSL_KEYFILE")
+# EMAIL_SSL_CERTFILE = config("EMAIL_SSL_CERTFILE")
+
 ALLOWED_HOSTS = ["localhost", "127.0.0.1", ".mi-time.fr"]
 
 #SSL Force

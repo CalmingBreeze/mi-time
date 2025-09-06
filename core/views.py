@@ -6,6 +6,8 @@ from .models import Practice
 from .models import Massage
 from .models import Page
 from .models import SiteConfig
+from django.contrib.contenttypes.models import ContentType
+from .models import GiftCard
 
 
 # Handle custom error views
@@ -41,6 +43,20 @@ def privilege(request, page_slug):
     page = get_object_or_404(Page, slug=page_slug)
     context = {"page" : page}
     return render(request, "core/privilege.html", context)
+
+def giftcards(request):
+    page = Page.objects.filter(custom_viewname = "giftcards").first()
+    giftcards = GiftCard.objects.order_by("pub_date")
+    context = {"page" : page, "giftcards" : giftcards}
+    return render(request, "core/giftcard_list.html", context)
+
+def giftcardBySlug(request, giftcard_slug):
+    product = get_object_or_404(GiftCard, slug=giftcard_slug)
+    product_model = ContentType.objects.get_for_model(product)
+    #pass model name using ContentType.model
+    context = {"product" : product, "product_model" : product_model.model}
+    return render(request, "core/giftcard_full.html", context)
+
 
 def practices(request):
     practices = Practice.objects.order_by("pub_date")

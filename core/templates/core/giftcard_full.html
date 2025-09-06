@@ -1,0 +1,35 @@
+{% extends "core/components/base.html" %}
+{% load i18n %}
+{% load l10n %}
+{% load static %}
+{% load core_extras %}
+
+{% block meta_title %}{{page.meta_title}}{% endblock %}
+{% block meta_description %}{{page.meta_description}}{% endblock %}
+{% block meta_keywords %}{{page.meta_keywords}}{% endblock %}
+{% block meta_robots %}{% if page.meta_robots %}<meta name="robots" content="{{page.meta_robots}}">{% endif %}{% endblock %}
+
+
+{% block content %}
+    {% if product %}
+    <section id="product-full-description">
+        <div class="title-duration-wrapper">
+            <h1>{{product.name}}</h1>
+            <h2>
+                <span class="icon regular fa-clock">
+                    {{product.duration|duration:'short'}} - {{product.get_display_price}}€
+                </span>
+            </h2>
+        </div>
+        <hr>
+        <div class="richtext">
+            {{product.text1|safe}}
+        </div>
+        <br>
+        <form action="{% url 'create-checkout-session' product_model product.id %}" method="POST">
+            {% csrf_token %}
+            <button type="submit">{% translate "Buy" context "Giftcard Full" %}</button>
+        </form>
+    {% endif %}
+    </section>
+{% endblock %}

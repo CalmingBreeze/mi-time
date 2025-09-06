@@ -1,0 +1,16 @@
+{% extends "core/components/base.html" %}
+
+{% block meta_title %}{{page.meta_title}}{% endblock %}
+{% block meta_description %}{{page.meta_description}}{% endblock %}
+{% block meta_keywords %}{{page.meta_keywords}}{% endblock %}
+{% block meta_robots %}{% if page.meta_robots %}<meta name="robots" content="{{page.meta_robots}}">{% endif %}{% endblock %}
+
+{% block content %}
+    {% load static %}
+    {% load i18n %}
+
+    {% if giftcards %}
+    {% translate "Our available gift cards" context "Product List" as main_title %}
+    {% include "core/components/product_tiles.html" with section_title=main_title h_val=1 products=giftcards product_type="giftcard" %}
+    {% endif %}
+{% endblock %}

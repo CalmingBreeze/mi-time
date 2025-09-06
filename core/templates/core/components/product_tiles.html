@@ -1,0 +1,37 @@
+{% load static %}
+{% load i18n %}
+{% load imagekit %}
+{% load core_extras %}
+
+<section id="tiles">
+    {% if products %}
+        <h{{h_val|default:"2"}}>{{section_title}}&nbsp;:</h{{h_val|default:"2"}}>
+        <div class="tiles">
+        {% for product in products %}
+        <article class='{{product.highlighted|yesno:"highlighted,default"}}'>
+            <span" class="image">
+                {% if product.cover %}
+                    <img src="{{product.tile_thumbnail.url}}" alt="{{product.name}}" />
+                {% else %}
+                    {% thumbnail '353x323' siteconfig.placeholder_img %}
+                {% endif %}
+            </span>
+            {% if product_type == 'massage' %}
+            <a href="{% url 'massage' massage_slug=product.slug %}">
+            {% elif product_type == 'giftcard' %}
+            <a href="{% url 'giftcard' giftcard_slug=product.slug %}">
+            {% endif %}
+                <span class="title">
+                    <h{{h_val|default:"2"|add:"1"}}>{{product.tile_label|default:product.name}}</h{{h_val|default:"2"|add:"1"}}>
+                    <span class="icon regular fa-clock">
+                        {{product.duration|duration:'short'}}
+                    </span>
+                </span>
+            </a>
+        </article>
+        {% endfor %}
+        </div>
+    {% else %}
+    <p>{% translate "We are currently polishing our offer. Come back soon to see what we have cooked for you !" context "Product Tiles" %}</p>
+    {% endif %}
+</section>

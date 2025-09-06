@@ -18,11 +18,11 @@
 			'color #{_duration(transition)} ease-in-out',
 			'box-shadow #{_duration(transition)} ease-in-out'
 		));
-		background-color: transparent;
+		background-color: _palette(accent3);
 		border-radius: _size(border-radius);
 		border: 0;
-		box-shadow: inset 0 0 0 (_size(border-width) * 2) _palette(fg);
-		color: _palette(fg) !important;
+		box-shadow: inset 0 0 0 (_size(border-width) * 2) _palette(accent2);
+		color: _palette(accent2) !important;
 		cursor: pointer;
 		display: inline-block;
 		font-size: 0.8em;

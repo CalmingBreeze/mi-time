@@ -1,0 +1,12 @@
+{% extends "../components/base.html" %}
+
+{% load core_extras %}
+
+{% block content %}
+    <section>
+        <h2>Annulation de la commande</h2>
+        <p>
+        En cas de nouvel echec, contactez-moi directement au <strong>{{siteconfig.header_mobile|phone_format:'spaced'}}</strong> ou par mail à l'adresse suivante : <strong>{{siteconfig.site_email}}</strong>
+        </p>
+    </section>
+{% endblock %}

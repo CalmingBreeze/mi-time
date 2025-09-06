@@ -88,7 +88,21 @@
         }
     }
 
-    #massage-description {
+    .action-button {
+        color: _palette(tile-title);
+        text-transform: uppercase;
+        font-weight: _font(weight-bold);
+        font-size: 1em;
+        // height: auto;
+        // line-height: normal;
+
+        padding: .5em 1em;
+        border-radius: _size(border-radius);
+        background-color:_palette(tile-tag);
+        border: 1px solid _palette(tile-title);
+    }
+
+    #product-full-description {
         .title-duration-wrapper {
             display: flex;
             flex-wrap: wrap;
@@ -130,17 +144,6 @@
     }
 
     #privilege {
-        .book {
-            color: _palette(tile-title);
-            text-transform: uppercase;
-            font-weight: _font(weight-bold);
-
-            padding: .5em 1em;
-            border-radius: _size(border-radius);
-            background-color:_palette(tile-tag);
-            border: 1px solid _palette(tile-title);
-        }
-
         .offer {
             display: flex;
             flex-wrap: wrap;

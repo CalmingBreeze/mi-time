@@ -2045,11 +2045,11 @@ button,
   -webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
   -ms-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
   transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-  background-color: transparent;
+  background-color: #7FBAB4;
   border-radius: 4px;
   border: 0;
-  box-shadow: inset 0 0 0 2px #585858;
-  color: #585858 !important;
+  box-shadow: inset 0 0 0 2px #F9DEB2;
+  color: #F9DEB2 !important;
   cursor: pointer;
   display: inline-block;
   font-size: 0.8em;
@@ -2739,47 +2739,49 @@ table.openings .bordered-right {
   text-align: center;
 }
 
-#massage-description .title-duration-wrapper {
-  display: flex;
-  flex-wrap: wrap;
-}
-#massage-description .title-duration-wrapper h1 {
-  flex: 1 1 100%;
-  text-decoration: none;
-}
-#massage-description .title-duration-wrapper h2 {
-  margin-bottom: 0.2em;
-  line-height: 2.3;
-  text-decoration: none;
-}
-#massage-description hr {
-  margin: 0 0 1.5em;
-  border: 1px solid #7FBAB4;
-}
-#massage-description h1 {
-  margin-bottom: 0.2em;
-}
-#massage-description h2 {
-  margin-bottom: 0.5em;
-}
-#massage-description h3 {
-  letter-spacing: 0.15em;
-  padding: 0.2em 0;
-}
-#massage-description p {
-  text-align: justify;
-  margin-bottom: 0.8em;
-}
-
-#privilege .book {
+.action-button {
   color: #F9DEB2;
   text-transform: uppercase;
   font-weight: 900;
+  font-size: 1em;
   padding: 0.5em 1em;
   border-radius: 4px;
   background-color: rgba(127, 186, 180, 0.8);
   border: 1px solid #F9DEB2;
 }
+
+#product-full-description .title-duration-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+}
+#product-full-description .title-duration-wrapper h1 {
+  flex: 1 1 100%;
+  text-decoration: none;
+}
+#product-full-description .title-duration-wrapper h2 {
+  margin-bottom: 0.2em;
+  line-height: 2.3;
+  text-decoration: none;
+}
+#product-full-description hr {
+  margin: 0 0 1.5em;
+  border: 1px solid #7FBAB4;
+}
+#product-full-description h1 {
+  margin-bottom: 0.2em;
+}
+#product-full-description h2 {
+  margin-bottom: 0.5em;
+}
+#product-full-description h3 {
+  letter-spacing: 0.15em;
+  padding: 0.2em 0;
+}
+#product-full-description p {
+  text-align: justify;
+  margin-bottom: 0.8em;
+}
+
 #privilege .offer {
   display: flex;
   flex-wrap: wrap;
