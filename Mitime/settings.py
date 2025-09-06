@@ -275,19 +275,17 @@ LOGGING = {
     'disable_existing_loggers': False,
     'handlers': {
         'console': {
-            'level': config("DJANGO_LOG_LEVEL", default="ERROR"),
             'class': 'logging.StreamHandler',
         },
         'file': {
             'level': config("DJANGO_LOG_LEVEL", default="ERROR"),
             'class': 'logging.FileHandler',
             'filename': 'debug.log',
-            'formatter': 'verbose',
         },
     },
     'loggers': {
         'django': {
-            'handlers': ['file', 'console'],
+            'handlers': ['console','file'],
             'level': config("DJANGO_LOG_LEVEL", default="ERROR")
         },
     },

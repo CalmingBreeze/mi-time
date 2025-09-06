@@ -116,7 +116,7 @@ def stripe_webhook(request):
                 gift_email = EmailMessage(
                     subject = "Mi-Time.fr, votre carte cadeau en pdf",
                     body = "Merci pour votre commande. Veuillez trouver ci-joint votre carte cadeau en format imprimable./n/nBelle Journée.",
-                    to = customer_email
+                    to = [customer_email]
                 )
                 gift_email.attach_file(gift_filepath, 'application/pdf')
                 print("Email de la carte cadeau :", gift_email.send())
