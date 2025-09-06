@@ -273,20 +273,32 @@ CKEDITOR_5_CUSTOM_CSS = 'admin/css/darkmode_fix.css'
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
-    'handlers': {
-        'console': {
-            'class': 'logging.StreamHandler',
+    'formatters': {
+        'verbose': {
+            'format': '{levelname} {asctime} {module} {message}',
+            'style': '{',
         },
-        'file': {
-            'level': config("DJANGO_LOG_LEVEL", default="ERROR"),
-            'class': 'logging.FileHandler',
-            'filename': 'debug.log',
+        'simple': {
+            'format': '{levelname} {message}',
+            'style': '{',
         },
     },
+    'handlers': {
+        'file': {
+            'level': 'DEBUG',
+            'class': 'logging.FileHandler',
+            'filename': 'debug.log',
+            'formatter': 'verbose',
+        },
+    },
+    'root': {
+        'handlers': ['file'],
+        'level': 'DEBUG',
+    },
     'loggers': {
-        'django': {
-            'handlers': ['console','file'],
-            'level': config("DJANGO_LOG_LEVEL", default="ERROR")
+        '': {
+            'handlers': ['file'],
+            'level': 'DEBUG',
         },
     },
 }
