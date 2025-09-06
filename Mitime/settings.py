@@ -269,3 +269,26 @@ CKEDITOR_5_CONFIGS = {
 # Define a constant in settings.py to specify file upload permissions
 CKEDITOR_5_FILE_UPLOAD_PERMISSION = "staff"  # Possible values: "staff", "authenticated", "any"
 CKEDITOR_5_CUSTOM_CSS = 'admin/css/darkmode_fix.css'
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'console': {
+            'level': config("DJANGO_LOG_LEVEL", default="ERROR"),
+            'class': 'logging.StreamHandler',
+        },
+        'file': {
+            'level': config("DJANGO_LOG_LEVEL", default="ERROR"),
+            'class': 'logging.FileHandler',
+            'filename': 'debug.log',
+            'formatter': 'verbose',
+        },
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['file', 'console'],
+            'level': config("DJANGO_LOG_LEVEL", default="ERROR")
+        },
+    },
+}
