@@ -79,7 +79,7 @@ def format_mobile_number(val, style):
             separator = "."
             return "".join(val[0:2]+separator+val[2:4]+separator+val[4:6]+separator+val[6:8]+separator+val[8:10])
         case "spaced":
-            separator = " "
+            separator = u'\xa0'
             return "".join(val[0:2]+separator+val[2:4]+separator+val[4:6]+separator+val[6:8]+separator+val[8:10])
         case "i18n":
             return "+33"+val[1:]

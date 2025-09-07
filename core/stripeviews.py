@@ -106,21 +106,36 @@ def stripe_webhook(request):
             except stripe.error.SignatureVerificationError as e:
                 # Invalid signature
                 return HttpResponse(status=400)
+            
+
+            from django.template.loader import render_to_string
+            from django.utils.html import strip_tags
+            template_name = "core/mail/giftcard.html"
+            context = {"site_url" : "www.mi-time.fr", "phone_number" : "0783390680", "email": settings.DEFAULT_FROM_EMAIL}
+            
+            convert_to_html_content =  render_to_string(
+                template_name=template_name,
+                context=context
+            )
+            plain_message = strip_tags(convert_to_html_content)
 
             #email the gift card
             from_email = settings.DEFAULT_FROM_EMAIL
             to = customer_email
-            subject = "Mi-Time.fr, votre carte cadeau en pdf",
-            text_content = "Merci pour votre commande. Veuillez trouver ci-joint votre carte cadeau en format imprimable. Belle Journée."
-            html_content = "Merci pour votre commande.<br>Veuillez trouver ci-joint votre carte cadeau en format imprimable.<br><br>Belle Journée."
+            subject = "Mi-Time.fr, votre carte cadeau en pdf"
+            text_content = plain_message
+            html_content = convert_to_html_content
             msg = EmailMultiAlternatives(subject, text_content, from_email, [to])
             msg.attach_alternative(html_content, "text/html")
             #generate filled pdf with the data
             try:
                 gift_filepath = generate_giftcard((metadata["gift_label"],event2["code"],new_coupon_expires_at.strftime('%d/%m/%Y')))
-                msg.attach_file(gift_filepath, 'application/pdf')
+            except Exception as e:
+                logger.error("Giftcard : PDF-GEN Error : %s", e)
+            msg.attach_file(gift_filepath, 'application/pdf')
+            try:
                 msg.send()
             except Exception as e:
-                logger.error("Giftcard PDF GEN Error : %s", e)
+                logger.error("Giftcard : Send Error : %s", e)
             
     return HttpResponse(status=200)

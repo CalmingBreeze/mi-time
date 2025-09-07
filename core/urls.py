@@ -16,6 +16,8 @@ urlpatterns = [
     path("", views.home, name="home"),
     path("robots.txt", views.robots, name="robots"),
 
+    # path("testgcmail", views.testgcmail, name="testgcmail"),
+
     #stripe related
     path('annulation/', CancelView.as_view(), name='cancel'),
     path('confirmation/', SuccessView.as_view(), name='success'),

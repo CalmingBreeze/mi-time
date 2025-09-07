@@ -22,6 +22,10 @@ def err401_view(request, exception):
 def err400_view(request, exception):
     return render(request, "core/error.html", {"request" : request, "exception": "400", "error_msg": "Bad Request"})
 
+# def testgcmail(request):
+#     context = {"site_url" : "www.mi-time.fr", "phone_number" : "0783390680", "email": "reservation@mi-time.fr"}
+#     return render(request, "core/mail/giftcard.html", context)
+
 def home(request):
     practices = Practice.objects.order_by("pub_date")
     massages = Massage.objects.order_by("priority", "-duration")
