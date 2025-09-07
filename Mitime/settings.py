@@ -45,6 +45,9 @@ EMAIL_USE_SSL = config("EMAIL_USE_SSL", default=False, cast=bool)
 # EMAIL_SSL_KEYFILE = config("EMAIL_SSL_KEYFILE")
 # EMAIL_SSL_CERTFILE = config("EMAIL_SSL_CERTFILE")
 
+# EMAIL_BACKEND = config("EMAIL_BACKEND", default="django.core.mail.backends.smtp.EmailBackend")
+# EMAIL_FILE_PATH = config("EMAIL_FILE_PATH", default="./mails/")
+
 ALLOWED_HOSTS = ["localhost", "127.0.0.1", ".mi-time.fr"]
 
 #SSL Force

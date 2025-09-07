@@ -57,7 +57,6 @@ def giftcardBySlug(request, giftcard_slug):
     context = {"product" : product, "product_model" : product_model.model}
     return render(request, "core/giftcard_full.html", context)
 
-
 def practices(request):
     practices = Practice.objects.order_by("pub_date")
     page = Page.objects.filter(custom_viewname = "practices").first()
