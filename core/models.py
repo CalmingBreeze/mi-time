@@ -83,7 +83,7 @@ class GiftCard(AbstractProduct):
         verbose_name = npgettext_lazy("Model Class Name", "Gift card", "Gift Cards", 1)
         verbose_name_plural = npgettext_lazy("Model Class Name", "Gift card", "Gift Cards", 2)
     
-    gift_label =  models.CharField(max_length=100, blank=True, null=True, help_text=pgettext_lazy("Model Field", "Gift label on the giftcard"))
+    gift_label =  models.CharField(max_length=100, null=False, help_text=pgettext_lazy("Model Field", "Gift label on the giftcard"))
     duration = models.DurationField(help_text=pgettext_lazy("Model Field", "Duration of the gifted Massage (HH:MM:SS)"), default=datetime.timedelta(hours=1))
     stripe_coupon_id = models.CharField(max_length=100, blank=True, null=True, help_text=pgettext_lazy("Model Field", "Stripe Coupon id of the gift card"))
     
