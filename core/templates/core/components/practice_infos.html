@@ -4,7 +4,11 @@
     <!--<p><span class="icon solid fa-location-dot iconified">{{main_practice.address.getFormatedAddress}}</span></p>-->
     {% translate "Our location" context "Practice map block" as default_title %}
     <h{{h_val|default:"2"}}>{{section_title|default:default_title}}</h{{h_val|default:"2"}}>
-    
+    {% if practice_object.text2 %}
+    <div class="richtext">
+        {{practice_object.text2|safe}}
+    </div>
+    {% endif %}
     <div class="openings-and-map">
         <table class="openings">
             <thead>
@@ -69,3 +73,11 @@
         <iframe class="bordered" width="748" height="410" load="lazy" allowfullscreen src="https://www.google.com/maps/embed/v1/place?q=place_id:{{practice_object.address.place_id|default:'ChIJsZ3dJQevthIRAuiUKHRWh60'}}&key={{gmap_api_key}}"></iframe>
     </div>
 </section>
+{% if practice_object.text3 %}
+<section>
+    <h{{h_val|default:"2"}}></h>{% translate "Nearby amenities" context "Practice detail block" %}</h{{h_val|default:"2"}}>
+        <div class="richtext">
+            {{practice_object.text3|safe}}
+        </div>
+</section>
+{% endif %}
