@@ -50,7 +50,7 @@ def privilege(request, page_slug):
 
 def giftcards(request):
     page = Page.objects.filter(custom_viewname = "giftcards").first()
-    giftcards = GiftCard.objects.order_by("pub_date")
+    giftcards = GiftCard.objects.order_by("priority", "-duration")
     context = {"page" : page, "giftcards" : giftcards}
     return render(request, "core/giftcard_list.html", context)
 

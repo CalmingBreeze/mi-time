@@ -275,7 +275,7 @@ class Page(models.Model):
     custom_viewname = models.CharField(max_length=100, null=True, blank=True, help_text=pgettext_lazy("Model Field", "Link custom view to its meta datas"))
     menu_position = models.SmallIntegerField(null=True, blank=True, help_text=pgettext_lazy("Model Field", "Position of the item in the menu (empties won't be displayed)"))
     footer_position = models.SmallIntegerField(null=True, blank=True, help_text=pgettext_lazy("Model Field", "Position of the item in footer links section (empties won't be displayed)"))
-    slug = models.SlugField(max_length=100, null=False, unique=True, help_text=pgettext_lazy("Model Field", "SEO Url Normalization"))
+    slug = models.SlugField(max_length=100, null=True, blank=True, unique=True, help_text=pgettext_lazy("Model Field", "SEO Url Normalization"))
 
     def __str__(self):
         return str(self.name)
