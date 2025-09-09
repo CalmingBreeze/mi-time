@@ -277,6 +277,7 @@ class Page(models.Model):
     text2 = CKEditor5Field('Text', config_name='extends', blank=True, help_text=pgettext_lazy("Model Field", "Additionnal content of the page"))
     text3 = CKEditor5Field('Text', config_name='extends', blank=True, help_text=pgettext_lazy("Model Field", "Additionnal content of the page"))
     custom_viewname = models.CharField(max_length=100, null=True, blank=True, help_text=pgettext_lazy("Model Field", "Link custom view to its meta datas"))
+    legal_page = models.BooleanField(default=False, help_text=pgettext_lazy("Model Field", "Page legaly required ? (displayed under the footer)"))
     menu_position = models.SmallIntegerField(null=True, blank=True, help_text=pgettext_lazy("Model Field", "Position of the item in the menu (empties won't be displayed)"))
     footer_position = models.SmallIntegerField(null=True, blank=True, help_text=pgettext_lazy("Model Field", "Position of the item in footer links section (empties won't be displayed)"))
     slug = models.SlugField(max_length=100, null=True, blank=True, unique=True, help_text=pgettext_lazy("Model Field", "SEO Url Normalization"))

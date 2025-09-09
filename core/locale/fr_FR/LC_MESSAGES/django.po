@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-09-08 23:31+0200\n"
+"POT-Creation-Date: 2025-09-09 16:58+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -238,7 +238,7 @@ msgctxt "Model Field"
 msgid "Google Site url"
 msgstr "Url du Google Site"
 
-#: .\core\models.py:192 .\core\models.py:282
+#: .\core\models.py:192 .\core\models.py:283
 msgctxt "Model Field"
 msgid "SEO Url Normalization"
 msgstr "Url finale (SEO)"
@@ -278,104 +278,109 @@ msgstr "Lien vers une vue personnalisée"
 
 #: .\core\models.py:280
 msgctxt "Model Field"
+msgid "Page legaly required ? (displayed under the footer)"
+msgstr "Page de mentions légale ? (Sera affichée sous le footer)"
+
+#: .\core\models.py:281
+msgctxt "Model Field"
 msgid "Position of the item in the menu (empties won't be displayed)"
 msgstr "Ordre des pages dans le menu (si vide, n'apparaîtra pas)"
 
-#: .\core\models.py:281
+#: .\core\models.py:282
 msgctxt "Model Field"
 msgid ""
 "Position of the item in footer links section (empties won't be displayed)"
 msgstr "Ordre des pages dans le menu (si vide, n'apparaîtra pas)"
 
-#: .\core\models.py:297 .\core\models.py:298
+#: .\core\models.py:298 .\core\models.py:299
 msgctxt "Model Class Name"
 msgid "Global Site Config"
 msgid_plural "Global Site Configs"
 msgstr[0] "Configurations globales"
 msgstr[1] "Configurations globales"
 
-#: .\core\models.py:302
+#: .\core\models.py:303
 msgctxt "Model Field"
 msgid "Email visible on the website"
 msgstr "Email principal du site"
 
-#: .\core\models.py:303
+#: .\core\models.py:304
 msgctxt "Model Field"
 msgid "Main Mobile number visible on the website"
 msgstr "Numéro de mobile dans le bandeau supérieur"
 
-#: .\core\models.py:304
+#: .\core\models.py:305
 msgctxt "Model Field"
 msgid "Opening time text in header"
 msgstr "Heure d'ouverture dans le bandeau supérieur"
 
-#: .\core\models.py:305
+#: .\core\models.py:306
 msgctxt "Model Field"
 msgid "Title of the about block in footer"
 msgstr "Titre du bloc à propos du footer"
 
-#: .\core\models.py:306
+#: .\core\models.py:307
 msgctxt "Model Field"
 msgid "Content of the about block in footer"
 msgstr "Contenu du bloc à propos du footer"
 
-#: .\core\models.py:307
+#: .\core\models.py:308
 msgctxt "Model Field"
 msgid "Facebook Account"
 msgstr "Compte Facebook"
 
-#: .\core\models.py:308
+#: .\core\models.py:309
 msgctxt "Model Field"
 msgid "Instagram Account"
 msgstr "Compte Instagram"
 
-#: .\core\models.py:309
+#: .\core\models.py:310
 msgctxt "Model Field"
 msgid "Copyright content in the footer"
 msgstr "Text de copyright dans le pied de page"
 
-#: .\core\models.py:310
+#: .\core\models.py:311
 msgctxt "Model Field"
 msgid "Design credit content in the footer"
 msgstr "Mentions du créateur du design du site"
 
-#: .\core\models.py:311
+#: .\core\models.py:312
 msgctxt "Model Field"
 msgid "An Image displayed when the original is not found"
 msgstr "Une image affichée lorsque l'originale n'existe pas"
 
-#: .\core\models.py:312
+#: .\core\models.py:313
 msgctxt "Model Field"
 msgid "Content of robots.txt"
 msgstr "Contenu de robots.txt"
 
-#: .\core\templates\core\components\base.html:69
+#: .\core\templates\core\components\base.html:87
 msgctxt "Header"
 msgid "Book now"
 msgstr "<span class=\"responsivehide\">Prendre </span>RDV"
 
-#: .\core\templates\core\components\base.html:73
+#: .\core\templates\core\components\base.html:91
 msgctxt "Header"
 msgid "Menu"
 msgstr "Menu"
 
-#: .\core\templates\core\components\base.html:91
-#: .\core\templates\core\components\base.html:131
+#: .\core\templates\core\components\base.html:109
+#: .\core\templates\core\components\base.html:149
 msgctxt "Menu link"
 msgid "Practice"
-msgstr "Salon"
+msgstr "Le Salon"
 
-#: .\core\templates\core\components\base.html:124
+#: .\core\templates\core\components\base.html:142
 msgctxt "Footer"
 msgid "Links"
 msgstr "Navigation"
 
-#: .\core\templates\core\components\base.html:139
+#: .\core\templates\core\components\base.html:157
 msgctxt "Menu link"
 msgid "Book an appointment"
 msgstr "Prendre rendez-vous"
 
-#: .\core\templates\core\components\base.html:143
+#: .\core\templates\core\components\base.html:161
 msgctxt "Footer"
 msgid "Informations"
 msgstr "Informations"

@@ -40,6 +40,24 @@
 
         <link rel="manifest" href="site.webmanifest">
         <meta name="theme-color" content="#fafafa">
+
+        <!--script type="application/ld+json">
+        {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Mi'Time",
+        "description": "Massage",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "186 Place Jacques Mirouze",
+            "addressLocality": "Montpellier",
+            "addressRegion": "",
+            "postalCode": "34000"
+        },
+        "telephone": "0783390680",
+        "url": "https://www.mi-time.fr/"
+        }
+        </script-->
     </head>
     <body>
         <div id="wrapper">
@@ -148,7 +166,16 @@
                         </ul>
                     </section>
                     <ul class="copyright">
-                        <li>{{siteconfig.copyright|default:"© 2025"}}</li><li>{{siteconfig.design|safe}}</li>
+                        <li>{{siteconfig.copyright|default:"© 2025"}}</li>
+                        <li>{{siteconfig.design|safe}}</li>
+                        {% for page in legal_links %}
+                            <li><a href="{% url 'page' page_slug=page.slug %}">{{page.name}}</a></li>
+                        {% endfor %}
+                        <!--
+                        <li><a href="{% url 'page' page_slug='cgv' %}">CGV</a></li>
+                        <li><a href="{% url 'page' page_slug='mentions-legales' %}">Mentions-légales</a></li>
+                        <li><a href="{% url 'page' page_slug='confidentialite' %}">RPGD</a></li>
+                        -->
                     </ul>
                     {% endblock %}
                 </div>
