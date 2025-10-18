@@ -1,0 +1,16 @@
+{% extends "core/mail/base.html" %}        
+
+{% load static %}
+{% load core_extras %}
+
+{% block content %} 
+  <div style="font-family: 'Montserrat',sans-serif; font-size: 16px; color: #9e7f5e; line-height: 150%; text-align: justify; word-wrap: break-word;">
+    <p style="line-height: 150%;">&nbsp;</p>
+    <p style="line-height: 150%;"><span style="color: rgb(158, 127, 94); line-height: 24px;">Une nouvelle commande vient d'&ecirc;tre valid&eacute;e !</span></p>
+    <p style="line-height: 150%;">&nbsp;</p>
+    <p style="line-height: 150%;"><span style="color: rgb(158, 127, 94); line-height: 24px;">Client: {{customer_name}} </span></p>
+    <p style="line-height: 150%;"><span style="color: rgb(158, 127, 94); line-height: 24px;">Email: {{customer_email}} </span></p>
+    <p style="line-height: 150%;"><span style="color: rgb(158, 127, 94); line-height: 24px;">Id stripe (payment): {{stripe_payment_id}} </span></p>
+    <p style="line-height: 150%;">&nbsp;</p>
+  </div>
+{% endblock %} 

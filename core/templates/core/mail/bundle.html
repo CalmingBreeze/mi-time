@@ -1,0 +1,10 @@
+{% extends "core/mail/new_order_client_confirm.html" %}        
+{% load static %}
+{% load core_extras %}
+
+{% block orderconfirmmsg %}
+    <p style="line-height: 150%;"><span style="color: rgb(158, 127, 94); line-height: 24px;">Je vous remercie d'avoir achet&eacute; un forfait massage.<br><br></span></p>
+    <p style="line-height: 150%;"><span style="color: rgb(158, 127, 94); line-height: 24px;"><span style="text-decoration: underline; line-height: 24px;">Rappel</span><span style="line-height: 24px;"> :</span> Afin d'utiliser votre forfait, contactez moi par t&eacute;l&eacute;phone au {{phone_number|phone_format:'spaced'}} pour choisir le massage et le cr&eacute;neau horaire de votre choix.<br></span></p>
+    <p style="line-height: 150%;">&nbsp;</p>
+    <p style="line-height: 150%;"><span style="color: rgb(158, 127, 94); line-height: 24px;">Les d&eacute;tails des massages disponibles dans la carte peuvent &ecirc;tre consult&eacute;s sur <a rel="noopener" href="https://{{site_url}}/massages/" target="_blank" style="color: rgb(158, 127, 94);">{{site_url}}</a></span></p>
+{% endblock %}

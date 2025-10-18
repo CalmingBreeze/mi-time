@@ -34,8 +34,14 @@ STRIPE_PUBLIC_KEY = config("STRIPE_PUBLIC_KEY")
 STRIPE_SECRET_KEY = config("STRIPE_SECRET_KEY")
 STRIPE_WEBHOOK_SECRET = config("STRIPE_WEBHOOK_SECRET")
 
+
+
+# Email Global
+EMAIL_BACKEND = config("EMAIL_BACKEND", default="django.core.mail.backends.smtp.EmailBackend")
+# Where to save dev file emails
+EMAIL_FILE_PATH = config("EMAIL_FILE_PATH", default="../mails/")
+
 #gmail workspace
-DEFAULT_FROM_EMAIL = config("DEFAULT_FROM_EMAIL")
 EMAIL_HOST = config("EMAIL_HOST")
 EMAIL_PORT= config("EMAIL_PORT")
 EMAIL_HOST_USER = config("EMAIL_HOST_USER")
@@ -45,8 +51,8 @@ EMAIL_USE_SSL = config("EMAIL_USE_SSL", default=False, cast=bool)
 # EMAIL_SSL_KEYFILE = config("EMAIL_SSL_KEYFILE")
 # EMAIL_SSL_CERTFILE = config("EMAIL_SSL_CERTFILE")
 
-# EMAIL_BACKEND = config("EMAIL_BACKEND", default="django.core.mail.backends.smtp.EmailBackend")
-# EMAIL_FILE_PATH = config("EMAIL_FILE_PATH", default="./mails/")
+# admin sender
+DEFAULT_FROM_EMAIL = config("DEFAULT_FROM_EMAIL")
 
 ALLOWED_HOSTS = ["localhost", "127.0.0.1", ".mi-time.fr"]
 

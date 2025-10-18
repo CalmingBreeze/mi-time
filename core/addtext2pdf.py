@@ -1,3 +1,9 @@
+"""
+
+Class AddTextToPdf superpose text on existing pdf to fill pdf and especially giftcards
+
+Dependencies : PyPODF2, reportlab
+"""
 from PyPDF2 import PdfWriter, PdfReader
 import io
 from reportlab.pdfgen import canvas
@@ -24,6 +30,13 @@ class AddTextToPDF:
 
     # Fill the blank pdf file with the infos provided
     def buildGiftcard(self, gift_name, code, expires_at):
+        """
+
+        Only work with defined pdf from mitime gift
+
+        Coords are bottom left based ? fixed positions
+
+        """
         gift_name_coords = (255, 344)
         code_coords = (225, 283)
         expires_at_coords = (310, 252)

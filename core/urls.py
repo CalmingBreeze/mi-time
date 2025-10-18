@@ -24,6 +24,9 @@ urlpatterns = [
     path('create-checkout-session/<model_name>/<int:product_id>', CreateCheckoutSessionView.as_view(), name='create-checkout-session'),
     path('webhooks/stripe/', stripe_webhook, name='stripe-webhook'),
 
+    path("forfaits/", views.bundles, name="bundles"),
+    path("forfaits/<slug:bundle_slug>/", views.bundleBySlug, name="bundle"),
+
     #pdf-gen
     # do not forget to import the view to test
     # path('generate-giftcard/', GenerateGifcard.as_view() , name='generate-giftcard'),

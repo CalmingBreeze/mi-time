@@ -20,6 +20,8 @@
             <a href="{% url 'massage' massage_slug=product.slug %}">
             {% elif product_type == 'giftcard' %}
             <a href="{% url 'giftcard' giftcard_slug=product.slug %}">
+            {% elif product_type == 'bundle' %}
+            <a href="{% url 'bundle' bundle_slug=product.slug %}">
             {% endif %}
                 <span class="title">
                     <h{{h_val|default:"2"|add:"1"}}>{{product.tile_label|default:product.name}}</h{{h_val|default:"2"|add:"1"}}>

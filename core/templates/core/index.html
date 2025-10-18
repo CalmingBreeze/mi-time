@@ -1,13 +1,12 @@
 {% extends "core/components/base.html" %}
+{% load static %}
+{% load i18n %}
 
 {% block meta_title %}{{page.meta_title}}{% endblock %}
 {% block meta_description %}{{page.meta_description}}{% endblock %}
 {% block meta_keywords %}{{page.meta_keywords}}{% endblock %}
 
 {% block content %}
-    {% load static %}
-    {% load i18n %}
-
     {% translate "Our available massages" context "Main page" as main_title %}
     {% include "core/components/product_tiles.html" with section_title=main_title h_val=1 product=massages products=massages product_type="massage" %}
 

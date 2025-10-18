@@ -5,6 +5,7 @@ from django.contrib import admin
 from .models import SiteConfig
 from .models import Page
 from .models import GiftCard
+from .models import Bundle
 from .models import Massage
 from .models import Practice
 from .models import Address
@@ -19,6 +20,7 @@ class MitimeAdmin(admin.AdminSite):
             'Openings',
             'Massage',
             'GiftCard',
+            'Bundle',
             'Page',
             'SiteConfig'
         )),
@@ -73,6 +75,10 @@ admin_site.register(Page, PageAdmin)
 class GiftcardAdmin(admin.ModelAdmin):
     prepopulated_fields = {"slug" : ("name",), "meta_title" : ("name",)}
 admin_site.register(GiftCard, GiftcardAdmin)
+
+class BundleAdmin(admin.ModelAdmin):
+    prepopulated_fields = {"slug" : ("name",), "meta_title" : ("name",)}
+admin_site.register(Bundle, BundleAdmin)
 
 class MassageAdmin(admin.ModelAdmin):
     prepopulated_fields = {"slug" : ("name",), "meta_title" : ("name",)}

@@ -8,6 +8,7 @@ from .models import Page
 from .models import SiteConfig
 from django.contrib.contenttypes.models import ContentType
 from .models import GiftCard
+from .models import Bundle
 
 
 # Handle custom error views
@@ -47,6 +48,19 @@ def privilege(request, page_slug):
     page = get_object_or_404(Page, slug=page_slug)
     context = {"page" : page}
     return render(request, "core/privilege.html", context)
+
+def bundles(request):
+    page = Page.objects.filter(custom_viewname = "bundles").first()
+    bundles = Bundle.objects.order_by("priority", "-duration")
+    context = {"page" : page, "bundles" : bundles}
+    return render(request, "core/bundle_list.html", context)
+
+def bundleBySlug(request, bundle_slug):
+    product = get_object_or_404(Bundle, slug=bundle_slug)
+    product_model = ContentType.objects.get_for_model(product)
+    #pass model name using ContentType.model
+    context = {"product" : product, "product_model" : product_model.model}
+    return render(request, "core/bundle_full.html", context)
 
 def giftcards(request):
     page = Page.objects.filter(custom_viewname = "giftcards").first()

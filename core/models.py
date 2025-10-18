@@ -89,6 +89,16 @@ class GiftCard(AbstractProduct):
     
     def get_absolute_url(self):
         return reverse("giftcard", kwargs={"giftcard_slug": self.slug})
+    
+class Bundle(AbstractProduct):
+    class Meta:
+        verbose_name = npgettext_lazy("Model Class Name", "Bundle", "Bundles", 1)
+        verbose_name_plural = npgettext_lazy("Model Class Name", "Bundle", "Bundles", 2)
+    
+    duration = models.DurationField(help_text=pgettext_lazy("Model Field", "Total massage credit duration of the bundle"), default=datetime.timedelta(hours=3))
+    
+    def get_absolute_url(self):
+        return reverse("bundle", kwargs={"bundle_slug": self.slug})
 
 class Address(models.Model):
     class Meta:
