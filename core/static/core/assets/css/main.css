@@ -2262,6 +2262,7 @@ button:disabled,
   border: 1px solid #F9DEB2;
   position: relative;
   padding: 0.2em 1.2em 1.2em;
+  top: 30%;
 }
 .tiles article a .title h2, .tiles article a .title h3, .tiles article a .title h4 {
   text-decoration: none;

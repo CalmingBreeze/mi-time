@@ -29,7 +29,7 @@ class AbstractProduct(models.Model):
     tile_thumbnail = ImageSpecField(source='cover',
                                       processors=[ResizeToFill(353, 326)],
                                       format='JPEG',
-                                      options={'quality': 60})
+                                      options={'quality': 90})
     priority = models.PositiveIntegerField(default=1,help_text=pgettext_lazy("Model Field", "Order index when listing, 1 is first, X last"))
     highlighted = models.BooleanField(default=False, help_text=pgettext_lazy("Model Field", "Different tile background color when listed"))
     text1 = CKEditor5Field('Text', config_name='extends')
