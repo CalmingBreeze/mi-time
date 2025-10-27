@@ -30,13 +30,13 @@ SELECT id, name, stripe_product_id, stripe_price_id FROM core_bundle;
 */
 
 UPDATE core_bundle SET 
-    stripe_product_id = 'prod_TF1rLpPHDftiWe',
-    stripe_price_id = 'price_1SIXnQDFgcrRu1lOvkjb5pkR' WHERE name = 'Forfait 10H';
+    stripe_product_id = 'prod_TF3BPyqDnT33bj',
+    stripe_price_id = 'price_1SIZ5KIBHqwpYiZwxNnQfDuy' WHERE name = 'Forfait 10H';
 
 UPDATE core_bundle SET 
-    stripe_product_id = 'prod_TF1qleOU7bqeDB',
-    stripe_price_id = 'price_1SIXn3DFgcrRu1lO0owoNWiE' WHERE name = 'Forfait 5H';
+    stripe_product_id = 'prod_TF3Cvru0cFqY9e',
+    stripe_price_id = 'price_1SIZ6NIBHqwpYiZwnBPvbKEK' WHERE name = 'Forfait 5H';
 
 UPDATE core_bundle SET 
-    stripe_product_id = 'prod_TF1pEi3BTVEq4t',
-    stripe_price_id = 'price_1SIXmBDFgcrRu1lOwnZxBzxB' WHERE name = 'Forfait 3H';
+    stripe_product_id = 'prod_TF3DMfXNoVlsSi',
+    stripe_price_id = 'price_1SIZ6oIBHqwpYiZwjBCOgdDQ' WHERE name = 'Forfait 3H';
