@@ -7,7 +7,7 @@ from . import views
 from .stripeviews import CreateCheckoutSessionView, SuccessView, CancelView, stripe_webhook
 
 from django.contrib.sitemaps.views import sitemap
-from core.sitemap import StaticViewSitemap, PracticeSitemap, MassageSitemap, GiftCardSitemap, PageSitemap
+from core.sitemap import StaticViewSitemap, PracticeSitemap, MassageSitemap, GiftCardSitemap, BundleSitemap, PageSitemap
 from core.admin import admin_site
 
 from django.http import Http404
@@ -55,7 +55,7 @@ urlpatterns += [
     path(
         "sitemap.xml",
         sitemap,
-        {"sitemaps": {'statics': StaticViewSitemap, 'massages' : MassageSitemap, 'practices' : PracticeSitemap, 'giftcards' : GiftCardSitemap, 'pages' : PageSitemap}},
+        {"sitemaps": {'statics': StaticViewSitemap, 'massages' : MassageSitemap, 'practices' : PracticeSitemap, 'giftcards' : GiftCardSitemap, 'bundles' : BundleSitemap, 'pages' : PageSitemap}},
         name="django.contrib.sitemaps.views.sitemap",
     )
 ]
