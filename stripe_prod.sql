@@ -6,24 +6,24 @@ SELECT id, name, stripe_product_id, stripe_price_id, stripe_coupon_id FROM core_
 */
 
 UPDATE core_giftcard SET 
-    stripe_product_id = 'prod_T1DippNT0JjXtp',
-    stripe_price_id = 'price_1S5BGhDFgcrRu1lO3vDIFifl',
-    stripe_coupon_id = 'cOELndEv' WHERE name = 'Carte Cadeau 1h30';
+    stripe_product_id = 'prod_TF36nE9Lquh4rT',
+    stripe_price_id = 'price_1SIZ0FIBHqwpYiZwOEVtAkog',
+    stripe_coupon_id = 'eUWW1lYt' WHERE name = 'Carte Cadeau 1h30';
 
 UPDATE core_giftcard SET 
-    stripe_product_id = 'prod_T1DibPWV9094pF',
-    stripe_price_id = 'price_1S5BGkDFgcrRu1lOmpIxflFo',
-    stripe_coupon_id = 'EyEMvx2G' WHERE name = 'Carte Cadeau 1h';
+    stripe_product_id = 'prod_TF379nRt48UQ0C',
+    stripe_price_id = 'price_1SIZ12IBHqwpYiZwPLqWbIS9',
+    stripe_coupon_id = 'zZFx9gCU' WHERE name = 'Carte Cadeau 1h';
 
 UPDATE core_giftcard SET 
-    stripe_product_id = 'prod_T1Di6hClHmZnir',
-    stripe_price_id = 'price_1S5BGfDFgcrRu1lOpUhwA6i0',
-    stripe_coupon_id = 'k7UbKZZb' WHERE name = 'Carte Cadeau 45min';
+    stripe_product_id = 'prod_TF38FMQN0nFoaB',
+    stripe_price_id = 'price_1SIZ2IIBHqwpYiZweXsWptgt',
+    stripe_coupon_id = 'xyK9FjbR' WHERE name = 'Carte Cadeau 45min';
 
 UPDATE core_giftcard SET 
-    stripe_product_id = 'prod_T1DhTJuvbXIxo4',
-    stripe_price_id = 'price_1S5BGfDFgcrRu1lOpUhwA6i0',
-    stripe_coupon_id = 'LqzERQx3' WHERE name = 'Carte Cadeau 30min';
+    stripe_product_id = 'prod_TF39rF5ssnRX1s',
+    stripe_price_id = 'price_1SIZ3CIBHqwpYiZwmBO0a0LH',
+    stripe_coupon_id = 'ixMsZBos' WHERE name = 'Carte Cadeau 30min';
 
 /* Select all Bundles
 SELECT id, name, stripe_product_id, stripe_price_id FROM core_bundle;
