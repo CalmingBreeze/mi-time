@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-10-18 14:51+0200\n"
+"POT-Creation-Date: 2025-11-03 11:14+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -387,22 +387,32 @@ msgid "Menu"
 msgstr ""
 
 #: .\core\templates\core\components\base.html:109
-#: .\core\templates\core\components\base.html:149
+#: .\core\templates\core\components\base.html:153
 msgctxt "Menu link"
 msgid "Practice"
 msgstr ""
 
-#: .\core\templates\core\components\base.html:142
+#: .\core\templates\core\components\base.html:118
+msgctxt "Menu link"
+msgid "Find us"
+msgstr ""
+
+#: .\core\templates\core\components\base.html:120
+msgctxt "Menu link"
+msgid "Contact us"
+msgstr ""
+
+#: .\core\templates\core\components\base.html:146
 msgctxt "Footer"
 msgid "Links"
 msgstr ""
 
-#: .\core\templates\core\components\base.html:157
+#: .\core\templates\core\components\base.html:161
 msgctxt "Menu link"
 msgid "Book an appointment"
 msgstr ""
 
-#: .\core\templates\core\components\base.html:161
+#: .\core\templates\core\components\base.html:165
 msgctxt "Footer"
 msgid "Informations"
 msgstr ""
@@ -414,7 +424,7 @@ msgstr ""
 
 #: .\core\templates\core\components\practice_infos.html:5
 msgctxt "Practice map block"
-msgid "Our location"
+msgid "Practical Informations"
 msgstr ""
 
 #: .\core\templates\core\components\practice_infos.html:17
@@ -431,7 +441,7 @@ msgstr ""
 
 #: .\core\templates\core\components\practice_infos.html:78
 msgctxt "Practice detail block"
-msgid "Nearby amenities"
+msgid "Directions"
 msgstr ""
 
 #: .\core\templates\core\components\practice_openings.html:3

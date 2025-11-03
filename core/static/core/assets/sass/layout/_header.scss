@@ -6,6 +6,15 @@
 @use "sass:color";
 
 /* Header */
+    html {
+        // scroll-padding-top: 100px;
+        scroll-padding-top: 7em;
+
+        @include breakpoint('<=small') {
+            // scroll-padding-top: 70px;
+            scroll-padding-top: 5em;
+        }
+    }
 
 	#header {
 		@include padding(5em, 0, (0, 0, -5em, 0));

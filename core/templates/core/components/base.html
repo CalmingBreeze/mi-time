@@ -113,6 +113,10 @@
                             <li><a href="{% url 'page' page_slug=page_item.slug %}">{% translate page_item.name context "Menu link" %}</a></li>
                             {% endif %}
                         {% endfor %}
+                        {%if practices_count == 1 %}
+                            <li><a href="{% url 'practice' practice_slug=first_practice.slug %}#find-us">{% translate 'Find us' context "Menu link" %}</a></li>
+                        {% endif %}
+                        <li><a href="#contact-infos">{% translate 'Contact us' context "Menu link" %}</a></li>
                     {% endblock %}
                 </ul>
             </nav>

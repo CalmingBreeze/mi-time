@@ -2,8 +2,8 @@
 
 <section>
     <!--<p><span class="icon solid fa-location-dot iconified">{{main_practice.address.getFormatedAddress}}</span></p>-->
-    {% translate "Our location" context "Practice map block" as default_title %}
-    <h{{h_val|default:"2"}}>{{section_title|default:default_title}}</h{{h_val|default:"2"}}>
+    {% translate "Practical Informations" context "Practice map block" as default_title %}
+    <h{{h_val|default:"2"}} id="find-us">{{section_title|default:default_title}}</h{{h_val|default:"2"}}>
     {% if practice_object.text2 %}
     <div class="richtext">
         {{practice_object.text2|safe}}
@@ -75,7 +75,7 @@
 </section>
 {% if practice_object.text3 %}
 <section>
-    <h{{h_val|default:"2"}}></h>{% translate "Nearby amenities" context "Practice detail block" %}</h{{h_val|default:"2"}}>
+    <h{{h_val|default:"2"}}></h>{% translate "Directions" context "Practice detail block" %}</h{{h_val|default:"2"}}>
         <div class="richtext">
             {{practice_object.text3|safe}}
         </div>

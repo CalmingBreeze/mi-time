@@ -2359,6 +2359,15 @@ body.is-touch .tiles article .image::before {
 }
 
 /* Header */
+html {
+  scroll-padding-top: 7em;
+}
+@media screen and (max-width: 736px) {
+  html {
+    scroll-padding-top: 5em;
+  }
+}
+
 #header {
   padding: 5em 0 0.1em 0;
   background-color: #0C354D;
