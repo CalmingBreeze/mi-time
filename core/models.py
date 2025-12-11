@@ -4,6 +4,7 @@ from django.urls import reverse
 from django.template.defaultfilters import slugify
 from django.utils.translation import pgettext_lazy, npgettext_lazy
 import datetime
+from django.utils import timezone
 
 from imagekit.models import ImageSpecField
 from imagekit.processors import ResizeToFill
@@ -52,8 +53,17 @@ class AbstractProduct(models.Model):
                                       format='JPEG',
                                       options={'quality': 60})
     
+    promo_name = models.CharField(max_length=100, blank=True, null=True, help_text=pgettext_lazy("Model Field", "Name of the promo displayed on full view"))
+    promo_stripe_coupon_id = models.CharField(max_length=100, blank=True, null=True, help_text=pgettext_lazy("Model Field", "Apply a coupon code to the product checkout, used for recurrent promo"))
+    promo_discounted_price = models.DecimalField(blank=True, null=True, max_digits=7, decimal_places=2, help_text=pgettext_lazy("Model Field", "Discounted price of the product"))
+    promo_start_date = models.DateTimeField(blank=True, null=True, help_text=pgettext_lazy("Model Field", "When the promotion begin"))
+    promo_end_date = models.DateTimeField(blank=True, null=True, help_text=pgettext_lazy("Model Field", "When the promotion end"))
+    
     def __str__(self):
         return str(self.name)
+    
+    def has_valid_discount(self):
+        return self.promo_name and self.promo_stripe_coupon_id and self.promo_start_date < timezone.now() and self.promo_end_date > timezone.now()
     
     def get_display_price(self):
         if self.price % 1 == 0:

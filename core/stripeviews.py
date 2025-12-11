@@ -6,7 +6,7 @@ from django.views.generic.base import TemplateView
 from django.views.decorators.csrf import csrf_exempt
 from django.apps import apps
 from django.shortcuts import redirect
-import datetime
+from datetime import datetime, timezone
 from django.utils import timezone
 from .addtext2pdf import AddTextToPDF
 from django.core.mail import EmailMessage, EmailMultiAlternatives
@@ -38,6 +38,20 @@ class CreateCheckoutSessionView(View):
         domain = "https://www.mi-time.fr"
         if settings.DEBUG:
             domain = "http://127.0.0.1:8000"
+        
+        #handle promotion discount events
+        if product.promo_stripe_coupon_id and product.promo_start_date < timezone.now() and product.promo_end_date > timezone.now():
+            #Promo valid
+            logger.debug(f"Discount code used : {product.promo_stripe_coupon_id}")
+            discountsC=[
+                {
+                    'coupon': product.promo_stripe_coupon_id
+                }
+            ]
+        else:
+            discountsC=[{}]
+
+
         checkout_session = stripe.checkout.Session.create(
             payment_method_types=['card'],
             line_items=[
@@ -48,6 +62,7 @@ class CreateCheckoutSessionView(View):
             ],
             mode='payment',
             # allow_promotion_codes=True,
+            discounts = discountsC,
             success_url=domain + '/confirmation/',
             cancel_url=domain + '/annulation/',
             metadata=product_metadata
@@ -60,7 +75,7 @@ class SuccessView(TemplateView):
 class CancelView(TemplateView):
     template_name = "core/stripe/cancel.html"
 
-def generate_giftcard(text = ('Massage 1H', 'TESTCODE', datetime.datetime.now().strftime('%d/%m/%Y')), pdfbase_path = "./core/static/core/giftcard.pdf", dest_path = "./static/core/pdf/carte-cadeau-"):
+def generate_giftcard(text = ('Massage 1H', 'TESTCODE', datetime.now().strftime('%d/%m/%Y')), pdfbase_path = "./core/static/core/giftcard.pdf", dest_path = "./static/core/pdf/carte-cadeau-"):
     """
 
     This function generate a PDF file with AddTextToPDF class and given infos

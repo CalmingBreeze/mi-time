@@ -26,7 +26,11 @@
                 <span class="title">
                     <h{{h_val|default:"2"|add:"1"}}>{{product.tile_label|default:product.name}}</h{{h_val|default:"2"|add:"1"}}>
                     <span class="icon regular fa-clock">
-                        {{product.duration|duration:'short'}}
+                        {% if product.has_valid_discount %}
+                        {{product.duration|duration:'short'}} — <s>{{product.price|floatformat}}</s> {{product.promo_discounted_price|floatformat}}€
+                        {% else %}
+                        {{product.duration|duration:'short'}} — {{product.price|floatformat}}€
+                        {% endif %}
                     </span>
                 </span>
             </a>

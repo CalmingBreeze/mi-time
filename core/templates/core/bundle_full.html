@@ -17,7 +17,11 @@
             <h1>{{product.name}}</h1>
             <h2>
                 <span class="icon regular fa-clock">
-                    {{product.duration|duration:'short'}} - {{product.get_display_price}}€
+                    {% if product.has_valid_discount %}
+                        {{product.duration|duration:'short'}} — <i class="fa-regular fa-star"></i> {{product.promo_name}} — <s>{{product.price|floatformat}}</s> {{product.promo_discounted_price|floatformat}}€
+                    {% else %}
+                        {{product.duration|duration:'short'}} — {{product.price|floatformat}}€
+                    {% endif %}
                 </span>
             </h2>
         </div>
