@@ -85,7 +85,7 @@ class GiftcardAdmin(admin.ModelAdmin):
             pgettext_lazy("Product Admin Attributes Group Block","Product Detail"),
             {
                 "classes": ["collapse"],
-                "fields": ["text1","img1", "img1_alt", "img2", "img2_alt", "img3", "img3_alt"],
+                "fields": ["price","text1","img1", "img1_alt", "img2", "img2_alt", "img3", "img3_alt"],
                 "description": pgettext_lazy("Product Admin Attributes Group Block","Full view related content. Modify product page content."),
             }
         ),
@@ -145,7 +145,7 @@ class BundleAdmin(admin.ModelAdmin):
             pgettext_lazy("Product Admin Attributes Group Block","Product Detail"),
             {
                 "classes": ["collapse"],
-                "fields": ["text1","img1", "img1_alt", "img2", "img2_alt", "img3", "img3_alt"],
+                "fields": ["price","text1","img1", "img1_alt", "img2", "img2_alt", "img3", "img3_alt"],
                 "description": pgettext_lazy("Product Admin Attributes Group Block","Full view related content. Modify product page content."),
             }
         ),
@@ -205,7 +205,7 @@ class MassageAdmin(admin.ModelAdmin):
             pgettext_lazy("Product Admin Attributes Group Block","Product Detail"),
             {
                 "classes": ["collapse"],
-                "fields": ["text1","img1", "img1_alt", "img2", "img2_alt", "img3", "img3_alt"],
+                "fields": ["price","text1","img1", "img1_alt", "img2", "img2_alt", "img3", "img3_alt"],
                 "description": pgettext_lazy("Product Admin Attributes Group Block","Full view related content. Modify product page content."),
             }
         ),

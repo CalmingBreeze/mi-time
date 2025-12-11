@@ -100,10 +100,10 @@ def massages(request):
     return render(request, "core/massage_list.html", context)
 
 def massageBySlug(request, massage_slug):
-    massage = get_object_or_404(Massage, slug=massage_slug)
+    product = get_object_or_404(Massage, slug=massage_slug)
 
     #get related salon
-    practices = massage.practice_set.all()
+    practices = product.practice_set.all()
 
-    context = {"massage" : massage, "practices" : practices}
+    context = {"product" : product, "practices" : practices}
     return render(request, "core/massage_full.html", context)

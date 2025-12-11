@@ -4,19 +4,19 @@
 {% load static %}
 {% load core_extras %}
 
-{% block meta_title %}{{massage.meta_title}}{% endblock %}
-{% block meta_description %}{{massage.meta_description}}{% endblock %}
-{% block meta_keywords %}{{massage.meta_keywords}}{% endblock %}
+{% block meta_title %}{{product.meta_title}}{% endblock %}
+{% block meta_description %}{{product.meta_description}}{% endblock %}
+{% block meta_keywords %}{{product.meta_keywords}}{% endblock %}
 
 {% block content %}
-    {% if massage %}
+    {% if product %}
     <section id="product-full-description">
         <div class="title-duration-wrapper">
-            <h1>{{massage.name}}</h1>
+            <h1>{{product.name}}</h1>
             <h2>
                 <span class="icon regular fa-clock">
                     {% if product.has_valid_discount %}
-                        {{product.duration|duration:'short'}} — <i class="fa-regular fa-star"></i> {{product.promo_name}} — <s>{{product.price|floatformat}}</s> {{product.promo_discounted_price|floatformat}}€
+                        {{product.duration|duration:'short'}} — {{product.promo_name}} — <s>{{product.price|floatformat}}</s> {{product.promo_discounted_price|floatformat}}€
                     {% else %}
                         {{product.duration|duration:'short'}} — {{product.price|floatformat}}€
                     {% endif %}
@@ -25,14 +25,14 @@
         </div>
         <hr>
         <div class="richtext">
-            {{massage.text1|safe}}
+            {{product.text1|safe}}
         </div>
         {% comment "Not needed for single practice" %}
         <!-- Get practice proposing this massage -->
-        {% if massage.practice_set.count > 0 %}
+        {% if product.practice_set.count > 0 %}
             <p>{% translate "This massage is available at" %} :</p>
             <ul>
-                {% for practice in massage.practice_set.all %}
+                {% for practice in product.practice_set.all %}
                     <li>{{practice}}</li>
                 {% endfor %}
             </ul>
