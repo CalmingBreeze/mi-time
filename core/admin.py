@@ -1,4 +1,5 @@
 from django.contrib import admin
+from django.utils.translation import pgettext_lazy
 
 # Register your models here.
 
@@ -65,7 +66,6 @@ class MitimeAdmin(admin.AdminSite):
         return app_list
 
 admin_site = MitimeAdmin(name="miadmin")
-
 admin_site.register(SiteConfig)
 
 class PageAdmin(admin.ModelAdmin):
@@ -74,14 +74,182 @@ admin_site.register(Page, PageAdmin)
 
 class GiftcardAdmin(admin.ModelAdmin):
     prepopulated_fields = {"slug" : ("name",), "meta_title" : ("name",)}
+    fieldsets = [
+        (
+            None,
+            {
+                "fields": ["name"],
+            },
+        ),
+        (
+            pgettext_lazy("Product Admin Attributes Group Block","Product Detail"),
+            {
+                "classes": ["collapse"],
+                "fields": ["text1","img1", "img1_alt", "img2", "img2_alt", "img3", "img3_alt"],
+                "description": pgettext_lazy("Product Admin Attributes Group Block","Full view related content. Modify product page content."),
+            }
+        ),
+        (
+            pgettext_lazy("Product Admin Attributes Group Block","Tile Detail"),
+            {
+                "classes": ["collapse"],
+                "fields": ["tile_label","cover"],
+                "description": pgettext_lazy("Product Admin Attributes Group Block","Tile view parameters. Modify tiles in list views"),
+            }
+        ),
+        (
+            pgettext_lazy("Product Admin Attributes Group Block","SEO"),
+            {
+                "classes": ["collapse"],
+                "fields": ["slug","meta_title", "meta_description", "meta_Keywords"],
+                "description": pgettext_lazy("Product Admin Attributes Group Block","SEO related parameters"),
+            }
+        ),
+        (
+            pgettext_lazy("Product Admin Attributes Group Block","Giftcard Specifics"),
+            {
+                "classes": ["collapse"],
+                "fields": ["gift_label", "duration", "stripe_coupon_id"],
+                "description": pgettext_lazy("Product Admin Attributes Group Block","Giftcard specifics attributes"),
+            }
+        ),
+        (
+            pgettext_lazy("Product Admin Attributes Group Block","Stripe connection"),
+            {
+                "classes": ["collapse"],
+                "fields": ["stripe_product_id","stripe_price_id"],
+                "description": pgettext_lazy("Product Admin Attributes Group Block","Stripe product pairing parameters"),
+            }
+        ),
+        (
+            pgettext_lazy("Product Admin Attributes Group Block","Promo"),
+            {
+                "classes": ["collapse"],
+                "fields": ["promo_name","promo_stripe_coupon_id", "promo_discounted_price", "promo_start_date", "promo_end_date"],
+                "description": pgettext_lazy("Product Admin Attributes Group Block","Promotion related parameters"),
+            }
+        ),
+    ]
 admin_site.register(GiftCard, GiftcardAdmin)
 
 class BundleAdmin(admin.ModelAdmin):
     prepopulated_fields = {"slug" : ("name",), "meta_title" : ("name",)}
+    fieldsets = [
+        (
+            None,
+            {
+                "fields": ["name"],
+            },
+        ),
+        (
+            pgettext_lazy("Product Admin Attributes Group Block","Product Detail"),
+            {
+                "classes": ["collapse"],
+                "fields": ["text1","img1", "img1_alt", "img2", "img2_alt", "img3", "img3_alt"],
+                "description": pgettext_lazy("Product Admin Attributes Group Block","Full view related content. Modify product page content."),
+            }
+        ),
+        (
+            pgettext_lazy("Product Admin Attributes Group Block","Tile Detail"),
+            {
+                "classes": ["collapse"],
+                "fields": ["tile_label","cover"],
+                "description": pgettext_lazy("Product Admin Attributes Group Block","Tile view parameters. Modify tiles in list views"),
+            }
+        ),
+        (
+            pgettext_lazy("Product Admin Attributes Group Block","SEO"),
+            {
+                "classes": ["collapse"],
+                "fields": ["slug","meta_title", "meta_description", "meta_Keywords"],
+                "description": pgettext_lazy("Product Admin Attributes Group Block","SEO related parameters"),
+            }
+        ),
+        (
+            pgettext_lazy("Product Admin Attributes Group Block","Bundle Specifics"),
+            {
+                "classes": ["collapse"],
+                "fields": ["duration"],
+                "description": pgettext_lazy("Product Admin Attributes Group Block","Bundle specific attributes"),
+            }
+        ),
+        (
+            pgettext_lazy("Product Admin Attributes Group Block","Stripe connection"),
+            {
+                "classes": ["collapse"],
+                "fields": ["stripe_product_id","stripe_price_id"],
+                "description": pgettext_lazy("Product Admin Attributes Group Block","Stripe product pairing parameters"),
+            }
+        ),
+        (
+            pgettext_lazy("Product Admin Attributes Group Block","Promo"),
+            {
+                "classes": ["collapse"],
+                "fields": ["promo_name","promo_stripe_coupon_id", "promo_discounted_price", "promo_start_date", "promo_end_date"],
+                "description": pgettext_lazy("Product Admin Attributes Group Block","Promotion related parameters"),
+            }
+        ),
+    ]
 admin_site.register(Bundle, BundleAdmin)
 
 class MassageAdmin(admin.ModelAdmin):
     prepopulated_fields = {"slug" : ("name",), "meta_title" : ("name",)}
+    fieldsets = [
+        (
+            None,
+            {
+                "fields": ["name"],
+            },
+        ),
+        (
+            pgettext_lazy("Product Admin Attributes Group Block","Product Detail"),
+            {
+                "classes": ["collapse"],
+                "fields": ["text1","img1", "img1_alt", "img2", "img2_alt", "img3", "img3_alt"],
+                "description": pgettext_lazy("Product Admin Attributes Group Block","Full view related content. Modify product page content."),
+            }
+        ),
+        (
+            pgettext_lazy("Product Admin Attributes Group Block","Tile Detail"),
+            {
+                "classes": ["collapse"],
+                "fields": ["tile_label","cover"],
+                "description": pgettext_lazy("Product Admin Attributes Group Block","Tile view parameters. Modify tiles in list views"),
+            }
+        ),
+        (
+            pgettext_lazy("Product Admin Attributes Group Block","SEO"),
+            {
+                "classes": ["collapse"],
+                "fields": ["slug","meta_title", "meta_description", "meta_Keywords"],
+                "description": pgettext_lazy("Product Admin Attributes Group Block","SEO related parameters"),
+            }
+        ),
+        (
+            pgettext_lazy("Product Admin Attributes Group Block","Massage Specifics"),
+            {
+                "classes": ["collapse"],
+                "fields": ["duration","calendlyURL"],
+                "description": pgettext_lazy("Product Admin Attributes Group Block","Massage specific attributes"),
+            }
+        ),
+        (
+            pgettext_lazy("Product Admin Attributes Group Block","Stripe connection"),
+            {
+                "classes": ["collapse"],
+                "fields": ["stripe_product_id","stripe_price_id"],
+                "description": pgettext_lazy("Product Admin Attributes Group Block","Stripe product pairing parameters"),
+            }
+        ),
+        (
+            pgettext_lazy("Product Admin Attributes Group Block","Promo"),
+            {
+                "classes": ["collapse"],
+                "fields": ["promo_name","promo_stripe_coupon_id", "promo_discounted_price", "promo_start_date", "promo_end_date"],
+                "description": pgettext_lazy("Product Admin Attributes Group Block","Promotion related parameters"),
+            }
+        ),
+    ]
 admin_site.register(Massage, MassageAdmin)
 
 class PracticeAdmin(admin.ModelAdmin):
