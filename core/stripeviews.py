@@ -6,7 +6,7 @@ from django.views.generic.base import TemplateView
 from django.views.decorators.csrf import csrf_exempt
 from django.apps import apps
 from django.shortcuts import redirect
-from datetime import datetime, timezone
+from datetime import datetime, timezone, timedelta
 from django.utils import timezone
 from .addtext2pdf import AddTextToPDF
 from django.core.mail import EmailMessage, EmailMultiAlternatives
@@ -223,7 +223,7 @@ def stripe_webhook(request):
 
         #Handle Giftcard generation workflow (new coupon, pdf generation, and email)
         if metadata and metadata["model_name"] == "giftcard":
-            new_coupon_expires_at = timezone.now() + datetime.timedelta(days=365)
+            new_coupon_expires_at = timezone.now() + timedelta(days=365)
 
             # generate new promocode for related coupon with 1Y expiry
             try:
