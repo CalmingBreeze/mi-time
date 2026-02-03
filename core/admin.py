@@ -78,7 +78,7 @@ class GiftcardAdmin(admin.ModelAdmin):
         (
             None,
             {
-                "fields": ["name"],
+                "fields": ["name","publication_state","priority"],
             },
         ),
         (
@@ -138,7 +138,7 @@ class BundleAdmin(admin.ModelAdmin):
         (
             None,
             {
-                "fields": ["name"],
+                "fields": ["name","publication_state","priority"],
             },
         ),
         (
@@ -198,7 +198,7 @@ class MassageAdmin(admin.ModelAdmin):
         (
             None,
             {
-                "fields": ["name"],
+                "fields": ["name","publication_state","priority"],
             },
         ),
         (

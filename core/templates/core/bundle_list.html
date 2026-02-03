@@ -12,5 +12,7 @@
     {% if bundles %}
     {% translate "Our available bundles" context "Product List" as main_title %}
     {% include "core/components/product_tiles.html" with section_title=main_title h_val=1 products=bundles product_type="bundle" %}
+    {% else %}
+    <p>{% translate "We are currently polishing our offer. Come back soon to see what we have cooked for you !" context "Product Tiles" %}</p>
     {% endif %}
 {% endblock %}

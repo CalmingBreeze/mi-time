@@ -561,7 +561,7 @@ msgid ""
 "We are currently polishing our offer. Come back soon to see what we have "
 "cooked for you !"
 msgstr ""
-"Nous finalisons notre offre de massage. N'hésitez pas à revenir nous voir "
+"Nous revoyons actuellement notre offre. N'hésitez pas à revenir nous voir "
 "très bientôt pour découvrir nos services."
 
 #: .\core\templates\core\error.html:14 .\core\templates\core\error.html:22

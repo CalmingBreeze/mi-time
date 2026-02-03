@@ -9,12 +9,19 @@ from django.utils import timezone
 from imagekit.models import ImageSpecField
 from imagekit.processors import ResizeToFill
 
+PUBLICATION_STATE = {
+    "DRAFT" : pgettext_lazy("Model Field", "Draft"),
+    "HIDDEN" : pgettext_lazy("Model Field", "Hidden"),
+    "PUBLISHED" : pgettext_lazy("Model Field", "Published"),
+}
+
 class AbstractProduct(models.Model):
     class Meta:
         abstract = True
 
     name = models.CharField(max_length=100)
     slug = models.SlugField(max_length=100, null=False, unique=True, help_text=pgettext_lazy("Model Field", "SEO URL Normalization"))
+    publication_state = models.CharField(default="DRAFT", choices=PUBLICATION_STATE, help_text=pgettext_lazy("Model Field", "Current state of the product (draft,hidden,published)"))
     pub_date = models.DateTimeField(auto_now_add=True)
     edit_date = models.DateTimeField(auto_now=True)
     meta_title = models.CharField(max_length=100, null=False, unique=True, help_text=pgettext_lazy("Model Field", "SEO Meta Title (50->70)"))

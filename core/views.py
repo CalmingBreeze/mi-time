@@ -29,7 +29,7 @@ def err400_view(request, exception):
 
 def home(request):
     practices = Practice.objects.order_by("pub_date")
-    massages = Massage.objects.order_by("priority", "-duration")
+    massages = Massage.objects.filter(publication_state="PUBLISHED").order_by("-priority", "-duration")
     page = Page.objects.filter(custom_viewname = "home").first()
     context = {"page": page, "practices" : practices, "massages" : massages}
     return render(request, "core/index.html", context)
@@ -53,7 +53,7 @@ def privilege(request, page_slug):
 
 def bundles(request):
     page = Page.objects.filter(custom_viewname = "bundles").first()
-    bundles = Bundle.objects.order_by("priority", "-duration")
+    bundles = Bundle.objects.filter(publication_state="PUBLISHED").order_by("-priority", "-duration")
     context = {"page" : page, "bundles" : bundles}
     return render(request, "core/bundle_list.html", context)
 
@@ -66,7 +66,7 @@ def bundleBySlug(request, bundle_slug):
 
 def giftcards(request):
     page = Page.objects.filter(custom_viewname = "giftcards").first()
-    giftcards = GiftCard.objects.order_by("priority", "-duration")
+    giftcards = GiftCard.objects.filter(publication_state="PUBLISHED").order_by("-priority", "-duration")
     context = {"page" : page, "giftcards" : giftcards}
     return render(request, "core/giftcard_list.html", context)
 
@@ -94,7 +94,7 @@ def practiceBySlug(request, practice_slug):
     return render(request, "core/practice_full.html", context)   
 
 def massages(request):
-    massages = Massage.objects.order_by("priority", "-duration")
+    massages = Massage.objects.filter(publication_state="PUBLISHED").order_by("-priority", "-duration")
     page = Page.objects.filter(custom_viewname = "practices").first()
     context = {"page" : page, "massages" : massages}
     return render(request, "core/massage_list.html", context)
