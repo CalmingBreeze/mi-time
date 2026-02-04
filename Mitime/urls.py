@@ -17,6 +17,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import include, path
 
+from django.conf import settings
+from django.conf.urls.static import static
+
+from .ckviews import custom_upload_file
+
 handler500 = "core.views.err500_view"
 handler404 = "core.views.err404_view"
 handler403 = "core.views.err403_view"
@@ -29,5 +34,9 @@ urlpatterns = [
 ]
 
 urlpatterns += [
+    path('ckeditor5/image_upload/', custom_upload_file, name='ckeditor5_custom_upload_file'),
     path("ckeditor5/", include('django_ckeditor_5.urls')),
 ]
+
+if settings.DEBUG:  # new
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

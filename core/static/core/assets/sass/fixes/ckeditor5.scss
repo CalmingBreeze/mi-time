@@ -1,0 +1,5 @@
+// Fix resizable uploaded images from ckeditor 5
+figure.image_resized img {
+    width: 100%;
+    height: 100%;
+}

@@ -48,9 +48,6 @@ urlpatterns = [
     path('miadmin/', admin_site.urls),
 ]
 
-if settings.DEBUG:  # new
-    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-
 urlpatterns += [
     path(
         "sitemap.xml",
