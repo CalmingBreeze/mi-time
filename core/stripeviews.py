@@ -53,7 +53,7 @@ class CreateCheckoutSessionView(View):
 
 
         checkout_session = stripe.checkout.Session.create(
-            payment_method_types=['card'],
+            payment_method_types=['card','alma','paypal'],
             line_items=[
                 {
                     'price': product.stripe_price_id,
