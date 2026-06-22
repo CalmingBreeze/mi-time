@@ -212,3 +212,9 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Windows venv
+Include
+Scripts
+Lib
+pyvenv.cfg

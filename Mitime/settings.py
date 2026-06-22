@@ -146,15 +146,15 @@ AUTH_PASSWORD_VALIDATORS = [
 # https://docs.djangoproject.com/en/5.2/topics/i18n/
 
 LANGUAGES = (
-    ('fr-FR', 'Français (FR)'),
-    ('en-US', 'English (US)')
+    ('fr', 'French'),
+    ('en', 'English')
 )
 
-LANGUAGE_CODE = 'fr-FR'
-#LANGUAGE_CODE = 'en-US'
+LANGUAGE_CODE = 'fr-fr'
+#LANGUAGE_CODE = 'en-us'
 
 LOCALE_PATHS = [
-    join(BASE_DIR, 'core', 'locale')
+    BASE_DIR / 'locale',
 ]
 
 MEDIA_URL = "/media/"
