@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-06-22 15:07+0200\n"
+"POT-Creation-Date: 2026-06-24 11:45+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -503,7 +503,7 @@ msgid "Our available bundles"
 msgstr "Nos forfaits disponibles"
 
 #: .\core\templates\core\bundle_list.html:16
-#: .\core\templates\core\components\product_tiles.html:41
+#: .\core\templates\core\components\product_tiles.html:47
 #: .\core\templates\core\giftcard_list.html:16
 #: .\core\templates\core\massage_list.html:15
 msgctxt "Product Tiles"
@@ -516,8 +516,13 @@ msgstr ""
 
 #: .\core\templates\core\components\base.html:85
 msgctxt "Header Button"
-msgid "Book now"
-msgstr "<span class=\"responsivehide\">Prendre </span>RDV"
+msgid "Booknow1"
+msgstr "Prendre"
+
+#: .\core\templates\core\components\base.html:85
+msgctxt "Header Button"
+msgid "Booknow2"
+msgstr "RDV"
 
 #: .\core\templates\core\components\base.html:91
 msgctxt "Header Button"

@@ -27,6 +27,9 @@
         <div class="richtext">
             {{product.text1|safe}}
         </div>
+        <hr>
+        <a href="#book" class="action-button" onclick="Calendly.initPopupWidget({ url: '{{product.calendlyURL}}' });">{% translate "Book this massage" context "Product Full" %}</a>
+
         {% comment "Not needed for single practice" %}
         <!-- Get practice proposing this massage -->
         {% if product.practice_set.count > 0 %}

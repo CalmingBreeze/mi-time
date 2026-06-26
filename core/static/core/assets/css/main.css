@@ -2482,6 +2482,11 @@ html {
 #header nav ul li a[href="#menu"]:hover:after {
   opacity: 0;
 }
+@media screen and (max-width: 980px) {
+  #header .large-hidden {
+    display: none;
+  }
+}
 @media screen and (max-width: 736px) {
   #header {
     padding: 4em 0 0.1em 0;
@@ -2489,7 +2494,7 @@ html {
   #header .logo {
     font-size: 1.5em;
   }
-  #header .responsivehide {
+  #header .medium-hidden {
     display: none;
   }
   #header nav {
@@ -2498,6 +2503,11 @@ html {
   }
   #header nav ul li a[href="#menu"]:before, #header nav ul li a[href="#menu"]:after {
     background-size: 1.5em 1.5em;
+  }
+}
+@media screen and (max-width: 480px) {
+  #header .small-hidden {
+    display: none;
   }
 }
 

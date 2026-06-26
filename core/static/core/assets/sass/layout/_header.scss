@@ -139,7 +139,9 @@
 		}
 
         @include breakpoint('<=medium') {
-            
+            .large-hidden {
+                display: none
+            }
         }
 
 		@include breakpoint('<=small') {
@@ -149,7 +151,7 @@
                 font-size: 1.5em;
             }
 
-            .responsivehide {
+            .medium-hidden {
                 display: none
             }
 
@@ -168,4 +170,10 @@
 				}
 			}
 		}
+
+        @include breakpoint('<=xsmall') {
+            .small-hidden {
+                display: none
+            }
+        }
 	}

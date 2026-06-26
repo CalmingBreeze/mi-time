@@ -73,11 +73,8 @@
                         </a>
                         {% block headerinfos %}
                         <!-- Nav -->
-                         <div class="infobloc responsivehide">
+                         <div class="infobloc small-hidden">
                             <span class="icon solid fa-phone iconified">{{siteconfig.header_mobile|phone_format:'spaced'}}</span>
-                        </div>
-                        <div class="infobloc responsivehide">
-                            <span class="icon solid fa-calendar-days iconified">{{siteconfig.header_openings}}</span>
                         </div>
                         {% endblock %}
                         <!-- Nav -->
@@ -85,11 +82,23 @@
                             <ul>
                                 {% block bookbutton %}
                                 <li>
-                                    <a href="#book" onclick="Calendly.initPopupWidget({ url: 'https://calendly.com/reservation-mi-time' });">{% blocktranslate context "Header" %}Book now{% endblocktranslate %}</a>
+                                    <a href="#book" onclick="Calendly.initPopupWidget({ url: 'https://calendly.com/reservation-mi-time' });"><span class="medium-hidden">{% translate "Booknow1" context "Header Button" %}</span> {% translate "Booknow2" context "Header Button" %}</a>
                                 </li>
                                 {% endblock %}
+                                {% for page_item in menu_pages %}
+                                    {% if page_item.custom_viewname and page_item.custom_viewname == "bundles" %}
+                                <li class="large-hidden">
+                                    <a href="{% url 'page' page_slug=page_item.slug %}">{% translate 'Bundles' context "Header Button" %}</a>
+                                </li>
+                                    {% endif %}
+                                    {% if page_item.custom_viewname and page_item.custom_viewname == "giftcards" %}
+                                <li class="large-hidden">
+                                    <a href="{% url 'page' page_slug=page_item.slug %}">{% translate 'Gifts' context "Header Button" %}</a>
+                                </li>
+                                    {% endif %}
+                                {% endfor %}
                                 <li>
-                                    <a href="#menu">{% translate "Menu" context "Header" %}</a>
+                                    <a href="#menu">{% translate "Menu" context "Header Button" %}</a>
                                 </li>
                             </ul>
                         </nav>
