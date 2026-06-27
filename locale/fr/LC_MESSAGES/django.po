@@ -500,7 +500,7 @@ msgstr "Acheter ce forfait"
 #: .\core\templates\core\bundle_list.html:13
 msgctxt "Product List"
 msgid "Our available bundles"
-msgstr "Nos forfaits disponibles"
+msgstr "Faites du massage votre rituel bien-être"
 
 #: .\core\templates\core\bundle_list.html:16
 #: .\core\templates\core\components\product_tiles.html:47
@@ -615,12 +615,12 @@ msgstr "Offrir cette Carte"
 #: .\core\templates\core\giftcard_list.html:13
 msgctxt "Product List"
 msgid "Our available gift cards"
-msgstr "Nos cartes cadeaux disponibles"
+msgstr "Offrez à ceux que vous aimez un moment de détente absolue"
 
 #: .\core\templates\core\index.html:10
 msgctxt "Main page"
 msgid "Our available massages"
-msgstr "Mireille prend soin  de vous, et vous propose"
+msgstr "Mireille prend soin de vous, et vous propose"
 
 #: .\core\templates\core\massage_full.html:31
 msgctxt "Product Full"
@@ -634,7 +634,7 @@ msgstr "Ce massage est disponible au"
 #: .\core\templates\core\massage_list.html:12
 msgctxt "Product List"
 msgid "Our available massages"
-msgstr "Mireille prend soin  de vous, et vous propose"
+msgstr "Mireille prend soin de vous, et vous propose"
 
 #: .\core\templates\core\practice_full.html:17
 msgctxt "Practice Full massage block title"
