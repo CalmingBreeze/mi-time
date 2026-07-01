@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-06-24 11:45+0200\n"
+"POT-Creation-Date: 2026-07-01 20:27+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,86 +17,90 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: .\core\admin.py:85 .\core\admin.py:145 .\core\admin.py:205
+#: .\core\admin.py:96 .\core\admin.py:156 .\core\admin.py:216
 msgctxt "Product Admin Attributes Group Block"
 msgid "Product Detail"
 msgstr "Détails du produit"
 
-#: .\core\admin.py:89 .\core\admin.py:149 .\core\admin.py:209
+#: .\core\admin.py:100 .\core\admin.py:160 .\core\admin.py:220
 msgctxt "Product Admin Attributes Group Block"
 msgid "Full view related content. Modify product page content."
 msgstr "Attributs de la vue détaillée. Impacte la page produit."
 
-#: .\core\admin.py:93 .\core\admin.py:153 .\core\admin.py:213
+#: .\core\admin.py:104 .\core\admin.py:164 .\core\admin.py:224
 msgctxt "Product Admin Attributes Group Block"
 msgid "Tile Detail"
 msgstr "Configuration de la vignette"
 
-#: .\core\admin.py:97 .\core\admin.py:157 .\core\admin.py:217
+#: .\core\admin.py:108 .\core\admin.py:168 .\core\admin.py:228
 msgctxt "Product Admin Attributes Group Block"
 msgid "Tile view parameters. Modify tiles in list views"
 msgstr ""
 "Attributs de la vue vignette. Impacte l'affichage des vignettes en liste."
 
-#: .\core\admin.py:101 .\core\admin.py:161 .\core\admin.py:221
+#: .\core\admin.py:112 .\core\admin.py:172 .\core\admin.py:232
 msgctxt "Product Admin Attributes Group Block"
 msgid "SEO"
 msgstr "SEO"
 
-#: .\core\admin.py:105 .\core\admin.py:165 .\core\admin.py:225
+#: .\core\admin.py:116 .\core\admin.py:176 .\core\admin.py:236
 msgctxt "Product Admin Attributes Group Block"
 msgid "SEO related parameters"
 msgstr "Paramètres SEO."
 
-#: .\core\admin.py:109
+#: .\core\admin.py:120
 msgctxt "Product Admin Attributes Group Block"
 msgid "Giftcard Specifics"
 msgstr "Spécificités Carte cadeau"
 
-#: .\core\admin.py:113
+#: .\core\admin.py:124
 msgctxt "Product Admin Attributes Group Block"
 msgid "Giftcard specifics attributes"
 msgstr "Attributs propres à cette carte-cadeau."
 
-#: .\core\admin.py:117 .\core\admin.py:177 .\core\admin.py:237
+#: .\core\admin.py:128 .\core\admin.py:188 .\core\admin.py:248
 msgctxt "Product Admin Attributes Group Block"
 msgid "Stripe connection"
 msgstr "Connexion avec Stripe"
 
-#: .\core\admin.py:121 .\core\admin.py:181 .\core\admin.py:241
+#: .\core\admin.py:132 .\core\admin.py:192 .\core\admin.py:252
 msgctxt "Product Admin Attributes Group Block"
 msgid "Stripe product pairing parameters"
 msgstr "Lien avec les produits stripes"
 
-#: .\core\admin.py:125 .\core\admin.py:185 .\core\admin.py:245
+#: .\core\admin.py:136 .\core\admin.py:196 .\core\admin.py:256
 msgctxt "Product Admin Attributes Group Block"
 msgid "Promo"
 msgstr "Offre promotionnelle"
 
-#: .\core\admin.py:129 .\core\admin.py:189 .\core\admin.py:249
+#: .\core\admin.py:140 .\core\admin.py:200 .\core\admin.py:260
 msgctxt "Product Admin Attributes Group Block"
 msgid "Promotion related parameters"
 msgstr "Parametrage d'une promotion stripe"
 
-#: .\core\admin.py:169
+#: .\core\admin.py:180
 msgctxt "Product Admin Attributes Group Block"
 msgid "Bundle Specifics"
 msgstr "Spécifités du forfait"
 
-#: .\core\admin.py:173
+#: .\core\admin.py:184
 msgctxt "Product Admin Attributes Group Block"
 msgid "Bundle specific attributes"
 msgstr "Attributs propre aux forfaits"
 
-#: .\core\admin.py:229
+#: .\core\admin.py:240
 msgctxt "Product Admin Attributes Group Block"
 msgid "Massage Specifics"
 msgstr "Attributs propre aux massages"
 
-#: .\core\admin.py:233
+#: .\core\admin.py:244
 msgctxt "Product Admin Attributes Group Block"
 msgid "Massage specific attributes"
 msgstr "Spécificités du massage"
+
+#: .\core\forms.py:34
+msgid "This email is already taken."
+msgstr ""
 
 #: .\core\models.py:13
 msgctxt "Model Field"
@@ -492,6 +496,67 @@ msgctxt "Model Field"
 msgid "Content of robots.txt"
 msgstr "Contenu de robots.txt"
 
+#: .\core\templates\core\account\profile.html:17
+msgctxt "User Profile"
+msgid "my account"
+msgstr "Mon compte"
+
+#: .\core\templates\core\account\profile.html:19
+msgctxt "User Profile"
+msgid "my infos"
+msgstr "Informations personnelles"
+
+#: .\core\templates\core\account\profile.html:48
+msgctxt "User Profile"
+msgid "Update"
+msgstr "Mettre à jour"
+
+#: .\core\templates\core\account\profile.html:51
+msgctxt "User Profile"
+msgid "last plans"
+msgstr "Mes forfaits"
+
+#: .\core\templates\core\account\profile.html:54
+msgctxt "User Profile"
+msgid "plan name"
+msgstr "Nom du forfait"
+
+#: .\core\templates\core\account\profile.html:55
+msgctxt "User Profile"
+msgid "plan status"
+msgstr "Statut"
+
+#: .\core\templates\core\account\profile.html:56
+msgctxt "User Profile"
+msgid "time remaining"
+msgstr "Forfait restant"
+
+#: .\core\templates\core\account\profile.html:57
+#: .\core\templates\core\account\profile.html:84
+msgctxt "User Profile"
+msgid "purchase date"
+msgstr "Date d'achat"
+
+#: .\core\templates\core\account\profile.html:79
+msgctxt "User Profile"
+msgid "last orders"
+msgstr "Mes commandes"
+
+#: .\core\templates\core\account\profile.html:82
+msgctxt "User Profile"
+msgid "product name"
+msgstr "Détails du produit"
+
+#: .\core\templates\core\account\profile.html:83
+msgctxt "User Profile"
+msgid "appointment date"
+msgstr "Prendre rendez-vous"
+
+#: .\core\templates\core\account\profile.html:85
+msgctxt "User Profile"
+msgid "status"
+msgstr "Statut"
+
 #: .\core\templates\core\bundle_full.html:35
 msgctxt "Bundle Full"
 msgid "Buy"
@@ -534,38 +599,44 @@ msgctxt "Header Button"
 msgid "Gifts"
 msgstr "Offrir"
 
-#: .\core\templates\core\components\base.html:101
+#: .\core\templates\core\components\base.html:103
+#: .\core\templates\core\components\base.html:111
 msgctxt "Header Button"
-msgid "Menu"
-msgstr "Menu"
+msgid "Logout"
+msgstr "Déconnexion"
 
-#: .\core\templates\core\components\base.html:119
-#: .\core\templates\core\components\base.html:163
+#: .\core\templates\core\components\base.html:107
+msgctxt "Header Button"
+msgid "My Account"
+msgstr "Mon compte"
+
+#: .\core\templates\core\components\base.html:129
+#: .\core\templates\core\components\base.html:173
 msgctxt "Menu link"
 msgid "Practice"
 msgstr "Le Salon"
 
-#: .\core\templates\core\components\base.html:128
+#: .\core\templates\core\components\base.html:138
 msgctxt "Menu link"
 msgid "Find us"
 msgstr "Nous trouver"
 
-#: .\core\templates\core\components\base.html:130
+#: .\core\templates\core\components\base.html:140
 msgctxt "Menu link"
 msgid "Contact us"
 msgstr "Nous contacter"
 
-#: .\core\templates\core\components\base.html:156
+#: .\core\templates\core\components\base.html:166
 msgctxt "Footer"
 msgid "Links"
 msgstr "Navigation"
 
-#: .\core\templates\core\components\base.html:171
+#: .\core\templates\core\components\base.html:181
 msgctxt "Menu link"
 msgid "Book an appointment"
 msgstr "Prendre rendez-vous"
 
-#: .\core\templates\core\components\base.html:175
+#: .\core\templates\core\components\base.html:185
 msgctxt "Footer"
 msgid "Informations"
 msgstr "Informations"
@@ -646,6 +717,16 @@ msgctxt "Practice List"
 msgid "My practices"
 msgstr "Les salons"
 
+#: .\core\templates\registration\login.html:33
+msgctxt "User Login"
+msgid "login"
+msgstr "Se connecter"
+
+#: .\core\templates\registration\login.html:38
+msgctxt "User Login"
+msgid "Lost password?"
+msgstr "Mot de passe oublié ?"
+
 #: .\core\templatetags\core_extras.py:20
 msgctxt "Duration Operator"
 msgid "w"
@@ -723,3 +804,12 @@ msgid "%(name)s"
 msgid_plural "%(name)ss"
 msgstr[0] "%(name)s"
 msgstr[1] "%(name)ss"
+
+#: .\core\views.py:119
+msgid "Your profile is updated successfully"
+msgstr "Vos informations ont été mises à jour."
+
+#: .\core\views.py:122
+msgid ""
+"There was an error in your submission. Please check the form and try again."
+msgstr "Vous avez une erreur dans votre formulaire. Veuillez vérifier."

@@ -74,7 +74,9 @@ INSTALLED_APPS = [
     'django.contrib.sitemaps',
     'core.apps.CoreConfig',
     'django_ckeditor_5',
-    'imagekit'
+    'imagekit',
+    'appointment',
+    #'django_q'
 ]
 
 MIDDLEWARE = [
@@ -141,6 +143,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+LOGOUT_REDIRECT_URL = 'home'
 
 # Internationalization
 # https://docs.djangoproject.com/en/5.2/topics/i18n/
@@ -279,6 +282,11 @@ CKEDITOR_5_CONFIGS = {
 # Define a constant in settings.py to specify file upload permissions
 CKEDITOR_5_FILE_UPLOAD_PERMISSION = "any"  # Possible values: "staff", "authenticated", "any"
 CKEDITOR_5_CUSTOM_CSS = 'admin/css/darkmode_fix.css'
+
+# Django Appointments 
+#AUTH_USER_MODEL = '' # Optional if using Django's default user model
+APPOINTMENT_WEBSITE_NAME = 'Mi-time.fr'
+
 
 LOGGING = {
     'version': 1,

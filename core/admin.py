@@ -1,16 +1,11 @@
 from django.contrib import admin
+from django.contrib.admin.sites import AdminSite, AlreadyRegistered
 from django.utils.translation import pgettext_lazy
 
-# Register your models here.
+import appointment.admin
 
-from .models import SiteConfig
-from .models import Page
-from .models import GiftCard
-from .models import Bundle
-from .models import Massage
-from .models import Practice
-from .models import Address
-from .models import Openings
+#core models
+from .models import SiteConfig, Page, GiftCard, Bundle, Massage, Practice, Address, Openings
 
 class MitimeAdmin(admin.AdminSite):
 
@@ -25,6 +20,22 @@ class MitimeAdmin(admin.AdminSite):
             'Page',
             'SiteConfig'
         )),
+        ('appointment', (
+            'WorkingHours'
+            'DayOff',
+            'Appointment',
+            'AppointmentRequest',
+            'AppointmentRescheduleHistory',
+            'Service',
+            'StaffMember',
+            'Config',
+            'EmailVerificationCode',
+            'PasswordResetToken',
+        )),
+        ('auth', (
+            'User',
+            'Group'
+        ))
         # ('anotherapp', (
         # ))
     )
@@ -259,20 +270,9 @@ admin_site.register(Practice, PracticeAdmin)
 admin_site.register(Address)
 admin_site.register(Openings)
 
-
-# admin.site.register(SiteConfig)
-
-# class PageAdmin(admin.ModelAdmin):
-#     prepopulated_fields = {"slug" : ("name",)}
-# admin.site.register(Page, PageAdmin)
-
-# class MassageAdmin(admin.ModelAdmin):
-#     prepopulated_fields = {"slug" : ("name",)}
-# admin.site.register(Massage, MassageAdmin)
-
-# class PracticeAdmin(admin.ModelAdmin):
-#     prepopulated_fields = {"slug" : ("name",)}
-# admin.site.register(Practice, PracticeAdmin)
-
-# admin.site.register(Address)
-# admin.site.register(Openings)
+#other apps & default models
+for model, model_admin in admin.site._registry.items():
+    try:
+        admin_site.register(model, model_admin.__class__)
+    except AlreadyRegistered:
+        pass

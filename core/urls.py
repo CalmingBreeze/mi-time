@@ -1,4 +1,4 @@
-from django.urls import path
+from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 from django.shortcuts import redirect
@@ -45,6 +45,10 @@ urlpatterns = [
     path("massages/", views.massages, name="massages"),
     path("massage/<slug:massage_slug>/", views.massageBySlug, name="massage"),
     #path("massage/<int:massage_id>/", views.massageById, name="massage"),
+
+    path("accounts/", include("django.contrib.auth.urls")),
+    path("accounts/profile/", views.profile, name="user-profile"),
+
     path('miadmin/', admin_site.urls),
 ]
 

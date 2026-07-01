@@ -30,12 +30,16 @@ handler400 = "core.views.err400_view"
 
 urlpatterns = [
     path('', include('core.urls')),
-    # path('admin/', admin.site.urls),
+    #path('admin/', admin.site.urls),
 ]
 
 urlpatterns += [
     path('ckeditor5/image_upload/', custom_upload_file, name='ckeditor5_custom_upload_file'),
     path("ckeditor5/", include('django_ckeditor_5.urls')),
+]
+
+urlpatterns += [
+    path('appointment/', include('appointment.urls')),
 ]
 
 if settings.DEBUG:  # new

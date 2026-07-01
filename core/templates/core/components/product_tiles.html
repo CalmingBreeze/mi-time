@@ -36,6 +36,12 @@
             </a>
         </article>
         {% endfor %}
+        {% comment "Special Case, adding a generic tile to go back to bundles when from giftcards" %}
+        <!-- Generic tile to go back on bundles when from giftcards -->
+        {% endcomment %}
+        {% if product_type == 'giftcard' %}
+        <article class='{{product.highlighted|yesno:"highlighted,default"}}'></article>
+        {% endif %}
         </div>
     {% else %}
     <p>{% translate "We are currently polishing our offer. Come back soon to see what we have cooked for you !" context "Product Tiles" %}</p>

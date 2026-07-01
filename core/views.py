@@ -2,13 +2,14 @@ from django.shortcuts import get_object_or_404, render, redirect
 from django.http import HttpResponse, Http404
 from django.template import loader
 
-from .models import Practice
-from .models import Massage
-from .models import Page
+from .models import Practice, Massage, Page, Bundle, GiftCard
 from .models import SiteConfig
+from .forms import PersonnalInformationForm
+
+from django.contrib import messages
 from django.contrib.contenttypes.models import ContentType
-from .models import GiftCard
-from .models import Bundle
+from django.contrib.auth.decorators import login_required
+from django.utils.translation import pgettext as _
 
 
 # Handle custom error views
@@ -107,3 +108,20 @@ def massageBySlug(request, massage_slug):
 
     context = {"product" : product, "practices" : practices}
     return render(request, "core/massage_full.html", context)
+
+@login_required
+def profile(request):
+    if request.method == 'POST':
+        user_form = PersonnalInformationForm(request.POST, user=request.user)
+        if user_form.is_valid():
+            #process
+            user_form.save()
+            messages.success(request, _('Your profile is updated successfully','Form Validation'))
+            return redirect(to='user-profile')
+        else:
+            messages.error(request, _('There was an error in your submission. Please check the form and try again.','Form Validation'))
+            messages.error(request, user_form.errors)
+    else:
+        form = PersonnalInformationForm(user=request.user)
+    
+    return render(request, "core/account/profile.html", {"form": form})

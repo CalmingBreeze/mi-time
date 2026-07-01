@@ -82,23 +82,33 @@
                             <ul>
                                 {% block bookbutton %}
                                 <li>
-                                    <a href="#book" onclick="Calendly.initPopupWidget({ url: 'https://calendly.com/reservation-mi-time' });"><span class="medium-hidden">{% translate "Booknow1" context "Header Button" %}</span> {% translate "Booknow2" context "Header Button" %}</a>
+                                    <a class="header-button" href="#book" onclick="Calendly.initPopupWidget({ url: 'https://calendly.com/reservation-mi-time' });"><span class="medium-hidden">{% translate "Booknow1" context "Header Button" %}</span> {% translate "Booknow2" context "Header Button" %}</a>
                                 </li>
                                 {% endblock %}
                                 {% for page_item in menu_pages %}
                                     {% if page_item.custom_viewname and page_item.custom_viewname == "bundles" %}
                                 <li class="large-hidden">
-                                    <a href="{% url 'page' page_slug=page_item.slug %}">{% translate 'Bundles' context "Header Button" %}</a>
+                                    <a class="header-button" href="{% url 'page' page_slug=page_item.slug %}">{% translate 'Bundles' context "Header Button" %}</a>
                                 </li>
                                     {% endif %}
                                     {% if page_item.custom_viewname and page_item.custom_viewname == "giftcards" %}
                                 <li class="large-hidden">
-                                    <a href="{% url 'page' page_slug=page_item.slug %}">{% translate 'Gifts' context "Header Button" %}</a>
+                                    <a class="header-button" href="{% url 'page' page_slug=page_item.slug %}">{% translate 'Gifts' context "Header Button" %}</a>
                                 </li>
                                     {% endif %}
                                 {% endfor %}
+                                {% if user.is_authenticated %}
+                                <form method="POST" action="{% url 'logout' %}">
+                                    {% csrf_token %}
+                                    <button class="header-button">{% translate 'Logout' context "Header Button" %}</button>
+                                </form>
+                                {% else %}
+                                <li class="">
+                                    <a class="header-button" href="{% url 'login' %}">{% translate 'My Account' context "Header Button" %}</a>
+                                </li>
+                                {% endif %}
                                 <li>
-                                    <a href="#menu">{% translate "Menu" context "Header Button" %}</a>
+                                    <a class="header-button" href="#menu">{% translate "Logout" context "Header Button" %}</a>
                                 </li>
                             </ul>
                         </nav>
