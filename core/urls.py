@@ -12,6 +12,19 @@ from core.admin import admin_site
 
 from django.http import Http404
 
+#app_name = 'core'
+
+stripe_patterns = (
+    [
+        path('annulation/', CancelView.as_view(), name='cancel'),
+        path('confirmation/', SuccessView.as_view(), name='success'),
+        path('create-checkout-session/<model_name>/<int:product_id>', CreateCheckoutSessionView.as_view(), name='create-checkout-session'),
+        path('create-appointment-checkout-session/<int:object_id>/<str:id_request>/', CreateCheckoutSessionView.as_view(), name='create-appointment-checkout-session'),
+        path('webhooks/stripe/', stripe_webhook, name='stripe-webhook'),
+    ],
+    "stripe",
+)
+
 urlpatterns = [
     path("", views.home, name="home"),
     path("robots.txt", views.robots, name="robots"),
@@ -19,10 +32,7 @@ urlpatterns = [
     # path("testgcmail", views.testgcmail, name="testgcmail"),
 
     #stripe related
-    path('annulation/', CancelView.as_view(), name='cancel'),
-    path('confirmation/', SuccessView.as_view(), name='success'),
-    path('create-checkout-session/<model_name>/<int:product_id>', CreateCheckoutSessionView.as_view(), name='create-checkout-session'),
-    path('webhooks/stripe/', stripe_webhook, name='stripe-webhook'),
+    path("stripe/", include(stripe_patterns)),
 
     path("forfaits/", views.bundles, name="bundles"),
     path("forfaits/<slug:bundle_slug>/", views.bundleBySlug, name="bundle"),
@@ -46,10 +56,10 @@ urlpatterns = [
     path("massage/<slug:massage_slug>/", views.massageBySlug, name="massage"),
     #path("massage/<int:massage_id>/", views.massageById, name="massage"),
 
+    path('miadmin/', admin_site.urls),
+    
     path("accounts/", include("django.contrib.auth.urls")),
     path("accounts/profile/", views.profile, name="user-profile"),
-
-    path('miadmin/', admin_site.urls),
 ]
 
 urlpatterns += [

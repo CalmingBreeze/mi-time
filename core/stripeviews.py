@@ -21,6 +21,7 @@ stripe.api_key = settings.STRIPE_SECRET_KEY
 
 class CreateCheckoutSessionView(View):
     def post(self, request, *args, **kwargs):
+
         #retrieve model, dynamically switch from subclasses
         # print(self.kwargs["model_name"]) 
         product_model = apps.get_model('core', self.kwargs["model_name"])
@@ -63,8 +64,8 @@ class CreateCheckoutSessionView(View):
             mode='payment',
             # allow_promotion_codes=True,
             discounts = discountsC,
-            success_url=domain + '/confirmation/',
-            cancel_url=domain + '/annulation/',
+            success_url=domain + '/stripe/confirmation/',
+            cancel_url=domain + '/stripe/annulation/',
             metadata=product_metadata
         )
         return redirect(checkout_session.url)

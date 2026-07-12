@@ -30,7 +30,7 @@
             {{product.text1|safe}}
         </div>
         <br>
-        <form action="{% url 'create-checkout-session' product_model product.id %}" method="POST">
+        <form action="{% url 'stripe:create-checkout-session' product_model product.id %}" method="POST">
             {% csrf_token %}
             <button type="submit">{% translate "Buy" context "Bundle Full" %}</button>
         </form>
