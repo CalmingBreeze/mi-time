@@ -47,6 +47,14 @@ def pages(request, page_slug):
         return redirect(page.custom_viewname)
     return render(request, "core/page.html", context)
 
+def reservation(request):
+    page = Page.objects.filter(custom_viewname = "reservation").first()
+    massages = Massage.objects.filter(publication_state="PUBLISHED").order_by("-priority", "-duration")
+    giftcards = GiftCard.objects.filter(publication_state="PUBLISHED").order_by("-priority", "-duration")
+    bundles = Bundle.objects.filter(publication_state="PUBLISHED").order_by("-priority", "-duration")
+    context = {"page" : page, "massages" : massages, "giftcards" : giftcards,"bundles" : bundles}
+    return render(request, "core/reservation.html", context)
+
 def privilege(request, page_slug):
     page = get_object_or_404(Page, slug=page_slug)
     context = {"page" : page}
@@ -103,10 +111,16 @@ def massages(request):
 def massageBySlug(request, massage_slug):
     product = get_object_or_404(Massage, slug=massage_slug)
 
+    related_service_id = None 
+    if product.service_set.first() == None:
+        logger.warning(f"Massage (id={product.id}) hasn't any related service.")
+    else:
+        related_service_id = product.service_set.first().id
+
     #get related salon
     practices = product.practice_set.all()
 
-    context = {"product" : product, "practices" : practices}
+    context = {"product" : product, "related_service_id": related_service_id, "practices" : practices}
     return render(request, "core/massage_full.html", context)
 
 @login_required

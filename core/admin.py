@@ -1,11 +1,17 @@
 from django.contrib import admin
 from django.contrib.admin.sites import AdminSite, AlreadyRegistered
+from django.contrib.auth.models import User, Group
+from django.contrib.auth.admin import UserAdmin, GroupAdmin
+
+
 from django.utils.translation import pgettext_lazy
 
+#Appointments Admins
 import appointment.admin
 
 #core models
 from .models import SiteConfig, Page, GiftCard, Bundle, Massage, Practice, Address, Openings
+
 
 class MitimeAdmin(admin.AdminSite):
 
@@ -240,7 +246,7 @@ class MassageAdmin(admin.ModelAdmin):
             pgettext_lazy("Product Admin Attributes Group Block","Massage Specifics"),
             {
                 "classes": ["collapse"],
-                "fields": ["duration","calendlyURL"],
+                "fields": ["duration"],
                 "description": pgettext_lazy("Product Admin Attributes Group Block","Massage specific attributes"),
             }
         ),
@@ -269,6 +275,9 @@ admin_site.register(Practice, PracticeAdmin)
 
 admin_site.register(Address)
 admin_site.register(Openings)
+
+admin_site.register(User, UserAdmin)
+admin_site.register(Group, GroupAdmin)
 
 #other apps & default models
 for model, model_admin in admin.site._registry.items():

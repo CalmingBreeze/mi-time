@@ -1,0 +1,31 @@
+{% extends "core/components/base.html" %}
+
+{% load static i18n %}
+
+{% block meta_title %}{{page.meta_title}}{% endblock %}
+{% block meta_description %}{{page.meta_description}}{% endblock %}
+{% block meta_keywords %}{{page.meta_keywords}}{% endblock %}
+
+{% block content %}
+    <section id="reservation">
+    {% if massages or bundles or giftcards %}
+        <h1>{% translate "We offer massages, giftcards and packages" context "Reservation" %}</h1>
+        {% if massages %}
+            {% translate "What massage would fit you today ?" context "Reservation" as main_title %}
+            {% include "core/components/product_tiles.html" with section_title=main_title h_val=2 products=massages product_type="massage" %}
+        {% endif %} 
+
+        {% if bundles %}
+            {% translate "Regular customer ? Save more with our packages :" context "Reservation" as main_title %}
+            {% include "core/components/product_tiles.html" with section_title=main_title h_val=2 products=bundles product_type="bundle" %}
+        {% endif %}
+        
+        {% if giftcards %}
+            {% translate "Ready to gift an extraordinary massage to your loved ones ?" context "Reservation" as main_title %}
+            {% include "core/components/product_tiles.html" with section_title=main_title h_val=2 products=giftcards product_type="giftcard" %}
+        {% endif %}
+    {% else %}
+        <p>{% translate "We are currently polishing our offer. Come back soon to see what we have cooked for you !" context "Product Tiles" %}</p>
+    {% endif %}
+    </section>
+{% endblock %}

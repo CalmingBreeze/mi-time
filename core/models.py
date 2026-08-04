@@ -89,7 +89,6 @@ class Massage(AbstractProduct):
         verbose_name = npgettext_lazy("Model Class Name", "Massage", "Massages", 1)
         verbose_name_plural = npgettext_lazy("Model Class Name", "Massage", "Massages", 2)
 
-    calendlyURL = models.CharField(default="https://calendly.com/reservation-mi-time", blank=True, help_text=pgettext_lazy("Model Field", "Full URL to calendly appointment event"))
     duration = models.DurationField(help_text=pgettext_lazy("Model Field", "Duration of the Massage (HH:MM:SS)"), default=datetime.timedelta(hours=1))
 
     def get_absolute_url(self):

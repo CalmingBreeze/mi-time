@@ -31,8 +31,19 @@ urlpatterns = [
 
     # path("testgcmail", views.testgcmail, name="testgcmail"),
 
-    #stripe related
+    #stripe urls
     path("stripe/", include(stripe_patterns)),
+
+    path("privilege/<slug:page_slug>", views.privilege, name="privilege"),
+    #redirect to fix mismatch between two simple slug matches
+    path("offre-privilege", lambda request: redirect('privilege/offre-privilege', permanent=True)),
+    path("<slug:page_slug>", views.pages, name="page"),
+
+    path("reservation/", views.reservation, name="reservation"),
+
+    path("massages/", views.massages, name="massages"),
+    path("massage/<slug:massage_slug>/", views.massageBySlug, name="massage"),
+    #path("massage/<int:massage_id>/", views.massageById, name="massage"),
 
     path("forfaits/", views.bundles, name="bundles"),
     path("forfaits/<slug:bundle_slug>/", views.bundleBySlug, name="bundle"),
@@ -40,26 +51,17 @@ urlpatterns = [
     #pdf-gen
     # do not forget to import the view to test
     # path('generate-giftcard/', GenerateGifcard.as_view() , name='generate-giftcard'),
-
     path("cartes-cadeaux/", views.giftcards, name="giftcards"),
     path("carte-cadeau/<slug:giftcard_slug>/", views.giftcardBySlug, name="giftcard"),
-
-    path("privilege/<slug:page_slug>", views.privilege, name="privilege"),
-    #redirect to fix mismatch between two simple slug matches
-    path("offre-privilege", lambda request: redirect('privilege/offre-privilege', permanent=True)),
-    path("<slug:page_slug>", views.pages, name="page"),
 
     path("salons/", views.practices, name="practices"),
     path("salon/<slug:practice_slug>/", views.practiceBySlug, name="practice"),
     #path("practice/<int:practice_id>/", views.practice, name="practice"),
-    path("massages/", views.massages, name="massages"),
-    path("massage/<slug:massage_slug>/", views.massageBySlug, name="massage"),
-    #path("massage/<int:massage_id>/", views.massageById, name="massage"),
 
     path('miadmin/', admin_site.urls),
     
-    path("accounts/", include("django.contrib.auth.urls")),
-    path("accounts/profile/", views.profile, name="user-profile"),
+    path("account/", include("django.contrib.auth.urls")),
+    path("account/profile/", views.profile, name="user-profile"),
 ]
 
 urlpatterns += [

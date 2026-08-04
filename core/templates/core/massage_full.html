@@ -28,7 +28,9 @@
             {{product.text1|safe}}
         </div>
         <hr>
-        <a href="#book" class="action-button" onclick="Calendly.initPopupWidget({ url: '{{product.calendlyURL}}' });">{% translate "Book this massage" context "Product Full" %}</a>
+        {% if related_service_id %}
+        <a href="{% url 'appointment:appointment_request' service_id=related_service_id %}" class="action-button">{% translate "Book this massage" context "Product Full" %}</a>
+        {% endif %}
 
         {% comment "Not needed for single practice" %}
         <!-- Get practice proposing this massage -->

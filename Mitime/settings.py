@@ -34,8 +34,6 @@ STRIPE_PUBLIC_KEY = config("STRIPE_PUBLIC_KEY")
 STRIPE_SECRET_KEY = config("STRIPE_SECRET_KEY")
 STRIPE_WEBHOOK_SECRET = config("STRIPE_WEBHOOK_SECRET")
 
-
-
 # Email Global
 EMAIL_BACKEND = config("EMAIL_BACKEND", default="django.core.mail.backends.smtp.EmailBackend")
 # Where to save dev file emails
@@ -65,6 +63,7 @@ SESSION_COOKIE_SECURE = config("SESSION_COOKIE_SECURE", default=False, cast=bool
 # Application definition
 
 INSTALLED_APPS = [
+    'core.apps.CoreConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -72,11 +71,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.sitemaps',
-    'core.apps.CoreConfig',
     'django_ckeditor_5',
     'imagekit',
     'appointment',
-    #'django_q'
+    'django_q'
 ]
 
 MIDDLEWARE = [
@@ -154,7 +152,7 @@ LANGUAGES = (
 )
 
 LANGUAGE_CODE = 'fr-fr'
-#LANGUAGE_CODE = 'en-us'
+# LANGUAGE_CODE = 'en-us'
 
 LOCALE_PATHS = [
     BASE_DIR / 'locale',
@@ -286,6 +284,22 @@ CKEDITOR_5_CUSTOM_CSS = 'admin/css/darkmode_fix.css'
 # Django Appointments 
 #AUTH_USER_MODEL = '' # Optional if using Django's default user model
 APPOINTMENT_WEBSITE_NAME = 'Mi-time.fr'
+PHONENUMBER_DEFAULT_REGION = 'FR'
+APPOINTMENT_BASE_TEMPLATE = 'appointment/base.html'
+# APPOINTMENT_BASE_TEMPLATE = 'base_templates/base.html'
+#APPOINTMENT_ADMIN_BASE_TEMPLATE = 'base_templates/base.html'  # optional
+APPOINTMENT_PAYMENT_URL = "stripe:create-appointment-checkout-session"
+APPOINTMENT_THANK_YOU_URL = None
+
+Q_CLUSTER = {
+   'name': 'DjangORM',
+   'workers': 4,
+   'timeout': 90,
+   'retry': 120,
+   'queue_limit': 50,
+   'bulk': 10,
+   'orm': 'default',
+}
 
 
 LOGGING = {
