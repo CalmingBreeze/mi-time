@@ -82,7 +82,7 @@
                             <ul>
                                 {% block bookbutton %}
                                 <li>
-                                    <a class="header-button" href="#book" onclick="Calendly.initPopupWidget({ url: 'https://calendly.com/reservation-mi-time' });"><span class="medium-hidden">{% translate "Booknow1" context "Header Button" %}</span> {% translate "Booknow2" context "Header Button" %}</a>
+                                    <a class="header-button" href="{% url 'reservation' %}" ><span class="medium-hidden">{% translate "Booknow1" context "Header Button" %}</span> {% translate "Booknow2" context "Header Button" %}</a>
                                 </li>
                                 {% endblock %}
                                 {% for page_item in menu_pages %}
@@ -213,12 +213,7 @@
         <script src="{% static 'core/assets/js/breakpoints.min.js' %}" type="text/javascript"></script>
         <script src="{% static 'core/assets/js/util.js' %}" type="text/javascript"></script>
         <script src="{% static 'core/assets/js/main.js' %}" type="text/javascript"></script>
-        <!-- Début de widget de badge Calendly -->
-        <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
-        <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
-        <!-- Fin de widget de badge Calendly -->
         {% block scripts %}
-
         {% endblock %}
 
     </body>

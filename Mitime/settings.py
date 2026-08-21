@@ -161,7 +161,7 @@ LOCALE_PATHS = [
 MEDIA_URL = "/media/"
 MEDIA_ROOT = join(BASE_DIR, "media")
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Europe/Paris'
 
 # USE_L10N = True
 USE_I18N = True
