@@ -28,6 +28,8 @@ SECRET_KEY = config("SECRET_KEY")
 DEBUG = config("DEBUG", default=False, cast=bool)
 
 GMAP_API_KEY = config("GMAP_API_KEY")
+STRIPE_PUBLIC_KEY = config("STRIPE_PUBLIC_KEY")
+STRIPE_SECRET_KEY = config("STRIPE_SECRET_KEY")
 
 #Stripe
 STRIPE_PUBLIC_KEY = config("STRIPE_PUBLIC_KEY")
