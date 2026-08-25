@@ -12,6 +12,7 @@
         <meta name="description" content="{% block meta_description %}Prenez le temps pour vous! Réservez votre rendez vous avec Mireille pour une moment unique de détente et d'apaisement.{% endblock %}">
         <meta name="keywords" content="{% block meta_keywords %}Massage, Montpellier, Mireille, Espace Pitôt{% endblock %}">
         {% block meta_robots %}{% endblock %}
+        {% block customMetaTag %}{% endblock %}
 
         <link rel="stylesheet" href="{% static 'core/assets/css/main.css' %}">
         <link rel="stylesheet" href="{% static 'core/assets/css/fontawesome/fontawesome.css' %}">
@@ -20,6 +21,11 @@
         <link rel="stylesheet" href="{% static 'core/assets/css/fontawesome/brands.css' %}">
         <link rel="stylesheet" href="{% static 'django_ckeditor_5/dist/styles.css' %}">
         <noscript><link rel="stylesheet" href="{% static 'core/assets/css/noscript.css' %}" /></noscript>
+        {% block customCSS %}{% endblock %}
+        <!-- Google font -->
+        <link href="https://fonts.googleapis.com/css?family=Poppins:300,300i,400,400i,500,500i,600,600i,700,700i&display=swap"
+            rel="stylesheet">
+        {% block scriptHead %}{% endblock %}
 
         <meta name="description" content="">
 
@@ -108,7 +114,7 @@
                                 </li>
                                 {% endif %}
                                 <li>
-                                    <a class="header-button" href="#menu">{% translate "Logout" context "Header Button" %}</a>
+                                    <a class="header-button" href="#menu">{% translate "Menu" context "Header Button" %}</a>
                                 </li>
                             </ul>
                         </nav>
@@ -123,7 +129,6 @@
                     {% block menulist %}
                         {% for page_item in menu_pages %}
                             {% if page_item.custom_viewname %}
-                                {% comment %}<!-- Handle case where the is only one practice switch from list to full view -->{% endcomment %}
                                 {%if page_item.custom_viewname == "practices" and practices_count == 1 %}
                                     <li><a href="{% url 'practice' practice_slug=first_practice.slug %}">{% translate 'Practice' context "Menu link" %}</a></li>
                                 {% else %}
@@ -137,6 +142,14 @@
                             <li><a href="{% url 'practice' practice_slug=first_practice.slug %}#find-us">{% translate 'Find us' context "Menu link" %}</a></li>
                         {% endif %}
                         <li><a href="#contact-infos">{% translate 'Contact us' context "Menu link" %}</a></li>
+                        {% if user.is_authenticated %}
+                        <li>
+                            <form method="POST" action="{% url 'logout' %}?next={{ request.path|urlencode }}">
+                                {% csrf_token %}
+                                <button type="submit">{% translate 'Logout' context "Header Button" %}</button>
+                            </form>
+                        </li>
+                        {% endif %}
                     {% endblock %}
                 </ul>
             </nav>
@@ -166,7 +179,6 @@
                         <ul>
                             {% for page_item in footer_links %}
                                 {% if page_item.custom_viewname %}
-                                    {% comment %}<!-- Handle case where the is only one practice switch from list to full view -->{% endcomment %}
                                     {%if page_item.custom_viewname == "practices" and practices_count == 1 %}
                                         <li><a href="{% url 'practice' practice_slug=first_practice.slug %}">{% translate 'Practice' context "Menu link" %}</a></li>
                                     {% else %}
@@ -195,11 +207,6 @@
                         {% for page in legal_links %}
                             <li><a href="{% url 'page' page_slug=page.slug %}">{{page.name}}</a></li>
                         {% endfor %}
-                        <!--
-                        <li><a href="{% url 'page' page_slug='cgv' %}">CGV</a></li>
-                        <li><a href="{% url 'page' page_slug='mentions-legales' %}">Mentions-légales</a></li>
-                        <li><a href="{% url 'page' page_slug='confidentialite' %}">RPGD</a></li>
-                        -->
                     </ul>
                     {% endblock %}
                 </div>
@@ -213,9 +220,16 @@
         <script src="{% static 'core/assets/js/breakpoints.min.js' %}" type="text/javascript"></script>
         <script src="{% static 'core/assets/js/util.js' %}" type="text/javascript"></script>
         <script src="{% static 'core/assets/js/main.js' %}" type="text/javascript"></script>
-        {% block scripts %}
-
-        {% endblock %}
+        {% block scripts %}{% endblock %}
+        <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+                integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+                crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.min.js"
+                integrity="sha512-WW8/jxkELe2CAiE4LvQfwm1rajOS8PHasCCx+knHG0gBHt8EXxS6T6tJRTGuDQVnluuAvMxWF4j8SNFDKceLFg=="
+                crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        {% block customJS %}{% endblock %}
 
     </body>
 </html>

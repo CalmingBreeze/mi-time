@@ -7,6 +7,7 @@ from . import views
 from .stripeviews import CreateCheckoutSessionView, SuccessView, CancelView, stripe_webhook
 
 from django.contrib.sitemaps.views import sitemap
+from django.contrib.auth.views import PasswordResetView
 from core.sitemap import StaticViewSitemap, PracticeSitemap, MassageSitemap, GiftCardSitemap, BundleSitemap, PageSitemap
 from core.admin import admin_site
 
@@ -59,9 +60,12 @@ urlpatterns = [
     #path("practice/<int:practice_id>/", views.practice, name="practice"),
 
     path('miadmin/', admin_site.urls),
-    
-    path("account/", include("django.contrib.auth.urls")),
-    path("account/profile/", views.profile, name="user-profile"),
+
+    #override password_reset to allow html template and plain text fallback
+    path('accounts/password_reset/', PasswordResetView.as_view(html_email_template_name="registration/password_reset_email.html"),name="password_reset"),
+    path("accounts/", include("django.contrib.auth.urls")),
+
+    path("accounts/profile/", views.profile, name="user-profile"),
 ]
 
 urlpatterns += [

@@ -29,7 +29,7 @@
         </div>
         <hr>
         {% if related_service_id %}
-        <a href="{% url 'appointment:appointment_request' service_id=related_service_id %}" class="action-button">{% translate "Book this massage" context "Product Full" %}</a>
+        <a href="{% url 'appointment:appointment_request' service_id=related_service_id %}" class="button">{% translate "Book this massage" context "Product Full" %}</a>
         {% endif %}
 
         {% comment "Not needed for single practice" %}

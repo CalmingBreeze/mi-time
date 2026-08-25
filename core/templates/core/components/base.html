@@ -98,7 +98,7 @@
                                     {% endif %}
                                 {% endfor %}
                                 {% if user.is_authenticated %}
-                                <form method="POST" action="{% url 'logout' %}">
+                                <form method="POST" action="{% url 'logout' %}?next={{ request.path|urlencode }}">
                                     {% csrf_token %}
                                     <button class="header-button">{% translate 'Logout' context "Header Button" %}</button>
                                 </form>
@@ -108,7 +108,7 @@
                                 </li>
                                 {% endif %}
                                 <li>
-                                    <a class="header-button" href="#menu">{% translate "Logout" context "Header Button" %}</a>
+                                    <a class="header-button" href="#menu">{% translate "Menu" context "Header Button" %}</a>
                                 </li>
                             </ul>
                         </nav>
@@ -137,6 +137,14 @@
                             <li><a href="{% url 'practice' practice_slug=first_practice.slug %}#find-us">{% translate 'Find us' context "Menu link" %}</a></li>
                         {% endif %}
                         <li><a href="#contact-infos">{% translate 'Contact us' context "Menu link" %}</a></li>
+                        {% if user.is_authenticated %}
+                        <li>
+                            <form method="POST" action="{% url 'logout' %}?next={{ request.path|urlencode }}">
+                                {% csrf_token %}
+                                <button type="submit">{% translate 'Logout' context "Header Button" %}</button>
+                            </form>
+                        </li>
+                        {% endif %}
                     {% endblock %}
                 </ul>
             </nav>
@@ -145,6 +153,8 @@
             <div id="main">
                 <div class="inner">
                     {% block content %}
+                    {% endblock %}
+                    {% block body %}
                     {% endblock %}
                 </div>
             </div>

@@ -153,8 +153,8 @@ LANGUAGES = (
     ('en', 'English')
 )
 
-LANGUAGE_CODE = 'fr-fr'
-# LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'fr'
+# LANGUAGE_CODE = 'en'
 
 LOCALE_PATHS = [
     BASE_DIR / 'locale',
@@ -163,7 +163,9 @@ LOCALE_PATHS = [
 MEDIA_URL = "/media/"
 MEDIA_ROOT = join(BASE_DIR, "media")
 
+# TIME_ZONE = 'America/Montreal'
 TIME_ZONE = 'Europe/Paris'
+# TIME_ZONE = 'UTC'
 
 # USE_L10N = True
 USE_I18N = True
@@ -288,8 +290,9 @@ CKEDITOR_5_CUSTOM_CSS = 'admin/css/darkmode_fix.css'
 APPOINTMENT_WEBSITE_NAME = 'Mi-time.fr'
 PHONENUMBER_DEFAULT_REGION = 'FR'
 APPOINTMENT_BASE_TEMPLATE = 'appointment/base.html'
-# APPOINTMENT_BASE_TEMPLATE = 'base_templates/base.html'
+#APPOINTMENT_BASE_TEMPLATE = 'base_templates/base.html'
 #APPOINTMENT_ADMIN_BASE_TEMPLATE = 'base_templates/base.html'  # optional
+APPOINTMENT_CUSTOM_EMAILS_DIR = 'appointment/emails'
 APPOINTMENT_PAYMENT_URL = "stripe:create-appointment-checkout-session"
 APPOINTMENT_THANK_YOU_URL = None
 

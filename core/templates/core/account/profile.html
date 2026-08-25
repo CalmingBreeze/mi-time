@@ -5,49 +5,39 @@
 
 {% block content %}
 <section>
+    <h1>{% translate 'my account' context 'User Profile' %}</h1>
+    <!-- Informations personnelles -->
+    <h2>{% translate 'my infos' context 'User Profile' %}</h2>
     {% if messages %}
         {% for message in messages %}
             <div class="alert alert-dismissible {% if message.tags %}alert-{% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}danger{% else %}{{ message.tags }}{% endif %}{% endif %}"
                     role="alert">{{ message }}</div>
         {% endfor %}
     {% endif %}
-
-
-
-    <h1>{% translate 'my account' context 'User Profile' %}</h1>
-    <!-- Informations personnelles -->
-    <h2>{% translate 'my infos' context 'User Profile' %}</h2>
-    <form method="post" action="{% url 'user-profile' %}">
+    {% for field in form %}
+        {% for error in field.errors %}
+            <div class="fielderror-item">{{field.label_tag}} {{ error }}</div>
+        {% endfor %}
+    {% endfor %}
+    <form method="post" action="{% url 'user-profile' %}" id="profile-user-info">
     {% csrf_token %}
-        {% if form.errors %}
-            <div class="errors">{{ form.non_field_errors }}</div>
-        {% endif %}
         <table>
             <tr>
                 <td>{{ form.first_name.label_tag }}</td>
                 <td>{{ form.first_name }}</td>
-                {% if form.first_name.errors %}
-                    <p class="error">{{ form.first_name.errors.0 }}</p>
-                {% endif %}
             </tr>
             <tr>
                 <td>{{ form.last_name.label_tag }}</td>
                 <td>{{ form.last_name }}</td>
-                {% if form.last_name.errors %}
-                    <p class="error">{{ form.last_name.errors.0 }}</p>
-                {% endif %}
             </tr>
             <tr>
                 <td>{{ form.email.label_tag }}</td>
                 <td>{{ form.email }}</td>
-                {% if form.email.errors %}
-                    <p class="error">{{ form.email.errors.0 }}</p>
-                {% endif %}
             </tr>
         </table>
         <input type="submit" value="{% translate 'Update' context 'User Profile' %}">
     </form>
-    <!-- Derniers Forfaits -->
+    <!-- Table for when plans will be saved on database.
     <h2>{% translate 'last plans' context 'User Profile' %}</h2>
     <table>
         <thead>
@@ -57,24 +47,24 @@
             <td>{% translate 'purchase date' context 'User Profile' %}</td>
         </thead>
         <tr>
-            <td>Forfait 10h</td>
+            <td>(Fac-Similé) Forfait 10h</td>
             <td>Actif</td>
             <td>3H 30Min</td>
             <td>17 Mai 2026</td>
         </tr>
         <tr>
-            <td>Forfait 3h</td>
+            <td>(Fac-Similé) Forfait 3h</td>
             <td>Utilisé</td>
             <td>Aucun</td>
             <td>28 Mars 2026</td>
         </tr>
         <tr>
-            <td>Forfait 3h</td>
+            <td>(Fac-Similé) Forfait 3h</td>
             <td>Expiré</td>
             <td>Aucun</td>
             <td>11 Janvier 2023</td>
         </tr>
-    </table>
+    </table-->
     <!-- Dernières commandes -->
     <h2>{% translate 'last orders' context 'User Profile' %}</h2>
     <table>
@@ -84,12 +74,11 @@
             <td>{% translate 'purchase date' context 'User Profile' %}</td>
             <td>{% translate 'status' context 'User Profile' %}</td>
         </thead>
+        {% for order in orders %}
         <tr>
-            <td>Massage 1H</td><td>30 Juin 2026 à 14h30</td><td>23 Juin à 15h37</td><td>Honoré</td>
+            <td>{{ order.appointment_request.service.name }}</td><td>{{ order.appointment_request.date }} à {{ order.appointment_request.start_time }}</td><td>{{ order.appointment_request.created_at }}</td><td>{% if order.paid %}{% translate 'Paid' context 'User Profile' %}{% else %}{% translate 'Awaiting payment' context 'User Profile' %}{% endif %}</td>
         </tr>
-        <tr>
-            <td>Massage 30min</td><td>16 Juin 2026 à 14h30</td><td>11 Juin à 08h12</td><td>Honoré</td>
-        </tr>
+        {% endfor %}
     </table>
 </section>
 {% endblock %}

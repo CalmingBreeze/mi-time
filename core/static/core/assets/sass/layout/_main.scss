@@ -87,20 +87,6 @@
         }
     }
 
-    .action-button {
-        color: _palette(tile-title);
-        text-transform: uppercase;
-        font-weight: _font(weight-bold);
-        font-size: 1em;
-        // height: auto;
-        // line-height: normal;
-
-        padding: .5em 1em;
-        border-radius: _size(border-radius);
-        background-color:_palette(tile-tag);
-        border: 1px solid _palette(tile-title);
-    }
-
     #product-full-description {
         .title-duration-wrapper {
             display: flex;
@@ -139,6 +125,19 @@
         p {
             text-align: justify;
             margin-bottom: .8em;
+        }
+    }
+
+    #reservation {
+        h1 {
+            font-size: 1.8em;
+        }
+
+        h2 {
+            font-size: 1.5em;
+            text-decoration: none;
+            text-transform: none;
+            letter-spacing: .1em;
         }
     }
 

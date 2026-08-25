@@ -3,6 +3,7 @@
 {% load static %}
 {% block customCSS %}
     <link rel="stylesheet" type="text/css" href="{% static 'css/appointments-user-details.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'core/assets/css/django-appointment.css' %}"/>
 {% endblock %}
 {% block title %}
     {% translate 'Client Information' %} - {{ ar.get_service_name }}
@@ -14,7 +15,7 @@
     {% endblocktranslate %}
 {% endblock %}
 {% block body %}
-    <div class="main-container">
+    <div id="appointment-request">
         <div class="body-container">
             {% if messages %}
                 {% for message in messages %}
@@ -30,7 +31,8 @@
                 <div class="appointment-user-info">
                     <div class="appointment-user-info-title">
                         <div class="title">
-                            {% trans "Fill out your details" %}
+                            {% trans "Fill out your details" context "DJA Client Info" %}
+                            <span id="required-field">{% trans "(* required)" context "DJA Client Info" %}</span>
                         </div>
                     </div>
                     <hr class="second-part">
@@ -39,16 +41,16 @@
                             {% if not user.is_authenticated %}
                             <div class="already-have-account">
                                 <div>
-                                    {% trans 'Already have an account?' %}
-                                    <a href="{% url 'login' %}?next={{ request.path|urlencode }}">{% trans 'Log in' %}</a> {% trans 'for faster booking.' %}
+                                    {% trans 'Already have an account?' context "DJA Client Info" %}
+                                    <a href="{% url 'login' %}?next={{ request.path|urlencode }}">{% trans 'Log in' context "DJA Client Info" %}</a> {% trans 'for faster booking.' context "DJA Client Info" %}
                                 </div>
                             </div>
                             {% endif %}
                             <div class="name-email">
-                                <label for="{{ form.name.id_for_label }}" class="name">{% trans "Name" %} *<br>
+                                <label for="{{ form.name.id_for_label }}" class="name">{% trans "Name" context "DJA Client Info"%} *<br>
                                     {{ client_data_form.name }}
                                 </label>
-                                <label for="{{ form.email.id_for_label }}" class="email">{% trans "Email" %} *<br>
+                                <label for="{{ form.email.id_for_label }}" class="email">{% trans "Email" context "DJA Client Info"%} *<br>
                                     {{ client_data_form.email }}
                                 </label>
                             </div>
@@ -56,7 +58,7 @@
                                 <div class="receive-email">
                                     <label for="{{ form.want_reminder.id_for_label }}">
                                         {{ form.want_reminder }}
-                                        {% trans "I want to receive an EMAIL reminder 24 hours before this session starts" %}
+                                        {% trans "I want to receive an EMAIL reminder 24 hours before this session starts" context "DJA Client Info" %}
                                     </label>
                                 </div>
                             {% endif %}
@@ -69,20 +71,23 @@
                                 </div>
                             </div>
                             <div class="address">
-                                <label for="{{ form.address.id_for_label }}">{% trans "City and State" %} :<br>
+                                <label for="{{ form.address.id_for_label }}">{% trans "City and State" context "DJA Client Info" %}<br>
                                     {{ form.address }}
                                 </label>
                             </div>
                             <div class="additional-information">
-                                <label for="{{ form.additional_info.id_for_label }}">{% trans 'Additional Information' %}<br>
-                                    {{ form.additional_info }}
+                                <label for="{{ form.additional_info.id_for_label }}">{% trans 'Additional Information' context "DJA Client Info" %}<br>
+                                    <div class="textarea-wrapper">
+                                        <textarea id="{{ form.additional_info.id_for_label }}" class="form-control" name="{{ form.additional_info.html_name }}"
+                                                  placeholder="{% trans 'Additional Information Placeholder' context 'DJA Client Info' %}"></textarea>
+                                    </div>
                                 </label>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="service-description-and-pay">
-                    <div class="service-details-title">{% trans "Service Details" %}</div>
+                    <div class="service-details-title">{% trans "Service Details" context "DJA Client Info" %}</div>
 
                     <hr class="second-part">
 
@@ -93,33 +98,29 @@
                             {{ ar.date }}&nbsp;{% trans "at" %}&nbsp;{{ ar.start_time }}
                         </div>
                         <div>{{ ar.service.get_duration }}</div>
+                        <div>{{ ar.get_service_price_text }}</div>
                     </div>
                     
                     <hr class="second-part">
-                        <div class="service-details-title">{% trans "Giftcard" %}</div>
+                        <div class="service-details-title">{% trans "Giftcard" context "DJA Client Info" %}</div>
                         <div>
-                            {% trans "Have a gift card? You can redeem it in the last payment step." %}
+                            {% trans "Have a gift card? You can redeem it in the last payment step." context "DJA Client Info" %}
                         </div>
 
                     <hr class="second-part">
                     {% if ar.is_a_paid_service %}
                         {% if APPOINTMENT_PAYMENT_URL %}
                             <div class="service-payment">
-                                <div class="payment-details-title">{% trans "Payment Details" %}</div>
-                                <div class="total">
-                                    <div>{% trans "Total" %}</div>
-                                    <div>{{ ar.get_service_price_text }}</div>
-                                </div>
                                 <div class="payment-options">
                                     <button type="submit" class="btn btn-dark btn-pay-full" name="payment_type"
                                             value="full">
-                                        {% trans "Pay" %}
+                                        {% trans "Continue" context "DJA Client Info" %}
                                     </button>
                                     {% if ar.accepts_down_payment %}
                                         <button type="submit" class="btn btn-dark btn-pay-down-payment"
                                                 name="payment_type"
                                                 value="down">
-                                            {% trans "Down Payment" %} ({{ ar.get_service_down_payment_text }})
+                                            {% trans "Down Payment" context "DJA Client Info" %} ({{ ar.get_service_down_payment_text }})
                                         </button>
                                     {% endif %}
                                 </div>
@@ -128,13 +129,13 @@
                         {% else %}
                             <button type="submit" class="btn btn-dark btn-submit-appointment" name="payment_type"
                                     value="full">
-                                {% trans "Finish" %}
+                                {% trans "Book" context "DJA Client Info" %}
                             </button>
                         {% endif %}
                     {% else %}
                         <button type="submit" class="btn btn-dark btn-submit-appointment" name="payment_type"
                                 value="full">
-                            {% trans "Finish" %}
+                            {% trans "Book" context "DJA Client Info" %}
                         </button>
                     {% endif %}
                 </div>

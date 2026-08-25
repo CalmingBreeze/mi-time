@@ -10,7 +10,12 @@ from django.contrib import messages
 from django.contrib.contenttypes.models import ContentType
 from django.contrib.auth.decorators import login_required
 from django.utils.translation import pgettext as _
+from django.utils.translation import pgettext
 
+from appointment.models import Appointment
+
+import logging
+logger = logging.getLogger(__name__)
 
 # Handle custom error views
 def err500_view(request):
@@ -126,16 +131,19 @@ def massageBySlug(request, massage_slug):
 @login_required
 def profile(request):
     if request.method == 'POST':
-        user_form = PersonnalInformationForm(request.POST, user=request.user)
-        if user_form.is_valid():
+        form = PersonnalInformationForm(request.POST, user=request.user)
+        if form.is_valid():
             #process
-            user_form.save()
-            messages.success(request, _('Your profile is updated successfully','Form Validation'))
+            form.save()
+            messages.success(request, pgettext('Form Validation','Your profile is updated successfully'))
             return redirect(to='user-profile')
         else:
-            messages.error(request, _('There was an error in your submission. Please check the form and try again.','Form Validation'))
-            messages.error(request, user_form.errors)
+            messages.error(request, pgettext('Form Validation','There was an error in your submission :'))
+            #messages.error(request, form.errors)
     else:
         form = PersonnalInformationForm(user=request.user)
-    
-    return render(request, "core/account/profile.html", {"form": form})
+
+    orders = Appointment.objects.filter(client_id=request.user.id).order_by("-id")[:10]
+    # orders = Appointment.objects.filter(client_id=8)
+    context = {"form": form, "orders": orders}
+    return render(request, "core/account/profile.html", context)

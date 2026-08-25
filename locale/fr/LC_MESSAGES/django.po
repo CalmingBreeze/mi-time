@@ -3,12 +3,11 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-18 11:09+0200\n"
+"POT-Creation-Date: 2026-08-25 17:18+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,105 +16,116 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: .\core\admin.py:104 .\core\admin.py:164 .\core\admin.py:224
+#: .\core\admin.py:102 .\core\admin.py:162 .\core\admin.py:222
 msgctxt "Product Admin Attributes Group Block"
 msgid "Product Detail"
 msgstr "Détails du produit"
 
-#: .\core\admin.py:108 .\core\admin.py:168 .\core\admin.py:228
+#: .\core\admin.py:106 .\core\admin.py:166 .\core\admin.py:226
 msgctxt "Product Admin Attributes Group Block"
 msgid "Full view related content. Modify product page content."
 msgstr "Attributs de la vue détaillée. Impacte la page produit."
 
-#: .\core\admin.py:112 .\core\admin.py:172 .\core\admin.py:232
+#: .\core\admin.py:110 .\core\admin.py:170 .\core\admin.py:230
 msgctxt "Product Admin Attributes Group Block"
 msgid "Tile Detail"
 msgstr "Configuration de la vignette"
 
-#: .\core\admin.py:116 .\core\admin.py:176 .\core\admin.py:236
+#: .\core\admin.py:114 .\core\admin.py:174 .\core\admin.py:234
 msgctxt "Product Admin Attributes Group Block"
 msgid "Tile view parameters. Modify tiles in list views"
 msgstr ""
 "Attributs de la vue vignette. Impacte l'affichage des vignettes en liste."
 
-#: .\core\admin.py:120 .\core\admin.py:180 .\core\admin.py:240
+#: .\core\admin.py:118 .\core\admin.py:178 .\core\admin.py:238
 msgctxt "Product Admin Attributes Group Block"
 msgid "SEO"
 msgstr "SEO"
 
-#: .\core\admin.py:124 .\core\admin.py:184 .\core\admin.py:244
+#: .\core\admin.py:122 .\core\admin.py:182 .\core\admin.py:242
 msgctxt "Product Admin Attributes Group Block"
 msgid "SEO related parameters"
 msgstr "Paramètres SEO."
 
-#: .\core\admin.py:128
+#: .\core\admin.py:126
 msgctxt "Product Admin Attributes Group Block"
 msgid "Giftcard Specifics"
 msgstr "Spécificités Carte cadeau"
 
-#: .\core\admin.py:132
+#: .\core\admin.py:130
 msgctxt "Product Admin Attributes Group Block"
 msgid "Giftcard specifics attributes"
 msgstr "Attributs propres à cette carte-cadeau."
 
-#: .\core\admin.py:136 .\core\admin.py:196 .\core\admin.py:256
+#: .\core\admin.py:134 .\core\admin.py:194 .\core\admin.py:254
 msgctxt "Product Admin Attributes Group Block"
 msgid "Stripe connection"
 msgstr "Connexion avec Stripe"
 
-#: .\core\admin.py:140 .\core\admin.py:200 .\core\admin.py:260
+#: .\core\admin.py:138 .\core\admin.py:198 .\core\admin.py:258
 msgctxt "Product Admin Attributes Group Block"
 msgid "Stripe product pairing parameters"
 msgstr "Lien avec les produits stripes"
 
-#: .\core\admin.py:144 .\core\admin.py:204 .\core\admin.py:264
+#: .\core\admin.py:142 .\core\admin.py:202 .\core\admin.py:262
 msgctxt "Product Admin Attributes Group Block"
 msgid "Promo"
 msgstr "Offre promotionnelle"
 
-#: .\core\admin.py:148 .\core\admin.py:208 .\core\admin.py:268
+#: .\core\admin.py:146 .\core\admin.py:206 .\core\admin.py:266
 msgctxt "Product Admin Attributes Group Block"
 msgid "Promotion related parameters"
 msgstr "Parametrage d'une promotion stripe"
 
-#: .\core\admin.py:188
+#: .\core\admin.py:186
 msgctxt "Product Admin Attributes Group Block"
 msgid "Bundle Specifics"
 msgstr "Spécifités du forfait"
 
-#: .\core\admin.py:192
+#: .\core\admin.py:190
 msgctxt "Product Admin Attributes Group Block"
 msgid "Bundle specific attributes"
 msgstr "Attributs propre aux forfaits"
 
-#: .\core\admin.py:248
+#: .\core\admin.py:246
 msgctxt "Product Admin Attributes Group Block"
 msgid "Massage Specifics"
 msgstr "Attributs propre aux massages"
 
-#: .\core\admin.py:252
+#: .\core\admin.py:250
 msgctxt "Product Admin Attributes Group Block"
 msgid "Massage specific attributes"
 msgstr "Spécificités du massage"
 
-#: .\core\forms.py:34
+#: .\core\forms.py:11
+msgctxt "User Profile"
+msgid "Firstname"
+msgstr "Prénom"
+
+#: .\core\forms.py:12
+msgctxt "User Profile"
+msgid "Lastname"
+msgstr "Nom"
+
+#: .\core\forms.py:35
+msgctxt "User Profile"
 msgid "This email is already taken."
-msgstr ""
+msgstr "Cette adresse est déjà utilisée."
 
 #: .\core\models.py:13
 msgctxt "Model Field"
 msgid "Draft"
-msgstr ""
+msgstr "Brouillon"
 
 #: .\core\models.py:14
 msgctxt "Model Field"
 msgid "Hidden"
-msgstr ""
+msgstr "Masqué"
 
 #: .\core\models.py:15
 msgctxt "Model Field"
 msgid "Published"
-msgstr ""
+msgstr "Publié"
 
 #: .\core\models.py:23
 msgctxt "Model Field"
@@ -491,11 +501,11 @@ msgctxt "Model Field"
 msgid "Content of robots.txt"
 msgstr "Contenu de robots.txt"
 
-#: .\core\templates\appointment\appointment_client_information.html:8
+#: .\core\templates\appointment\appointment_client_information.html:9
 msgid "Client Information"
 msgstr "Informations"
 
-#: .\core\templates\appointment\appointment_client_information.html:11
+#: .\core\templates\appointment\appointment_client_information.html:12
 #, python-format
 msgid ""
 "\n"
@@ -505,217 +515,348 @@ msgid ""
 "    "
 msgstr ""
 
-#: .\core\templates\appointment\appointment_client_information.html:33
+#: .\core\templates\appointment\appointment_client_information.html:34
+msgctxt "DJA Client Info"
 msgid "Fill out your details"
 msgstr "Vos informations"
 
-#: .\core\templates\appointment\appointment_client_information.html:42
+#: .\core\templates\appointment\appointment_client_information.html:35
+msgctxt "DJA Client Info"
+msgid "(* required)"
+msgstr "(* requis)"
+
+#: .\core\templates\appointment\appointment_client_information.html:44
+msgctxt "DJA Client Info"
 msgid "Already have an account?"
 msgstr "Vous avez déjà un compte ?"
 
-#: .\core\templates\appointment\appointment_client_information.html:43
+#: .\core\templates\appointment\appointment_client_information.html:45
+msgctxt "DJA Client Info"
 msgid "Log in"
 msgstr "Connectez-vous"
 
-#: .\core\templates\appointment\appointment_client_information.html:43
+#: .\core\templates\appointment\appointment_client_information.html:45
+msgctxt "DJA Client Info"
 msgid "for faster booking."
-msgstr "pour une réservation plus rapide"
+msgstr "pour une réservation plus rapide !"
 
-#: .\core\templates\appointment\appointment_client_information.html:46
-msgid "Tell us a bit about yourself"
-msgstr "Vos informations"
-
-#: .\core\templates\appointment\appointment_client_information.html:49
-msgid "Full Name"
+#: .\core\templates\appointment\appointment_client_information.html:50
+msgctxt "DJA Client Info"
+msgid "Name"
 msgstr "Nom"
 
-#: .\core\templates\appointment\appointment_client_information.html:52
+#: .\core\templates\appointment\appointment_client_information.html:53
+msgctxt "DJA Client Info"
 msgid "Email"
 msgstr "Email"
 
-#: .\core\templates\appointment\appointment_client_information.html:60
+#: .\core\templates\appointment\appointment_client_information.html:61
+msgctxt "DJA Client Info"
 msgid "I want to receive an EMAIL reminder 24 hours before this session starts"
 msgstr "Je souhaite recevoir un rappel par email la veille du massage."
 
-#: .\core\templates\appointment\appointment_client_information.html:66
+#: .\core\templates\appointment\appointment_client_information.html:67
 msgid "Phone"
 msgstr "Téléphone"
 
-#: .\core\templates\appointment\appointment_client_information.html:73
+#: .\core\templates\appointment\appointment_client_information.html:74
+msgctxt "DJA Client Info"
 msgid "City and State"
-msgstr "Ville et Région"
+msgstr "Adresse postale"
 
-#: .\core\templates\appointment\appointment_client_information.html:78
+#: .\core\templates\appointment\appointment_client_information.html:79
+msgctxt "DJA Client Info"
 msgid "Additional Information"
 msgstr "Informations complémentaires"
 
-#: .\core\templates\appointment\appointment_client_information.html:86
+#: .\core\templates\appointment\appointment_client_information.html:82
+msgctxt "DJA Client Info"
+msgid "Additional Information Placeholder"
+msgstr ""
+"Veuillez nous préciser toute allergie ou autre information de santé "
+"pertinente."
+
+#: .\core\templates\appointment\appointment_client_information.html:90
+msgctxt "DJA Client Info"
 msgid "Service Details"
 msgstr "Détail du massage"
 
-#: .\core\templates\appointment\appointment_client_information.html:94
+#: .\core\templates\appointment\appointment_client_information.html:98
 msgid "at"
 msgstr "à"
 
-#: .\core\templates\appointment\appointment_client_information.html:100
+#: .\core\templates\appointment\appointment_client_information.html:105
+msgctxt "DJA Client Info"
 msgid "Giftcard"
 msgstr "Carte cadeau"
 
-#: .\core\templates\appointment\appointment_client_information.html:102
+#: .\core\templates\appointment\appointment_client_information.html:107
+msgctxt "DJA Client Info"
 msgid "Have a gift card? You can redeem it in the last payment step."
 msgstr ""
-"Vous avez une carte cadeau ? Vous pourrez l'appliquer à la dernière étape du "
-"paiement."
+"Vous avez une carte cadeau ? Vous pourrez l'appliquer à la dernière étape de "
+"la réservation"
 
-#: .\core\templates\appointment\appointment_client_information.html:111
-msgid "Payment Details"
-msgstr "Total"
+#: .\core\templates\appointment\appointment_client_information.html:117
+msgctxt "DJA Client Info"
+msgid "Continue"
+msgstr "Continuer"
 
-#: .\core\templates\appointment\appointment_client_information.html:113
-msgid "Total"
-msgstr "Total"
-
-#: .\core\templates\appointment\appointment_client_information.html:119
-msgid "Pay"
-msgstr "Payer"
-
-#: .\core\templates\appointment\appointment_client_information.html:125
+#: .\core\templates\appointment\appointment_client_information.html:123
+msgctxt "DJA Client Info"
 msgid "Down Payment"
 msgstr "Acompte"
 
-#: .\core\templates\appointment\appointment_client_information.html:134
-#: .\core\templates\appointment\appointment_client_information.html:140
-msgid "Finish"
-msgstr "Terminer"
+#: .\core\templates\appointment\appointment_client_information.html:132
+#: .\core\templates\appointment\appointment_client_information.html:138
+msgctxt "DJA Client Info"
+msgid "Book"
+msgstr "Réserver"
 
-#: .\core\templates\appointment\appointment_client_information.html:197
-#: .\core\templates\appointment\appointment_client_information.html:223
+#: .\core\templates\appointment\appointment_client_information.html:195
+#: .\core\templates\appointment\appointment_client_information.html:221
 msgid "Please enter a valid email address"
 msgstr "Veuillez entrer une adresse email valide"
 
-#: .\core\templates\appointment\appointments.html:21
+#: .\core\templates\appointment\appointments.html:19
 msgid ""
 "Check out our availability and book the date and time that works for you"
 msgstr ""
 "Vérifiez la disponibilité et prenez le rendez-vous à la date qui vous "
 "convient."
 
-#: .\core\templates\appointment\appointments.html:29
+#: .\core\templates\appointment\appointments.html:27
 msgid "Select a date and time"
 msgstr "Choisissez le jour et l'heure"
 
-#: .\core\templates\appointment\appointments.html:32
+#: .\core\templates\appointment\appointments.html:30
 msgid "Timezone"
 msgstr "Fuseau Horaire"
 
-#: .\core\templates\appointment\appointments.html:52
+#: .\core\templates\appointment\appointments.html:51
 msgid "Reason for rescheduling"
 msgstr "Raison pour le report"
 
-#: .\core\templates\appointment\appointments.html:67
+#: .\core\templates\appointment\appointments.html:66
 msgid "Please select a staff member"
 msgstr "Veuillez choisir votre masseuse"
 
-#: .\core\templates\appointment\appointments.html:85
+#: .\core\templates\appointment\appointments.html:84
 msgid "Next"
 msgstr "Suivant"
 
-#: .\core\templates\appointment\appointments.html:126
+#: .\core\templates\appointment\appointments.html:124
 msgid "Request next available slot"
 msgstr "Demander le prochain créneau disponible."
 
-#: .\core\templates\appointment\appointments.html:127
+#: .\core\templates\appointment\appointments.html:125
 msgid "No staff member selected."
 msgstr "Pas de masseur choisi."
 
-#: .\core\templates\appointment\appointments.html:128
+#: .\core\templates\appointment\appointments.html:126
 msgid "Please select a time slot before submitting the appointment request."
 msgstr "Veuillez choisir un créneau avant d'envoyer la demande de rendez-vous."
 
-#: .\core\templates\appointment\appointments.html:129
+#: .\core\templates\appointment\appointments.html:127
 msgid "Date is in the past."
 msgstr "La date est passée"
 
-#: .\core\templates\appointment\appointments.html:130
+#: .\core\templates\appointment\appointments.html:128
 msgid "Please select a date and time"
 msgstr "Veuillez choisir le jour et l'heure"
 
-#: .\core\templates\appointment\appointments.html:131
+#: .\core\templates\appointment\appointments.html:129
 msgid "Today"
 msgstr "Aujourd'hui"
 
-#: .\core\templates\appointment\appointments.html:132
+#: .\core\templates\appointment\appointments.html:130
 msgid "Next month"
 msgstr "Mois suivant"
 
-#: .\core\templates\appointment\appointments.html:133
+#: .\core\templates\appointment\appointments.html:131
 msgid "Previous month"
 msgstr "Mois précédent"
 
-#: .\core\templates\appointment\appointments.html:134
+#: .\core\templates\appointment\appointments.html:132
 msgid "Next available date"
 msgstr "Faites du massage votre rituel bien-être"
 
-#: .\core\templates\core\account\profile.html:17
+#: .\core\templates\appointment\base.html:91
+#: .\core\templates\core\components\base.html:85
+msgctxt "Header Button"
+msgid "Booknow1"
+msgstr "Prendre"
+
+#: .\core\templates\appointment\base.html:91
+#: .\core\templates\core\components\base.html:85
+msgctxt "Header Button"
+msgid "Booknow2"
+msgstr "RDV"
+
+#: .\core\templates\appointment\base.html:97
+#: .\core\templates\core\components\base.html:91
+msgctxt "Header Button"
+msgid "Bundles"
+msgstr "Forfaits"
+
+#: .\core\templates\appointment\base.html:102
+#: .\core\templates\core\components\base.html:96
+msgctxt "Header Button"
+msgid "Gifts"
+msgstr "Offrir"
+
+#: .\core\templates\appointment\base.html:109
+#: .\core\templates\appointment\base.html:149
+#: .\core\templates\core\components\base.html:103
+#: .\core\templates\core\components\base.html:145
+msgctxt "Header Button"
+msgid "Logout"
+msgstr "Déconnexion"
+
+#: .\core\templates\appointment\base.html:113
+#: .\core\templates\core\components\base.html:107
+msgctxt "Header Button"
+msgid "My Account"
+msgstr "Mon compte"
+
+#: .\core\templates\appointment\base.html:117
+#: .\core\templates\core\components\base.html:111
+msgctxt "Header Button"
+msgid "Menu"
+msgstr ""
+
+#: .\core\templates\appointment\base.html:133
+#: .\core\templates\appointment\base.html:183
+#: .\core\templates\core\components\base.html:129
+#: .\core\templates\core\components\base.html:183
+msgctxt "Menu link"
+msgid "Practice"
+msgstr "Le Salon"
+
+#: .\core\templates\appointment\base.html:142
+#: .\core\templates\core\components\base.html:138
+msgctxt "Menu link"
+msgid "Find us"
+msgstr "Nous trouver"
+
+#: .\core\templates\appointment\base.html:144
+#: .\core\templates\core\components\base.html:140
+msgctxt "Menu link"
+msgid "Contact us"
+msgstr "Nous contacter"
+
+#: .\core\templates\appointment\base.html:178
+#: .\core\templates\core\components\base.html:176
+msgctxt "Footer"
+msgid "Links"
+msgstr "Navigation"
+
+#: .\core\templates\appointment\base.html:191
+#: .\core\templates\core\components\base.html:191
+msgctxt "Menu link"
+msgid "Book an appointment"
+msgstr "Prendre rendez-vous"
+
+#: .\core\templates\appointment\base.html:195
+#: .\core\templates\core\components\base.html:195
+msgctxt "Footer"
+msgid "Informations"
+msgstr "Informations"
+
+#: .\core\templates\appointment\enter_verification_code.html:10
+#: .\core\templates\appointment\enter_verification_code.html:11
+msgid "Enter Verification Code"
+msgstr "Entrez le code de vérification"
+
+#: .\core\templates\appointment\enter_verification_code.html:16
+msgctxt "DJA Client Verification"
+msgid "Enter Verification Code"
+msgstr "Vérification de l'email"
+
+#: .\core\templates\appointment\enter_verification_code.html:17
+msgctxt "DJA Client Verification"
+msgid "A verification code has been sent to your email."
+msgstr ""
+"Veuillez rentrer le code qui vous a été envoyé à l'adresse email renseignée."
+
+#: .\core\templates\appointment\enter_verification_code.html:22
+msgid "Code"
+msgstr "Code reçu"
+
+#: .\core\templates\appointment\enter_verification_code.html:33
+msgid "Submit"
+msgstr "Valider"
+
+#: .\core\templates\core\account\profile.html:8
 msgctxt "User Profile"
 msgid "my account"
 msgstr "Mon compte"
 
-#: .\core\templates\core\account\profile.html:19
+#: .\core\templates\core\account\profile.html:10
 msgctxt "User Profile"
 msgid "my infos"
 msgstr "Informations personnelles"
 
-#: .\core\templates\core\account\profile.html:48
+#: .\core\templates\core\account\profile.html:38
 msgctxt "User Profile"
 msgid "Update"
 msgstr "Mettre à jour"
 
-#: .\core\templates\core\account\profile.html:51
+#: .\core\templates\core\account\profile.html:41
 msgctxt "User Profile"
 msgid "last plans"
 msgstr "Mes forfaits"
 
-#: .\core\templates\core\account\profile.html:54
+#: .\core\templates\core\account\profile.html:44
 msgctxt "User Profile"
 msgid "plan name"
 msgstr "Nom du forfait"
 
-#: .\core\templates\core\account\profile.html:55
+#: .\core\templates\core\account\profile.html:45
 msgctxt "User Profile"
 msgid "plan status"
 msgstr "Statut"
 
-#: .\core\templates\core\account\profile.html:56
+#: .\core\templates\core\account\profile.html:46
 msgctxt "User Profile"
 msgid "time remaining"
 msgstr "Forfait restant"
 
-#: .\core\templates\core\account\profile.html:57
-#: .\core\templates\core\account\profile.html:84
+#: .\core\templates\core\account\profile.html:47
+#: .\core\templates\core\account\profile.html:74
 msgctxt "User Profile"
 msgid "purchase date"
 msgstr "Date d'achat"
 
-#: .\core\templates\core\account\profile.html:79
+#: .\core\templates\core\account\profile.html:69
 msgctxt "User Profile"
 msgid "last orders"
-msgstr "Mes commandes"
+msgstr "Mes dernières commandes"
 
-#: .\core\templates\core\account\profile.html:82
+#: .\core\templates\core\account\profile.html:72
 msgctxt "User Profile"
 msgid "product name"
 msgstr "Détails du produit"
 
-#: .\core\templates\core\account\profile.html:83
+#: .\core\templates\core\account\profile.html:73
 msgctxt "User Profile"
 msgid "appointment date"
-msgstr "Prendre rendez-vous"
+msgstr "Date du rendez-vous"
 
-#: .\core\templates\core\account\profile.html:85
+#: .\core\templates\core\account\profile.html:75
 msgctxt "User Profile"
 msgid "status"
 msgstr "Statut"
+
+#: .\core\templates\core\account\profile.html:79
+msgctxt "User Profile"
+msgid "Paid"
+msgstr "Payé"
+
+#: .\core\templates\core\account\profile.html:79
+msgctxt "User Profile"
+msgid "Awaiting payment"
+msgstr "En attente de paiement"
 
 #: .\core\templates\core\bundle_full.html:35
 msgctxt "Bundle Full"
@@ -731,7 +872,7 @@ msgstr "Faites du massage votre rituel bien-être"
 #: .\core\templates\core\components\product_tiles.html:47
 #: .\core\templates\core\giftcard_list.html:16
 #: .\core\templates\core\massage_list.html:15
-#: .\core\templates\core\reservation.html:27
+#: .\core\templates\core\reservation.html:28
 msgctxt "Product Tiles"
 msgid ""
 "We are currently polishing our offer. Come back soon to see what we have "
@@ -739,68 +880,6 @@ msgid ""
 msgstr ""
 "Nous revoyons actuellement notre offre. N'hésitez pas à revenir nous voir "
 "très bientôt pour découvrir nos services."
-
-#: .\core\templates\core\components\base.html:85
-msgctxt "Header Button"
-msgid "Booknow1"
-msgstr "Prendre"
-
-#: .\core\templates\core\components\base.html:85
-msgctxt "Header Button"
-msgid "Booknow2"
-msgstr "RDV"
-
-#: .\core\templates\core\components\base.html:91
-msgctxt "Header Button"
-msgid "Bundles"
-msgstr "Forfaits"
-
-#: .\core\templates\core\components\base.html:96
-msgctxt "Header Button"
-msgid "Gifts"
-msgstr "Offrir"
-
-#: .\core\templates\core\components\base.html:103
-#: .\core\templates\core\components\base.html:111
-msgctxt "Header Button"
-msgid "Logout"
-msgstr "Déconnexion"
-
-#: .\core\templates\core\components\base.html:107
-msgctxt "Header Button"
-msgid "My Account"
-msgstr "Mon compte"
-
-#: .\core\templates\core\components\base.html:129
-#: .\core\templates\core\components\base.html:173
-msgctxt "Menu link"
-msgid "Practice"
-msgstr "Le Salon"
-
-#: .\core\templates\core\components\base.html:138
-msgctxt "Menu link"
-msgid "Find us"
-msgstr "Nous trouver"
-
-#: .\core\templates\core\components\base.html:140
-msgctxt "Menu link"
-msgid "Contact us"
-msgstr "Nous contacter"
-
-#: .\core\templates\core\components\base.html:166
-msgctxt "Footer"
-msgid "Links"
-msgstr "Navigation"
-
-#: .\core\templates\core\components\base.html:181
-msgctxt "Menu link"
-msgid "Book an appointment"
-msgstr "Prendre rendez-vous"
-
-#: .\core\templates\core\components\base.html:185
-msgctxt "Footer"
-msgid "Informations"
-msgstr "Informations"
 
 #: .\core\templates\core\components\practice_detail.html:4
 msgctxt "Practice detail block"
@@ -878,53 +957,166 @@ msgctxt "Practice List"
 msgid "My practices"
 msgstr "Les salons"
 
-#: .\core\templates\core\reservation.html:11
+#: .\core\templates\core\reservation.html:12
 msgctxt "Reservation"
 msgid "We offer massages, giftcards and packages"
 msgstr "Retrouvez nos massages, forfaits et cartes cadeaux."
 
-#: .\core\templates\core\reservation.html:13
+#: .\core\templates\core\reservation.html:14
 msgctxt "Reservation"
 msgid "What massage would fit you today ?"
 msgstr "Quel massage vous ferait plaisir aujourd'hui ?"
 
-#: .\core\templates\core\reservation.html:18
+#: .\core\templates\core\reservation.html:19
 msgctxt "Reservation"
 msgid "Regular customer ? Save more with our packages :"
 msgstr "Déja conquis(e) ? Economisez avec nos forfaits :"
 
-#: .\core\templates\core\reservation.html:23
+#: .\core\templates\core\reservation.html:24
 msgctxt "Reservation"
 msgid "Ready to gift an extraordinary massage to your loved ones ?"
 msgstr ""
 "Un massage d'exception où nous prendrons soin de vos proches comme si "
 "c'était vous !"
 
-#: .\core\templates\registration\login.html:33
+#: .\core\templates\registration\login.html:8
+msgctxt "User Login"
+msgid "Your username and password did not match. Please try again."
+msgstr "Login ou mot de passe incorrect. Veuillez réessayer."
+
+#: .\core\templates\registration\login.html:13
+msgctxt "User Login"
+msgid "You do not have sufficient privilege to perfom this action."
+msgstr "Vous n'avez pas les droits suffisants pour accéder à cette page."
+
+#: .\core\templates\registration\login.html:31
 msgctxt "User Login"
 msgid "login"
 msgstr "Se connecter"
 
-#: .\core\templates\registration\login.html:38
+#: .\core\templates\registration\login.html:35
 msgctxt "User Login"
 msgid "Lost password?"
 msgstr "Mot de passe oublié ?"
+
+#: .\core\templates\registration\password_change_done.html:8
+msgid "Password reset email sent"
+msgstr "Email de réinitialisation du mot de passe envoyé"
+
+#: .\core\templates\registration\password_change_done.html:11
+#: .\core\templates\registration\password_reset_done.html:10
+msgctxt "Change Password"
+msgid ""
+"We've emailed you instructions for setting your password, if an account "
+"exists with the email address you entered."
+msgstr ""
+"Nous vous avons envoyé les instructions pour réinitialiser votre mot de "
+"passe à l'adresse indiquée."
+
+#: .\core\templates\registration\password_change_form.html:7
+msgid "Password reset"
+msgstr "Réinitialisation du mot de passe."
+
+#: .\core\templates\registration\password_change_form.html:10
+msgctxt "Change Password"
+msgid ""
+"Enter your email address below, and we'll email instructions for setting a "
+"new password."
+msgstr ""
+"Mot de passe oublié ? Entrez votre adresse email et nous vous enverrons les "
+"instructions pour en créer un nouveau."
+
+#: .\core\templates\registration\password_change_form.html:33
+#: .\core\templates\registration\password_reset_form.html:21
+msgctxt "Change Password"
+msgid "Submit"
+msgstr "Valider"
+
+#: .\core\templates\registration\password_reset_complete.html:7
+msgid "Password reset complete"
+msgstr "Réinitialisation du mot de passe terminée."
+
+#: .\core\templates\registration\password_reset_complete.html:10
+msgctxt "Change Password"
+msgid "Your password has been set."
+msgstr "Votre mot de passe a été mis à jour."
+
+#: .\core\templates\registration\password_reset_complete.html:13
+msgid "Log in"
+msgstr "Se connecter"
+
+#: .\core\templates\registration\password_reset_confirm.html:8
+msgid "Set new password"
+msgstr "Modifier mon mot de passe"
+
+#: .\core\templates\registration\password_reset_confirm.html:29
+msgctxt "Change Password"
+msgid "Change my password"
+msgstr "Modifier mon mot de passe"
+
+#: .\core\templates\registration\password_reset_confirm.html:32
+msgctxt "Change Password"
+msgid "Password reset unsuccessful"
+msgstr "Echec de la réinitialisation du mot de passe"
+
+#: .\core\templates\registration\password_reset_confirm.html:35
+msgctxt "Change Password"
+msgid ""
+"The password reset link was invalid, possibly because it has already been "
+"used. Please request a new password reset."
+msgstr ""
+"Le lien de réinitialisation n'est plus valide. Veuillez en redemander un "
+"autre."
+
+#: .\core\templates\registration\password_reset_confirm.html:39
+#: .\core\templates\registration\password_reset_email.html:15
+msgctxt "Change Password"
+msgid "Reset my password"
+msgstr "Réinitialiser mon mot de passe"
+
+#: .\core\templates\registration\password_reset_done.html:7
+msgctxt "Change Password"
+msgid "Password reset email sent"
+msgstr "Email de réinitialisation du mot de passe envoyé"
+
+#: .\core\templates\registration\password_reset_email.html:10
+#, python-format
+msgctxt "Change Password"
+msgid "You requested a password reset for your account on %(site_name)s."
+msgstr ""
+"Vous avez demandé la réinitialisation de votre mot de passe sur "
+"%(site_name)s."
+
+#: .\core\templates\registration\password_reset_email.html:13
+msgctxt "Change Password"
+msgid "Please click the following link to set a new password:"
+msgstr "Cliquez sur le lien suivant pour définir un nouveau mot de passe :"
+
+#: .\core\templates\registration\password_reset_email.html:17
+msgctxt "Change Password"
+msgid "This link will expire after a certain period of time."
+msgstr "Ce lien n'est valide que quelques minutes."
+
+#: .\core\templates\registration\password_reset_email.html:19
+msgctxt "Change Password"
+msgid ""
+"If you did not request a password reset, you can safely ignore this email."
+msgstr ""
+"Si vous n'êtes pas à l'origine de cette demande, vous pouvez ignorer cet "
+"email."
 
 #: .\core\templates\registration\password_reset_form.html:5
 msgid "Error:"
 msgstr "Erreur :"
 
 #: .\core\templates\registration\password_reset_form.html:9
+msgctxt "Change Password"
 msgid ""
 "Forgotten your password? Enter your email address below, and we’ll email "
 "instructions for setting a new one."
 msgstr ""
 "Mot de passe oublié ? Entrez votre adresse email et nous vous enverrons les "
 "instruction pour en créer un nouveau."
-
-#: .\core\templates\registration\password_reset_form.html:21
-msgid "Reset my password"
-msgstr "Mot de passe oublié ?"
 
 #: .\core\templatetags\core_extras.py:20
 msgctxt "Duration Operator"
@@ -1004,11 +1196,12 @@ msgid_plural "%(name)ss"
 msgstr[0] "%(name)s"
 msgstr[1] "%(name)ss"
 
-#: .\core\views.py:135
-msgid "Your profile is updated successfully"
-msgstr "Vos informations ont été mises à jour."
-
 #: .\core\views.py:138
-msgid ""
-"There was an error in your submission. Please check the form and try again."
-msgstr "Vous avez une erreur dans votre formulaire. Veuillez vérifier."
+msgctxt "Form Validation"
+msgid "Your profile is updated successfully"
+msgstr "Vos informations ont bien été mises à jour."
+
+#: .\core\views.py:141
+msgctxt "Form Validation"
+msgid "There was an error in your submission :"
+msgstr "Vous avez une erreur dans votre formulaire :"

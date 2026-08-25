@@ -1,5 +1,6 @@
 from django import forms
-from django.utils.translation import pgettext_lazy as _
+from django.utils.translation import gettext_lazy as _
+from django.utils.translation import pgettext_lazy
 from django.contrib.auth import get_user_model
 
 # import logging
@@ -7,9 +8,9 @@ from django.contrib.auth import get_user_model
 
 class PersonnalInformationForm(forms.Form):
     # first_name, last_name, email
-    first_name = forms.CharField(max_length=50, widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'John'}))
-    last_name = forms.CharField(max_length=50, widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Doe'}))
-    email = forms.EmailField(widget=forms.EmailInput(attrs={'class': 'form-control', 'placeholder': 'john.doe@example.com'}))
+    first_name = forms.CharField(max_length=50, label=pgettext_lazy("User Profile","Firstname"),  widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Albert'}))
+    last_name = forms.CharField(max_length=50, label=pgettext_lazy("User Profile","Lastname"), widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Einstein'}))
+    email = forms.EmailField(widget=forms.EmailInput(attrs={'class': 'form-control', 'placeholder': 'albert.eistein@example.com'}))
 
     def __init__(self, *args, **kwargs):
         self.user = kwargs.pop('user', None)  # pop the user from the kwargs
@@ -31,7 +32,7 @@ class PersonnalInformationForm(forms.Form):
             queryset = get_user_model().objects.all()
 
         if queryset.filter(email=email).exists():
-            raise forms.ValidationError(_("This email is already taken.","User Profile"))
+            raise forms.ValidationError(pgettext_lazy("User Profile","This email is already taken."))
         
         return email
     
