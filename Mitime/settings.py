@@ -27,6 +27,10 @@ SECRET_KEY = config("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config("DEBUG", default=False, cast=bool)
 
+WEBSITE_NAME = config("WEBSITE_NAME") # Mi-time.fr
+DOMAIN = config("DOMAIN") # mi-time.fr
+PROTOCOL = config("PROTOCOL") # https
+
 GMAP_API_KEY = config("GMAP_API_KEY")
 STRIPE_PUBLIC_KEY = config("STRIPE_PUBLIC_KEY")
 STRIPE_SECRET_KEY = config("STRIPE_SECRET_KEY")
@@ -142,6 +146,9 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
+
+AUTHENTICATION_BACKENDS = ['core.backends.EmailBackend']
+AUTH_USER_MODEL = 'core.MailUser'
 
 LOGOUT_REDIRECT_URL = 'home'
 
@@ -286,7 +293,7 @@ CKEDITOR_5_FILE_UPLOAD_PERMISSION = "any"  # Possible values: "staff", "authenti
 CKEDITOR_5_CUSTOM_CSS = 'admin/css/darkmode_fix.css'
 
 # Django Appointments 
-#AUTH_USER_MODEL = '' # Optional if using Django's default user model
+#AUTH_USER_MODEL = '' # Optional if using Django's default user model #Already setup
 APPOINTMENT_WEBSITE_NAME = 'Mi-time.fr'
 PHONENUMBER_DEFAULT_REGION = 'FR'
 APPOINTMENT_BASE_TEMPLATE = 'appointment/base.html'
@@ -295,6 +302,7 @@ APPOINTMENT_BASE_TEMPLATE = 'appointment/base.html'
 APPOINTMENT_CUSTOM_EMAILS_DIR = 'appointment/emails'
 APPOINTMENT_PAYMENT_URL = "stripe:create-appointment-checkout-session"
 APPOINTMENT_THANK_YOU_URL = None
+APPOINTMENT_CLEANUP_DAYS = 1 # terminate non paid appointment a day after.
 
 Q_CLUSTER = {
    'name': 'DjangORM',

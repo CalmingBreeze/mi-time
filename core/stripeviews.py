@@ -10,10 +10,11 @@ from django.urls import reverse
 from datetime import datetime, timezone, timedelta
 from django.utils import timezone
 from .addtext2pdf import AddTextToPDF
-from django.core.mail import EmailMessage, EmailMultiAlternatives
+from .utils.mails import send_html_and_plaintext_mail
 
-from django.template.loader import render_to_string
-from django.utils.html import strip_tags
+# from django.core.mail import EmailMessage, EmailMultiAlternatives
+# from django.template.loader import render_to_string
+# from django.utils.html import strip_tags
 
 import logging
 logger = logging.getLogger('__name__')
@@ -188,94 +189,69 @@ def send_giftcardmail(customer_email, pdf_added_text):
     pdf_added_text : list
         list of 3 str, first is the title of the gift certificate, then the stripe coupon code used, and the expiry date  
     """
-    # Template
-    template_name = "core/mail/giftcard.html"
-    context = {"site_url" : "www.mi-time.fr", "phone_number" : "0783390680", "email": settings.DEFAULT_FROM_EMAIL}
-    
-    convert_to_html_content =  render_to_string(
-        template_name=template_name,
-        context=context
-    )
-    plain_message = strip_tags(convert_to_html_content)
-
-    # Email parameters
-    from_email = settings.DEFAULT_FROM_EMAIL
-    to = customer_email
-    subject = "[Mi-time.fr] Votre carte cadeau en pdf"
-    text_content = plain_message
-    html_content = convert_to_html_content
-    msg = EmailMultiAlternatives(subject, text_content, from_email, [to])
-    msg.attach_alternative(html_content, "text/html")
 
     # PDF Generation
+    gift_filepath = None
     try:
         gift_filepath = generate_giftcard(pdf_added_text)
     except Exception as e:
         logger.error("Giftcard : PDF-GEN Error : %s", e)
-    
-    # Include the pdf.
-    msg.attach_file(gift_filepath, 'application/pdf')
+
+    # Template
+    subject = "[Mi-time.fr] Votre carte cadeau en pdf"
+    template_name = "core/mail/giftcard.html"
+    context = {}
 
     try:
-        logger.debug("Giftcard Send Tentative")
-        msg.send()
+        send_html_and_plaintext_mail(
+            mail_address = customer_email,
+            subject = subject,
+            template_name = template_name,
+            template_context = context,
+            attachments = {"path": gift_filepath, "mime_type": 'application/pdf'} if gift_filepath else None
+            )
     except Exception as e:
-        logger.error("Giftcard : Send Error : %s", e)
+        logger.error("Stripe : send_html_an_giftcardmail : Error : %s", e)
 
 def send_neworder_confirmation(customer_email, customer_name, stripe_payment_id, order_type):
     """
         Send an automated mail when a command is validated
     """
-    template_name = f"core/mail/{order_type}.html"
-    context = {"site_url" : "www.mi-time.fr", "phone_number" : "0783390680", "customer_email": customer_email,"customer_name" : customer_name, "stripe_payment_id" : stripe_payment_id}
 
-    convert_to_html_content = render_to_string(
-        template_name=template_name,
-        context=context
-    )
-    plain_message = strip_tags(convert_to_html_content)
-
-    # Email parameters
-    from_email = settings.DEFAULT_FROM_EMAIL
-    to = customer_email
+    # Template
     subject = "[Mi-time.fr] Confirmation de votre commande"
-    text_content = plain_message
-    html_content = convert_to_html_content
-    msg = EmailMultiAlternatives(subject, text_content, from_email, [to])
-    msg.attach_alternative(html_content, "text/html")
+    template_name = f"core/mail/{order_type}.html"
+    context = {"customer_email": customer_email,"customer_name" : customer_name, "stripe_payment_id" : stripe_payment_id}
 
     try:
-        msg.send()
+        send_html_and_plaintext_mail(
+            mail_address = customer_email,
+            subject = subject,
+            template_name = template_name,
+            template_context = context,
+            )
     except Exception as e:
-        logger.error("New Order Client Confirm Mail : Send Error : %s", e)
+        logger.error("Stripe : send_neworder_confirmation : Error : %s", e)
 
 def send_neworder_selfmail(customer_email, customer_name, stripe_payment_id, order_type):
     """
         Send an automated mail when a command is validated to facilitate manual handling of appointments until automation is online.
     """
 
+    # Template
+    subject = f"[à traiter] Nouvelle commande : {customer_name} - {customer_email} - {stripe_payment_id}"
     template_name = "core/mail/new_order_validated.html"
-    context = {"site_url" : "www.mi-time.fr", "customer_email": customer_email,"customer_name" : customer_name, "stripe_payment_id" : stripe_payment_id}
-
-    convert_to_html_content = render_to_string(
-        template_name=template_name,
-        context=context
-    )
-    plain_message = strip_tags(convert_to_html_content)
-
-    # Email parameters
-    from_email = settings.DEFAULT_FROM_EMAIL
-    to = from_email
-    subject = f" [à traiter] Nouvelle commande : {customer_name} - {customer_email} - {stripe_payment_id}"
-    text_content = plain_message
-    html_content = convert_to_html_content
-    msg = EmailMultiAlternatives(subject, text_content, from_email, [to])
-    msg.attach_alternative(html_content, "text/html")
+    context = {"customer_email": customer_email,"customer_name" : customer_name, "stripe_payment_id" : stripe_payment_id}
 
     try:
-        msg.send()
+        send_html_and_plaintext_mail(
+            mail_address = customer_email,
+            subject = subject,
+            template_name = template_name,
+            template_context = context,
+            )
     except Exception as e:
-        logger.error("New Order Validated Mail : Send Error : %s", e)
+        logger.error("Stripe : send_neworder_selfmail : Error : %s", e)
 
 def confirm_massage_paid(paymentinfo_id):
     """
@@ -335,7 +311,7 @@ def stripe_webhook(request):
 
                 # generate new promocode for related coupon with 1Y expiry
                 try:
-                    event2 = promotion_code = stripe.PromotionCode.create(
+                    event2 = stripe.PromotionCode.create(
                         coupon=metadata["coupon_id"],
                         max_redemptions=1,
                         expires_at=new_coupon_expires_at

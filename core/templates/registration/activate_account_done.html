@@ -1,0 +1,19 @@
+{% extends "core/components/base.html" %}
+
+{% load i18n %}
+
+{% block content %}
+<section>
+
+    <h1>{% translate "Create password and activate account" context "Account Activation" %}</h1>
+
+    <p>
+        {% translate "Congratulations, you account is now active." context "Account Activation" %}
+    </p>
+
+    <p>
+        {% translate "You have now access to you profile settings : " context "Change Password" %}<a href="{% url 'user-profile' %}">{% translate "my account" context "User Profile" %}</a>
+    </p>
+
+</section>
+{% endblock %}

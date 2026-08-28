@@ -183,3 +183,63 @@
 			});
 
 })(jQuery);
+
+$(document).ready(function() {
+    $('a[href*="#"]')
+    .not('[href="#"]')
+    .not('[href="#0"]')
+    .not('.back-to-top')
+    .click(function(event) {
+        if (
+        location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '')
+        &&
+        location.hostname == this.hostname
+        ) {
+        var target = $(this.hash);
+        target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+        
+        var headerOffset = $('#header').outerHeight() || 0;
+        var scrollPosition = target.offset().top - headerOffset;
+
+        $('html, body').animate({
+            scrollTop: scrollPosition
+        }, 1000, function() {
+            var $target = $(target);
+
+            if (!$target.is(":focus")) {
+                $target.attr('tabindex', '-1');
+            }
+
+            $target[0].focus({ preventScroll: true });
+        });
+
+        }
+    });
+
+    var $backToTop = $('.back-to-top'); 
+    // Caché par défaut 
+    $backToTop.hide(); 
+
+    // Apparition après un écran de scroll 
+    $(window).on('scroll', function() { 
+        var scrollTop = $(window).scrollTop();
+        var screenHeight = $(window).height(); 
+        if (scrollTop > 3*screenHeight) { 
+            if (!$backToTop.is(':visible')) { 
+                $backToTop.fadeIn(); 
+            } 
+        } else { 
+            if ($backToTop.is(':visible')) { 
+                $backToTop.fadeOut();
+            } 
+        } 
+    });
+
+    $backToTop.on('click', function(event) {
+        event.preventDefault(); 
+        $('html, body').stop().animate({scrollTop: 0 }, 1000, function() { 
+            // Une fois arrivé en haut, on cache le bouton 
+            $backToTop.hide(); 
+        }); 
+    });
+});

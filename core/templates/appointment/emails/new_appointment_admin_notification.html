@@ -1,0 +1,38 @@
+{% extends "core/mail/base.html" %}        
+
+{% load static %}
+{% load i18n %}
+{% load core_extras %}
+
+{% block content %}
+<div style="font-family: 'Montserrat',sans-serif; font-size: 16px; color: #9e7f5e; line-height: 150%; text-align: justify; word-wrap: break-word;">
+    <h1 style="color: rgb(158, 127, 94); line-height: 24px;">{% translate 'New Appointment Request' %}</h1>
+    <p style="line-height: 150%;">&nbsp;</p>
+    <p style="line-height: 150%;"><span style="color: rgb(158, 127, 94); line-height: 24px;">{% translate 'Dear' %} {{ recipient_name }},</span></p>
+    <p style="line-height: 150%;">&nbsp;</p>
+    {% if is_staff_member %}
+    <p style="line-height: 150%;"><span style="color: rgb(158, 127, 94); line-height: 24px;">{% translate 'You have received a new appointment request. Here are the details:' %}</span></p>
+    {% else %}
+    <p style="line-height: 150%;"><span style="color: rgb(158, 127, 94); line-height: 24px;">{% translate 'A new appointment request has been received for' %} {{ staff_member_name }}. {% translate 'Here are the details:' %}</span></p>
+    {% endif %}
+    <p style="line-height: 150%;">&nbsp;</p>
+    <p style="line-height: 150%;"><span style="color: rgb(158, 127, 94); line-height: 24px;"><strong>{% translate 'Client Name' %}:</strong> {{ client_name }}</span></p>
+    <p style="line-height: 150%;"><span style="color: rgb(158, 127, 94); line-height: 24px;"><strong>{% translate 'Service Requested' %}:</strong> {{ appointment.get_service_name }}</span></p>
+    <p style="line-height: 150%;"><span style="color: rgb(158, 127, 94); line-height: 24px;"><strong>{% translate 'Appointment Date' %}:</strong> {{ appointment.appointment_request.date|date:"l, d F Y" }}</span></p>
+    <p style="line-height: 150%;"><span style="color: rgb(158, 127, 94); line-height: 24px;"><strong>{% translate 'Time' %}:</strong> {{ appointment.appointment_request.start_time|time }}
+        - {{ appointment.appointment_request.end_time|time }}</span></p>
+    <p style="line-height: 150%;"><span style="color: rgb(158, 127, 94); line-height: 24px;"><strong>{% translate 'Contact Details' %}:</strong> {{ appointment.phone }} | {{ appointment.client.email }}</span></p>
+    <p style="line-height: 150%;"><span style="color: rgb(158, 127, 94); line-height: 24px;"><strong>{% translate 'Additional Info' %}:</strong> {{ appointment.additional_info|default:"N/A" }}</span></p>
+    <p style="line-height: 150%;">&nbsp;</p>
+    {% comment %}
+    {% if is_staff_member %}
+        <p style="line-height: 150%;"><span style="color: rgb(158, 127, 94); line-height: 24px;">{% translate 'Please review the appointment request and take the necessary action.' %}</span></p>
+    {% else %}
+        <p style="line-height: 150%;"><span style="color: rgb(158, 127, 94); line-height: 24px;">{% translate 'Please ensure that' %} {{ staff_member_name }} {% translate 'reviews this appointment request and takes the necessary action.' %}</a></span></p>
+    {% endif %}
+    {% endcomment %} 
+    <p style="line-height: 150%;">&nbsp;</p>        
+    <p style="line-height: 150%;"><span style="color: rgb(158, 127, 94); line-height: 24px;">{% translate 'This is an automated message. Please do not reply directly to this email.' %}</a></span></p>
+    <p style="line-height: 150%;">&nbsp;</p>
+</div>
+{% endblock %}

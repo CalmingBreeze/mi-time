@@ -1,9 +1,12 @@
 from django.db import models
 from django_ckeditor_5.fields import CKEditor5Field
 from django.urls import reverse
+from django.contrib.auth.models import AbstractUser, BaseUserManager
 from django.template.defaultfilters import slugify
 from django.utils.translation import pgettext_lazy, npgettext_lazy
 import datetime
+import secrets
+import uuid
 from django.utils import timezone
 
 from imagekit.models import ImageSpecField
@@ -14,6 +17,61 @@ PUBLICATION_STATE = {
     "HIDDEN" : pgettext_lazy("Model Field", "Hidden"),
     "PUBLISHED" : pgettext_lazy("Model Field", "Published"),
 }
+
+class MailUserManager(BaseUserManager):
+    def create_user(self, email, password=None, **extra_fields):
+        if not email:
+            raise ValueError("The email address must be set")
+
+        email = self.normalize_email(email)
+
+        user = self.model(
+            email=email,
+            **extra_fields,
+        )
+
+        if password is None:
+            password = secrets.token_urlsafe(32)
+
+        user.set_password(password)
+        user.save(using=self._db)
+
+        return user
+
+    def create_superuser(self, email, password=None, **extra_fields):
+        extra_fields.setdefault("is_staff", True)
+        extra_fields.setdefault("is_superuser", True)
+        extra_fields.setdefault("is_active", True)
+
+        if extra_fields.get("is_staff") is not True:
+            raise ValueError("Superuser must have is_staff=True")
+
+        if extra_fields.get("is_superuser") is not True:
+            raise ValueError("Superuser must have is_superuser=True")
+
+        temporary_password = secrets.token_urlsafe(32)
+
+        return self.create_user(
+            email,
+            temporary_password,
+            **extra_fields,
+        )
+
+class MailUser(AbstractUser):
+    username = None
+    email = models.EmailField(unique=True)
+    activation_token = models.UUIDField(
+        default=uuid.uuid4,
+        unique=True,
+        editable=False,
+        null=True,
+        blank=True
+    )
+
+    USERNAME_FIELD = "email"
+    REQUIRED_FIELDS = []
+
+    objects = MailUserManager()
 
 class AbstractProduct(models.Model):
     class Meta:

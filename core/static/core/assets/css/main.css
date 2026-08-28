@@ -1733,10 +1733,6 @@ input:disabled {
   cursor: not-allowed;
 }
 
-#profile-user-info {
-  margin-bottom: 50px;
-}
-
 form {
   margin-bottom: 10px;
 }
@@ -1779,6 +1775,10 @@ tr label {
   border-color: #fbd5d5;
   background-color: #fde8e8;
   color: #9b1c1c;
+}
+
+#profile-user section {
+  margin-bottom: 30px;
 }
 
 /*
@@ -2612,6 +2612,18 @@ body.is-menu-visible #menu .close {
   #main {
     padding: 7em 0 2em 0;
   }
+}
+
+.back-to-top {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  color: #F9DEB2;
+  background-color: #7FBAB4;
+  border: 2px solid #F9DEB2;
+  border-radius: 20px;
+  padding: 7px 15px;
+  z-index: 4;
 }
 
 .server-error-code {

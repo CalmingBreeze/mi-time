@@ -5,7 +5,7 @@
 
 <section id="tiles">
     {% if products %}
-        <h{{h_val|default:"2"}}>{{section_title}}&nbsp;:</h{{h_val|default:"2"}}>
+        <h{{h_val|default:"2"}} id="{{h_id}}">{{section_title}}</h{{h_val|default:"2"}}>
         <div class="tiles">
         {% for product in products %}
         <article class='{{product.highlighted|yesno:"highlighted,default"}}'>

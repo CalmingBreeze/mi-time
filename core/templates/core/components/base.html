@@ -98,12 +98,12 @@
                                     {% endif %}
                                 {% endfor %}
                                 {% if user.is_authenticated %}
-                                <form method="POST" action="{% url 'logout' %}?next={{ request.path|urlencode }}">
+                                <form method="POST" action="{% url 'logout' %}?next={{ request.path|urlencode }}" class="large-hidden">
                                     {% csrf_token %}
                                     <button class="header-button">{% translate 'Logout' context "Header Button" %}</button>
                                 </form>
                                 {% else %}
-                                <li class="">
+                                <li class="large-hidden">
                                     <a class="header-button" href="{% url 'login' %}">{% translate 'My Account' context "Header Button" %}</a>
                                 </li>
                                 {% endif %}
@@ -215,6 +215,7 @@
                 </div>
             </footer>
         </div>
+        <a href="#main" class="icon solid fa-turn-up back-to-top" aria-label="Retour en haut"></a>
 
         <!-- Scripts -->
         {% load static %}

@@ -3,11 +3,13 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.shortcuts import redirect
 
+from django.contrib.sitemaps.views import sitemap
+from django.contrib.auth.views import PasswordResetView, LoginView
+
 from . import views
 from .stripeviews import CreateCheckoutSessionView, SuccessView, CancelView, stripe_webhook
+from .forms import MailPasswordResetForm, MailAuthenticationForm
 
-from django.contrib.sitemaps.views import sitemap
-from django.contrib.auth.views import PasswordResetView
 from core.sitemap import StaticViewSitemap, PracticeSitemap, MassageSitemap, GiftCardSitemap, BundleSitemap, PageSitemap
 from core.admin import admin_site
 
@@ -61,8 +63,18 @@ urlpatterns = [
 
     path('miadmin/', admin_site.urls),
 
-    #override password_reset to allow html template and plain text fallback
-    path('accounts/password_reset/', PasswordResetView.as_view(html_email_template_name="registration/password_reset_email.html"),name="password_reset"),
+    path("accounts/activate/<str:token>", views.activate_account, name="activate-account"),
+    #override (auth modules defaults) password_reset to allow html template and plain text fallback
+    path("accounts/login/",LoginView.as_view(
+        authentication_form=MailAuthenticationForm),
+        name="login",
+    ),
+    path('accounts/password_reset/', PasswordResetView.as_view(
+            form_class=MailPasswordResetForm,
+            subject_template_name="registration/password_reset_email_title.txt",
+            email_template_name="registration/password_reset_email.txt", #compatibility purpose
+            html_email_template_name="registration/password_reset_email.html",
+        ),name="password_reset"),
     path("accounts/", include("django.contrib.auth.urls")),
 
     path("accounts/profile/", views.profile, name="user-profile"),

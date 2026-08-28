@@ -1,0 +1,69 @@
+{% extends "core/mail/base.html" %}        
+
+{% load static %}
+{% load core_extras %}
+
+{% block content %} 
+<div style="font-family: 'Montserrat',sans-serif; font-size: 16px; color: #9e7f5e; line-height: 150%; text-align: justify; word-wrap: break-word;">
+    {{ month_year }}
+    {{ day }}
+        
+    {% trans 'Thank you for choosing us.' %}
+                    
+    {% if account_details %}
+        {% if activation_link %}
+            <h3>{% trans 'Account Activation' %}</h3>
+        
+            {% blocktranslate with link=activation_link %}
+                To activate your account and set your password, please use the following secure
+                link: <a href="{{ link }}" style="color: #1155cc;">Set Your Password</a>. Please
+                note that this link will expire in 2 days for your security.
+            {% endblocktranslate %}
+        {% endif %}
+
+        <h3>{% trans "Account Information" %}</h3>
+        <div style="color: #000000; font-size: 14px; line-height: 24px;">
+            <ul>
+                {% for key, value in account_details.items %}
+                    <li>{{ key }}: {{ value }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    {% endif %}
+    {% if more_details %}
+        
+        <h3>{% trans "Appointment Details" %}</h3>
+        <div style="color: #000000; font-size: 14px; line-height: 24px;">
+            <ul>
+                {% for key, value in more_details.items %}
+                    <li>{{ key }}: {{ value }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+
+    {% endif %}
+    {% if reschedule_link %}
+        <h3>{% trans 'Rescheduling' %}</h3>
+        <p style="margin-top: 15px !important; font-size: 14px">
+            {% translate 'If your plans change and you need to reschedule your appointment, you can easily do so by following this link: ' %}
+            <a href="{{ reschedule_link }}">
+                {% translate 'Reschedule Appointment' %}
+            </a>
+        </p>
+    {% endif %}
+
+    <h3>{% trans 'Support' %}</h3>
+    <p style="margin-top: 15px !important; font-size: 14px">
+        {% blocktranslate %}
+            Should you have any inquiries or require further assistance, our support team is here to
+            help. You can reach us anytime.
+        {% endblocktranslate %}
+    </p>
+    {% trans "We look forward to serving you and ensuring that your experience with us is both rewarding and satisfactory." %}
+    <p style="margin-top: 15px !important; font-size: 14px">{% trans "Warm regards" %},</p>
+    <p style="margin-top: 15px !important; font-size: 14px">{% trans "The Team" %}</p>
+
+    &copy; {{ current_year }} {{ company }}. {% trans "All rights reserved" %}.
+</div>
+{% endblock %}
+

@@ -2,9 +2,9 @@ from django.shortcuts import get_object_or_404, render, redirect
 from django.http import HttpResponse, Http404
 from django.template import loader
 
-from .models import Practice, Massage, Page, Bundle, GiftCard
+from .models import MailUser, Practice, Massage, Page, Bundle, GiftCard
 from .models import SiteConfig
-from .forms import PersonnalInformationForm
+from .forms import MailUserChangeForm, MailUserActivationForm
 
 from django.contrib import messages
 from django.contrib.contenttypes.models import ContentType
@@ -128,10 +128,33 @@ def massageBySlug(request, massage_slug):
     context = {"product" : product, "related_service_id": related_service_id, "practices" : practices}
     return render(request, "core/massage_full.html", context)
 
+def activate_account(request, token):
+    user = get_object_or_404(
+        MailUser,
+        activation_token=token
+    )
+
+    form = MailUserActivationForm(request.POST or None)
+
+    if request.method == "POST":
+        if form.is_valid():
+            user.set_password(form.cleaned_data["password1"])
+            # user.is_active = True
+            # user.activation_token = None
+
+            user.save(update_fields=["password"])
+            return render(request, "registration/activate_account_done.html", {})
+        # else:
+        #     messages.error(request, pgettext('Form Validation','There was an error in your submission :'))
+
+    context = {"form": form}
+    return render(request, "registration/activate_account.html", context)
+
+
 @login_required
 def profile(request):
     if request.method == 'POST':
-        form = PersonnalInformationForm(request.POST, user=request.user)
+        form = MailUserChangeForm(request.POST, user=request.user)
         if form.is_valid():
             #process
             form.save()
@@ -141,7 +164,7 @@ def profile(request):
             messages.error(request, pgettext('Form Validation','There was an error in your submission :'))
             #messages.error(request, form.errors)
     else:
-        form = PersonnalInformationForm(user=request.user)
+        form = MailUserChangeForm(user=request.user)
 
     orders = Appointment.objects.filter(client_id=request.user.id).order_by("-id")[:10]
     # orders = Appointment.objects.filter(client_id=8)

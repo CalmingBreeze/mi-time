@@ -154,9 +154,10 @@
             }, 3000);
 
             // Get the form and the 'submit' button
-            const form = document.querySelector('form');
+            const form = document.querySelector('form.page-body');
             const submitButtons = Array.from(form.querySelectorAll('button[type="submit"]'));
             const emailField = form.querySelector('input[type="email"]');
+            console.log(form, submitButtons, emailField);
 
             // Create email validation message element
             const emailValidationMessage = document.createElement('div');

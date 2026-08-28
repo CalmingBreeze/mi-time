@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.contrib.admin.sites import AdminSite, AlreadyRegistered
-from django.contrib.auth.models import User, Group
+from django.contrib.auth.models import Group
 from django.contrib.auth.admin import UserAdmin, GroupAdmin
 
 
@@ -10,13 +10,14 @@ from django.utils.translation import pgettext_lazy
 import appointment.admin
 
 #core models
-from .models import SiteConfig, Page, GiftCard, Bundle, Massage, Practice, Address, Openings
+from .models import SiteConfig, Page, GiftCard, Bundle, Massage, Practice, Address, Openings, MailUser
 
 
 class MitimeAdmin(admin.AdminSite):
 
     ADMIN_ORDERING = (
         ('core', (
+            'MailUser',
             'Practice',
             'Address',
             'Openings',
@@ -38,10 +39,10 @@ class MitimeAdmin(admin.AdminSite):
             'EmailVerificationCode',
             'PasswordResetToken',
         )),
-        ('auth', (
-            'User',
-            'Group'
-        ))
+        # ('auth', (
+        #     'MailUser',
+        #     'Group'
+        # ))
         # ('anotherapp', (
         # ))
     )
@@ -276,7 +277,66 @@ admin_site.register(Practice, PracticeAdmin)
 admin_site.register(Address)
 admin_site.register(Openings)
 
-admin_site.register(User, UserAdmin)
+class MailUserAdmin(UserAdmin):
+    ordering = ("email",)
+
+    list_display = (
+        "email",
+        "first_name",
+        "last_name",
+        "is_staff",
+        "is_active",
+    )
+
+    search_fields = (
+        "email",
+        "first_name",
+        "last_name",
+    )
+
+    fieldsets = (
+        (None, {
+            "fields": (
+                "email",
+                "password",
+            )
+        }),
+        ("Personal info", {
+            "fields": (
+                "first_name",
+                "last_name",
+            )
+        }),
+        ("Permissions", {
+            "fields": (
+                "is_active",
+                "is_staff",
+                "is_superuser",
+                "groups",
+                "user_permissions",
+            )
+        }),
+        ("Important dates", {
+            "fields": (
+                "last_login",
+                "date_joined",
+            )
+        }),
+    )
+
+    add_fieldsets = (
+        (None, {
+            "classes": ("wide",),
+            "fields": (
+                "email",
+                "password1",
+                "password2",
+            ),
+        }),
+    )
+
+admin_site.register(MailUser, MailUserAdmin)
+
 admin_site.register(Group, GroupAdmin)
 
 #other apps & default models

@@ -40,10 +40,6 @@ input:disabled {
     cursor: not-allowed;
 }
 
-#profile-user-info {
-    margin-bottom: 50px;
-}
-
 form {
     margin-bottom: 10px;
 }
@@ -94,6 +90,10 @@ tr {
     border-color: #fbd5d5;
     background-color: #fde8e8;
     color: #9b1c1c;
+}
+
+#profile-user section {
+    margin-bottom: 30px;
 }
 
 /*

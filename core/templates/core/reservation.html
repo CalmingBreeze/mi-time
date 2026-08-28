@@ -9,20 +9,21 @@
 {% block content %}
     <section id="reservation">
     {% if massages or bundles or giftcards %}
-        <h1>{% translate "We offer massages, giftcards and packages" context "Reservation" %}</h1>
+        <h1>{% translate "Our services :" context "Reservation" %}</h1>
+        {{page.text|safe}}
         {% if massages %}
-            {% translate "What massage would fit you today ?" context "Reservation" as main_title %}
-            {% include "core/components/product_tiles.html" with section_title=main_title h_val=2 products=massages product_type="massage" %}
+            {% translate "Massages :" context "Reservation" as main_title %}
+            {% include "core/components/product_tiles.html" with section_title=main_title h_val=2 h_id="available_massages" products=massages product_type="massage" %}
         {% endif %} 
 
-        {% if bundles %}
-            {% translate "Regular customer ? Save more with our packages :" context "Reservation" as main_title %}
-            {% include "core/components/product_tiles.html" with section_title=main_title h_val=2 products=bundles product_type="bundle" %}
-        {% endif %}
-        
         {% if giftcards %}
-            {% translate "Ready to gift an extraordinary massage to your loved ones ?" context "Reservation" as main_title %}
-            {% include "core/components/product_tiles.html" with section_title=main_title h_val=2 products=giftcards product_type="giftcard" %}
+            {% translate "Giftcards :" context "Reservation" as main_title %}
+            {% include "core/components/product_tiles.html" with section_title=main_title h_val=2 h_id="available_giftcards" products=giftcards product_type="giftcard" %}
+        {% endif %}
+
+        {% if bundles %}
+            {% translate "Bundles :" context "Reservation" as main_title %}
+            {% include "core/components/product_tiles.html" with section_title=main_title h_val=2 h_id="available_bundles" products=bundles product_type="bundle" %}
         {% endif %}
     {% else %}
         <p>{% translate "We are currently polishing our offer. Come back soon to see what we have cooked for you !" context "Product Tiles" %}</p>

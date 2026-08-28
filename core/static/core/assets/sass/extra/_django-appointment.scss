@@ -155,6 +155,10 @@
     }
 }
 
+.service-description-content{
+    grid-template-rows: auto;
+}
+
 /*************************************************/
 /*                                               */
 /*    old django-appointment appt-common.css     */

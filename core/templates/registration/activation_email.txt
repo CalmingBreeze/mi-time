@@ -1,0 +1,9 @@
+{% load static %}{% load i18n %}{% load core_extras %}
+
+{% blocktranslate with site_name=site_name context "Account Activation" %}Welcome on {{ site_name }}.{% endblocktranslate %}
+
+{% translate "Please click the following link to set a new password and activate your acccount :" context "Account Activation" %}
+
+{{ protocol }}://{{ domain }}{% url 'activate-account' token=token %}
+
+{% translate "Reminder : You can always ask for a new password using forgotten password link on login pages." context "Account Activation" %}
