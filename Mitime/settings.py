@@ -57,6 +57,7 @@ EMAIL_USE_SSL = config("EMAIL_USE_SSL", default=False, cast=bool)
 
 # admin sender
 DEFAULT_FROM_EMAIL = config("DEFAULT_FROM_EMAIL")
+RESERVATION_EMAIL = config("RESERVATION_EMAIL") # reservation@mi-time.fr
 
 ALLOWED_HOSTS = ["localhost", "127.0.0.1", ".mi-time.fr"]
 

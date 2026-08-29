@@ -245,7 +245,7 @@ def send_neworder_selfmail(customer_email, customer_name, stripe_payment_id, ord
 
     try:
         send_html_and_plaintext_mail(
-            mail_address = customer_email,
+            mail_address = settings.RESERVATION_EMAIL,
             subject = subject,
             template_name = template_name,
             template_context = context,
