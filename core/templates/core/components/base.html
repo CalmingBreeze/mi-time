@@ -186,7 +186,7 @@
                                 <li><a href="{% url 'page' page_slug=page_item.slug %}">{% translate page_item.name context "Menu link" %}</a></li>
                                 {% endif %}
                             {% endfor %}
-                            <li><a href="#book" onclick="Calendly.initPopupWidget({ url: 'https://calendly.com/reservation-mi-time' });">{% translate 'Book an appointment' context "Menu link" %}</a></li>
+                            <li><a href="{% url 'reservation' %}">{% translate 'Book an appointment' context "Menu link" %}</a></li>
                         </ul>
                     </section>
                     <section id="contact-infos">

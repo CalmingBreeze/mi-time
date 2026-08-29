@@ -1,21 +1,33 @@
 {% extends "../components/base.html" %}
 
+{% load i18n %}
 {% load core_extras %}
 
 {% block content %}
     <section>
-        <h2>Commande validée</h2>
+        <h2>{% translate "Order validated" context "order-thankyou" %}</h2>
         <p>
-            Merci pour votre commande ! Elle sera traitée dans les plus brefs délais.
+            {% translate "Thank you for your order! We’ll process it as soon as possible." context "order-thankyou" %}
         </p>
         <p>
-            Afin d'utiliser votre carte cadeau ou votre forfait massage, veuillez prendre rendez-vous au <strong>07 83 39 06 80</strong> ou par mail à <strong>reservation@mi-time.fr</strong>. 
+            <u>{% translate "About <strong>giftcards</strong> :" context "order-thankyou" %}</u>
+            <br>
+            {% translate "Gift cards are generated once your payment has been confirmed and are usually sent within 5 minutes." context "order-thankyou" %}
+            <br>
+            {% translate "If you don’t receive the email, please check your <strong>SPAM folder</strong> to make sure it hasn’t been filtered there." context "order-thankyou" %}
+            <br>
+            {% translate "To use your gift card on our website, simply book your appointment as usual.<br>Just before payment, enter your gift card code in the “Promo code” field and apply your gift card." context "order-thankyou" %}
         </p>
         <p>
-            <u>Note concernant les <strong>cartes cadeaux</strong> :</u><br>
-            Les cartes cadeaux sont générées une fois le paiement validé, et sont envoyées habituellement sous 5 minutes.<br>
-            En cas de non réception du mail, veuillez vérifier que le message n'a pas été filtré dans votre <strong>répertoire SPAM</strong>.<br>
-            Si toutefois il ne s'y trouvait pas, vous pouvez me contacter directement au téléphone ou mail ci-dessus.
+            <u>{% translate "About <strong>massage packages</strong> :" context "order-thankyou" %}</u>
+            <br>
+            {% translate "Our online booking system does not currently support massage packages. To use your package, please book your appointment by phone or email." context "order-thankyou" %}
+        </p>
+        <p>
+            {% comment %}
+            If you have any questions or issues with your order, please feel free to contact us at {{phone}} or by email at {{mail}}.
+            {% endcomment %}
+            Si vous avez des questions ou un problème avec votre commande, n'hésitez pas à nous contacter au <strong>{{ siteconfig.header_mobile|phone_format:'spaced' }}</strong> ou par mail : <strong>{{ siteconfig.site_email }}</strong>
         </p>
     </section>
 {% endblock %}

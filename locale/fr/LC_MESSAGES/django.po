@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-08-28 16:51+0200\n"
+"POT-Creation-Date: 2026-08-29 10:49+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1161,6 +1161,87 @@ msgstr "Les cartes-cadeaux :"
 msgctxt "Reservation"
 msgid "Bundles :"
 msgstr "Les forfaits :"
+
+#: .\core\templates\core\stripe\success.html:8
+msgctxt "order-thankyou"
+msgid "Order validated"
+msgstr "Commande validée"
+
+#: .\core\templates\core\stripe\success.html:10
+msgctxt "order-thankyou"
+msgid "Thank you for your order! We’ll process it as soon as possible."
+msgstr ""
+"Merci pour votre commande ! Elle sera traitée dans les plus brefs délais."
+
+#: .\core\templates\core\stripe\success.html:13
+msgctxt "order-thankyou"
+msgid "About <strong>giftcards</strong> :"
+msgstr "A propos des <strong>cartes-cadeaux</strong> :"
+
+#: .\core\templates\core\stripe\success.html:15
+msgctxt "order-thankyou"
+msgid ""
+"Gift cards are generated once your payment has been confirmed and are "
+"usually sent within 5 minutes."
+msgstr ""
+"Les cartes cadeaux sont générées une fois le paiement validé, et sont "
+"envoyées habituellement sous 5 minutes."
+
+#: .\core\templates\core\stripe\success.html:17
+msgctxt "order-thankyou"
+msgid ""
+"If you don’t receive the email, please check your <strong>SPAM folder</"
+"strong> to make sure it hasn’t been filtered there."
+msgstr ""
+"En cas de non réception du mail, veuillez vérifier que le message n'a pas "
+"été filtré dans votre <strong>répertoire SPAM</strong>."
+
+#: .\core\templates\core\stripe\success.html:19
+msgctxt "order-thankyou"
+msgid ""
+"To use your gift card on our website, simply book your appointment as usual."
+"<br>Just before payment, enter your gift card code in the “Promo code” field "
+"and apply your gift card."
+msgstr ""
+"Afin d'utiliser votre carte cadeau sur le site, prenez rendez-vous "
+"normalement.<br>Juste avant le paiement, vous pourrez rentrer le code dans "
+"la case \"code promotionnel\" et appliquer la carte-cadeau."
+
+#: .\core\templates\core\stripe\success.html:22
+msgctxt "order-thankyou"
+msgid "About <strong>massage packages</strong> :"
+msgstr "A propos des <strong>forfaits massage</strong> :"
+
+#: .\core\templates\core\stripe\success.html:23
+msgctxt "order-thankyou"
+msgid ""
+"Our online booking system does not currently support massage packages. To "
+"use your package, please book your appointment by phone or email."
+msgstr ""
+"La réservation en ligne ne prend pas encore en compte les forfaits. Pour "
+"l'utiliser veuillez prendre rendez vous par téléphone ou par mail."
+
+#: .\core\templates\core\stripe\success.html:26
+#, fuzzy, python-format
+#| msgctxt "order-thankyou"
+#| msgid ""
+#| "\n"
+#| "            If you have any questions or issues with your order, please "
+#| "feel free to contact us at <strong>%(phone)s</strong> or by email at "
+#| "<strong>%(mail)s</strong>.\n"
+#| "            "
+msgctxt "order-thankyou"
+msgid ""
+"\n"
+"            If you have any questions or issues with your order, please feel "
+"free to contact us at %(phone)s or by email at %(mail)s.\n"
+"            "
+msgstr ""
+"\n"
+"            Si vous avez des questions ou des problèmes avec votre commande, "
+"n'hésitez pas à nous contacter au <strong>%(phone)s</strong> ou par mail "
+"<strong>%(email)s</strong>.\n"
+"            "
 
 #: .\core\templates\registration\activate_account.html:7
 #: .\core\templates\registration\activate_account_done.html:8
