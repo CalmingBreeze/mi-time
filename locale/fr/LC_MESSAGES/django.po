@@ -1269,7 +1269,7 @@ msgstr "Vous pouvez maintenant accéder à votre profil : "
 #, python-format
 msgctxt "Account Activation"
 msgid "Welcome on %(site_name)s."
-msgstr "Bienvenus sur %(site_name)s."
+msgstr "Bienvenue sur %(site_name)s."
 
 #: .\core\templates\registration\activation_email.html:15
 #: .\core\templates\registration\activation_email.txt:5
