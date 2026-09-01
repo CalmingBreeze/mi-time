@@ -2,6 +2,7 @@ from django.contrib import admin
 from django.contrib.admin.sites import AdminSite, AlreadyRegistered
 from django.contrib.auth.models import Group
 from django.contrib.auth.admin import UserAdmin, GroupAdmin
+from django.urls import reverse
 
 
 from django.utils.translation import pgettext_lazy
@@ -81,6 +82,35 @@ class MitimeAdmin(admin.AdminSite):
                     if not model['object_name'] in ao[1]:
                         app['models'].remove(model)
             app['models'].sort(key=lambda x: ao[1].index(x['object_name']))
+
+        #Add specific links to handle DJA backoffice admin
+        app_list.append({
+            "name": "Gestion du salon",
+            "app_label": "appointment_custom",
+            "app_url": "#",
+            "has_module_perms": True,
+            "models": [
+                {
+                    "name": "Planning global",
+                    "object_name": "planning",
+                    "admin_url": reverse(
+                        "appointment:get_user_appointments"
+                    ),
+                    "add_url": None,
+                    "view_only": True,
+                },
+                {
+                    "name": "Équipe",
+                    "object_name": "equipe",
+                    "admin_url": reverse(
+                        "appointment:user_profile"
+                    ),
+                    "add_url": None,
+                    "view_only": True,
+                },
+            ],
+        })
+
         return app_list
 
 admin_site = MitimeAdmin(name="miadmin")
