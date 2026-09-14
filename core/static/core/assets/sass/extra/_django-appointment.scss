@@ -30,6 +30,23 @@
         font-weight: _font(weight-bold-alt);
     }
 
+    .djangoAppt_btn-request-next-slot {
+        line-height: inherit;
+        overflow: inherit;
+        text-overflow: inherit;
+        white-space: inherit;
+        height: inherit;
+    }
+
+    .djangoAppt_no-availability-text {
+        color: _palette(accent3);
+
+        &.icon.iconified::before {
+            color: _palette(accent2);
+            padding-right: 0.45em;
+        }
+    }
+
     // TODO Opacify to add somber tone on activated button
     .fc-button:hover {
         background-color: _palette(accent3) !important;

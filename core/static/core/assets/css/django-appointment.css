@@ -24,6 +24,20 @@
   color: #F9DEB2 !important;
   font-weight: 700;
 }
+.djangoAppt_appointment-calendar .djangoAppt_btn-request-next-slot {
+  line-height: inherit;
+  overflow: inherit;
+  text-overflow: inherit;
+  white-space: inherit;
+  height: inherit;
+}
+.djangoAppt_appointment-calendar .djangoAppt_no-availability-text {
+  color: #7FBAB4;
+}
+.djangoAppt_appointment-calendar .djangoAppt_no-availability-text.icon.iconified::before {
+  color: #F9DEB2;
+  padding-right: 0.45em;
+}
 .djangoAppt_appointment-calendar .fc-button:hover {
   background-color: #7FBAB4 !important;
 }

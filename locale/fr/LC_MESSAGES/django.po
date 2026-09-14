@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-08-29 10:49+0200\n"
+"POT-Creation-Date: 2026-09-12 14:02+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,83 +16,83 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: .\core\admin.py:103 .\core\admin.py:163 .\core\admin.py:223
+#: .\core\admin.py:133 .\core\admin.py:193 .\core\admin.py:253
 msgctxt "Product Admin Attributes Group Block"
 msgid "Product Detail"
 msgstr "Détails du produit"
 
-#: .\core\admin.py:107 .\core\admin.py:167 .\core\admin.py:227
+#: .\core\admin.py:137 .\core\admin.py:197 .\core\admin.py:257
 msgctxt "Product Admin Attributes Group Block"
 msgid "Full view related content. Modify product page content."
 msgstr "Attributs de la vue détaillée. Impacte la page produit."
 
-#: .\core\admin.py:111 .\core\admin.py:171 .\core\admin.py:231
+#: .\core\admin.py:141 .\core\admin.py:201 .\core\admin.py:261
 msgctxt "Product Admin Attributes Group Block"
 msgid "Tile Detail"
 msgstr "Configuration de la vignette"
 
-#: .\core\admin.py:115 .\core\admin.py:175 .\core\admin.py:235
+#: .\core\admin.py:145 .\core\admin.py:205 .\core\admin.py:265
 msgctxt "Product Admin Attributes Group Block"
 msgid "Tile view parameters. Modify tiles in list views"
 msgstr ""
 "Attributs de la vue vignette. Impacte l'affichage des vignettes en liste."
 
-#: .\core\admin.py:119 .\core\admin.py:179 .\core\admin.py:239
+#: .\core\admin.py:149 .\core\admin.py:209 .\core\admin.py:269
 msgctxt "Product Admin Attributes Group Block"
 msgid "SEO"
 msgstr "SEO"
 
-#: .\core\admin.py:123 .\core\admin.py:183 .\core\admin.py:243
+#: .\core\admin.py:153 .\core\admin.py:213 .\core\admin.py:273
 msgctxt "Product Admin Attributes Group Block"
 msgid "SEO related parameters"
 msgstr "Paramètres SEO."
 
-#: .\core\admin.py:127
+#: .\core\admin.py:157
 msgctxt "Product Admin Attributes Group Block"
 msgid "Giftcard Specifics"
 msgstr "Spécificités Carte cadeau"
 
-#: .\core\admin.py:131
+#: .\core\admin.py:161
 msgctxt "Product Admin Attributes Group Block"
 msgid "Giftcard specifics attributes"
 msgstr "Attributs propres à cette carte-cadeau."
 
-#: .\core\admin.py:135 .\core\admin.py:195 .\core\admin.py:255
+#: .\core\admin.py:165 .\core\admin.py:225 .\core\admin.py:285
 msgctxt "Product Admin Attributes Group Block"
 msgid "Stripe connection"
 msgstr "Connexion avec Stripe"
 
-#: .\core\admin.py:139 .\core\admin.py:199 .\core\admin.py:259
+#: .\core\admin.py:169 .\core\admin.py:229 .\core\admin.py:289
 msgctxt "Product Admin Attributes Group Block"
 msgid "Stripe product pairing parameters"
 msgstr "Lien avec les produits stripes"
 
-#: .\core\admin.py:143 .\core\admin.py:203 .\core\admin.py:263
+#: .\core\admin.py:173 .\core\admin.py:233 .\core\admin.py:293
 msgctxt "Product Admin Attributes Group Block"
 msgid "Promo"
 msgstr "Offre promotionnelle"
 
-#: .\core\admin.py:147 .\core\admin.py:207 .\core\admin.py:267
+#: .\core\admin.py:177 .\core\admin.py:237 .\core\admin.py:297
 msgctxt "Product Admin Attributes Group Block"
 msgid "Promotion related parameters"
 msgstr "Parametrage d'une promotion stripe"
 
-#: .\core\admin.py:187
+#: .\core\admin.py:217
 msgctxt "Product Admin Attributes Group Block"
 msgid "Bundle Specifics"
 msgstr "Spécifités du forfait"
 
-#: .\core\admin.py:191
+#: .\core\admin.py:221
 msgctxt "Product Admin Attributes Group Block"
 msgid "Bundle specific attributes"
 msgstr "Attributs propre aux forfaits"
 
-#: .\core\admin.py:247
+#: .\core\admin.py:277
 msgctxt "Product Admin Attributes Group Block"
 msgid "Massage Specifics"
 msgstr "Attributs propre aux massages"
 
-#: .\core\admin.py:251
+#: .\core\admin.py:281
 msgctxt "Product Admin Attributes Group Block"
 msgid "Massage specific attributes"
 msgstr "Spécificités du massage"
@@ -663,7 +663,7 @@ msgstr "Suivant"
 
 #: .\core\templates\appointment\appointments.html:124
 msgid "Request next available slot"
-msgstr "Demander le prochain créneau disponible."
+msgstr "Prochaine disponibilité"
 
 #: .\core\templates\appointment\appointments.html:125
 msgid "No staff member selected."
@@ -695,7 +695,7 @@ msgstr "Mois précédent"
 
 #: .\core\templates\appointment\appointments.html:132
 msgid "Next available date"
-msgstr "Faites du massage votre rituel bien-être"
+msgstr "Prochaine disponibilité "
 
 #: .\core\templates\appointment\base.html:91
 #: .\core\templates\core\components\base.html:85
@@ -1212,7 +1212,7 @@ msgctxt "order-thankyou"
 msgid "About <strong>massage packages</strong> :"
 msgstr "A propos des <strong>forfaits massage</strong> :"
 
-#: .\core\templates\core\stripe\success.html:23
+#: .\core\templates\core\stripe\success.html:24
 msgctxt "order-thankyou"
 msgid ""
 "Our online booking system does not currently support massage packages. To "
@@ -1220,28 +1220,6 @@ msgid ""
 msgstr ""
 "La réservation en ligne ne prend pas encore en compte les forfaits. Pour "
 "l'utiliser veuillez prendre rendez vous par téléphone ou par mail."
-
-#: .\core\templates\core\stripe\success.html:26
-#, fuzzy, python-format
-#| msgctxt "order-thankyou"
-#| msgid ""
-#| "\n"
-#| "            If you have any questions or issues with your order, please "
-#| "feel free to contact us at <strong>%(phone)s</strong> or by email at "
-#| "<strong>%(mail)s</strong>.\n"
-#| "            "
-msgctxt "order-thankyou"
-msgid ""
-"\n"
-"            If you have any questions or issues with your order, please feel "
-"free to contact us at %(phone)s or by email at %(mail)s.\n"
-"            "
-msgstr ""
-"\n"
-"            Si vous avez des questions ou des problèmes avec votre commande, "
-"n'hésitez pas à nous contacter au <strong>%(phone)s</strong> ou par mail "
-"<strong>%(email)s</strong>.\n"
-"            "
 
 #: .\core\templates\registration\activate_account.html:7
 #: .\core\templates\registration\activate_account_done.html:8
@@ -1534,3 +1512,24 @@ msgstr "Vos informations ont bien été mises à jour."
 msgctxt "Form Validation"
 msgid "There was an error in your submission :"
 msgstr "Vous avez une erreur dans votre formulaire :"
+
+#, fuzzy, python-format
+#~| msgctxt "order-thankyou"
+#~| msgid ""
+#~| "\n"
+#~| "            If you have any questions or issues with your order, please "
+#~| "feel free to contact us at <strong>%(phone)s</strong> or by email at "
+#~| "<strong>%(mail)s</strong>.\n"
+#~| "            "
+#~ msgctxt "order-thankyou"
+#~ msgid ""
+#~ "\n"
+#~ "            If you have any questions or issues with your order, please "
+#~ "feel free to contact us at %(phone)s or by email at %(mail)s.\n"
+#~ "            "
+#~ msgstr ""
+#~ "\n"
+#~ "            Si vous avez des questions ou des problèmes avec votre "
+#~ "commande, n'hésitez pas à nous contacter au <strong>%(phone)s</strong> ou "
+#~ "par mail <strong>%(email)s</strong>.\n"
+#~ "            "
