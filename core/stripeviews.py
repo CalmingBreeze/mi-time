@@ -126,7 +126,7 @@ class CreateCheckoutSessionView(View):
     
     def post(self, request, *args, **kwargs):
         #we need to match related Product
-        product = self.fetch_product_infos('core', self.kwargs["model_name"], self.kwargs["product_id"]) 
+        product = self.fetch_product_infos('core', self.kwargs["model_name"], self.kwargs["object_id"])
         logger.debug("CreateCheckoutSessionView : POST : call")
 
         #handle domain in prod or debug

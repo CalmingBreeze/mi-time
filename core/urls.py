@@ -21,7 +21,7 @@ stripe_patterns = (
     [
         path('annulation/', CancelView.as_view(), name='cancel'),
         path('confirmation/', SuccessView.as_view(), name='success'),
-        path('create-checkout-session/<model_name>/<int:product_id>', CreateCheckoutSessionView.as_view(), name='create-checkout-session'),
+        path('create-checkout-session/<model_name>/<int:object_id>', CreateCheckoutSessionView.as_view(), name='create-checkout-session'),
         path('create-appointment-checkout-session/<int:object_id>/<str:id_request>/', CreateCheckoutSessionView.as_view(), name='create-appointment-checkout-session'),
         path('webhooks/stripe/', stripe_webhook, name='stripe-webhook'),
     ],
