@@ -59,7 +59,8 @@ EMAIL_USE_SSL = config("EMAIL_USE_SSL", default=False, cast=bool)
 DEFAULT_FROM_EMAIL = config("DEFAULT_FROM_EMAIL")
 RESERVATION_EMAIL = config("RESERVATION_EMAIL") # reservation@mi-time.fr
 
-ALLOWED_HOSTS = ["localhost", "127.0.0.1", ".mi-time.fr"]
+# ALLOWED_HOSTS = ["localhost", "127.0.0.1", ".mi-time.fr"]
+ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=lambda v: [s.strip() for s in v.split(',')])
 
 #SSL Force
 SECURE_SSL_REDIRECT = config("SECURE_SSL_REDIRECT", default=False, cast=bool)
