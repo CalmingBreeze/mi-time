@@ -290,6 +290,14 @@ class MassageAdmin(admin.ModelAdmin):
             }
         ),
         (
+            pgettext_lazy("Product Admin Attributes Group Block","Appointment Service Relation"),
+            {
+                "classes": ["collapse"],
+                "fields": ["service"],
+                "description": pgettext_lazy("Product Admin Attributes Group Block","Django Appointment Service to Mi-time.fr Massage pairing"),
+            }
+        ),
+        (
             pgettext_lazy("Product Admin Attributes Group Block","Promo"),
             {
                 "classes": ["collapse"],

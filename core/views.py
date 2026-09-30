@@ -117,10 +117,10 @@ def massageBySlug(request, massage_slug):
     product = get_object_or_404(Massage, slug=massage_slug)
 
     related_service_id = None 
-    if product.service_set.first() == None:
+    if product.service is None:
         logger.warning(f"Massage (id={product.id}) hasn't any related service.")
     else:
-        related_service_id = product.service_set.first().id
+        related_service_id = product.service.id
 
     #get related salon
     practices = product.practice_set.all()

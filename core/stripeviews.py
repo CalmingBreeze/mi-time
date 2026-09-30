@@ -37,7 +37,7 @@ class CreateCheckoutSessionView(View):
             model = apps.get_model(app_origin, model_name)
             paymentinfo = model.objects.get(id=object_id)
             service = paymentinfo.appointment.appointment_request.service
-            product = service.related_product
+            product = service.massage
         elif (app_origin == 'core'):
             model = apps.get_model(app_origin, model_name)
             product = model.objects.get(id=object_id)

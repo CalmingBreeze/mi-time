@@ -148,6 +148,13 @@ class Massage(AbstractProduct):
         verbose_name_plural = npgettext_lazy("Model Class Name", "Massage", "Massages", 2)
 
     duration = models.DurationField(help_text=pgettext_lazy("Model Field", "Duration of the Massage (HH:MM:SS)"), default=datetime.timedelta(hours=1))
+    service = models.OneToOneField(
+        "appointment.Service",
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True,
+        related_name="massage",
+    )
 
     def get_absolute_url(self):
         return reverse("massage", kwargs={"massage_slug": self.slug})

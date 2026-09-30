@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-12 14:02+0200\n"
+"POT-Creation-Date: 2026-09-30 19:04+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -67,12 +67,12 @@ msgctxt "Product Admin Attributes Group Block"
 msgid "Stripe product pairing parameters"
 msgstr "Lien avec les produits stripes"
 
-#: .\core\admin.py:173 .\core\admin.py:233 .\core\admin.py:293
+#: .\core\admin.py:173 .\core\admin.py:233 .\core\admin.py:301
 msgctxt "Product Admin Attributes Group Block"
 msgid "Promo"
 msgstr "Offre promotionnelle"
 
-#: .\core\admin.py:177 .\core\admin.py:237 .\core\admin.py:297
+#: .\core\admin.py:177 .\core\admin.py:237 .\core\admin.py:305
 msgctxt "Product Admin Attributes Group Block"
 msgid "Promotion related parameters"
 msgstr "Parametrage d'une promotion stripe"
@@ -96,6 +96,16 @@ msgstr "Attributs propre aux massages"
 msgctxt "Product Admin Attributes Group Block"
 msgid "Massage specific attributes"
 msgstr "Spécificités du massage"
+
+#: .\core\admin.py:293
+msgctxt "Product Admin Attributes Group Block"
+msgid "Appointment Service Relation"
+msgstr "Relation Service Massage"
+
+#: .\core\admin.py:297
+msgctxt "Product Admin Attributes Group Block"
+msgid "Django Appointment Service to Mi-time.fr Massage pairing"
+msgstr "Relation entre le Service et le produit associé (massage)"
 
 #: .\core\forms.py:15 .\core\forms.py:37
 msgid "Email"
@@ -153,17 +163,17 @@ msgctxt "Model Field"
 msgid "Current state of the product (draft,hidden,published)"
 msgstr ""
 
-#: .\core\models.py:85 .\core\models.py:269 .\core\models.py:356
+#: .\core\models.py:85 .\core\models.py:276 .\core\models.py:363
 msgctxt "Model Field"
 msgid "SEO Meta Title (50->70)"
 msgstr "SEO Balise Meta Title (50->70 caractères)"
 
-#: .\core\models.py:86 .\core\models.py:270 .\core\models.py:357
+#: .\core\models.py:86 .\core\models.py:277 .\core\models.py:364
 msgctxt "Model Field"
 msgid "SEO Meta Description (90->160)"
 msgstr "SEO Balise Meta Description (90->160 caractères)"
 
-#: .\core\models.py:87 .\core\models.py:271 .\core\models.py:358
+#: .\core\models.py:87 .\core\models.py:278 .\core\models.py:365
 msgctxt "Model Field"
 msgid "SEO Meta Keyword (max 10)"
 msgstr "SEO Balise Meta Keyword (max 10 mots)"
@@ -209,8 +219,8 @@ msgid "An image to illustrate the massage"
 msgstr "Image du massage"
 
 #: .\core\models.py:103 .\core\models.py:109 .\core\models.py:115
-#: .\core\models.py:283 .\core\models.py:289 .\core\models.py:295
-#: .\core\models.py:301 .\core\models.py:307
+#: .\core\models.py:290 .\core\models.py:296 .\core\models.py:302
+#: .\core\models.py:308 .\core\models.py:314
 msgctxt "Model Field"
 msgid "SEO Img Alt"
 msgstr "SEO Attribut Alt de l'image"
@@ -252,267 +262,267 @@ msgctxt "Model Field"
 msgid "Duration of the Massage (HH:MM:SS)"
 msgstr "Durée du massage (HH:MM:SS)"
 
-#: .\core\models.py:157 .\core\models.py:158
+#: .\core\models.py:164 .\core\models.py:165
 msgctxt "Model Class Name"
 msgid "Gift card"
 msgid_plural "Gift Cards"
 msgstr[0] "Carte cadeau"
 msgstr[1] "Cartes Cadeaux"
 
-#: .\core\models.py:160
+#: .\core\models.py:167
 msgctxt "Model Field"
 msgid "Gift label on the giftcard"
 msgstr "Titre de la carte cadeau"
 
-#: .\core\models.py:161
+#: .\core\models.py:168
 msgctxt "Model Field"
 msgid "Duration of the gifted Massage (HH:MM:SS)"
 msgstr "Valeur de la carte en temps (HH:MM:SS)"
 
-#: .\core\models.py:162
+#: .\core\models.py:169
 msgctxt "Model Field"
 msgid "Stripe Coupon id of the gift card"
 msgstr "Identifiant Coupon de la carte cadeau"
 
-#: .\core\models.py:169 .\core\models.py:170
+#: .\core\models.py:176 .\core\models.py:177
 msgctxt "Model Class Name"
 msgid "Bundle"
 msgid_plural "Bundles"
 msgstr[0] "Forfait"
 msgstr[1] "Forfaits"
 
-#: .\core\models.py:172
+#: .\core\models.py:179
 msgctxt "Model Field"
 msgid "Total massage credit duration of the bundle"
 msgstr "Durée totale de massage du forfait"
 
-#: .\core\models.py:179 .\core\models.py:180
+#: .\core\models.py:186 .\core\models.py:187
 msgctxt "Model Class Name"
 msgid "Address"
 msgid_plural "Addresses"
 msgstr[0] "adresses"
 msgstr[1] "adresses"
 
-#: .\core\models.py:188
+#: .\core\models.py:195
 msgctxt "Model Field"
 msgid "Postal code"
 msgstr "Code postal"
 
-#: .\core\models.py:189
+#: .\core\models.py:196
 msgctxt "Model Field"
 msgid "City"
 msgstr "Ville"
 
-#: .\core\models.py:190
+#: .\core\models.py:197
 msgctxt "Model Field"
 msgid "Country"
 msgstr "Pays"
 
-#: .\core\models.py:191
+#: .\core\models.py:198
 msgctxt "Model Field"
 msgid "Place id encoded by google map for this address"
 msgstr "Valeur du place_id selon google"
 
-#: .\core\models.py:206 .\core\models.py:207
+#: .\core\models.py:213 .\core\models.py:214
 msgctxt "Model Class Name"
 msgid "Opening"
 msgid_plural "Openings"
 msgstr[0] "Ouverture"
 msgstr[1] "Ouverture"
 
-#: .\core\models.py:213 .\core\models.py:218 .\core\models.py:223
-#: .\core\models.py:228 .\core\models.py:233 .\core\models.py:238
-#: .\core\models.py:243
+#: .\core\models.py:220 .\core\models.py:225 .\core\models.py:230
+#: .\core\models.py:235 .\core\models.py:240 .\core\models.py:245
+#: .\core\models.py:250
 msgctxt "Model Field"
 msgid "Opening"
 msgstr "Ouverture"
 
-#: .\core\models.py:214 .\core\models.py:219 .\core\models.py:224
-#: .\core\models.py:229 .\core\models.py:234 .\core\models.py:239
-#: .\core\models.py:244
+#: .\core\models.py:221 .\core\models.py:226 .\core\models.py:231
+#: .\core\models.py:236 .\core\models.py:241 .\core\models.py:246
+#: .\core\models.py:251
 msgctxt "Model Field"
 msgid "Lunchbreak"
 msgstr "Pause repas"
 
-#: .\core\models.py:215 .\core\models.py:220 .\core\models.py:225
-#: .\core\models.py:230 .\core\models.py:235 .\core\models.py:240
-#: .\core\models.py:245
+#: .\core\models.py:222 .\core\models.py:227 .\core\models.py:232
+#: .\core\models.py:237 .\core\models.py:242 .\core\models.py:247
+#: .\core\models.py:252
 msgctxt "Model Field"
 msgid "End of the Lunchbreak"
 msgstr "Fin de la Pause repas"
 
-#: .\core\models.py:216 .\core\models.py:221 .\core\models.py:226
-#: .\core\models.py:231 .\core\models.py:236 .\core\models.py:241
-#: .\core\models.py:246
+#: .\core\models.py:223 .\core\models.py:228 .\core\models.py:233
+#: .\core\models.py:238 .\core\models.py:243 .\core\models.py:248
+#: .\core\models.py:253
 msgctxt "Model Field"
 msgid "Closing"
 msgstr "Fermeture"
 
-#: .\core\models.py:250
+#: .\core\models.py:257
 msgctxt "Model Field"
 msgid "monday"
 msgstr "lundi"
 
-#: .\core\models.py:251
+#: .\core\models.py:258
 msgctxt "Model Field"
 msgid "tuesday"
 msgstr "mardi"
 
-#: .\core\models.py:252
+#: .\core\models.py:259
 msgctxt "Model Field"
 msgid "wednesday"
 msgstr "mercredi"
 
-#: .\core\models.py:253
+#: .\core\models.py:260
 msgctxt "Model Field"
 msgid "thursday"
 msgstr "jeudi"
 
-#: .\core\models.py:254
+#: .\core\models.py:261
 msgctxt "Model Field"
 msgid "friday"
 msgstr "vendredi"
 
-#: .\core\models.py:255
+#: .\core\models.py:262
 msgctxt "Model Field"
 msgid "saturday"
 msgstr "samedi"
 
-#: .\core\models.py:256
+#: .\core\models.py:263
 msgctxt "Model Field"
 msgid "sunday"
 msgstr "dimanche"
 
-#: .\core\models.py:264 .\core\models.py:265
+#: .\core\models.py:271 .\core\models.py:272
 msgctxt "Model Class Name"
 msgid "Practice"
 msgid_plural "Practices"
 msgstr[0] "Salon"
 msgstr[1] "Salons"
 
-#: .\core\models.py:273 .\core\models.py:274 .\core\models.py:361
-#: .\core\models.py:362
+#: .\core\models.py:280 .\core\models.py:281 .\core\models.py:368
+#: .\core\models.py:369
 msgctxt "Model Field"
 msgid "Additionnal content of the page"
 msgstr "Contenu de la page"
 
-#: .\core\models.py:275
+#: .\core\models.py:282
 msgctxt "Model Field"
 msgid "Google Site url"
 msgstr "Url du Google Site"
 
-#: .\core\models.py:276 .\core\models.py:367
+#: .\core\models.py:283 .\core\models.py:374
 msgctxt "Model Field"
 msgid "SEO Url Normalization"
 msgstr "Url finale (SEO)"
 
-#: .\core\models.py:277
+#: .\core\models.py:284
 msgctxt "Model Field"
 msgid "The cover image used when listed"
 msgstr "Vignette utilisée dans la liste"
 
-#: .\core\models.py:282 .\core\models.py:288 .\core\models.py:294
-#: .\core\models.py:300 .\core\models.py:306
+#: .\core\models.py:289 .\core\models.py:295 .\core\models.py:301
+#: .\core\models.py:307 .\core\models.py:313
 msgctxt "Model Field"
 msgid "An image to illustrate the practice"
 msgstr "Photo du salon"
 
-#: .\core\models.py:351 .\core\models.py:352
+#: .\core\models.py:358 .\core\models.py:359
 msgctxt "Model Class Name"
 msgid "Page"
 msgid_plural "Pages"
 msgstr[0] "Page"
 msgstr[1] "Pages"
 
-#: .\core\models.py:359
+#: .\core\models.py:366
 msgctxt "Model Field"
 msgid "SEO Meta Robots"
 msgstr "SEO Meta Robots"
 
-#: .\core\models.py:360
+#: .\core\models.py:367
 msgctxt "Model Field"
 msgid "Content of the page"
 msgstr "Contenu de la page"
 
-#: .\core\models.py:363
+#: .\core\models.py:370
 msgctxt "Model Field"
 msgid "Link custom view to its meta datas"
 msgstr "Lien vers une vue personnalisée"
 
-#: .\core\models.py:364
+#: .\core\models.py:371
 msgctxt "Model Field"
 msgid "Page legaly required ? (displayed under the footer)"
 msgstr "Page de mentions légale ? (Sera affichée sous le footer)"
 
-#: .\core\models.py:365
+#: .\core\models.py:372
 msgctxt "Model Field"
 msgid "Position of the item in the menu (empties won't be displayed)"
 msgstr "Ordre des pages dans le menu (si vide, n'apparaîtra pas)"
 
-#: .\core\models.py:366
+#: .\core\models.py:373
 msgctxt "Model Field"
 msgid ""
 "Position of the item in footer links section (empties won't be displayed)"
 msgstr "Ordre des pages dans le menu (si vide, n'apparaîtra pas)"
 
-#: .\core\models.py:382 .\core\models.py:383
+#: .\core\models.py:389 .\core\models.py:390
 msgctxt "Model Class Name"
 msgid "Global Site Config"
 msgid_plural "Global Site Configs"
 msgstr[0] "Configurations globales"
 msgstr[1] "Configurations globales"
 
-#: .\core\models.py:387
+#: .\core\models.py:394
 msgctxt "Model Field"
 msgid "Email visible on the website"
 msgstr "Email principal du site"
 
-#: .\core\models.py:388
+#: .\core\models.py:395
 msgctxt "Model Field"
 msgid "Main Mobile number visible on the website"
 msgstr "Numéro de mobile dans le bandeau supérieur"
 
-#: .\core\models.py:389
+#: .\core\models.py:396
 msgctxt "Model Field"
 msgid "Opening time text in header"
 msgstr "Heure d'ouverture dans le bandeau supérieur"
 
-#: .\core\models.py:390
+#: .\core\models.py:397
 msgctxt "Model Field"
 msgid "Title of the about block in footer"
 msgstr "Titre du bloc à propos du footer"
 
-#: .\core\models.py:391
+#: .\core\models.py:398
 msgctxt "Model Field"
 msgid "Content of the about block in footer"
 msgstr "Contenu du bloc à propos du footer"
 
-#: .\core\models.py:392
+#: .\core\models.py:399
 msgctxt "Model Field"
 msgid "Facebook Account"
 msgstr "Compte Facebook"
 
-#: .\core\models.py:393
+#: .\core\models.py:400
 msgctxt "Model Field"
 msgid "Instagram Account"
 msgstr "Compte Instagram"
 
-#: .\core\models.py:394
+#: .\core\models.py:401
 msgctxt "Model Field"
 msgid "Copyright content in the footer"
 msgstr "Text de copyright dans le pied de page"
 
-#: .\core\models.py:395
+#: .\core\models.py:402
 msgctxt "Model Field"
 msgid "Design credit content in the footer"
 msgstr "Mentions du créateur du design du site"
 
-#: .\core\models.py:396
+#: .\core\models.py:403
 msgctxt "Model Field"
 msgid "An Image displayed when the original is not found"
 msgstr "Une image affichée lorsque l'originale n'existe pas"
 
-#: .\core\models.py:397
+#: .\core\models.py:404
 msgctxt "Model Field"
 msgid "Content of robots.txt"
 msgstr "Contenu de robots.txt"
@@ -1512,24 +1522,3 @@ msgstr "Vos informations ont bien été mises à jour."
 msgctxt "Form Validation"
 msgid "There was an error in your submission :"
 msgstr "Vous avez une erreur dans votre formulaire :"
-
-#, fuzzy, python-format
-#~| msgctxt "order-thankyou"
-#~| msgid ""
-#~| "\n"
-#~| "            If you have any questions or issues with your order, please "
-#~| "feel free to contact us at <strong>%(phone)s</strong> or by email at "
-#~| "<strong>%(mail)s</strong>.\n"
-#~| "            "
-#~ msgctxt "order-thankyou"
-#~ msgid ""
-#~ "\n"
-#~ "            If you have any questions or issues with your order, please "
-#~ "feel free to contact us at %(phone)s or by email at %(mail)s.\n"
-#~ "            "
-#~ msgstr ""
-#~ "\n"
-#~ "            Si vous avez des questions ou des problèmes avec votre "
-#~ "commande, n'hésitez pas à nous contacter au <strong>%(phone)s</strong> ou "
-#~ "par mail <strong>%(email)s</strong>.\n"
-#~ "            "
