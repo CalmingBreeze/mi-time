@@ -1,9 +1,24 @@
-from django.test import TestCase
+from django.test import Client, TestCase
 from django.urls import reverse
 
 from core.models import Page, Massage, Bundle, GiftCard
 
 # Create your tests here.
+
+class HTTPSClient(Client):
+    def get(self, path, data=None, secure=True, **extra):
+        # extra.setdefault("secure", True)
+        return super().get(path, data=data, secure=secure, **extra)
+
+    def post(self, path, data=None, content_type=None, secure=True, **extra):
+        # extra.setdefault("secure", True)
+        return super().post(
+            path,
+            data=data,
+            content_type=content_type,
+            secure=secure,
+            **extra,
+        )
 
 class BaseViewTests(TestCase):
     fixtures = [
@@ -11,6 +26,8 @@ class BaseViewTests(TestCase):
         "pages_and_configs.yaml",
         "products_and_practices.yaml"
     ]
+
+    client_class = HTTPSClient
 
     def test_homepage_is_accessible(self):
         """The homepage should return HTTP 200."""
@@ -42,6 +59,8 @@ class ProductViewTests(TestCase):
         "pages_and_configs.yaml",
         "products_and_practices.yaml"
     ]
+
+    client_class = HTTPSClient
 
     def test_massages_view(self):
         """The massages view should return HTTP 200."""
@@ -101,20 +120,10 @@ class ProductViewTests(TestCase):
                 self.assertContains(response,expected_url)
 
 class ErrorViewTests(TestCase):
+
+    client_class = HTTPSClient
+
     def test_unknown_massage_returns_404(self):
-        # response = self.client.get(reverse("massage",kwargs={"massage_slug": "ce-massage-nexiste-pas"}))
-        # self.assertEqual(response.status_code, 404)
-
-        url = reverse(
-        "massage",
-        kwargs={"massage_slug": "ce-massage-nexiste-pas"},
-        )
-
-        print("URL:", url)
-
+        url = reverse("massage",kwargs={"massage_slug": "ce-massage-nexiste-pas"},)
         response = self.client.get(url)
-
-        print("STATUS:", response.status_code)
-        print("CONTENT:", response.content[:500])
-
         self.assertEqual(response.status_code, 404)
