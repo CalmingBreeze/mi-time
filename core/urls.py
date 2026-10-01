@@ -37,9 +37,6 @@ urlpatterns = [
     #stripe urls
     path("stripe/", include(stripe_patterns)),
 
-    path("privilege/<slug:page_slug>", views.privilege, name="privilege"),
-    #redirect to fix mismatch between two simple slug matches
-    path("offre-privilege", lambda request: redirect('privilege/offre-privilege', permanent=True)),
     path("<slug:page_slug>", views.pages, name="page"),
 
     path("reservation/", views.reservation, name="reservation"),

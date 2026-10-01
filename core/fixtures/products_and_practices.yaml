@@ -1,0 +1,1410 @@
+- model: appointment.service
+  pk: 1
+  fields:
+    name: 'Massage personnalisé : La Parenthèse'
+    description: Ici la description du massage.
+    duration: 01:00:00
+    price: '80.00'
+    down_payment: '0.00'
+    image: ''
+    currency: EUR
+    background_color: rgb(22, 32, 229)
+    reschedule_limit: 0
+    allow_rescheduling: false
+    use_service_duration_as_slot: true
+    created_at: 2026-08-25 17:57:09.284592+00:00
+    updated_at: 2026-08-25 17:57:09.284606+00:00
+- model: appointment.service
+  pk: 2
+  fields:
+    name: 'Massage : Le Ciblé 45 mn'
+    description: Ici la description du massage.
+    duration: 00:45:00
+    price: '65.00'
+    down_payment: '0.00'
+    image: ''
+    currency: EUR
+    background_color: rgb(22, 229, 216)
+    reschedule_limit: 0
+    allow_rescheduling: false
+    use_service_duration_as_slot: true
+    created_at: 2026-08-25 17:58:00.830792+00:00
+    updated_at: 2026-08-25 17:58:00.830810+00:00
+- model: appointment.service
+  pk: 3
+  fields:
+    name: 'Massage : Le Ciblé 1h'
+    description: Ici la description du massage.
+    duration: 01:00:00
+    price: '80.00'
+    down_payment: '0.00'
+    image: ''
+    currency: EUR
+    background_color: rgb(229, 22, 80)
+    reschedule_limit: 0
+    allow_rescheduling: false
+    use_service_duration_as_slot: true
+    created_at: 2026-08-25 18:00:18.645932+00:00
+    updated_at: 2026-08-25 18:18:05.543671+00:00
+- model: appointment.service
+  pk: 4
+  fields:
+    name: 'Massage détente : L''Étoile 30mn'
+    description: Ici la description du massage.
+    duration: 00:30:00
+    price: '40.00'
+    down_payment: '0.00'
+    image: ''
+    currency: EUR
+    background_color: rgb(229, 82, 22)
+    reschedule_limit: 0
+    allow_rescheduling: false
+    use_service_duration_as_slot: true
+    created_at: 2026-08-25 18:11:20.368201+00:00
+    updated_at: 2026-08-25 18:11:27.644520+00:00
+- model: appointment.service
+  pk: 5
+  fields:
+    name: 'Massage bien-être sur-mesure : L''Absolu 1h30'
+    description: Ici la description du massage.
+    duration: 01:30:00
+    price: '110.00'
+    down_payment: '0.00'
+    image: ''
+    currency: EUR
+    background_color: rgb(22, 195, 229)
+    reschedule_limit: 0
+    allow_rescheduling: false
+    use_service_duration_as_slot: true
+    created_at: 2026-08-25 18:13:05.823933+00:00
+    updated_at: 2026-08-25 18:13:05.823946+00:00
+- model: appointment.service
+  pk: 6
+  fields:
+    name: 'Massage du visage : Le Gua Sha 45 mn'
+    description: Ici la description du massage.
+    duration: 00:45:00
+    price: '65.00'
+    down_payment: '0.00'
+    image: ''
+    currency: EUR
+    background_color: rgb(229, 22, 26)
+    reschedule_limit: 0
+    allow_rescheduling: false
+    use_service_duration_as_slot: true
+    created_at: 2026-08-25 18:14:13.818249+00:00
+    updated_at: 2026-08-25 18:14:13.818260+00:00
+- model: appointment.service
+  pk: 7
+  fields:
+    name: 'Massage prénatal : Le Rituel 45 mn'
+    description: Ici la description du massage
+    duration: 01:00:00
+    price: '80.00'
+    down_payment: '0.00'
+    image: ''
+    currency: EUR
+    background_color: rgb(161, 22, 229)
+    reschedule_limit: 0
+    allow_rescheduling: false
+    use_service_duration_as_slot: true
+    created_at: 2026-08-25 18:14:48.743619+00:00
+    updated_at: 2026-08-25 18:14:48.743631+00:00
+- model: appointment.service
+  pk: 8
+  fields:
+    name: 'Massage prénatal : Le Rituel 1h'
+    description: Ici la description du massage
+    duration: 01:00:00
+    price: '80.00'
+    down_payment: '0.00'
+    image: ''
+    currency: EUR
+    background_color: rgb(229, 110, 22)
+    reschedule_limit: 0
+    allow_rescheduling: false
+    use_service_duration_as_slot: true
+    created_at: 2026-08-25 18:15:19.298124+00:00
+    updated_at: 2026-08-25 18:15:19.298136+00:00
+- model: appointment.service
+  pk: 9
+  fields:
+    name: 'Massage prénatal : Le Rituel 1h15'
+    description: Ici la description du massage.
+    duration: 01:15:00
+    price: '95.00'
+    down_payment: '0.00'
+    image: ''
+    currency: EUR
+    background_color: rgb(22, 133, 229)
+    reschedule_limit: 0
+    allow_rescheduling: false
+    use_service_duration_as_slot: true
+    created_at: 2026-08-25 18:15:43.909286+00:00
+    updated_at: 2026-08-25 18:20:53.146544+00:00
+- model: core.massage
+  pk: 1
+  fields:
+    name: 'Massage personnalisé : La Parenthèse 1h'
+    slug: massage-personnalise-la-parenthese
+    publication_state: PUBLISHED
+    pub_date: 2026-08-25 17:02:47.934074+00:00
+    edit_date: 2026-09-30 16:38:08.028259+00:00
+    meta_title: Massage corps 1h La Parenthèse – Mi’ Time Montpellier
+    meta_description: Massage corps 1h La Parenthèse – Mi’ Time Montpellier
+    meta_Keywords: Massage
+    stripe_product_id: prod_UsXHWNYzV2Y6Zo
+    stripe_price_id: price_1TsmCzRBrGMIS9Ri8BvlIYTK
+    price: '80.00'
+    tile_label: La parenthèse
+    cover: img/massage-personnalise-la-parenthese_qbH98cy.png
+    priority: 8
+    highlighted: false
+    text1: <p>Ce massage personnalisé d’une heure, se décline en deux versions pour
+      s’adapter à votre besoin :</p><ul><li>Relaxant</li><li>Sportif</li></ul><h3>Massage
+      Relaxant</h3><p><span style="color:#7FBAB4;"><strong>Pour qui&nbsp;?</strong></span>
+      Ceux/Celles qui ont peu de douleurs, du stress ou privilégient le bien-être.</p><p><span
+      style="color:#7FBAB4;"><strong>Quelles zones&nbsp;?</strong></span> Il s’agit
+      d’un massage corps de la tête aux pieds, on peut éviter une petite zone que
+      vous n’aimez pas, cependant cela reste un massage global du corps.</p><p><span
+      style="color:#7FBAB4;"><strong>Description du massage&nbsp;:</strong></span>
+      Ce massage bien-être, aux gestes enveloppants et à la pression juste, est conçu
+      pour vous aider à ralentir et à vous laisser porter. Idéal pour libérer le stress
+      accumulé et repartir plus léger(e), ce massage est une invitation à revenir
+      à soi et se reconnecter en douceur à votre corps et vos sensations. Loin du
+      rythme effréné de la vie, c’est un moment rien qu’à vous, où vous pouvez enfin
+      être chouchouté(e) comme il se doit.</p><h3><strong>Massage Sportif&nbsp;</strong></h3><p><span
+      style="color:#7FBAB4;"><strong>Pour qui&nbsp;?</strong></span> Ceux/celles qui
+      ont des douleurs musculaires ou pratiquent un sport et veulent un massage qui
+      se concentre sur les tensions du corps.</p><p><span style="color:#7FBAB4;"><strong>Quelles
+      zones&nbsp;?</strong></span> Massage global du corps, il peut être adapté d’un
+      commun accord selon vos besoins.</p><p><span style="color:#7FBAB4;"><strong>Description
+      du massage&nbsp;:</strong></span> Ce massage dynamique s’adresse aussi bien
+      aux sportifs qu’à toute personne souffrant de tensions ou de douleurs musculaires.
+      Grâce à l’utilisation ciblée des techniques de <i>Trigger points</i> et de <i>Deep
+      Tissue</i>, il vise à relâcher les tensions profondes, améliorer la mobilité
+      et soulager les zones contractées. Inspiré du massage suédois, reconnu pour
+      son efficacité sur la récupération physique, ce soin combine gestes toniques
+      et étirements doux. Ces techniques favorisent une meilleure circulation, une
+      détente musculaire profonde ainsi qu’une récupération plus rapide après l’effort.
+      Que vous soyez un athlète régulier ou que vous cherchiez simplement à libérer
+      votre corps de ses tensions, ce massage vous apportera à la fois soulagement,
+      mobilité et bien-être global.&nbsp;</p>
+    img1: ''
+    img1_alt: null
+    img2: ''
+    img2_alt: null
+    img3: ''
+    img3_alt: null
+    promo_name: null
+    promo_stripe_coupon_id: null
+    promo_discounted_price: null
+    promo_start_date: null
+    promo_end_date: null
+    duration: 01:00:00
+    service: 1
+- model: core.massage
+  pk: 2
+  fields:
+    name: 'Massage : Le Ciblé 45 mn'
+    slug: massage-cible-45
+    publication_state: PUBLISHED
+    pub_date: 2026-08-25 17:04:52.398511+00:00
+    edit_date: 2026-09-30 16:38:00.627328+00:00
+    meta_title: Massage relaxant 45 min Le Ciblé – Mi’ Time Montpellier
+    meta_description: 'Offrez-vous Le Ciblé : massage relaxant de 45 min, global ou
+      ciblé (dos, épaules, jambes lourdes), chez Mi’ Time, près du Peyrou à Montpellier.'
+    meta_Keywords: Massage
+    stripe_product_id: prod_UsWx9A8NrKoYcO
+    stripe_price_id: price_1TsltIRBrGMIS9Ri0Y0sDHPU
+    price: '65.00'
+    tile_label: Le ciblé
+    cover: img/massage-cible-la-bulle_VoRnsPF.png
+    priority: 5
+    highlighted: false
+    text1: <p>Un massage parfait en 45 minutes, ça existe&nbsp;! Il se décline en
+      <strong>3 versions</strong> pour s’adapter à votre besoin&nbsp;:</p><ul><li>Relaxant</li><li>Dos
+      et Épaules</li><li>Jambe légère et Réflexologie Plantaire<br>&nbsp;</li></ul><h3><strong>Massage
+      Relaxant</strong></h3><p><span style="color:#7FBAB4;"><strong>Pour qui&nbsp;?</strong></span><strong>
+      </strong>Ceux/Celles qui ont peu de douleurs ou privilégient le bien-être. S’il
+      y a de nombreuses zones du corps que vous ne voulez pas que l’on masse ou dévoile.&nbsp;</p><p><span
+      style="color:#7FBAB4;"><strong>Quelles zones&nbsp;?</strong></span><strong>
+      </strong>C'est un massage corps personnalisé, on échange ensemble pour savoir
+      ce qui vous correspond le mieux.</p><p><span style="color:#7FBAB4;"><strong>Description&nbsp;du
+      massage :</strong></span> De la pure détente pour évacuer le stress&nbsp;! Les
+      gestes enveloppants, la juste pression vous accompagnent pour atteindre&nbsp;la
+      relaxation et le bien-être mental. Ce massage bien-être vous reconnecte en douceur
+      à votre corps et à vos sensations. Il rétablit une sensation d’équilibre intérieur
+      et vous aide à repartir apaisée.</p><p>&nbsp;</p><h3><strong>Massage du Dos
+      et des Épaules</strong></h3><p><span style="color:#7FBAB4;"><strong>Pour qui&nbsp;?</strong></span><strong>
+      </strong>Accessible à tous, ce soin convient aussi bien aux adultes actifs qu’aux
+      personnes âgées ou aux profils plus sensibles, avec une adaptation de la pression
+      selon les besoins.</p><p><span style="color:#7FBAB4;"><strong>Quelles zones&nbsp;?</strong></span><strong>
+      </strong>Le dos, les épaules jusqu’aux fessiers.<strong> </strong>Les bras,
+      les mains, le cou et la tête seront aussi pris en compte dans ce massage ciblé.
+      Le ventre peut aussi être nécessaire. A préciser selon vos besoins.</p><p><span
+      style="color:#7FBAB4;"><strong>Description&nbsp;du&nbsp;massage&nbsp;:</strong></span>
+      Des douleurs à la nuque, aux épaules, aux lombaires… bref l’impression de porter
+      le monde sur son dos. C’est le massage qu’il vous faut&nbsp;! Ce massage ciblé
+      se concentre sur le soulagement des tensions globales ou des douleurs localisés.
+      Il agit efficacement sur les nœuds musculaires, appelés Trigger Points et les
+      zones contractées. La pression s’adapte aux tensions rencontrées, sachez que
+      l’intensité doit toujours être ajustée d’un commun accord. Le massage du dos
+      vous soulage pour retrouver mobilité et sérénité au quotidien durant plusieurs
+      jours à plusieurs semaines. Pour des effets plus durables, il est nécessaire
+      d’être régulier dans le massage.</p><p><span style="color:#7FBAB4;"><strong>Options&nbsp;:</strong></span></p><p><strong>-
+      </strong>Usage local d<strong>'</strong>huile essentielle aux propriétés anti-inflammatoire</p><p>&nbsp;</p><h3><strong>Massage
+      Jambes légères et Réflexologie Plantaire</strong></h3><p><span style="color:#7FBAB4;"><strong>Pour
+      qui&nbsp;?</strong></span> Il est particulièrement apprécié après une longue
+      journée debout, une séance de sport ou en cas de station assise prolongée.&nbsp;</p><p><span
+      style="color:#7FBAB4;"><strong>Quelles zones&nbsp;?</strong></span><strong>
+      </strong>Jambes entières jusqu’aux pieds inclus.</p><p><span style="color:#7FBAB4;"><strong>Description&nbsp;du
+      massage :</strong></span> Sport, fatigue, vous, ce sont les jambes et les pieds
+      qui réclament du soutien&nbsp;! Ce massage ciblé permet de retrouver une sensation
+      de légèreté. Que vous souffriez de jambes lourdes ou que vous soyez simplement
+      en quête de détente musculaire sur cette zone du corps, il vous offre un véritable
+      moment de bien-être. Grâce à des gestes fluides, drainants et profonds, il aide
+      à libérer les tensions accumulées, stimule la circulation et réduit les sensations
+      d’inconfort. Ce soin de bien-être s’inspire des principes de la réflexologie
+      plantaire pour un moment de détente profonde à travers des pressions ciblées
+      sur les pieds. Offrez à vos pieds l’attention qu’ils méritent, et repartez ancré·e&nbsp;!</p><p><span
+      style="color:#7FBAB4;"><strong>Options&nbsp;:</strong></span><strong>&nbsp;</strong></p><p><strong>-
+      </strong>Si vous n’aimez pas qu’on vous touche les pieds&nbsp;? pas de problème,
+      on enlève cette étape.&nbsp;<br>- Si vous êtes chatouilleux, normalement sans
+      huile, cela ne pose plus de difficulté, je peux aussi travailleur au talc.</p>
+    img1: ''
+    img1_alt: null
+    img2: ''
+    img2_alt: null
+    img3: ''
+    img3_alt: null
+    promo_name: null
+    promo_stripe_coupon_id: null
+    promo_discounted_price: null
+    promo_start_date: null
+    promo_end_date: null
+    duration: 00:45:00
+    service: 2
+- model: core.massage
+  pk: 3
+  fields:
+    name: 'Massage : Le Ciblé 1h'
+    slug: massage-cible-1h
+    publication_state: PUBLISHED
+    pub_date: 2026-08-25 17:06:18.333000+00:00
+    edit_date: 2026-09-30 16:37:55.091115+00:00
+    meta_title: Massage relaxant 1h Le Ciblé– Mi’ Time Montpellier
+    meta_description: 'Offrez-vous Le Ciblé : massage 1h, (dos, épaules ou jambes
+      lourdes, pieds), chez Mi’ Time, près du Peyrou à Montpellier.'
+    meta_Keywords: massage
+    stripe_product_id: prod_UsWuX6kgBbBn4h
+    stripe_price_id: price_1TslqgRBrGMIS9RihvRPkKnI
+    price: '80.00'
+    tile_label: le ciblé
+    cover: img/massage-cible-la-bulle_3cbzuw0.png
+    priority: 6
+    highlighted: false
+    text1: <p>Un massage ciblé qui se décline en <strong>2 versions</strong> pour
+      s’adapter à votre besoin&nbsp;:</p><ul><li>Dos, Épaules et Nuque</li><li>Jambes
+      légères et Massage des Pieds<br>&nbsp;</li></ul><h3><strong>Massage du Dos et
+      des Épaules</strong></h3><p><span style="color:#7FBAB4;"><strong>Pour qui&nbsp;?</strong></span><strong>
+      </strong>Accessible à tous, ce soin convient aussi bien aux adultes actifs qu’aux
+      personnes âgées ou aux profils plus sensibles, avec une adaptation de la pression
+      selon les besoins.</p><p><span style="color:#7FBAB4;"><strong>Quelles zones&nbsp;?</strong></span><strong>
+      </strong>Le dos, les épaules jusqu’aux fessiers.<strong> </strong>Les bras,
+      les mains, le cou et la tête seront aussi pris en compte dans ce massage ciblé.
+      Le ventre peut aussi être nécessaire. A préciser selon vos besoins.</p><p><span
+      style="color:#7FBAB4;"><strong>Description&nbsp;du&nbsp;massage&nbsp;:</strong></span>
+      Des douleurs à la nuque, aux épaules, aux lombaires… bref l’impression de porter
+      le monde sur son dos. C’est le massage qu’il vous faut&nbsp;! Ce massage ciblé
+      se concentre sur le soulagement des tensions globales ou des douleurs localisés.
+      Il agit efficacement sur les nœuds musculaires, appelés Trigger Points et les
+      zones contractées. La pression s’adapte aux tensions rencontrées, sachez que
+      l’intensité doit toujours être ajustée d’un commun accord. Le massage du dos
+      vous soulage pour retrouver mobilité et sérénité au quotidien durant plusieurs
+      jours à plusieurs semaines. Pour des effets plus durables, il est nécessaire
+      d’être régulier dans le massage.</p><p><span style="color:#7FBAB4;"><strong>Options&nbsp;:</strong></span></p><p><strong>-
+      </strong>Usage local d<strong>'</strong>huile essentielle aux propriétés anti-inflammatoire</p><p>&nbsp;</p><h3><strong>Massage
+      Jambes légères et Massage des Pieds</strong></h3><p><span style="color:#7FBAB4;"><strong>Pour
+      qui&nbsp;?</strong></span> Il est particulièrement apprécié après une longue
+      journée debout, une séance de sport ou en cas de station assise prolongée.&nbsp;</p><p><span
+      style="color:#7FBAB4;"><strong>Quelles zones&nbsp;?</strong></span><strong>
+      </strong>Jambes entières jusqu’aux pieds inclus.</p><p><span style="color:#7FBAB4;"><strong>Description&nbsp;du
+      massage :</strong></span> Sport, fatigue, vous, ce sont les jambes et les pieds
+      qui réclament du soutien&nbsp;! Ce massage ciblé permet de retrouver une sensation
+      de légèreté. Que vous souffriez de jambes lourdes ou que vous soyez simplement
+      en quête de détente musculaire sur cette zone du corps, il vous offre un véritable
+      moment de bien-être. Grâce à des gestes fluides, drainants et profonds, il aide
+      à libérer les tensions accumulées, stimule la circulation et réduit les sensations
+      d’inconfort. Ce soin de bien-être s’inspire des principes de la réflexologie
+      plantaire pour un moment de détente profonde à travers des pressions ciblées
+      sur les pieds. Offrez à vos pieds l’attention qu’ils méritent, et repartez ancré·e&nbsp;!</p><p><span
+      style="color:#7FBAB4;"><strong>Options&nbsp;:</strong></span><strong>&nbsp;</strong></p><p><strong>-
+      </strong>Si vous n’aimez pas qu’on vous touche les pieds&nbsp;? Je vous propose
+      de remplacer par du massage crânien ou des mains si vous ne voulez que les jambes,
+      il sera plus adapté de choisir la Bulle 45mn.&nbsp;<br>- Si vous êtes chatouilleux,
+      normalement sans huile, cela ne pose plus de difficulté.</p>
+    img1: ''
+    img1_alt: null
+    img2: ''
+    img2_alt: null
+    img3: ''
+    img3_alt: null
+    promo_name: null
+    promo_stripe_coupon_id: null
+    promo_discounted_price: null
+    promo_start_date: null
+    promo_end_date: null
+    duration: 01:00:00
+    service: 3
+- model: core.massage
+  pk: 4
+  fields:
+    name: 'Massage détente : L''Étoile 30mn'
+    slug: massage-detente-l-etoile
+    publication_state: PUBLISHED
+    pub_date: 2026-08-25 17:08:19.658608+00:00
+    edit_date: 2026-09-30 16:37:40.366724+00:00
+    meta_title: Massage express 30 min L'Étoile  – Mi’ Time Montpellier
+    meta_description: 'Offrez-vous L’Étoile : massage express de 30 min, cuir chevelu,
+      mains et pieds au choix, chez Mi’ Time, près du Peyrou à Montpellier.'
+    meta_Keywords: Massage
+    stripe_product_id: prod_UsX5eQw7WxuT7O
+    stripe_price_id: price_1Tsm18RBrGMIS9Ri1uRdJBqR
+    price: '40.00'
+    tile_label: L'étoile
+    cover: img/massage-detente-l-etoile_JamsYRX.png
+    priority: 4
+    highlighted: false
+    text1: '<p><span style="color:#7FBAB4;"><strong>Pour qui&nbsp;?</strong></span>
+      Idéal pour toute personne en quête d’une détente rapide et efficace, sans avoir
+      besoin de se dévêtir complètement ni de mobiliser tout le corps. Il s’adresse
+      particulièrement à ceux et celles qui manquent de temps mais souhaitent relâcher
+      les tensions du quotidien. Ceux et celles qui souhaitent découvrir un soin doux
+      et confortable. Il convient aussi bien aux adultes actifs, qu’aux seniors. C’est
+      aussi le plus accessible pour un premier massage bien-être.</p><p><span style="color:#7FBAB4;"><strong>Quelles
+      zones&nbsp;?</strong></span> De base, le cuir chevelu, les mains et les pieds.
+      Il peut concerner aussi le visage, la nuque, les bras. Voir options</p><p>Offrez-vous
+      une parenthèse de bien-être avec ce massage de 30 minutes qui agit en profondeur
+      sur les zones-clés du corps : la tête, les mains et les pieds. Inspiré du massage
+      en étoile, ce soin relaxant stimule les points réflexes pour activer le système
+      parasympathique. Le corps passe en mode repos. Le rythme cardiaque ralentit,
+      la respiration se calme, les tensions s’apaisent. C’est à ce moment-là que le
+      corps peut vraiment lâcher prise et retrouver son équilibre. Idéal pour une
+      pause dans la journée, ce massage express procure une sensation immédiate de
+      légèreté et de sérénité, sans mobiliser tout le corps. Un moment court, mais
+      intensément régénérant.</p><p><span style="color:#7FBAB4;"><strong>Options&nbsp;:</strong></span></p><p>-
+      si vous ne voulez pas d’huile dans les cheveux, le massage crânien peut se pratiquer
+      à sec.<br>- si vous n’aimez pas les pieds, on peut remplacer par le massage
+      du visage ou descendre sur la nuque en remplacement. Pensez à venir démaquiller
+      si vous voulez le visage.<br>- si vous n’aimez pas les cheveux et la tête, le
+      massage des pieds sera plus long.</p>'
+    img1: ''
+    img1_alt: null
+    img2: ''
+    img2_alt: null
+    img3: ''
+    img3_alt: null
+    promo_name: null
+    promo_stripe_coupon_id: null
+    promo_discounted_price: null
+    promo_start_date: null
+    promo_end_date: null
+    duration: 00:30:00
+    service: 4
+- model: core.massage
+  pk: 5
+  fields:
+    name: 'Massage bien-être sur-mesure : L''Absolu 1h30'
+    slug: massage-bien-etre-sur-mesure-l-absolu
+    publication_state: PUBLISHED
+    pub_date: 2026-08-25 17:09:48.689771+00:00
+    edit_date: 2026-09-30 16:37:33.395557+00:00
+    meta_title: Massage relaxant sur mesure 1h30 – Mi’ Time Montpellier
+    meta_description: 'Offrez-vous L''Absolu : massage corps sur mesure de 1h30 selon
+      vos besoins, chez Mi’ Time près du Peyrou à Montpellier.'
+    meta_Keywords: massage, 1h30
+    stripe_product_id: prod_UsXICUwpdZnrk4
+    stripe_price_id: price_1TsmE7RBrGMIS9RiK4UdCFx7
+    price: '110.00'
+    tile_label: L'Absolu
+    cover: img/massage-sur-mesure-le-temps-suspendu_nG9EHFx.png
+    priority: 9
+    highlighted: false
+    text1: '<p>Conçu pour vous offrir une expérience haut de gamme</p><p><span style="color:#7FBAB4;"><strong>Pour
+      qui ?</strong></span> Pour ceux/celles qui veulent une expérience de bien-être
+      maximal avec une relaxation sublimée. Aussi pour ceux/celles qui ont besoin
+      d’un soin plus long pour une récupération durable.</p><p><span style="color:#7FBAB4;"><strong>Quelles
+      zones&nbsp;?</strong></span> Massage global et enveloppant du corps avec une
+      attention particulière aux zones que vous préférez ou aux zones de tension musculaire.</p><p>Comme
+      un voyage en mer, ce massage est une traversée fluide et sensible. Il ne s''agit
+      pas de se hâter vers une destination, mais de savourer le mouvement, de suivre
+      le rythme des vagues, parfois douces, parfois plus profondes. Issu d''une approche
+      intuitive, il se construit dans l’instant, selon les besoins ressentis. Rien
+      n’est figé, tout s’adapte : pression, rythme, pour offrir un soin sur mesure.</p><p>Ce
+      massage long propose un soin complet du corps, alliant la douceur du toucher
+      enveloppant à un travail plus précis sur les zones de tension. Il offre ainsi
+      un équilibre entre détente profonde et relâchement ciblé.</p>'
+    img1: ''
+    img1_alt: null
+    img2: ''
+    img2_alt: null
+    img3: ''
+    img3_alt: null
+    promo_name: null
+    promo_stripe_coupon_id: null
+    promo_discounted_price: null
+    promo_start_date: null
+    promo_end_date: null
+    duration: 01:30:00
+    service: 5
+- model: core.massage
+  pk: 6
+  fields:
+    name: 'Massage du visage : Le Gua Sha 45 mn'
+    slug: massage-du-visage-le-gua-sha
+    publication_state: PUBLISHED
+    pub_date: 2026-08-25 17:11:07.163141+00:00
+    edit_date: 2026-09-30 16:37:26.182965+00:00
+    meta_title: Massage visage drainant Gua Sha 45 mn  – Mi’ Time Montpellier
+    meta_description: 'Offrez-vous le Gua Sha : massage du visage pour un teint éclatant,
+      chez Mi'' Time, près du Peyrou à Montpellier.'
+    meta_Keywords: massage, gua sha
+    stripe_product_id: prod_UsXGjuWOuXbClr
+    stripe_price_id: price_1TsmBtRBrGMIS9Ri5nhCxF4P
+    price: '65.00'
+    tile_label: Le Gua Sha
+    cover: img/massage-du-visage-le-gua-sha_hjiXlGk.png
+    priority: 7
+    highlighted: false
+    text1: <p><span style="color:#7FBAB4;"><strong>Pour qui&nbsp;?</strong></span>
+      Ceux et celles qui veulent prendre soin de leur peau avec des gestes doux et
+      naturels, détendre les tensions du visage accumulées par le stress ou la fatigue.
+      Soutenir la circulation et le drainage naturel pour un teint plus clair et reposé.</p><p><span
+      style="color:#7FBAB4;"><strong>Quelles zones&nbsp;?</strong></span> Cuir chevelu,
+      visage et décolleté.</p><p>Le soin commence par quelques instants de recentrage,
+      pour vous inviter à déposer les tensions du quotidien et vous reconnecter à
+      votre souffle. Un nettoyage doux prépare ensuite la peau à recevoir le soin.
+      Le massage débute au niveau du <strong>décolleté</strong>, souvent oublié, mais
+      essentiel pour relancer la circulation et soutenir l’ouverture du cœur. À l’aide
+      d’un <strong>Gua Sha en quartz rose</strong>, pierre associée à l’amour de soi
+      et à l’apaisement, les gestes sont lents, enveloppants, précis. Le massage remonte
+      progressivement vers le cou, puis le visage, en suivant les lignes naturelles
+      de drainage et de circulation énergétique. Le travail ciblé avec le Gua Sha
+      aide à <strong>lisser les ridules</strong>, en stimulant naturellement la production
+      de collagène et en redonnant du tonus aux tissus. Les tensions musculaires sont
+      dénouées, les traits se décrispent, la peau s’illumine. Le soin se termine par
+      une pause d’intégration, pour permettre au corps et à l’esprit d’ancrer les
+      bienfaits du massage.</p><p><span style="color:#7FBAB4;"><strong>Options&nbsp;:</strong></span>
+      Si vous ne voulez pas d’huile dans les cheveux, je peux masser le cuir chevelu
+      à sec.</p><p><span style="color:#7FBAB4;"><strong>Huiles adaptées au massage
+      du visage :</strong></span> pour sublimer le massage et respecter votre peau,
+      j’ai sélectionné deux huiles spécifiques, aucune ne laisse de film gras sur
+      la peau.</p>
+    img1: ''
+    img1_alt: null
+    img2: ''
+    img2_alt: null
+    img3: ''
+    img3_alt: null
+    promo_name: null
+    promo_stripe_coupon_id: null
+    promo_discounted_price: null
+    promo_start_date: null
+    promo_end_date: null
+    duration: 00:45:00
+    service: 6
+- model: core.massage
+  pk: 7
+  fields:
+    name: 'Massage prénatal : Le Rituel 45 mn'
+    slug: massage-prenatal-le-rituel
+    publication_state: PUBLISHED
+    pub_date: 2026-08-25 17:12:20.874836+00:00
+    edit_date: 2026-09-30 16:37:17.084552+00:00
+    meta_title: Massage prénatal Le Rituel 45 mn – Mi’ Time Montpellier
+    meta_description: 'Offrez-vous Le Rituel 45 mn : massage relaxant pour femmes
+      enceintes, chez Mi’ Time, près du Peyrou à Montpellier.'
+    meta_Keywords: massage, prénatal, future maman
+    stripe_product_id: prod_UsX1FZee0ITzKw
+    stripe_price_id: price_1TslxgRBrGMIS9Ri6IlLFyeY
+    price: '65.00'
+    tile_label: Le rituel
+    cover: img/massage-prenatal-le-cocon_zxgw5bH.png
+    priority: 1
+    highlighted: false
+    text1: '<p><span style="color:#7FBAB4;"><strong>Pour qui&nbsp;?</strong></span>
+      Pour les futures mamans tout au long de cette période unique où la vie grandit
+      en vous. Il n’y a pas de contre-indication au massage bien-être prénatal, sauf
+      avis contraire de votre médecin.</p><p><span style="color:#7FBAB4;"><strong>Quelles
+      zones&nbsp;?</strong></span> Venez profiter d’un <strong>massage complet</strong>
+      de la tête aux pieds ! A l’exception, du ventre.</p><p><span style="color:#7FBAB4;"><strong>Comment
+      ça se passe&nbsp;?</strong></span> Le massage commence sur le côté afin de pouvoir
+      masser le dos, ensuite vous vous allongerez. Le massage est réalisé dans une
+      <strong>position confortable</strong>&nbsp;: allongée sur le dos avec un coussin
+      sous la tête et un autre sous les genoux. <strong>Pas d''huile essentielle</strong>
+      pour ce massage. Grâce à des gestes enveloppants et adaptés à chaque stade de
+      la grossesse, ce soin soulage les tensions du dos, allège les jambes et apaise
+      le mental. Idéal pour vivre sa grossesse en toute sérénité, le massage prénatal
+      offre un véritable cocon de douceur, un moment suspendu, dédié à la future maman
+      et à son bébé. Il est connu pour diminuer le stress. Nous nous accordons ensemble
+      sur la pression afin que ce moment soit le plus privilégié pour vous. Certaines
+      femmes enceintes ont des douleurs dont elles veulent être soulagées (épaules,
+      lombaires, jambes lourdes…) les autres préféreront un massage relaxant et/ou
+      plus doux. C’est à votre convenance. Ce massage procure un profond sentiment
+      de détente et de <strong>connexion avec bébé</strong>. Souvent le bébé interagit
+      pendant le massage, et lui aussi profite des hormones de relaxation sécrétées
+      par la maman. Ce massage spécial grossesse est donc bien un moment de partage
+      entre la maman et le bébé. Dans un espace calme et sécurisé, j’accompagne la
+      femme enceinte avec bienveillance et écoute.</p><p><span style="color:#7FBAB4;"><strong>Options&nbsp;:</strong></span></p><p>-
+      si vous n’aimez pas qu’on vous touche les pieds, pas de problème j’enlève cette
+      partie.<br>- si vous ne voulez pas d’huile dans les cheveux, le massage crânien
+      peut se faire à sec.</p>'
+    img1: ''
+    img1_alt: null
+    img2: ''
+    img2_alt: null
+    img3: ''
+    img3_alt: null
+    promo_name: null
+    promo_stripe_coupon_id: null
+    promo_discounted_price: null
+    promo_start_date: null
+    promo_end_date: null
+    duration: 00:45:00
+    service: 7
+- model: core.massage
+  pk: 8
+  fields:
+    name: 'Massage prénatal : Le Rituel 1h'
+    slug: massage-prenatal-1h
+    publication_state: PUBLISHED
+    pub_date: 2026-08-25 17:13:10.929668+00:00
+    edit_date: 2026-09-30 16:37:06.489783+00:00
+    meta_title: Massage prénatal Le Rituel 1h – Mi’ Time
+    meta_description: 'Offrez-vous Le Rituel 1h : massage relaxant pour femmes enceintes,
+      chez Mi’ Time, près du Peyrou à Montpellier.'
+    meta_Keywords: massage, prénatal, future maman
+    stripe_product_id: prod_UsX0DXysDBEwkS
+    stripe_price_id: price_1TslwHRBrGMIS9RifTdonV8L
+    price: '80.00'
+    tile_label: le rituel
+    cover: img/massage-prenatal-le-cocon_Gbatv4F.png
+    priority: 2
+    highlighted: false
+    text1: '<p><span style="color:#7FBAB4;"><strong>Pour qui&nbsp;?</strong></span>
+      Pour les futures mamans tout au long de cette période unique où la vie grandit
+      en vous. Il n’y a pas de contre-indication au massage bien-être prénatal, sauf
+      avis contraire de votre médecin.</p><p><span style="color:#7FBAB4;"><strong>Quelles
+      zones&nbsp;?</strong></span> Venez profiter d’un <strong>massage complet</strong>
+      de la tête aux pieds ! A l’exception, du ventre.</p><p><span style="color:#7FBAB4;"><strong>Comment
+      ça se passe&nbsp;?</strong></span> Le massage commence sur le côté afin de pouvoir
+      masser le dos, ensuite vous vous allongerez. Le massage est réalisé dans une
+      <strong>position confortable</strong>&nbsp;: allongée sur le dos avec un coussin
+      sous la tête et un autre sous les genoux. <strong>Pas d''huile essentielle</strong>
+      pour ce massage. Grâce à des gestes enveloppants et adaptés à chaque stade de
+      la grossesse, ce soin soulage les tensions du dos, allège les jambes et apaise
+      le mental. Idéal pour vivre sa grossesse en toute sérénité, le massage prénatal
+      offre un véritable cocon de douceur, un moment suspendu, dédié à la future maman
+      et à son bébé. Il est connu pour diminuer le stress. Nous nous accordons ensemble
+      sur la pression afin que ce moment soit le plus privilégié pour vous. Certaines
+      femmes enceintes ont des douleurs dont elles veulent être soulagées (épaules,
+      lombaires, jambes lourdes…) les autres préféreront un massage relaxant et/ou
+      plus doux. C’est à votre convenance. Ce massage procure un profond sentiment
+      de détente et de <strong>connexion avec bébé</strong>. Souvent le bébé interagit
+      pendant le massage, et lui aussi profite des hormones de relaxation sécrétées
+      par la maman. Ce massage spécial grossesse est donc bien un moment de partage
+      entre la maman et le bébé. Dans un espace calme et sécurisé, j’accompagne la
+      femme enceinte avec bienveillance et écoute.</p><p><span style="color:#7FBAB4;"><strong>Options&nbsp;:</strong></span></p><p>-
+      si vous n’aimez pas qu’on vous touche les pieds, pas de problème j’enlève cette
+      partie.<br>- si vous ne voulez pas d’huile dans les cheveux, le massage crânien
+      peut se faire à sec.</p>'
+    img1: ''
+    img1_alt: null
+    img2: ''
+    img2_alt: null
+    img3: ''
+    img3_alt: null
+    promo_name: null
+    promo_stripe_coupon_id: null
+    promo_discounted_price: null
+    promo_start_date: null
+    promo_end_date: null
+    duration: 01:00:00
+    service: 8
+- model: core.massage
+  pk: 9
+  fields:
+    name: 'Massage prénatal : Le Rituel 1h15'
+    slug: massage-prenatal-le-rituel-1h15
+    publication_state: PUBLISHED
+    pub_date: 2026-08-25 17:15:18.296220+00:00
+    edit_date: 2026-09-30 16:36:57.972549+00:00
+    meta_title: Massage prénatal Le Rituel 1h15 – Mi’ Time Montpellier
+    meta_description: 'Offrez-vous Le Rituel 1h15 : massage relaxant pour femmes enceintes,
+      chez Mi’ Time, près du Peyrou à Montpellier.'
+    meta_Keywords: massage, prénatal, future maman
+    stripe_product_id: prod_UsWyesxFtT2cXc
+    stripe_price_id: price_1TslujRBrGMIS9RiJ7NKcdC4
+    price: '95.00'
+    tile_label: le rituel
+    cover: img/massage-prenatal-le-cocon_elsIdRR.png
+    priority: 3
+    highlighted: false
+    text1: '<p><span style="color:#7FBAB4;"><strong>Pour qui&nbsp;?</strong></span>
+      Pour les futures mamans tout au long de cette période unique où la vie grandit
+      en vous. Il n’y a pas de contre-indication au massage bien-être prénatal, sauf
+      avis contraire de votre médecin.</p><p><span style="color:#7FBAB4;"><strong>Quelles
+      zones&nbsp;?</strong></span> Venez profiter d’un <strong>massage complet</strong>
+      de la tête aux pieds ! A l’exception, du ventre.</p><p><span style="color:#7FBAB4;"><strong>Comment
+      ça se passe&nbsp;?</strong></span> Le massage commence sur le côté afin de pouvoir
+      masser le dos, ensuite vous vous allongerez. Le massage est réalisé dans une
+      <strong>position confortable</strong>&nbsp;: allongée sur le dos avec un coussin
+      sous la tête et un autre sous les genoux. <strong>Pas d''huile essentielle</strong>
+      pour ce massage. Grâce à des gestes enveloppants et adaptés à chaque stade de
+      la grossesse, ce soin soulage les tensions du dos, allège les jambes et apaise
+      le mental. Idéal pour vivre sa grossesse en toute sérénité, le massage prénatal
+      offre un véritable cocon de douceur, un moment suspendu, dédié à la future maman
+      et à son bébé. Il est connu pour diminuer le stress. Nous nous accordons ensemble
+      sur la pression afin que ce moment soit le plus privilégié pour vous. Certaines
+      femmes enceintes ont des douleurs dont elles veulent être soulagées (épaules,
+      lombaires, jambes lourdes…) les autres préféreront un massage relaxant et/ou
+      plus doux. C’est à votre convenance. Ce massage procure un profond sentiment
+      de détente et de <strong>connexion avec bébé</strong>. Souvent le bébé interagit
+      pendant le massage, et lui aussi profite des hormones de relaxation sécrétées
+      par la maman. Ce massage spécial grossesse est donc bien un moment de partage
+      entre la maman et le bébé. Dans un espace calme et sécurisé, j’accompagne la
+      femme enceinte avec bienveillance et écoute.</p><p><span style="color:#7FBAB4;"><strong>Options&nbsp;:</strong></span></p><p>-
+      si vous n’aimez pas qu’on vous touche les pieds, pas de problème j’enlève cette
+      partie.<br>- si vous ne voulez pas d’huile dans les cheveux, le massage crânien
+      peut se faire à sec.</p>'
+    img1: ''
+    img1_alt: null
+    img2: ''
+    img2_alt: null
+    img3: ''
+    img3_alt: null
+    promo_name: null
+    promo_stripe_coupon_id: null
+    promo_discounted_price: null
+    promo_start_date: null
+    promo_end_date: null
+    duration: 01:15:00
+    service: 9
+- model: core.giftcard
+  pk: 1
+  fields:
+    name: Carte Cadeau 30min
+    slug: carte-cadeau-massage-30-minutes
+    publication_state: PUBLISHED
+    pub_date: 2026-08-25 17:18:19.178408+00:00
+    edit_date: 2026-08-26 15:50:06.322735+00:00
+    meta_title: Offrir un massage 30 min à Montpellier – Carte cadeau Mi’ Time
+    meta_description: Offrez 30 min de bien-être à Montpellier avec une carte cadeau
+      Mi’ Time. Valable pour le massage L’Étoile. Une pause détente bien méritée !
+    meta_Keywords: carte cadeau, massage, offrir
+    stripe_product_id: prod_TZxbHYNgLmPDfJ
+    stripe_price_id: price_1Scng2RBrGMIS9RiH7xjTlQp
+    price: '40.00'
+    tile_label: Carte Cadeau
+    cover: img/carte-cadeau_mjl5q1x.png
+    priority: 1
+    highlighted: false
+    text1: <h3>Description</h3><p>Cette carte cadeau d’une valeur de 40€ permet d'offrir
+      le massage relaxant L’Étoile, d'une durée d'une demie-heure. Elle peut aussi
+      constituer un avoir sur un autre massage qui sera déduit de la somme totale.
+      Une attention douce pour une pause, à offrir en toute occasion !&nbsp;</p><h3>Recevoir
+      la carte cadeau</h3><p>Vous recevrez un e-mail avec votre carte cadeau imprimable
+      et son code unique.&nbsp;</p><h3>Utilisation</h3><p><strong>Appelez</strong>
+      au <strong>07 83 39 06 80</strong> pour réserver le massage correspondant au
+      créneau de votre choix.</p><p>La carte est <strong>valable 1 an </strong>à partir
+      de la date d'achat.</p>
+    img1: ''
+    img1_alt: null
+    img2: ''
+    img2_alt: null
+    img3: ''
+    img3_alt: null
+    promo_name: Offre Fêtes 2025
+    promo_stripe_coupon_id: KbnIlpZx
+    promo_discounted_price: '28.00'
+    promo_start_date: 2025-12-09 23:00:00+00:00
+    promo_end_date: 2026-01-14 23:00:00+00:00
+    gift_label: Massage 30min
+    duration: 00:30:00
+    stripe_coupon_id: K2Y0yTrq
+- model: core.giftcard
+  pk: 2
+  fields:
+    name: Carte Cadeau 45min
+    slug: carte-cadeau-massage-45-minutes
+    publication_state: PUBLISHED
+    pub_date: 2026-08-25 17:19:52.855510+00:00
+    edit_date: 2026-08-25 17:19:52.855525+00:00
+    meta_title: Massage 45 min à Montpellier – Carte cadeau Mi’ Time
+    meta_description: Offrez 45 min de bien-être à Montpellier. Carte cadeau valable
+      sur différents soins au choix chez Mi’ Time.
+    meta_Keywords: carte cadeau, massage, offrir
+    stripe_product_id: prod_TZxfcJlpbuhVzR
+    stripe_price_id: price_1ScnkaRBrGMIS9RiLlE7y8nB
+    price: '65.00'
+    tile_label: Carte Cadeau
+    cover: img/carte-cadeau_xfKw934.png
+    priority: 1
+    highlighted: false
+    text1: <p>Offrez un instant précieux pour s’évader du quotidien le temps d’un
+      massage.</p><h3>Description</h3><p>Cette carte cadeau d'une valeur de 70 euros
+      offre une séance de massage de 45 minutes. Le/la bénéficiaire pourra choisir
+      le soin de son choix lors de la réservation, parmi tous les massages correspondant
+      à cette durée.&nbsp;</p><h3>Recevoir la carte cadeau</h3><p>Vous recevrez un
+      e-mail avec votre carte cadeau imprimable et son code personnalisé.&nbsp;</p><h3>Utilisation</h3><p>Recevez
+      un e-mail avec votre carte cadeau imprimable et son code personnalisé<br><strong>Appelez</strong>
+      au <strong>07 83 39 06 80</strong> pour réserver le massage correspondant au
+      créneau de votre choix.</p><p>La carte est <strong>valable 1 an</strong> à partir
+      de la date d'achat.</p>
+    img1: ''
+    img1_alt: null
+    img2: ''
+    img2_alt: null
+    img3: ''
+    img3_alt: null
+    promo_name: Offre Fêtes 2025
+    promo_stripe_coupon_id: KbnIlpZx
+    promo_discounted_price: '49.00'
+    promo_start_date: 2025-12-09 23:00:00+00:00
+    promo_end_date: 2026-01-14 23:00:00+00:00
+    gift_label: Massage 45min
+    duration: 00:45:00
+    stripe_coupon_id: meYHy1Z1
+- model: core.giftcard
+  pk: 3
+  fields:
+    name: Carte Cadeau 1h
+    slug: carte-cadeau-massage-1h
+    publication_state: PUBLISHED
+    pub_date: 2026-08-25 17:21:51.757421+00:00
+    edit_date: 2026-08-26 15:53:01.056119+00:00
+    meta_title: Massage 1h à Montpellier – Carte cadeau Mi’ Time
+    meta_description: Offrez 1h de bien-être à Montpellier. Carte cadeau valable sur
+      différents soins au choix chez Mi’ Time.
+    meta_Keywords: carte cadeau, massage, offrir
+    stripe_product_id: prod_TZxhPL2yphH22W
+    stripe_price_id: price_1ScnmVRBrGMIS9RimjAnqzAM
+    price: '80.00'
+    tile_label: Carte Cadeau
+    cover: img/carte-cadeau_D6y0yR0.png
+    priority: 1
+    highlighted: false
+    text1: <p>Un cadeau attentionné pour offrir une vraie parenthèse de détente !</p><h3>Description</h3><p>Cette
+      carte cadeau, d’une valeur de 80 euros, offre une séance de massage d’une heure.
+      Le/la bénéficiaire pourra choisir le soin de son choix lors de la réservation,
+      parmi tous les massages correspondant à cette durée. Cette carte peut aussi
+      constituer un avoir sur un autre massage qui sera déduit de la somme totale.&nbsp;</p><h3>Recevoir
+      la carte cadeau</h3><p>Vous recevrez un e-mail avec votre carte cadeau imprimable
+      et son code personnalisé.&nbsp;</p><h3>Utilisation</h3><p>Recevez un e-mail
+      avec votre carte cadeau imprimable et son code personnalisé<br><strong>Appelez</strong>
+      au <strong>07 83 39 06 80</strong> pour réserver le massage correspondant au
+      créneau de votre choix.</p><p>La carte est <strong>valable 1 an</strong> à partir
+      de la date d'achat.</p>
+    img1: ''
+    img1_alt: null
+    img2: ''
+    img2_alt: null
+    img3: ''
+    img3_alt: null
+    promo_name: Offre Fêtes 2025
+    promo_stripe_coupon_id: KbnIlpZx
+    promo_discounted_price: '56.00'
+    promo_start_date: 2025-12-09 23:00:00+00:00
+    promo_end_date: 2026-01-14 23:00:00+00:00
+    gift_label: Massage 1H
+    duration: 01:00:00
+    stripe_coupon_id: nMEsJAFa
+- model: core.giftcard
+  pk: 4
+  fields:
+    name: Carte Cadeau 1h15
+    slug: carte-cadeau-massage-1h15
+    publication_state: PUBLISHED
+    pub_date: 2026-08-25 17:25:46.629094+00:00
+    edit_date: 2026-08-26 17:05:02.990866+00:00
+    meta_title: Massage 1h15 à Montpellier – Carte cadeau Mi’ Time
+    meta_description: Offrez 1h15 de bien-être à Montpellier. Carte cadeau valable
+      sur différents soins au choix chez Mi’ Time.
+    meta_Keywords: carte cadeau, massage, offrir
+    stripe_product_id: prod_UsyGR9OUGMSVMB
+    stripe_price_id: price_1TtCK0RBrGMIS9RiLEwRTLXj
+    price: '95.00'
+    tile_label: Carte Cadeau
+    cover: img/carte-cadeau_8LgQ5nq.png
+    priority: 1
+    highlighted: false
+    text1: <p>Un cadeau attentionné pour les futures mamans !</p><h3>Description</h3><p>Cette
+      carte cadeau, d’une valeur de 95 euros est valable <strong>uniquement</strong>
+      pour Le Rituel qui accompagne les futures mamans vers une détente totale.</p><h3>Recevoir
+      la carte cadeau</h3><p>Vous recevrez un e-mail avec votre carte cadeau imprimable
+      et son code personnalisé.&nbsp;</p><h3>Utilisation</h3><p>Recevez un e-mail
+      avec votre carte cadeau imprimable et son code personnalisé<br><strong>Appelez</strong>
+      au <strong>07 83 39 06 80</strong> pour réserver le massage correspondant au
+      créneau de votre choix.</p><p>La carte est <strong>valable 1 an</strong> à partir
+      de la date d'achat.</p>
+    img1: ''
+    img1_alt: null
+    img2: ''
+    img2_alt: null
+    img3: ''
+    img3_alt: null
+    promo_name: Offre Fêtes 2025
+    promo_stripe_coupon_id: null
+    promo_discounted_price: '66.00'
+    promo_start_date: 2025-12-09 23:00:00+00:00
+    promo_end_date: 2026-01-14 23:00:00+00:00
+    gift_label: Massage 1h15
+    duration: 01:15:00
+    stripe_coupon_id: b7EXLizY
+- model: core.giftcard
+  pk: 5
+  fields:
+    name: Carte Cadeau 1h30
+    slug: carte-cadeau-massage-1h30
+    publication_state: PUBLISHED
+    pub_date: 2026-08-25 17:27:28.099853+00:00
+    edit_date: 2026-08-26 15:53:44.623228+00:00
+    meta_title: Massage 1h30 à Montpellier – Carte cadeau Mi’ Time
+    meta_description: Offrez 1h30 de lâcher-prise à Montpellier. Carte cadeau Mi’
+      Time valable pour le massage Voyage intérieur, soin relaxant et ressourçant.
+    meta_Keywords: carte cadeau, massage, offrir
+    stripe_product_id: prod_TZxj1hRVncAKKa
+    stripe_price_id: price_1ScnnnRBrGMIS9RikmD8eE1K
+    price: '110.00'
+    tile_label: Carte Cadeau
+    cover: img/carte-cadeau_zas21ez.png
+    priority: 1
+    highlighted: false
+    text1: <p>Offrez une immersion enveloppante pour s’abandonner à la détente d’un
+      soin profond.</p><h3>Description</h3><p>Cette carte cadeau, d’une valeur de
+      110 euros, offre une séance de massage d’une heure et demie. Le/la bénéficiaire
+      pourra choisir le soin de son choix lors de la réservation, parmi tous les massages
+      correspondant à cette durée. Cette carte peut aussi constituer un avoir sur
+      un autre massage qui sera déduit de la somme totale.&nbsp;</p><h3>Recevoir la
+      carte cadeau</h3><p>Vous recevrez un e-mail avec votre carte cadeau imprimable
+      et son code personnalisé.&nbsp;</p><h3>Utilisation</h3><p>Recevez un e-mail
+      avec votre carte cadeau imprimable et son code personnalisé<br><strong>Appelez</strong>
+      au <strong>07 83 39 06 80</strong> pour réserver le massage correspondant au
+      créneau de votre choix.</p><p>La carte est <strong>valable 1 an</strong> à partir
+      de la date d'achat.</p>
+    img1: ''
+    img1_alt: null
+    img2: ''
+    img2_alt: null
+    img3: ''
+    img3_alt: null
+    promo_name: Offre Fêtes 2025
+    promo_stripe_coupon_id: KbnIlpZx
+    promo_discounted_price: '77.00'
+    promo_start_date: 2025-12-09 23:00:00+00:00
+    promo_end_date: 2026-01-14 23:00:00+00:00
+    gift_label: Massage 1h30
+    duration: 01:30:00
+    stripe_coupon_id: vT6Eb03G
+- model: core.giftcard
+  pk: 6
+  fields:
+    name: Carte Cadeau 30min St Valentin
+    slug: massage-30-min-montpellier-saint-valentin
+    publication_state: HIDDEN
+    pub_date: 2026-08-25 17:39:16.178545+00:00
+    edit_date: 2026-08-26 15:50:41.080131+00:00
+    meta_title: "Massage 30mn à Montpellier – Spécial Saint-Valentin \U0001F49D"
+    meta_description: "\U0001F49D Massage 30mn à Montpellier, spécial Saint-Valentin.
+      Achat en ligne et carte cadeau physique à offrir pour un moment de détente inoubliable."
+    meta_Keywords: massage montpellier, massage 30 min, carte cadeau massage, saint
+      valentin, cadeau bien etre
+    stripe_product_id: prod_TZxbHYNgLmPDfJ
+    stripe_price_id: price_1Scng2RBrGMIS9RiH7xjTlQp
+    price: '40.00'
+    tile_label: Carte Cadeau
+    cover: img/carte-cadeau-st-valentin_ZViqqe2.png
+    priority: 1
+    highlighted: false
+    text1: <h3>Description</h3><p>Cette carte cadeau d’une valeur de 40€ permet d'offrir
+      le massage relaxant L’Étoile, d'une durée d'une demie-heure. Elle peut aussi
+      constituer un avoir sur un autre massage qui sera déduit de la somme totale.
+      Une attention douce pour une pause, à offrir en toute occasion&nbsp;!</p><h3>Offre
+      spéciale Saint-Valentin</h3><p>Pour la Saint-Valentin, offrez bien plus qu’un
+      massage. Pour toute carte cadeau commandée, recevez une carte aquarelle peinte
+      à la main (dans la limite des stocks), à personnaliser avec un mot doux, pour
+      quelqu’un que vous aimez ou pour y écrire ce que vous avez besoin d'entendre.</p><figure
+      class="image image_resized" style="width:50%;"><img style="aspect-ratio:1077/807;"
+      src="/media/ckeditor_uploads/cartes%20st%20valentin.jpg" width="1077" height="807"></figure><h3>Recevoir
+      la carte cadeau</h3><p>A l'achat, vous recevrez un e-mail avec votre carte cadeau
+      imprimable et son code unique.&nbsp;</p><p>Pour recevoir la carte cadeau physique
+      et <strong>la carte de Saint-Valentin par voie postale</strong>, merci de me
+      communiquer l'adresse de votre choix <strong>par sms ou email</strong>. Les
+      commandes<strong> </strong>effectuées<strong> jusqu’au 12 février </strong>sont
+      prises en charge par La Poste et devraient être livrées à temps pour la Saint-Valentin.</p><p>Passé
+      ce délai, après achat en ligne, la remise des cartes cadeaux s’effectuera en
+      mains propres au salon et <strong>sur rendez-vous préalable le samedi 14 février
+      entre 14h00 et 15h30.</strong></p><h3>Utilisation</h3><p><strong>Appelez</strong>
+      au <strong>07 83 39 06 80 </strong>ou &nbsp;envoyez un sms ou un email pour
+      réserver votre massage.</p><p>La carte est <strong>valable 1 an </strong>à partir
+      de la date d'achat.</p>
+    img1: ''
+    img1_alt: null
+    img2: ''
+    img2_alt: null
+    img3: ''
+    img3_alt: null
+    promo_name: null
+    promo_stripe_coupon_id: null
+    promo_discounted_price: null
+    promo_start_date: null
+    promo_end_date: null
+    gift_label: Massage 30min
+    duration: 00:30:00
+    stripe_coupon_id: K2Y0yTrq
+- model: core.giftcard
+  pk: 7
+  fields:
+    name: Carte Cadeau 45min St Valentin
+    slug: massage-45-min-montpellier-saint-valentin
+    publication_state: HIDDEN
+    pub_date: 2026-08-25 17:40:29.096569+00:00
+    edit_date: 2026-08-26 15:52:08.162322+00:00
+    meta_title: "Massage 45 mn à Montpellier – Spécial Saint-Valentin \U0001F49D"
+    meta_description: "\U0001F49D Massage 45mn à Montpellier, spécial Saint-Valentin.
+      Achat en ligne et carte cadeau physique à offrir pour un moment de détente inoubliable."
+    meta_Keywords: massage-45-min-montpellier-saint-valentin
+    stripe_product_id: prod_TZxfcJlpbuhVzR
+    stripe_price_id: price_1ScnkaRBrGMIS9RiLlE7y8nB
+    price: '65.00'
+    tile_label: Carte Cadeau
+    cover: ''
+    priority: 1
+    highlighted: false
+    text1: <p>Offrez un instant précieux pour s’évader du quotidien le temps d’un
+      massage.</p><h3>Description</h3><p>Cette carte cadeau d'une valeur de 70 euros
+      offre une séance de massage de 45 minutes. Le/la bénéficiaire pourra choisir
+      le soin de son choix lors de la réservation, parmi tous les massages correspondant
+      à cette durée.&nbsp;</p><h3>Offre spéciale Saint-Valentin</h3><p>Pour la Saint-Valentin,
+      offrez bien plus qu’un massage. Pour toute carte cadeau commandée, recevez une
+      carte aquarelle peinte à la main (dans la limite des stocks), à personnaliser
+      avec un mot doux, pour quelqu’un que vous aimez ou pour y écrire ce que vous
+      avez besoin d'entendre.</p><figure class="image image_resized" style="width:50%;"><img
+      style="aspect-ratio:1077/807;" src="/media/ckeditor_uploads/cartes%20st%20valentin_eDsmFEB.jpg"
+      width="1077" height="807"></figure><h3>Recevoir la carte cadeau</h3><p>A l'achat,
+      vous recevrez un e-mail avec votre carte cadeau imprimable et son code unique.&nbsp;</p><p>Pour
+      recevoir la carte cadeau physique et <strong>la carte de Saint-Valentin par
+      voie postale</strong>, merci de me communiquer l'adresse de votre choix<strong>
+      par sms ou email</strong>. Les commandes<strong> </strong>effectuées <strong>jusqu’au
+      12 février </strong>sont prises en charge par La Poste et devraient être livrées
+      à temps pour la Saint-Valentin.</p><p>Passé ce délai, après achat en ligne,
+      la remise des cartes cadeaux s’effectuera en mains propres au salon et <strong>sur
+      rendez-vous préalable le samedi 14 février entre 14h00 et 15h30.</strong></p><h3>Utilisation</h3><p><strong>Appelez</strong>
+      au <strong>07 83 39 06 80</strong> ou envoyez un sms ou un email pour réserver
+      votre massage.</p><p>La carte est <strong>valable 1 an</strong> à partir de
+      la date d'achat.</p>
+    img1: ''
+    img1_alt: null
+    img2: ''
+    img2_alt: null
+    img3: ''
+    img3_alt: null
+    promo_name: null
+    promo_stripe_coupon_id: null
+    promo_discounted_price: null
+    promo_start_date: null
+    promo_end_date: null
+    gift_label: Massage 45min
+    duration: 00:45:00
+    stripe_coupon_id: meYHy1Z1
+- model: core.giftcard
+  pk: 8
+  fields:
+    name: Carte Cadeau 1h St Valentin
+    slug: massage-1-h-montpellier-saint-valentin
+    publication_state: HIDDEN
+    pub_date: 2026-08-25 17:41:35.291475+00:00
+    edit_date: 2026-08-26 15:52:33.092153+00:00
+    meta_title: "Massage 1h00 à Montpellier – Spécial Saint-Valentin \U0001F49D"
+    meta_description: "\U0001F49D Massage 1h00 à Montpellier, spécial Saint-Valentin.
+      Achat en ligne et carte cadeau physique à offrir pour un moment de détente inoubliable."
+    meta_Keywords: massage, 1h, montpellier, saint-valentin
+    stripe_product_id: prod_TZxhPL2yphH22W
+    stripe_price_id: price_1ScnmVRBrGMIS9RimjAnqzAM
+    price: '80.00'
+    tile_label: Carte Cadeau
+    cover: ''
+    priority: 1
+    highlighted: false
+    text1: <p>Un cadeau attentionné pour offrir une vraie parenthèse de détente !</p><h3>Description</h3><p>Cette
+      carte cadeau, d’une valeur de 80 euros, offre une séance de massage d’une heure.
+      Le/la bénéficiaire pourra choisir le soin de son choix lors de la réservation,
+      parmi tous les massages correspondant à cette durée. Cette carte peut aussi
+      constituer un avoir sur un autre massage qui sera déduit de la somme totale.&nbsp;</p><h3>Offre
+      spéciale Saint-Valentin</h3><p>Pour la Saint-Valentin, offrez bien plus qu’un
+      massage. Pour toute carte cadeau commandée, recevez une carte aquarelle peinte
+      à la main (dans la limite des stocks), à personnaliser avec un mot doux, pour
+      quelqu’un que vous aimez ou pour y écrire ce que vous avez besoin d'entendre.</p><figure
+      class="image image_resized" style="width:50%;"><img style="aspect-ratio:1077/807;"
+      src="/media/ckeditor_uploads/cartes%20st%20valentin_33YrkAH.jpg" width="1077"
+      height="807"></figure><h3>Recevoir la carte cadeau</h3><p>A l'achat, vous recevrez
+      un e-mail avec votre carte cadeau imprimable et son code unique.&nbsp;</p><p>Pour
+      recevoir la carte cadeau physique et la carte de Saint-Valentin<strong> par
+      voie postale</strong>, merci de me communiquer l'adresse de votre choix <strong>par
+      sms ou email</strong>. Les commandes<strong> </strong>effectuées<strong> jusqu’au
+      12 février </strong>sont prises en charge par La Poste et devraient être livrées
+      à temps pour la Saint-Valentin.</p><p>Passé ce délai, après achat en ligne,
+      la remise des cartes cadeaux s’effectuera en mains propres au salon et <strong>sur
+      rendez-vous préalable le samedi 14 février entre 14h00 et 15h30.</strong></p><h3>Utilisation</h3><p><strong>Appelez</strong>
+      au <strong>07 83 39 06 80</strong> ou envoyez un sms ou un email pour réserver
+      votre massage.</p><p>La carte est <strong>valable 1 an</strong> à partir de
+      la date d'achat.</p>
+    img1: ''
+    img1_alt: null
+    img2: ''
+    img2_alt: null
+    img3: ''
+    img3_alt: null
+    promo_name: null
+    promo_stripe_coupon_id: null
+    promo_discounted_price: null
+    promo_start_date: null
+    promo_end_date: null
+    gift_label: Massage 1H
+    duration: 01:00:00
+    stripe_coupon_id: nMEsJAFa
+- model: core.giftcard
+  pk: 9
+  fields:
+    name: Carte Cadeau 1h15 St Valentin
+    slug: massage-1h15-montpellier-saint-valentin
+    publication_state: HIDDEN
+    pub_date: 2026-08-25 17:43:06.559132+00:00
+    edit_date: 2026-08-26 15:54:17.634737+00:00
+    meta_title: "Massage 1h15 à Montpellier – Spécial Saint-Valentin \U0001F49D"
+    meta_description: "\U0001F49D Massage 1h15 à Montpellier, spécial Saint-Valentin.
+      Achat en ligne et carte cadeau physique à offrir pour un moment de détente inoubliable."
+    meta_Keywords: massage, 1h30, montpellier, saint-valentin
+    stripe_product_id: prod_UsyGR9OUGMSVMB
+    stripe_price_id: price_1TtCK0RBrGMIS9RiLEwRTLXj
+    price: '95.00'
+    tile_label: Carte Cadeau
+    cover: img/carte-cadeau-st-valentin_osWyJpU.png
+    priority: 1
+    highlighted: false
+    text1: <p>Offrez une immersion enveloppante pour s’abandonner à la détente d’un
+      soin profond.</p><h3>Description</h3><p>Cette carte cadeau, d’une valeur de
+      110 euros, offre une séance de massage d’une heure et demie. Le/la bénéficiaire
+      pourra choisir le soin de son choix lors de la réservation, parmi tous les massages
+      correspondant à cette durée. Cette carte peut aussi constituer un avoir sur
+      un autre massage qui sera déduit de la somme totale.&nbsp;</p><h3>Offre spéciale
+      Saint-Valentin</h3><p>Pour la Saint-Valentin, offrez bien plus qu’un massage.
+      Pour toute carte cadeau commandée, recevez une carte aquarelle peinte à la main
+      (dans la limite des stocks), à personnaliser avec un mot doux, pour quelqu’un
+      que vous aimez ou pour y écrire ce que vous avez besoin d'entendre.</p><figure
+      class="image image_resized" style="width:50%;"><img style="aspect-ratio:1077/807;"
+      src="/media/ckeditor_uploads/cartes%20st%20valentin_k0iQpb3.jpg" width="1077"
+      height="807"></figure><h3>Recevoir la carte cadeau</h3><p>A l'achat, vous recevrez
+      un e-mail avec votre carte cadeau imprimable et son code unique.&nbsp;</p><p>Pour
+      recevoir la carte cadeau physique et la carte de Saint-Valentin<strong> par
+      voie postale</strong>, merci de me communiquer l'adresse de votre choix <strong>par
+      sms ou email</strong>. Les commandes<strong> effectuées jusqu’au 12 février
+      </strong>sont prises en charge par La Poste et devraient être livrées à temps
+      pour la Saint-Valentin.</p><p>Passé ce délai, après achat en ligne, la remise
+      des cartes cadeaux s’effectuera en mains propres au salon et <strong>sur rendez-vous
+      préalable le samedi 14 février entre</strong> <strong>14h00 et 15h30</strong>.</p><h3>Utilisation</h3><p><strong>Appelez</strong>
+      au <strong>07 83 39 06 80</strong> ou envoyez un sms ou un email pour réserver
+      votre massage.&nbsp;<br>La carte est <strong>valable 1 an</strong> à partir
+      de la date d'achat.</p>
+    img1: ''
+    img1_alt: null
+    img2: ''
+    img2_alt: null
+    img3: ''
+    img3_alt: null
+    promo_name: null
+    promo_stripe_coupon_id: null
+    promo_discounted_price: null
+    promo_start_date: null
+    promo_end_date: null
+    gift_label: Massage 1h15
+    duration: 01:15:00
+    stripe_coupon_id: b7EXLizY
+- model: core.giftcard
+  pk: 10
+  fields:
+    name: Carte Cadeau 1h30 St Valentin
+    slug: massage-1h30-montpellier-saint-valentin
+    publication_state: HIDDEN
+    pub_date: 2026-08-25 17:43:59.243616+00:00
+    edit_date: 2026-08-26 15:55:04.268341+00:00
+    meta_title: "Massage 1h30 à Montpellier – Spécial Saint-Valentin \U0001F49D"
+    meta_description: "\U0001F49D Massage 1h30 à Montpellier, spécial Saint-Valentin.
+      Achat en ligne et carte cadeau physique à offrir pour un moment de détente inoubliable."
+    meta_Keywords: massage, 1h30, montpellier, saint-valentin
+    stripe_product_id: prod_TZxj1hRVncAKKa
+    stripe_price_id: price_1ScnnnRBrGMIS9RikmD8eE1K
+    price: '110.00'
+    tile_label: Carte Cadeau
+    cover: img/carte-cadeau-st-valentin_97YwvuP.png
+    priority: 1
+    highlighted: false
+    text1: <p>Offrez une immersion enveloppante pour s’abandonner à la détente d’un
+      soin profond.</p><h3>Description</h3><p>Cette carte cadeau, d’une valeur de
+      110 euros, offre une séance de massage d’une heure et demie. Le/la bénéficiaire
+      pourra choisir le soin de son choix lors de la réservation, parmi tous les massages
+      correspondant à cette durée. Cette carte peut aussi constituer un avoir sur
+      un autre massage qui sera déduit de la somme totale.&nbsp;</p><h3>Offre spéciale
+      Saint-Valentin</h3><p>Pour la Saint-Valentin, offrez bien plus qu’un massage.
+      Pour toute carte cadeau commandée, recevez une carte aquarelle peinte à la main
+      (dans la limite des stocks), à personnaliser avec un mot doux, pour quelqu’un
+      que vous aimez ou pour y écrire ce que vous avez besoin d'entendre.</p><figure
+      class="image image_resized" style="width:50%;"><img style="aspect-ratio:1077/807;"
+      src="/media/ckeditor_uploads/cartes%20st%20valentin_k0iQpb3.jpg" width="1077"
+      height="807"></figure><h3>Recevoir la carte cadeau</h3><p>A l'achat, vous recevrez
+      un e-mail avec votre carte cadeau imprimable et son code unique.&nbsp;</p><p>Pour
+      recevoir la carte cadeau physique et la carte de Saint-Valentin<strong> par
+      voie postale</strong>, merci de me communiquer l'adresse de votre choix <strong>par
+      sms ou email</strong>. Les commandes<strong> effectuées jusqu’au 12 février
+      </strong>sont prises en charge par La Poste et devraient être livrées à temps
+      pour la Saint-Valentin.</p><p>Passé ce délai, après achat en ligne, la remise
+      des cartes cadeaux s’effectuera en mains propres au salon et <strong>sur rendez-vous
+      préalable le samedi 14 février entre</strong> <strong>14h00 et 15h30</strong>.</p><h3>Utilisation</h3><p><strong>Appelez</strong>
+      au <strong>07 83 39 06 80</strong> ou envoyez un sms ou un email pour réserver
+      votre massage.&nbsp;<br>La carte est <strong>valable 1 an</strong> à partir
+      de la date d'achat.</p>
+    img1: ''
+    img1_alt: null
+    img2: ''
+    img2_alt: null
+    img3: ''
+    img3_alt: null
+    promo_name: null
+    promo_stripe_coupon_id: null
+    promo_discounted_price: null
+    promo_start_date: null
+    promo_end_date: null
+    gift_label: Massage 1h30
+    duration: 01:30:00
+    stripe_coupon_id: vT6Eb03G
+- model: core.bundle
+  pk: 1
+  fields:
+    name: Forfait 3H
+    slug: forfait-massage-3h-montpellier
+    publication_state: PUBLISHED
+    pub_date: 2026-08-25 17:45:17.419597+00:00
+    edit_date: 2026-08-26 15:55:36.490525+00:00
+    meta_title: Forfait Massage 3h à Montpellier | Mi Time Bien-être
+    meta_description: Réservez votre forfait massage 3h à Montpellier. Séances flexibles
+      et personnalisées chez Mi Time pour une détente totale.
+    meta_Keywords: Forfait, Massage, Montpellier
+    stripe_product_id: prod_TZxXnTKjwwawQX
+    stripe_price_id: price_1ScnccRBrGMIS9Rib2eVT9jb
+    price: '225.00'
+    tile_label: Forfait 3H
+    cover: img/Forfait-3h_3FGpCzP.png
+    priority: 1
+    highlighted: false
+    text1: <h2>Description</h2><p>Ce forfait est idéal pour bénéficier de plusieurs
+      séances à un tarif préférentiel.</p><h2>Utilisation</h2><p>Consultez le site
+      pour savoir ce que vous souhaitez choisir comme première séance de massage et
+      les horaires disponibles puis réservez en envoyer un message par mail à <a href="mailto:reservation@mi-time.fr">reservation@mi-time.fr</a>
+      ou par téléphone au <strong>07 83&nbsp;39&nbsp;06&nbsp;80</strong>. <strong>Valable
+      1 an</strong></p>
+    img1: ''
+    img1_alt: null
+    img2: ''
+    img2_alt: null
+    img3: ''
+    img3_alt: null
+    promo_name: null
+    promo_stripe_coupon_id: null
+    promo_discounted_price: null
+    promo_start_date: null
+    promo_end_date: null
+    duration: 03:00:00
+- model: core.bundle
+  pk: 2
+  fields:
+    name: Forfait 5H
+    slug: forfait-massage-5h-montpellier
+    publication_state: PUBLISHED
+    pub_date: 2026-08-25 17:46:13.524045+00:00
+    edit_date: 2026-08-26 15:55:47.309796+00:00
+    meta_title: Forfait Massage 5h à Montpellier | Mi Time Relaxation
+    meta_description: Offrez-vous 5h de massage à Montpellier. Forfait économique
+      et modulable chez Mi Time. Du bien-être durable.
+    meta_Keywords: Forfait, Massage, Montpellier
+    stripe_product_id: prod_TZxY9SljD0Xel0
+    stripe_price_id: price_1ScndlRBrGMIS9RiaG8O7IKP
+    price: '350.00'
+    tile_label: Forfait 5H
+    cover: img/Forfait-5h_ztVllTd.png
+    priority: 1
+    highlighted: false
+    text1: <h2>Description</h2><p>Un bon équilibre pour une routine bien-être à un
+      tarif avantageux.</p><h2>Utilisation</h2><p>Consultez le site pour savoir ce
+      que vous souhaitez choisir comme première séance de massage et les horaires
+      disponibles puis réservez en envoyer un message par mail à <a href="mailto:reservation@mi-time.fr">reservation@mi-time.fr</a>
+      ou par téléphone au <strong>07&nbsp;83&nbsp;39&nbsp;06&nbsp;80</strong>. <strong>Valable
+      1 an</strong></p>
+    img1: ''
+    img1_alt: null
+    img2: ''
+    img2_alt: null
+    img3: ''
+    img3_alt: null
+    promo_name: null
+    promo_stripe_coupon_id: null
+    promo_discounted_price: null
+    promo_start_date: null
+    promo_end_date: null
+    duration: 05:00:00
+- model: core.bundle
+  pk: 3
+  fields:
+    name: Forfait 10H
+    slug: forfait-massage-10h-montpellier
+    publication_state: PUBLISHED
+    pub_date: 2026-08-25 17:47:04.776408+00:00
+    edit_date: 2026-08-26 15:56:07.545654+00:00
+    meta_title: Forfait Massage 10h à Montpellier | Mi Time Longue Détente
+    meta_description: 'Le forfait massage 10h Mi Time à Montpellier : idéal pour une
+      détente profonde sur le long terme. Flexibilité et tarif avantageux.'
+    meta_Keywords: Forfait, Massage, Montpellier
+    stripe_product_id: prod_TZxZwY2JLVc3RP
+    stripe_price_id: price_1ScneaRBrGMIS9RiXONu9f3X
+    price: '650.00'
+    tile_label: Forfait 10H
+    cover: img/Forfait-10h_QrPApQ6.png
+    priority: 1
+    highlighted: false
+    text1: <h2>Description</h2><p>Le meilleur tarif pour les clients réguliers.</p><h2>Utilisation</h2><p>Consultez
+      le site pour savoir ce que vous souhaitez choisir comme première séance de massage
+      et les horaires disponibles puis réservez en envoyer un message par mail à <a
+      href="mailto:reservation@mi-time.fr">reservation@mi-time.fr</a> ou par téléphone
+      au <strong>07&nbsp;83&nbsp;39&nbsp;06&nbsp;80</strong>. <strong>Valable 2 ans</strong></p>
+    img1: ''
+    img1_alt: null
+    img2: ''
+    img2_alt: null
+    img3: ''
+    img3_alt: null
+    promo_name: null
+    promo_stripe_coupon_id: null
+    promo_discounted_price: null
+    promo_start_date: null
+    promo_end_date: null
+    duration: '10:00:00'
+- model: core.address
+  pk: 1
+  fields:
+    name: Espace Pitôt
+    pub_date: 2026-08-25 16:53:38.695265+00:00
+    edit_date: 2026-08-25 16:53:38.695275+00:00
+    address1: Centre Naturo Bien-être
+    address2: 186 Place Jacques Mirouze
+    address3: ''
+    postal_code: '34000'
+    city: Montpellier
+    country: France
+    place_id: ChIJq6r61gCvthIR8dDe1ByN884
+- model: core.openings
+  pk: 1
+  fields:
+    name: Pitôt
+    pub_date: 2026-08-25 16:53:07.397048+00:00
+    edit_date: 2026-08-25 16:53:07.397059+00:00
+    monday_open: null
+    monday_pause_start: null
+    monday_pause_end: null
+    monday_close: null
+    tuesday_open: null
+    tuesday_pause_start: null
+    tuesday_pause_end: null
+    tuesday_close: null
+    wednesday_open: '10:00:00'
+    wednesday_pause_start: '13:00:00'
+    wednesday_pause_end: '14:30:00'
+    wednesday_close: '19:30:00'
+    thursday_open: null
+    thursday_pause_start: null
+    thursday_pause_end: null
+    thursday_close: null
+    friday_open: '10:00:00'
+    friday_pause_start: '13:00:00'
+    friday_pause_end: '14:30:00'
+    friday_close: '19:00:00'
+    saturday_open: null
+    saturday_pause_start: null
+    saturday_pause_end: '13:30:00'
+    saturday_close: '19:30:00'
+    sunday_open: null
+    sunday_pause_start: null
+    sunday_pause_end: null
+    sunday_close: null
+- model: core.practice
+  pk: 1
+  fields:
+    name: Le salon de massage pour votre bien-être.
+    pub_date: 2026-08-25 16:51:32.179347+00:00
+    edit_date: 2026-08-25 17:47:51.222185+00:00
+    meta_title: Le salon Mi’ Time – Massage à Montpellier Centre (Pitôt)
+    meta_description: Découvrez Mi’ Time, salon de massage à Montpellier Centre. Quartier
+      Pitôt, lieu chaleureux, accès facile, parking Pitôt, toilettes sur place.
+    meta_Keywords: Massage
+    text1: <p>Situé dans le quartier paisible Pitôt à Montpellier, <strong>Mi’ Time
+      </strong>vous accueille dans un lieu pensé pour la détente, à <strong>deux pas
+      du tramway</strong>. Que vous veniez pour une pause bien-être ou pour offrir
+      un moment de douceur, je vous reçois <strong>avec simplicité et attention</strong>.&nbsp;</p><p>Prendre
+      le temps de vous accueillir est essentiel, avant ou après votre massage, vous
+      pourrez en profiter pour vous rafraîchir… ou simplement souffler quelques instants.
+      Des toilettes sont bien sûr à votre disposition.</p>
+    text2: <p>Le salon Mi' Time est situé dans le Centre Naturo Bien-être sur la Place
+      Jacques Mirouze, <strong>au-dessus du parking Pitôt</strong>. Vous devez respecter
+      l'horaire convenu et sonner pour que l'on vous ouvre. Merci de patienter en
+      respectant la tranquillité des lieux. Retrouvez ci-dessous les commerces et
+      services à proximité.</p>
+    text3: '<p><strong>3 parkings à proximité :</strong></p><p>Parking Pitot&nbsp;:
+      <strong>accès direct </strong>à la place Jacques Mirouze par escaliers ou ascenseurs
+      depuis le parking.</p><p>Parking de l’Arc de Triomphe&nbsp;: 4 mn à pied de
+      la salle</p><p>Parking de la Préfecture&nbsp;: 8 mn à pied de la salle</p><p>Vous
+      pouvez venir de la Gare Saint-Roch en prenant le tramway ligne 4 sens B à l’arrêt
+      Gare Saint-Roch-République.</p><p><strong>Tramway ligne 4</strong>&nbsp;: arrêt
+      Peyrou – Arc de Triomphe</p><p>3 mn à pied,&nbsp;: Suivez la rue Pitot sur 150
+      mètres, continuez après le panneau du parking Pitot puis juste après descendez
+      les escaliers à votre droite donnant sur la place Jacques Mirouze (panneau Salle
+      Guillaume de Nougaret). Ensuite dirigez-vous sur la gauche et la salle situé
+      au Centre Naturo Bien-être se trouvera sur votre droite. En cas de doute, vous
+      pouvez aussi demander poliment à la brasserie de la place.</p><p>Arrêt de bus
+      le plus proche&nbsp;: Doria, 3 mn à pied</p><p><strong>Dans le quartier :</strong></p><ul><li>Parc
+      : Le Jardin des Plantes</li><li>Brasseries&nbsp;: La Brasserie Pitot, Le Broc
+      Café</li><li>Restaurants&nbsp;: nombreux autour de la rue Foch, à 5 mn de là</li><li>Culture&nbsp;:
+      la Cathédrale Saint-Pierre</li></ul>'
+    googlesite_url: ''
+    slug: salon-massage-montpellier
+    cover: ''
+    img1: img/front_0D1q7iO.webp
+    img1_alt: Devanture du centre Naturo Bien-être
+    img2: img/hall_OhO2Q2h.webp
+    img2_alt: Hall du centre Naturo Bien-être
+    img3: img/hall-reverse_oddTotK.webp
+    img3_alt: Hall du centre Naturo Bien-être
+    img4: ''
+    img4_alt: null
+    img5: ''
+    img5_alt: null
+    address: 1
+    opening: 1
+    massages:
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+    - 6
+    - 7
+    - 8
+    - 9

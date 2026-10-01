@@ -85,14 +85,9 @@ class CreateCheckoutSessionView(View):
     def get(self, request, *args, **kwargs):
         # int : object_id (service id)
         # str : id_request
-        logger.debug(request)
-        logger.debug(self.kwargs)
 
         product = self.fetch_product_infos('appointment', 'PaymentInfo', self.kwargs["object_id"])
         logger.debug("CreateCheckoutSessionView : GET : call")
-
-        logger.debug(product.stripe_product_id)
-        logger.debug(product.stripe_price_id)
 
         #handle domain in prod or debug
         domain = self.get_domain_url()

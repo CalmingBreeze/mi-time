@@ -1,0 +1,15 @@
+- model: appointment.config
+  pk: 1
+  fields:
+    slot_duration: 30
+    lead_time: 09:00:00
+    finish_time: '18:00:00'
+    appointment_buffer_time: 960.0
+    website_name: Mi-time.fr
+    app_offered_by_label: Massage par
+    default_reschedule_limit: 2
+    allow_staff_change_on_reschedule: false
+    default_to_service_duration: false
+    slot_gap_time: 30
+    created_at: 2026-08-25 16:47:54.483768+00:00
+    updated_at: 2026-09-04 07:57:50.107726+00:00

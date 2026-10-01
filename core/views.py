@@ -19,15 +19,15 @@ logger = logging.getLogger(__name__)
 
 # Handle custom error views
 def err500_view(request):
-    return render(request, "core/error.html", {"request" : request, "exception": "500", "error_msg": "Internal Server Error"})
+    return render(request, "core/error.html", {"request" : request, "exception": "500", "error_msg": "Internal Server Error"}, status=500)
 def err404_view(request, exception):
-    return render(request, "core/error.html", {"request" : request, "exception": "404", "error_msg": "Not Found"})
+    return render(request, "core/error.html", {"request" : request, "exception": "404", "error_msg": "Not Found"}, status=404)
 def err403_view(request, exception):
-    return render(request, "core/error.html", {"request" : request, "exception": "403", "error_msg": "Forbidden"})
+    return render(request, "core/error.html", {"request" : request, "exception": "403", "error_msg": "Forbidden"}, status=403)
 def err401_view(request, exception):
-    return render(request, "core/error.html", {"request" : request, "exception": "401", "error_msg": "Unauthorized"})
+    return render(request, "core/error.html", {"request" : request, "exception": "401", "error_msg": "Unauthorized"}, status=401)
 def err400_view(request, exception):
-    return render(request, "core/error.html", {"request" : request, "exception": "400", "error_msg": "Bad Request"})
+    return render(request, "core/error.html", {"request" : request, "exception": "400", "error_msg": "Bad Request"}, status=400)
 
 # def testgcmail(request):
 #     context = {"site_url" : "www.mi-time.fr", "phone_number" : "0783390680", "email": "reservation@mi-time.fr"}

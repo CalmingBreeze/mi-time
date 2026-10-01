@@ -1,0 +1,509 @@
+- model: core.page
+  pk: 1
+  fields:
+    name: Mentions légales
+    pub_date: 2026-08-25 16:54:53.231254+00:00
+    edit_date: 2026-08-25 16:54:53.231266+00:00
+    meta_title: Mentions légales
+    meta_description: 'Mentions légales du site Mi'' Time, salon de massage à Montpellier
+      : éditeur, hébergeur, propriété et informations légales du site internet.'
+    meta_keywords: Mentions légales
+    meta_robots: null
+    text: <h1>Mentions Légales</h1><h2>Société</h2><p>Le site Internet mi-time.fr
+      est édité par Mireille CAZORLA (EI, SIREN 988 322 434) assumant de fait le rôle
+      de directrice de la publication</p><p>Le siège social est situé au 1037, Avenue
+      du Pic Saint-Loup, 34090 MONTPELLIER</p><h2>Hébergement</h2><p>Ce site est hébergé
+      par OVH (SAS) domiciliée au 2 rue Kellermann, 59100 ROUBAIX, FRANCE</p>
+    text2: <p>&nbsp;</p>
+    text3: <p>&nbsp;</p>
+    custom_viewname: null
+    legal_page: true
+    menu_position: null
+    footer_position: null
+    slug: mentions-legales
+- model: core.page
+  pk: 2
+  fields:
+    name: Conditions générales de vente
+    pub_date: 2026-08-25 16:55:31.403024+00:00
+    edit_date: 2026-08-25 16:55:31.403037+00:00
+    meta_title: Conditions générales de vente – Mi' Time, massage à Montpellier
+    meta_description: 'Conditions générales de vente de Mi'' Time, salon de massage
+      à Montpellier : prestations, réservations, paiements et conditions d''annulation.'
+    meta_keywords: CGV
+    meta_robots: null
+    text: '<h1>Conditions Générales de Vente</h1><h2>PRÉAMBULE</h2><h3>I- Définitions</h3><p>Les
+      termes ci-après définis ont, dans les présentes Conditions Générales de Vente
+      (CGV), les significations suivantes :</p><p><strong>Offre&nbsp;:</strong> désigne
+      l’ensemble des services et produits proposés par «&nbsp;Mi’&nbsp;Time&nbsp;»,
+      liste non exhaustive&nbsp;: Massages – Carte Cadeau – Abonnement</p><p><strong>Client&nbsp;:</strong>
+      désigne la personne qui achète une Offre, étant entendu que le Client peut ou
+      non en être le Bénéficiaire selon qu’il fera un usage personnel de l’Offre ou
+      non.</p><p><strong>Bénéficiaire&nbsp;:</strong> désigne la personne indiquée
+      par le Client comme utilisatrice de l’Offre.</p><p><strong>Carte Cadeau&nbsp;:</strong>
+      désigne le document comportant l’Offre, le lieu, le numéro de validité, la date
+      de validité, le nom du bénéficiaire et le descriptif permettant de profiter
+      de l’Offre.</p><p><strong>Abonnement&nbsp;:</strong> désigne un ensemble de
+      soins proposés sur plusieurs séances.</p><p><strong>Prestataire&nbsp;:</strong>
+      désigne la personne exécutant la prestation pour le bénéficiaire.</p><p><strong>Données
+      personnelles&nbsp;:</strong> désigne toutes les informations permettant, notamment
+      sur Internet, d’identifier directement ou indirectement une personne physique
+      (nom, prénom, adresse électronique).</p><h3>II- Champs d''application et offres
+      en ligne</h3><p>Les présentes conditions générales de vente s''appliquent, sans
+      restriction ni réserve à l''ensemble des services et prestations proposés par
+      «&nbsp;Mi’&nbsp;Time&nbsp;», sur son site Internet et à destination des <strong>clients
+      (“Clients”)</strong> ou visiteurs. Par l’intermédiaire de son site Internet
+      «&nbsp;www.mi-time.fr&nbsp;», «&nbsp;Mi’&nbsp;Time&nbsp;» offre au Client la
+      possibilité d’accéder à une gamme complète de massages bien-être, à réserver
+      en ligne ou directement auprès du prestataire. En conséquence, le fait pour
+      une personne physique ou morale, de procéder à une réservation ou un achat le
+      site Internet «&nbsp;www.mi-time.fr&nbsp;» implique acceptation pleine et entière
+      des présentes conditions générales de vente. Elles sont accessibles à tout moment
+      sur ce site Internet et prévaudront, le cas échéant, sur toute autre version,
+      étant précisé que seule la version en vigueur lors de la réservation ou de l’achat
+      du Client lui sera opposable.</p><p>Tout achat ou réservation effectués par
+      le Client implique son acceptation sans réserve et son adhésion pleine et entière
+      aux présentes CGV.</p><p>«&nbsp;Mi’&nbsp;Time&nbsp;» se réserve le droit de
+      pouvoir modifier les présentes CGV à tout moment. Dans ce cas, les nouvelles
+      conditions s’appliqueront à tout nouvel achat ou réservation, ainsi qu’à toutes
+      les opérations en cours, dès la date où elles auront été portées à la connaissance
+      du Client par tout moyen. Les présentes Conditions Générales de Vente sont valables
+      à compter du 01/09/2025.</p><h2>ARTICLE 1 : Objet</h2><p>«&nbsp;Mi’&nbsp;Time&nbsp;»
+      propose des prestations de soins corporels, massages bien-être (ci-dessus «&nbsp;Offre&nbsp;»)
+      à ses clients (ci-dessus «&nbsp;Client&nbsp;»). Les présentes Conditions Générales
+      de Vente (CGV) régissent les ventes de prestations de massage ainsi que les
+      ventes de cartes cadeaux effectuées sur le site «&nbsp;www.mi-time.fr&nbsp;»,
+      ou directement auprès du Prestataire.</p><h2>ARTICLE 2 : Conditions d’utilisation
+      des offres</h2><h3>Article 2.1.</h3><p>Dans l’hypothèse où le Client ne serait
+      pas Bénéficiaire de l’Offre, celui-ci doit porter à la connaissance du Bénéficiaire
+      les conditions ci-dessous développées.</p><h3>Article 2.2.</h3><p>Un Bénéficiaire
+      mineur ne peut être accepté.</p><h3>Article 2.3.</h3><p>La délivrance de la
+      prestation interviendra après le contrôle par «&nbsp;Mi’&nbsp;Time&nbsp;» de
+      la validité de l’Offre et du paiement intégral de celle-ci.</p><h3>Article 2.4.</h3><p>Seule
+      la présentation de l’original de la Carte, de l’Abonnement reçu auprès du Prestataire,
+      par voie postale ou imprimé depuis le courriel donne droit à une prestation.</p><h3>Article
+      2.5.</h3><p>L’Offre est valable selon les dates et jours de la semaine précisées
+      sur le site «&nbsp;www.mi-time.fr&nbsp;», sous réserve de disponibilité au moment
+      de la demande du Client.</p><h3>Article 2.6.</h3><p>Le Client reconnaît que
+      les prestations des Offres n’incluent pas le transport jusqu’au lieu de la prestation
+      de l’établissement sélectionné.</p><h3>Article 2.7.</h3><p>Les photographies
+      présentées sur le site internet «&nbsp;www.mi-time.fr&nbsp;» ou sur les supports
+      publicitaires de «&nbsp;Mi’ &nbsp;Time&nbsp;» ne sont pas contractuelles.<br>Toute
+      reproduction partielle ou entière est interdite et sera susceptible de donner
+      lieu à des poursuites judiciaires.</p><h3>Article 2.8.</h3><p>En cas de non
+      utilisation dans sa période de validité, de perte, de vol ou de destruction
+      de l’Offre, le Client ou le Bénéficiaire ne pourra prétendre à un remboursement
+      ni à une compensation de quelque nature que ce soit.</p><h3>Article 2.9.</h3><p>Dans
+      le cadre de l’utilisation des Offres, le Bénéficiaire déclare bénéficier d’une
+      couverture d’assurance suffisante, notamment pour la pratique des soins corporels
+      et de massages bien-être. Il est rappelé au Bénéficiaire que la délivrance des
+      prestations dans de bonnes conditions de sécurité ne le dispense pas d’observer
+      les règles de prudence élémentaires. Le Bénéficiaire en accepte seul les risques
+      en conséquence et décharge «&nbsp;Mi’&nbsp;Time&nbsp;» de toute responsabilité
+      à cet égard.</p><h2>ARTICLE 3 : Modalités de réalisations des prestations</h2><p>Pour
+      que les soins puissent être réalisés dans les meilleurs conditions possibles
+      et que vous puissiez en tirer un maximum de satisfactions, il est nécessaire
+      de respecter les points suivants.</p><h3>Article 3.1. Horaires.</h3><p>Il est
+      important de respecter l’horaire de votre rendez-vous. Dans un souci de détente
+      et de satisfaction optimale, nous vous demandons d’arriver 5 minutes avant le
+      début de votre soin. En cas de retard, nous nous verrons dans l’obligation d’écourter
+      votre prestation au prorata du retard constaté sans compensation possible.</p><h3>Article
+      3.2. Modification ou annulation.</h3><p>Pour toute modification ou annulation
+      de rendez-vous, le délai minimum de 48H avant votre soin est requis. Au-delà
+      de ce délai, nous serons contraints de facturer la totalité de votre soin ou
+      le déduire de votre Abonnement ou Carte cadeau.<br>Les arrhes ne sont pas remboursables.</p><h3>Article
+      3.3. Cadre de la prestation : Massage Bien-être.</h3><p>Les massages proposés
+      par «&nbsp;Mi’&nbsp;Time&nbsp;» sont des prestations de bien-être, de détente
+      et de relaxation. Ils n’ont aucune visée médicale, thérapeutique ou paramédicale,
+      et ne s’apparentent en aucun cas à des actes de kinésithérapie ou de massothérapie
+      au sens médical du terme. Le Prestataire n’est pas professionnel de santé et
+      n’effectue aucun diagnostic, traitement ou suivi médical. Toute personne présentant
+      une pathologie, un problème de santé particulier ou un doute doit consulter
+      son médecin traitant avant de réserver une séance.</p><h3>Article 3.4 État de
+      santé.</h3><p>Avant la réalisation de soins, il est important de nous aviser
+      de tout problème de santé, allergie ou blessure qui pourrait gêner le bon déroulement
+      de votre soin ou provoquer des effets secondaires. En cas de doute, veuillez
+      consulter votre médecin traitant avant toute réservation. Si vous avez subi
+      une opération chirurgicale de moins de trois mois ou pour toute maladie systémique,
+      chronique ou auto-immune, veuillez prendre l’avis de votre médecin et si besoin
+      fournir un avis médical avec les précautions à prendre avant toute réservation.
+      En conséquence, «&nbsp;Mi’&nbsp;Time&nbsp;» se réserve le droit de refuser à
+      tout moment, un client dont l’état de santé ne serait pas compatible avec la
+      réalisation d’un Massage Bien-être sur sa personne sans avis médical préalable.</p><p>«&nbsp;Mi’&nbsp;Time&nbsp;»
+      ne saurait être tenu responsable de tout effet secondaire relatif à un soin
+      lié à la non communication de l’état de santé du Bénéficiaire. Dans tous les
+      cas, les zones présentant des brûlures, des plaies ouvertes ou tout signe d’inflammation
+      ou d’infection locale et/ou transmissible ne seront pas massées et suivant la
+      gravité, cela aura pour conséquence de stopper le massage sans remboursement
+      possible.</p><h3>Article 3.5 Comportement au sein de l’Établissement.</h3><p>Le
+      lieu où «&nbsp;Mi’&nbsp;Time&nbsp;» reçoit le Client est un univers de tranquillité,
+      d’harmonie et de bien-être. Pour profiter au mieux de votre expérience, de votre
+      sécurité et ne pas troubler celle des autres clients, il est interdit de fumer
+      ou de faire usage de téléphone portable en dehors du mode «&nbsp;discret&nbsp;»
+      ou «&nbsp;silencieux&nbsp;» ou appareil audio, de consommer des boissons ou
+      de la nourriture issus de l’extérieur. Il est également interdit de venir avec
+      ses animaux de compagnie. Les photos et les films sont interdits sans accord
+      préalable auprès de la Prestataire.</p><h3>Article 3.6 Sécurité des Personnes
+      et des biens.</h3><p>Une caméra de surveillance est installée dans la salle
+      d''attente du local afin de garantir la sécurité de tous. Aucun enregistrement
+      n''est effectué dans les zones privées. Vous êtes informé de cette surveillance
+      dès votre première visite. Pour toute question sur la gestion des images, n''hésitez
+      pas à nous contacter.</p><h3>Article 3.7. Perte ou vols d’effets personnels.</h3><p>Pour
+      votre confort et votre sécurité, nous vous demandons de pas laisser vos affaires
+      personnelles sans surveillance. «&nbsp;Mi’&nbsp;Time&nbsp;» ne peut être tenu
+      responsable en cas de perte, de vol ou de détérioration d’objets au sein de
+      l’établissement.</p><h3>Article 3.8. Mœurs.</h3><p>Sont également exclues de
+      l’activité de «&nbsp;Mi’&nbsp;Time&nbsp;», toute prestation à caractère érotique
+      ou sexuel. Tout comportement déplacé entraînera l’arrêt de la prestation sans
+      remboursement. Tout exhibitionnisme, acte à caractère sexuel au sein de l’Établissement
+      ou toute demande auprès du personnel d’actes relevant de la prostitution engendrerons
+      l’expulsion immédiate des locaux et des poursuites seront engagées.</p><h2>ARTICLE
+      4 : Tarif et conditions d’achat.</h2><h3>Article 4.1. Tarif</h3><p>Les tarifs
+      sont indiqués en euros TTC.<br>«&nbsp;Mi’&nbsp;Time&nbsp;» se réserve le droit
+      de modifier ses tarifs à tout moment, l’Offre sera facturée au tarif en vigueur
+      au moment de la commande.<br>Le paiement est exigible immédiatement à la commande,
+      par carte bancaire ou tout autre moyen proposé sur le site.</p><h3>Article 4.2.
+      Achat</h3><p>Les achats en ligne se font via le site internet «&nbsp;www.mi-time.fr&nbsp;».<br>Pour
+      les prestations, la réservation d’un créneau est obligatoire via le système
+      de réservation en ligne ou par contact téléphonique au 0783390680 ou en direct
+      auprès de la prestataire.<br>Pour les cartes cadeaux, la commande est confirmée
+      après réception du paiement.</p><h3>Article 4.3. Livraison et modalités des
+      cartes cadeaux</h3><p>Les cartes cadeaux sont disponibles :</p><ul><li>En version
+      dématérialisée, envoyée par e-mail au format PDF à l’adresse fournie par le
+      Client au moment de la commande.</li><li>En version papier, envoyée par voie
+      postale à l’adresse indiquée par le Client lors de la commande (option à sélectionner
+      lors du processus d’achat).</li><li>Les cartes cadeaux physiques sont à retirer
+      directement au salon en réservant un horaire de retrait par téléphone ou par
+      mail après confirmation par le prestataire.</li></ul><p>L’envoi postal est effectué
+      sous un délai de 2 à 3 jours ouvrés après réception du paiement. Des frais de
+      livraison peuvent s’appliquer, clairement indiqués lors de la commande.</p><p>Le
+      Prestataire ne pourra être tenu responsable en cas de :</p><ul><li>retard d’acheminement
+      imputable au transporteur.</li><li>erreur ou omission dans l’adresse fournie
+      par le Client.</li><li>perte ou vol du courrier après remise au service postal.</li></ul><p>Il
+      appartient au Client de vérifier soigneusement l’adresse d’expédition qu’il
+      fournit au prestataire.<br>Les cartes cadeaux et abonnements sont non nominatifs.
+      Le client peut céder sa carte cadeau à une autre personne à tout moment.</p><h3>Article
+      4.3. Utilisation des cartes cadeaux</h3><p>Les cartes cadeaux sont valables
+      pour une durée de 12 mois à compter de la date d’achat.<br>Elles sont <strong>non
+      remboursables</strong> et <strong>non échangeables contre de l''argent</strong>.<br>En
+      cas de perte, elles ne peuvent être ni remplacées ni remboursées.<br>Les cartes
+      cadeaux sont utilisables uniquement pour les prestations proposées sur le site.</p><h3>Article
+      4.4. Conditions d''annulation et de report</h3><p>Toute annulation ou report
+      doit être signalé au minimum 24h avant le rendez-vous prévu.<br>En cas d’annulation
+      tardive ou de non-présentation de la carte cadeau, la prestation pourra être
+      facturée ou la carte cadeau considérée comme utilisée.</p><h3>Article 4.5. Droit
+      de rétractation</h3><p>Conformément à l’article L221-28 du Code de la consommation,
+      le droit de rétractation ne s’applique pas aux prestations de services pleinement
+      exécutées avant la fin du délai de rétractation.<br>Pour les cartes cadeaux
+      envoyées par voie électronique, le droit de rétractation ne s’applique pas une
+      fois le code de la carte utilisé ou si le client a expressément renoncé à ce
+      droit.</p><p>Le Client exerçant ce droit dans les conditions prévues au présent
+      article en termes de délai et de modalités, pourra obtenir, au choix :</p><ul><li>un
+      avoir d’un montant égal au prix des Offres retournées pour une durée de 1 an
+      à la date d’émission de l’avoir, utilisable uniquement auprès de «&nbsp;Mi’&nbsp;Time&nbsp;».</li><li>un
+      remboursement de l’Offre.</li></ul><h3>Article 4.6. PREUVE D’ACHAT OU DE RÉSERVATION/ARCHIVAGE</h3><p>Le
+      Client est expressément informé que, sauf erreur manifeste dont il doit apporter
+      la preuve, les données conservées dans les bases de données de «&nbsp;Mi’&nbsp;Time&nbsp;»
+      ont force probante quant aux achats ou réservations passés.</p><p>Les données
+      sur support informatique ou électronique conservées régulièrement constituent
+      des preuves recevables et opposables dans les mêmes termes et avec la même force
+      probante que tout document qui serait reçu et conservé par écrit.</p><h3>Article
+      4.6. Réclamations</h3><p>Toute réclamation par le Client doit être adressée
+      au Prestataire.</p>'
+    text2: <p>&nbsp;</p>
+    text3: <p>&nbsp;</p>
+    custom_viewname: null
+    legal_page: true
+    menu_position: null
+    footer_position: null
+    slug: cgv
+- model: core.page
+  pk: 3
+  fields:
+    name: Accueil
+    pub_date: 2026-08-25 16:55:58.121087+00:00
+    edit_date: 2026-08-25 16:55:58.121100+00:00
+    meta_title: Mi' Time – Salon de massage à Montpellier Centre
+    meta_description: Salon de massage à Montpellier Centre. Mi' Time vous propose
+      des soins bien-être, relaxants ou énergétiques dans une atmosphère apaisante.
+    meta_keywords: Massage, Montpellier, Mireille, Espace Pitôt
+    meta_robots: null
+    text: <p>&nbsp;</p>
+    text2: <p>&nbsp;</p>
+    text3: <p>&nbsp;</p>
+    custom_viewname: home
+    legal_page: false
+    menu_position: 1
+    footer_position: 1
+    slug: accueil
+- model: core.page
+  pk: 4
+  fields:
+    name: Les Massages
+    pub_date: 2026-08-25 16:56:29.827529+00:00
+    edit_date: 2026-08-25 16:56:29.827542+00:00
+    meta_title: Massages à Montpellier Centre – Mi' Time
+    meta_description: 'Massages à Montpellier Centre chez Mi'' Time : détente, énergie,
+      bien-être. Choisissez le soin qui vous convient.'
+    meta_keywords: Massage, Mitime, Mireille
+    meta_robots: null
+    text: <p>&nbsp;</p>
+    text2: <p>&nbsp;</p>
+    text3: <p>&nbsp;</p>
+    custom_viewname: massages
+    legal_page: false
+    menu_position: 2
+    footer_position: 2
+    slug: liste-massages
+- model: core.page
+  pk: 5
+  fields:
+    name: Les Salons
+    pub_date: 2026-08-25 16:56:59.765598+00:00
+    edit_date: 2026-08-25 16:56:59.765614+00:00
+    meta_title: Les Salons
+    meta_description: Description des salons
+    meta_keywords: Salon, Mireille, Massage, Pitôt
+    meta_robots: null
+    text: <p>&nbsp;</p>
+    text2: <p>&nbsp;</p>
+    text3: <p>&nbsp;</p>
+    custom_viewname: practices
+    legal_page: false
+    menu_position: 4
+    footer_position: 4
+    slug: les-salons
+- model: core.page
+  pk: 6
+  fields:
+    name: Mireille et l'aventure Mi' time
+    pub_date: 2026-08-25 16:57:38.032098+00:00
+    edit_date: 2026-08-25 16:57:38.032115+00:00
+    meta_title: 'Mireille – Mi’ Time : massage bien-être à Montpellier'
+    meta_description: Mireille, fondatrice de Mi’ Time à Montpellier, vous invite
+      à vivre une expérience de massage bien-être pour un moment unique « Me Time
+      ».
+    meta_keywords: Salon, Mireille, Massage, Pitôt
+    meta_robots: null
+    text: '<h1>Mireille et l''aventure Mi'' time</h1><p style="text-align:justify;">Je
+      suis Mireille. Après plusieurs années d’expérience en salon professionnel, j''ai
+      choisi de m’installer à mon compte pour proposer une pratique plus personnelle
+      et conforme à mes valeurs. J''ai crée Mi'' Time en clin d''oeil à l''expression
+      anglaise "Take some <strong>me time</strong>" qui signifie "prendre du temps
+      pour soi".</p><p style="text-align:justify;">Dans notre société qui va toujours
+      plus vite, il est facile d’oublier l’essentiel : prendre soin de soi.<br>Je
+      souhaite offrir à chacun·e ce temps précieux pour faire une pause, souffler
+      et se reconnecter à son corps et à soi-même.</p><h2 style="text-align:justify;">Mes
+      massages</h2><p style="text-align:justify;">Chaque massage suit un fil rouge
+      clair (relaxant, sportif, etc.). J’adapte ma pression et mes techniques en fonction
+      de vos besoins, pour que ce moment soit le plus bénéfique possible.</p><p style="text-align:justify;">Formée
+      dans plusieurs écoles reconnues, je maîtrise aussi bien les gestes doux et enveloppants
+      que les techniques plus profondes et précises.&nbsp;</p><p style="text-align:justify;">Pour
+      moi, un rendez-vous de massage est un temps de relaxation physique et psychologique.</p><h3
+      style="text-align:justify;">Bienfaits physiques&nbsp;</h3><p style="text-align:justify;">Le
+      massage joue un rôle clé dans la perception de son corps et de sa posture. Il
+      stimule la circulation sanguine et lymphatique, ce qui réduit l’inflammation,
+      élimine les toxines et aide à atténuer courbatures et tensions musculaires,
+      favorisant une récupération optimale.</p><p style="text-align:justify;">Ainsi,
+      le massage soutient les fonctions physiologiques et contribue à un équilibre
+      corporel global.</p><h3 style="text-align:justify;">Bienfaits mentaux</h3><p
+      style="text-align:justify;">Un toucher bienveillant et attentif rassure, recentre
+      et offre un réconfort souvent difficile à exprimer par les mots. Il procure
+      un véritable lâcher-prise, où stress, anxiété et tristesse s’allègent pour laisser
+      place à la sérénité. Ce soin enveloppant est essentiel au bien-être de tous,
+      notamment des personnes plus sensibles, comme les personnes âgées, qui bénéficient
+      tout particulièrement de cette attention douce et respectueuse.</p><p style="text-align:justify;">Le
+      massage devient alors un moment privilégié où l’on se sent enveloppé, reconnu
+      et profondément apaisé.</p><h2 style="text-align:justify;">Matériel et lieu</h2><p
+      style="text-align:justify;">J’ai choisi un espace calme et lumineux, situé quartier
+      Pitot à Montpellier Centre, pour vous accueillir dans une ambiance sereine.
+      La salle de massage, intime et tamisée, garantit confort et confidentialité.</p><p
+      style="text-align:justify;">Je travaille avec des huiles naturelles, Pour le
+      visage, j’utilise une huile spécifique qui respecte la peau. N’hésitez pas à
+      me signaler toute allergie.&nbsp;En fin de séance, une lotion et des cotons
+      sont à votre disposition pour retirer l’huile si vous le souhaitez.</p>'
+    text2: <p>&nbsp;</p>
+    text3: <p>&nbsp;</p>
+    custom_viewname: null
+    legal_page: false
+    menu_position: 5
+    footer_position: null
+    slug: mireille-mi-time-montpellier-massage-bien-etre
+- model: core.page
+  pk: 7
+  fields:
+    name: Offre Privilège
+    pub_date: 2026-08-25 16:58:09.655779+00:00
+    edit_date: 2026-08-25 16:58:09.655792+00:00
+    meta_title: Offre Privilège
+    meta_description: Offre Privilège
+    meta_keywords: null
+    meta_robots: noindex, nofollow
+    text: <h1>Votre offre privilège</h1><p>Afin de vous remercier de votre soutien
+      et votre fidélité, voici l'accès à deux offres exclusives :</p>
+    text2: <p>&nbsp;</p>
+    text3: <p>&nbsp;</p>
+    custom_viewname: privilege
+    legal_page: false
+    menu_position: null
+    footer_position: null
+    slug: offre-privilege
+- model: core.page
+  pk: 8
+  fields:
+    name: Les Cartes cadeaux
+    pub_date: 2026-08-25 16:58:35.489522+00:00
+    edit_date: 2026-08-25 16:58:35.489532+00:00
+    meta_title: Cartes cadeaux massage à Montpellier – Mi' Time
+    meta_description: Offrez une carte cadeau Mi’ Time pour un massage personnalisé
+      à Montpellier Centre. Un moment de bien-être et de détente dans un cadre apaisant.
+    meta_keywords: null
+    meta_robots: null
+    text: <p>Nos cartes Cadeaux</p>
+    text2: <p>&nbsp;</p>
+    text3: <p>&nbsp;</p>
+    custom_viewname: giftcards
+    legal_page: false
+    menu_position: 2
+    footer_position: 2
+    slug: cartes-cadeaux
+- model: core.page
+  pk: 9
+  fields:
+    name: Politique de confidentialité
+    pub_date: 2026-08-25 16:59:16.491282+00:00
+    edit_date: 2026-08-25 16:59:16.491295+00:00
+    meta_title: Politique de confidentialité – Mi' Time
+    meta_description: Découvrez comment Mi' Time collecte, utilise et protège vos
+      données personnelles, en conformité avec le RGPD. Vos droits expliqués en toute
+      transparence.
+    meta_keywords: null
+    meta_robots: null
+    text: '<h1>Responsable du traitement</h1><p>Le responsable du traitement des données
+      personnelles collectées sur le site est :</p><p><strong>Mi'' Time </strong>géré
+      par Mireille Cazorla</p><p>Numéro de contact : 07.83.39.06.80<br>Email de contact
+      : <a href="mailto:reservation@mi-time.fr">reservation@mi-time.fr</a></p><h2>Données
+      collectées</h2><p>Les données personnelles suivantes peuvent être collectées
+      via le site :</p><ul><li><strong>Nom</strong></li><li><strong>Adresse e-mail</strong></li></ul><p>Ces
+      données sont collectées lors de la prise de rendez-vous via un <strong>formulaire
+      intégré à Calendly</strong>.</p><p>Dans le cadre des paiements en ligne, certaines
+      données peuvent également être collectées et traitées par la plateforme <strong>Stripe</strong>,
+      notamment l’adresse e-mail fournie au moment de l’achat, afin de permettre l’envoi
+      d’un e-mail de confirmation /et d''un email contenant la carte cadeau au format
+      .pdf s''il s''agit d''un achat de carte cadeau.</p><h2>Finalités du traitement</h2><p>Les
+      données collectées sont utilisées pour les finalités suivantes :</p><ul><li><strong>Gestion
+      des rendez-vous</strong> (via Calendly)</li><li><strong>Envoi d’e-mails de confirmation</strong>
+      liés aux paiements (via Stripe)</li><li><strong>Envoi d''emails </strong>contenant
+      la carte cadeau achetée en ligne<strong> </strong>(via Stripe)</li><li><strong>Communication
+      avec le client</strong> en cas de besoin explicite</li></ul><p>Aucune donnée
+      n’est utilisée à des fins de prospection commerciale sans consentement préalable.</p><h2>Base
+      légale du traitement</h2><p>Le traitement des données repose sur :</p><ul><li>L’<strong>exécution
+      d’un contrat</strong> (prise de rendez-vous, paiement d’une prestation)</li><li>Le
+      <strong>consentement</strong> de la personne concernée, lorsque cela est requis
+      (ex. : newsletter)</li></ul><h2>Destinataires des données</h2><p>Les données
+      peuvent être transmises aux prestataires suivants, dans le cadre de leurs services
+      :</p><ul><li><strong>Calendly</strong> : pour la gestion des rendez-vous</li><li><strong>Stripe</strong>
+      : pour la gestion des paiements en ligne</li></ul><p>Ces prestataires sont susceptibles
+      de transférer des données en dehors de l’Union européenne, mais assurent des
+      garanties conformes au RGPD (clauses contractuelles types, etc.).</p><h2>Durée
+      de conservation des données</h2><p>Les données personnelles sont conservées
+      :</p><ul><li><strong>Jusqu’à 3 ans maximum</strong> après le dernier contact
+      pour les données de contact (nom, e-mail)</li><li><strong>Durée légale applicable</strong>
+      pour les données de facturation ou de paiement (obligations comptables)</li></ul><h2>Droits
+      des personnes concernées</h2><p>Conformément au Règlement Général sur la Protection
+      des Données (RGPD), vous disposez des droits suivants sur vos données personnelles
+      :</p><ul><li>Droit d’accès</li><li>Droit de rectification</li><li>Droit d’opposition</li><li>Droit
+      à l’effacement</li><li>Droit à la limitation du traitement</li><li>Droit à la
+      portabilité des données</li></ul><p>Vous pouvez exercer vos droits en envoyant
+      un e-mail à : <a href="mailto:reservation@mi-time.fr">reservation@mi-time.fr</a></p>'
+    text2: <p>&nbsp;</p>
+    text3: <p>&nbsp;</p>
+    custom_viewname: null
+    legal_page: true
+    menu_position: null
+    footer_position: null
+    slug: politique-de-confidentialite
+- model: core.page
+  pk: 10
+  fields:
+    name: Les Forfaits
+    pub_date: 2026-08-25 16:59:46.972530+00:00
+    edit_date: 2026-08-25 16:59:46.972546+00:00
+    meta_title: Forfaits massage à Montpellier – Mi-Time bien-être & détente
+    meta_description: 'Profitez de nos forfaits massage à Montpellier : 3h, 5h ou
+      10h de bien-être à prix réduit. Flexibles et valables 1 an. Réservez en ligne
+      avec Mi-Time.'
+    meta_keywords: null
+    meta_robots: null
+    text: '<p>Des formules avantageuses pour votre bien-être ! Profitez des forfaits
+      pour vous offrir des moments de détente réguliers à un tarif réduit. Vous pouvez
+      régler en une ou plusieurs fois au moment du paiement en ligne.</p><p>&nbsp;</p><p>Forfait
+      3 heures : Parfait pour tester ou offrir plusieurs séances. 225 € &nbsp;Valable
+      pendant 12 mois.</p><p>&nbsp;</p><p>Forfait 5 heures : Un bon équilibre entre
+      relaxation et économies. Idéal pour un suivi bien-être. 350 € &nbsp;Valable
+      pendant 12 mois.</p><p>&nbsp;</p><p>Forfait 10 heures : Le meilleur tarif pour
+      les clients réguliers. 650 € Valable pendant 18 mois.</p>'
+    text2: <p>&nbsp;</p>
+    text3: <p>&nbsp;</p>
+    custom_viewname: bundles
+    legal_page: false
+    menu_position: 3
+    footer_position: 3
+    slug: forfaits-massage-montpellier
+- model: core.page
+  pk: 11
+  fields:
+    name: Mon compte
+    pub_date: 2026-08-25 18:29:15.612652+00:00
+    edit_date: 2026-08-25 18:29:33.402500+00:00
+    meta_title: mon-compte
+    meta_description: Retrouvez toutes les informations relative à votre compte chez
+      Mi-time.fr
+    meta_keywords: compte utilisateur
+    meta_robots: noindex, nofollow
+    text: <p>&nbsp;</p>
+    text2: <p>&nbsp;</p>
+    text3: <p>&nbsp;</p>
+    custom_viewname: user-profile
+    legal_page: false
+    menu_position: 1
+    footer_position: null
+    slug: mon-compte
+- model: core.page
+  pk: 12
+  fields:
+    name: Nos prestations
+    pub_date: 2026-08-28 14:48:39.955001+00:00
+    edit_date: 2026-08-28 14:48:39.955013+00:00
+    meta_title: nos-prestations
+    meta_description: 'Massages à Montpellier centre : découvrez les prestations de
+      Mi-Time, nos forfaits et cartes cadeaux pour un moment de détente et de bien-être.'
+    meta_keywords: massages, forfaits, carte cadeau
+    meta_robots: null
+    text: <p>Vous trouverez sur cette page <a href="#available_massages">nos massages</a>,
+      nos <a href="#available_giftcards">cartes-cadeaux</a> et nos <a href="#available_bundles">forfaits</a>.</p>
+    text2: <p>&nbsp;</p>
+    text3: <p>&nbsp;</p>
+    custom_viewname: reservation
+    legal_page: false
+    menu_position: null
+    footer_position: null
+    slug: nos-prestations
+- model: core.siteconfig
+  pk: 1
+  fields:
+    name: Mi'time
+    pub_date: 2026-08-25 18:25:19.533118+00:00
+    edit_date: 2026-08-25 18:25:19.533129+00:00
+    site_email: reservation@mi-time.fr
+    header_mobile: 0783390680
+    header_openings: Mercredis, Vendredis et Samedis
+    footer_about_title: Mireille
+    footer_about_text: <p>Masseuse expérimentée à votre service, dédiée à votre bien-être
+      personnel et corporel.</p>
+    facebook: ''
+    instagram: mi_time_massage
+    copyright: © Mi'time. Tout droits reservés
+    design: 'Design : ALL'
+    placeholder_img: ''
+    robots_content: "User-agent: *\r\nAllow: /\r\n\r\n# Sitemap: https://www.mi-time.fr/sitemap.xml"
