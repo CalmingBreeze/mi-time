@@ -1,7 +1,9 @@
 import datetime
 from collections import OrderedDict
 from django import template
+from django.conf import settings
 from django.utils.translation import npgettext
+from core.models import SiteConfig
 
 register = template.Library()
 
@@ -87,3 +89,14 @@ def format_mobile_number(val, style):
             return val
 
 register.filter("phone_format", format_mobile_number)
+
+@register.simple_tag
+def mail_context():
+    """
+    Retrieve mail required vars form settings and site_config
+    """
+    siteconfig = SiteConfig.objects.first()
+    return {
+        'site_url': settings.SITE_URL,
+        'siteconfig': siteconfig
+    }

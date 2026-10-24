@@ -24,27 +24,6 @@ stripe.api_key = settings.STRIPE_SECRET_KEY
 class CreateCheckoutSessionView(View):
     def get_domain_url(self):
         return "http://127.0.0.1:8000" if settings.DEBUG else "https://www.mi-time.fr"
-
-    def fetch_product_infos(self, app_origin, model_name, object_id):
-        """
-        Retrieve the correct product model (Massage, Giftcard, Bundle) depending on app origin
-
-        Parameters:
-        app_origin (str) : app who made the call to stripe API ('appointment' or 'core')
-        model_name (str) : the name of the model to invoke (PaymentInfo for appointment, 
-        """
-        if (app_origin == 'appointment'):
-            model = apps.get_model(app_origin, model_name)
-            paymentinfo = model.objects.get(id=object_id)
-            service = paymentinfo.appointment.appointment_request.service
-            product = service.massage
-        elif (app_origin == 'core'):
-            model = apps.get_model(app_origin, model_name)
-            product = model.objects.get(id=object_id)
-        else:
-            logger.error("Invalid Product pairing")
-
-        return product
     
     def apply_discount_event(self, product):
         """
@@ -68,25 +47,25 @@ class CreateCheckoutSessionView(View):
         model_name = product._meta.model_name
 
         #generate metadata for after purchase routing
-        product_metadata = {
+        object_metadata = {
             "model_name": model_name, 
-            "product_id" : product.id
+            "object_id" : product.id
         }
-        logger.debug(f"Generate metadatas : model_name : {model_name}, product_id : {product.id}")
+        logger.debug(f"Generate metadatas : model_name : {model_name}, object_id : {product.id}")
 
         if model_name == "giftcard":
-            product_metadata["gift_label"] = product.gift_label
-            product_metadata["coupon_id"] = product.stripe_coupon_id
+            object_metadata["gift_label"] = product.gift_label
+            object_metadata["coupon_id"] = product.stripe_coupon_id
             logger.debug(f"Additional metadatas : gift_label : {product.gift_label}, coupon_id : {product.stripe_coupon_id}")
 
-        return product_metadata
+        return object_metadata
 
     #Handle appointment redirects
     def get(self, request, *args, **kwargs):
         # int : object_id (service id)
         # str : id_request
 
-        product = self.fetch_product_infos('appointment', 'PaymentInfo', self.kwargs["object_id"])
+        product = fetch_product_infos('appointment', 'PaymentInfo', self.kwargs["object_id"])
         logger.debug("CreateCheckoutSessionView : GET : call")
 
         #handle domain in prod or debug
@@ -121,7 +100,7 @@ class CreateCheckoutSessionView(View):
     
     def post(self, request, *args, **kwargs):
         #we need to match related Product
-        product = self.fetch_product_infos('core', self.kwargs["model_name"], self.kwargs["object_id"])
+        product = fetch_product_infos('core', self.kwargs["model_name"], self.kwargs["object_id"])
         logger.debug("CreateCheckoutSessionView : POST : call")
 
         #handle domain in prod or debug
@@ -156,6 +135,41 @@ class SuccessView(TemplateView):
 
 class CancelView(TemplateView):
     template_name = "core/stripe/cancel.html"
+
+def fetch_product_infos(app_origin, model_name, object_id):
+        """
+        Retrieve the correct product model (Massage, Giftcard, Bundle) depending on app origin
+
+        Parameters:
+        app_origin (str) : app who made the call to stripe API ('appointment' or 'core')
+        model_name (str) : the name of the model to invoke (PaymentInfo for appointment), 
+        """
+        if (app_origin == 'appointment'):
+            model = apps.get_model(app_origin, model_name)
+            paymentinfo = model.objects.get(id=object_id)
+            service = paymentinfo.appointment.appointment_request.service
+            product = service.massage
+        elif (app_origin == 'core'):
+            model = apps.get_model(app_origin, model_name)
+            product = model.objects.get(id=object_id)
+        else:
+            logger.error("Invalid Product pairing")
+
+        return product
+
+def fetch_appointment_infos(object_id):
+        """
+        Retrieve an appointment from its paymentinfo_id
+
+        Parameters:
+        object_id (int) : id of the PaymentInfo
+        """
+        
+        model = apps.get_model('appointment', 'PaymentInfo')
+        paymentinfo = model.objects.get(id=object_id)
+        appointment = paymentinfo.appointment
+
+        return appointment
 
 def generate_giftcard(text = ('Massage 1H', 'TESTCODE', datetime.now().strftime('%d/%m/%Y')), pdfbase_path = "./core/static/core/giftcard.pdf", dest_path = "./static/core/pdf/carte-cadeau-"):
     """
@@ -208,15 +222,25 @@ def send_giftcardmail(customer_email, pdf_added_text):
     except Exception as e:
         logger.error("Stripe : send_html_an_giftcardmail : Error : %s", e)
 
-def send_neworder_confirmation(customer_email, customer_name, stripe_payment_id, order_type):
+def send_neworder_confirmation(customer_email, customer_name, stripe_payment_id, metadata):
     """
         Send an automated mail when a command is validated
     """
+
+    order_type = metadata["model_name"]
 
     # Template
     subject = "[Mi-time.fr] Confirmation de votre commande"
     template_name = f"core/mail/{order_type}.html"
     context = {"customer_email": customer_email,"customer_name" : customer_name, "stripe_payment_id" : stripe_payment_id}
+
+    # Fetch massage infos
+    if order_type == "massage":
+        product = fetch_product_infos('appointment', 'PaymentInfo', metadata["object_id"])
+        appointment = fetch_appointment_infos(metadata["paymentinfo_id"])
+        context["product"] = product
+        context["appointment"] = appointment
+        context["appointment_request"] = appointment.appointment_request
 
     try:
         send_html_and_plaintext_mail(
@@ -228,7 +252,7 @@ def send_neworder_confirmation(customer_email, customer_name, stripe_payment_id,
     except Exception as e:
         logger.error("Stripe : send_neworder_confirmation : Error : %s", e)
 
-def send_neworder_selfmail(customer_email, customer_name, stripe_payment_id, order_type):
+def send_neworder_selfmail(customer_email, customer_name, stripe_payment_id, metadata):
     """
         Send an automated mail when a command is validated to facilitate manual handling of appointments until automation is online.
     """
@@ -266,7 +290,7 @@ def stripe_webhook(request):
     sig_header = request.META['HTTP_STRIPE_SIGNATURE']
     event = None
 
-    logger.debug("stripe_webhook triggered")
+    logger.info("stripe_webhook triggered")
 
     try:
         event = stripe.Webhook.construct_event(
@@ -292,16 +316,20 @@ def stripe_webhook(request):
         payment_intent = session["payment_intent"]
         metadata = session["metadata"]
 
-        #print(session, customer_email, payment_intent, metadata)
-        logger.debug(f"Giftcard bought : {customer_email}, {payment_intent}, {metadata}")
+        logger.debug(f"Webhook triggered : {session}, {customer_email}, {payment_intent}, {metadata}")
 
         if metadata :
         # Update payment status
             if metadata["model_name"] == "massage":
+                logger.info(f"Massage bought")
+                # Set appoint status to paid
                 confirm_massage_paid(metadata["paymentinfo_id"])
+                # Send Confirmation Mail to Client
+                send_neworder_confirmation(customer_email, customer_name, session["payment_intent"], metadata)
 
             #Handle Giftcard generation workflow (new coupon, pdf generation, and email)
             if metadata["model_name"] == "giftcard":
+                logger.info(f"Giftcard bought")
                 new_coupon_expires_at = timezone.now() + timedelta(days=365)
 
                 # generate new promocode for related coupon with 1Y expiry
@@ -318,11 +346,13 @@ def stripe_webhook(request):
                     # Invalid signature
                     return HttpResponse(status=400)
 
+                # Send Giftcard Mail to Client
                 send_giftcardmail(customer_email, (metadata["gift_label"],event2["code"],new_coupon_expires_at.strftime('%d/%m/%Y')))
 
             if metadata["model_name"] == "bundle":
-                # Order Confirmation
-                send_neworder_confirmation(customer_email, customer_name, session["payment_intent"], metadata["model_name"])
+                logger.info(f"Bundle bought")
+                # Send Confirmation Mail to Client
+                send_neworder_confirmation(customer_email, customer_name, session["payment_intent"], metadata)
 
         # Alert Mi-time manager by mail that a new order has been processed by Stripe
         send_neworder_selfmail(customer_email, customer_name, session["payment_intent"], metadata["model_name"])

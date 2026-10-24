@@ -2,6 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
     {% load static %}
     {% load core_extras %}
+    {% mail_context as mail %}
 <head>
 <!--[if gte mso 9]>
 <xml>
@@ -105,8 +106,8 @@ table, td { color: #7e8f9e; } #u_body a { color: #000000; text-decoration: under
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
   <tr>
     <td style="padding-right: 0px;padding-left: 0px;" align="center">
-      <a href="https://{{site_url}}/" target="_blank">
-      <img align="center" border="0" src="https://{{site_url}}{% static 'core/img/logo-mitime-email.png' %}" alt="Mi&#039; Time Logo" title="Mi&#039; Time Logo" style="outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;display: inline-block !important;border: none;height: auto;float: none;width: 35%;max-width: 203px;" width="203"/>
+      <a href="{{mail.site_url}}/" target="_blank">
+      <img align="center" border="0" src="{{mail.site_url}}/{% static 'core/img/logo-mitime-email.png' %}" alt="Mi&#039; Time Logo" title="Mi&#039; Time Logo" style="outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;display: inline-block !important;border: none;height: auto;float: none;width: 35%;max-width: 203px;" width="203"/>
       </a>
     </td>
   </tr>
@@ -174,7 +175,7 @@ table, td { color: #7e8f9e; } #u_body a { color: #000000; text-decoration: under
       <td style="overflow-wrap:break-word;word-break:break-word;padding:10px;font-family:helvetica,sans-serif;" align="left">
         
   <div style="font-size: 10px; color: #f9deb2; line-height: 140%; text-align: center; word-wrap: break-word;">
-    <p style="line-height: 140%;">Retrouvez toutes les informations sur <a rel="noopener" href="https://{{site_url}}/" target="_blank" style="color: rgb(158, 127, 94);">{{site_url}}</a></p>
+    <p style="line-height: 140%;">Retrouvez toutes les informations sur <a rel="noopener" href="{{mail.site_url}}/" target="_blank" style="color: rgb(158, 127, 94);">{{mail.site_url}}/</a></p>
   </div>
 
       </td>

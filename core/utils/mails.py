@@ -9,10 +9,8 @@ logger = logging.getLogger('__name__')
 def send_html_and_plaintext_mail(mail_address, subject, template_name, template_context = None, attachments = None):
 
     if template_context is None:
+        #void context as default
         template_context = {}
-
-    #default context for admin mails
-    template_context.update({"site_url" : "www.mi-time.fr", "phone_number" : "0783390680", "email": settings.DEFAULT_FROM_EMAIL})
 
     convert_to_html_content =  render_to_string(
         template_name=template_name,

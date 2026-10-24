@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-30 19:04+0200\n"
+"POT-Creation-Date: 2026-10-24 19:03+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -108,6 +108,7 @@ msgid "Django Appointment Service to Mi-time.fr Massage pairing"
 msgstr "Relation entre le Service et le produit associé (massage)"
 
 #: .\core\forms.py:15 .\core\forms.py:37
+#: .\core\templates\appointment\appointment_client_information.html:64
 msgid "Email"
 msgstr "Email"
 
@@ -540,170 +541,221 @@ msgid ""
 "the payment process.\n"
 "    "
 msgstr ""
+"\n"
+"        Votre demande de rendez vous pour %(service_name)s a bien été "
+"envoyée.\n"
+"        Veuillez vous connecter ou créer un compte et procéder au "
+"paiement .\n"
+"    "
 
-#: .\core\templates\appointment\appointment_client_information.html:34
+#: .\core\templates\appointment\appointment_client_information.html:28
+msgctxt "DJA Client Info"
+msgid "Book an appointment"
+msgstr "Prendre rendez-vous"
+
+#: .\core\templates\appointment\appointment_client_information.html:29
 msgctxt "DJA Client Info"
 msgid "Fill out your details"
 msgstr "Vos informations"
 
-#: .\core\templates\appointment\appointment_client_information.html:35
+#: .\core\templates\appointment\appointment_client_information.html:38
+msgid "Contact information"
+msgstr "Informations"
+
+#: .\core\templates\appointment\appointment_client_information.html:39
 msgctxt "DJA Client Info"
-msgid "(* required)"
-msgstr "(* requis)"
+msgid "(* fields are required)"
+msgstr "(* champ requis)"
 
 #: .\core\templates\appointment\appointment_client_information.html:44
+#, python-format
+msgctxt "DJA Client Info"
+msgid "You're booking as <strong>%(fullname)s</strong> (%(email)s)."
+msgstr "Vous réservez en tant que <strong>%(fullname)s</strong> (%(email)s)."
+
+#: .\core\templates\appointment\appointment_client_information.html:48
 msgctxt "DJA Client Info"
 msgid "Already have an account?"
 msgstr "Vous avez déjà un compte ?"
 
-#: .\core\templates\appointment\appointment_client_information.html:45
+#: .\core\templates\appointment\appointment_client_information.html:49
 msgctxt "DJA Client Info"
 msgid "Log in"
 msgstr "Connectez-vous"
 
-#: .\core\templates\appointment\appointment_client_information.html:45
+#: .\core\templates\appointment\appointment_client_information.html:49
 msgctxt "DJA Client Info"
 msgid "for faster booking."
 msgstr "pour une réservation plus rapide !"
 
-#: .\core\templates\appointment\appointment_client_information.html:50
+#: .\core\templates\appointment\appointment_client_information.html:58
 msgctxt "DJA Client Info"
-msgid "Name"
-msgstr "Nom"
+msgid "Full Name"
+msgstr "Nom complet"
 
-#: .\core\templates\appointment\appointment_client_information.html:53
-msgctxt "DJA Client Info"
-msgid "Email"
-msgstr "Email"
-
-#: .\core\templates\appointment\appointment_client_information.html:61
-msgctxt "DJA Client Info"
-msgid "I want to receive an EMAIL reminder 24 hours before this session starts"
-msgstr "Je souhaite recevoir un rappel par email la veille du massage."
-
-#: .\core\templates\appointment\appointment_client_information.html:67
+#: .\core\templates\appointment\appointment_client_information.html:69
 msgid "Phone"
 msgstr "Téléphone"
 
-#: .\core\templates\appointment\appointment_client_information.html:74
+#: .\core\templates\appointment\appointment_client_information.html:76
 msgctxt "DJA Client Info"
 msgid "City and State"
 msgstr "Adresse postale"
 
-#: .\core\templates\appointment\appointment_client_information.html:79
+#: .\core\templates\appointment\appointment_client_information.html:81
 msgctxt "DJA Client Info"
 msgid "Additional Information"
 msgstr "Informations complémentaires"
 
-#: .\core\templates\appointment\appointment_client_information.html:82
+#: .\core\templates\appointment\appointment_client_information.html:84
 msgctxt "DJA Client Info"
 msgid "Additional Information Placeholder"
 msgstr ""
 "Veuillez nous préciser toute allergie ou autre information de santé "
 "pertinente."
 
-#: .\core\templates\appointment\appointment_client_information.html:90
+#: .\core\templates\appointment\appointment_client_information.html:93
 msgctxt "DJA Client Info"
-msgid "Service Details"
-msgstr "Détail du massage"
+msgid "I want to receive an EMAIL reminder 24 hours before this session starts"
+msgstr "Je souhaite recevoir un rappel par email la veille du massage."
 
-#: .\core\templates\appointment\appointment_client_information.html:98
-msgid "at"
-msgstr "à"
-
-#: .\core\templates\appointment\appointment_client_information.html:105
+#: .\core\templates\appointment\appointment_client_information.html:104
 msgctxt "DJA Client Info"
 msgid "Giftcard"
 msgstr "Carte cadeau"
 
-#: .\core\templates\appointment\appointment_client_information.html:107
+#: .\core\templates\appointment\appointment_client_information.html:106
 msgctxt "DJA Client Info"
 msgid "Have a gift card? You can redeem it in the last payment step."
 msgstr ""
 "Vous avez une carte cadeau ? Vous pourrez l'appliquer à la dernière étape de "
 "la réservation"
 
-#: .\core\templates\appointment\appointment_client_information.html:117
+#: .\core\templates\appointment\appointment_client_information.html:111
+#: .\core\templates\appointment\appointments.html:107
 msgctxt "DJA Client Info"
-msgid "Continue"
-msgstr "Continuer"
+msgid "Your appointment"
+msgstr "Votre rendez-vous"
+
+#: .\core\templates\appointment\appointment_client_information.html:114
+#: .\core\templates\appointment\appointments.html:110
+#: .\core\templates\appointment\emails\reminder_email.html:17
+msgid "Service"
+msgstr "Détail du massage"
+
+#: .\core\templates\appointment\appointment_client_information.html:118
+#: .\core\templates\appointment\appointments.html:114
+#: .\core\templates\appointment\emails\reminder_email.html:18
+msgid "Date"
+msgstr ""
+
+#: .\core\templates\appointment\appointment_client_information.html:120
+msgid "at"
+msgstr "à"
 
 #: .\core\templates\appointment\appointment_client_information.html:123
-msgctxt "DJA Client Info"
+#: .\core\templates\appointment\appointments.html:118
+msgid "Duration"
+msgstr "Durée"
+
+#: .\core\templates\appointment\appointment_client_information.html:128
+msgid "Total"
+msgstr ""
+
+#: .\core\templates\appointment\appointment_client_information.html:137
+msgid "Pay"
+msgstr "Payer"
+
+#: .\core\templates\appointment\appointment_client_information.html:142
 msgid "Down Payment"
 msgstr "Acompte"
 
-#: .\core\templates\appointment\appointment_client_information.html:132
-#: .\core\templates\appointment\appointment_client_information.html:138
-msgctxt "DJA Client Info"
-msgid "Book"
-msgstr "Réserver"
+#: .\core\templates\appointment\appointment_client_information.html:149
+msgid "Finish"
+msgstr "Valider"
 
-#: .\core\templates\appointment\appointment_client_information.html:196
-#: .\core\templates\appointment\appointment_client_information.html:222
+#: .\core\templates\appointment\appointment_client_information.html:218
+#: .\core\templates\appointment\appointment_client_information.html:237
 msgid "Please enter a valid email address"
 msgstr "Veuillez entrer une adresse email valide"
 
-#: .\core\templates\appointment\appointments.html:19
+#: .\core\templates\appointment\appointments.html:25
+msgid "Book an appointment"
+msgstr "Prendre rendez-vous"
+
+#: .\core\templates\appointment\appointments.html:29
 msgid ""
 "Check out our availability and book the date and time that works for you"
 msgstr ""
 "Vérifiez la disponibilité et prenez le rendez-vous à la date qui vous "
 "convient."
 
-#: .\core\templates\appointment\appointments.html:27
-msgid "Select a date and time"
-msgstr "Choisissez le jour et l'heure"
-
-#: .\core\templates\appointment\appointments.html:30
+#: .\core\templates\appointment\appointments.html:49
 msgid "Timezone"
 msgstr "Fuseau Horaire"
 
-#: .\core\templates\appointment\appointments.html:51
+#: .\core\templates\appointment\appointments.html:56
+msgid "Select a date and time"
+msgstr "Choisissez le jour et l'heure"
+
+#: .\core\templates\appointment\appointments.html:61
+msgid "Choose a date"
+msgstr "Choisissez une date"
+
+#: .\core\templates\appointment\appointments.html:65
+msgid "Choose a time"
+msgstr "Choisissez une heure"
+
+#: .\core\templates\appointment\appointments.html:80
 msgid "Reason for rescheduling"
 msgstr "Raison pour le report"
 
-#: .\core\templates\appointment\appointments.html:66
+#: .\core\templates\appointment\appointments.html:94
 msgid "Please select a staff member"
 msgstr "Veuillez choisir votre masseuse"
 
-#: .\core\templates\appointment\appointments.html:84
-msgid "Next"
-msgstr "Suivant"
+#: .\core\templates\appointment\appointments.html:122
+msgid "Price"
+msgstr "Prix"
 
-#: .\core\templates\appointment\appointments.html:124
+#: .\core\templates\appointment\appointments.html:127
+msgctxt "DJA Client Info"
+msgid "Proceed"
+msgstr "Continuer"
+
+#: .\core\templates\appointment\appointments.html:160
 msgid "Request next available slot"
 msgstr "Prochaine disponibilité"
 
-#: .\core\templates\appointment\appointments.html:125
+#: .\core\templates\appointment\appointments.html:161
 msgid "No staff member selected."
 msgstr "Pas de masseur choisi."
 
-#: .\core\templates\appointment\appointments.html:126
+#: .\core\templates\appointment\appointments.html:162
 msgid "Please select a time slot before submitting the appointment request."
 msgstr "Veuillez choisir un créneau avant d'envoyer la demande de rendez-vous."
 
-#: .\core\templates\appointment\appointments.html:127
+#: .\core\templates\appointment\appointments.html:163
 msgid "Date is in the past."
 msgstr "La date est passée"
 
-#: .\core\templates\appointment\appointments.html:128
+#: .\core\templates\appointment\appointments.html:164
 msgid "Please select a date and time"
 msgstr "Veuillez choisir le jour et l'heure"
 
-#: .\core\templates\appointment\appointments.html:129
+#: .\core\templates\appointment\appointments.html:165
 msgid "Today"
 msgstr "Aujourd'hui"
 
-#: .\core\templates\appointment\appointments.html:130
+#: .\core\templates\appointment\appointments.html:166
 msgid "Next month"
 msgstr "Mois suivant"
 
-#: .\core\templates\appointment\appointments.html:131
+#: .\core\templates\appointment\appointments.html:167
 msgid "Previous month"
 msgstr "Mois précédent"
 
-#: .\core\templates\appointment\appointments.html:132
+#: .\core\templates\appointment\appointments.html:168
 msgid "Next available date"
 msgstr "Prochaine disponibilité "
 
@@ -866,32 +918,32 @@ msgstr ""
 
 #: .\core\templates\appointment\emails\new_appointment_admin_notification.html:9
 msgid "New Appointment Request"
-msgstr "Date du rendez-vous"
+msgstr "Nouvelle Reservation"
 
 #: .\core\templates\appointment\emails\new_appointment_admin_notification.html:11
 #: .\core\templates\appointment\emails\reminder_email.html:11
 msgid "Dear"
-msgstr ""
+msgstr "Cher"
 
 #: .\core\templates\appointment\emails\new_appointment_admin_notification.html:14
 msgid "You have received a new appointment request. Here are the details:"
-msgstr ""
+msgstr "Vous avez reçu une nouvelle demande de rendez-vous. Voici les détails :"
 
 #: .\core\templates\appointment\emails\new_appointment_admin_notification.html:16
 msgid "A new appointment request has been received for"
-msgstr ""
+msgstr "Une nouvelle demande de rendez-vous a étée reçue pour"
 
 #: .\core\templates\appointment\emails\new_appointment_admin_notification.html:16
 msgid "Here are the details:"
-msgstr ""
+msgstr "Voici les détails :"
 
 #: .\core\templates\appointment\emails\new_appointment_admin_notification.html:19
 msgid "Client Name"
-msgstr ""
+msgstr "Nom du client"
 
 #: .\core\templates\appointment\emails\new_appointment_admin_notification.html:20
 msgid "Service Requested"
-msgstr "Détail du massage"
+msgstr "Massage demandé"
 
 #: .\core\templates\appointment\emails\new_appointment_admin_notification.html:21
 msgid "Appointment Date"
@@ -900,45 +952,54 @@ msgstr "Date du rendez-vous"
 #: .\core\templates\appointment\emails\new_appointment_admin_notification.html:22
 #: .\core\templates\appointment\emails\reminder_email.html:19
 msgid "Time"
-msgstr "Fuseau Horaire"
+msgstr "Heure"
 
 #: .\core\templates\appointment\emails\new_appointment_admin_notification.html:24
 msgid "Contact Details"
-msgstr "Nous contacter"
+msgstr "Informations de contact"
 
 #: .\core\templates\appointment\emails\new_appointment_admin_notification.html:25
 msgid "Additional Info"
 msgstr "Informations complémentaires"
 
-#: .\core\templates\appointment\emails\new_appointment_admin_notification.html:36
+#: .\core\templates\appointment\emails\new_appointment_admin_notification.html:28
+#, fuzzy
+#| msgid "You have received a new appointment request. Here are the details:"
+msgid "Please review the appointment request and take the necessary action."
+msgstr ""
+"Vous avez reçu une nouvelle demande de rendez-vous. Voici les détails :"
+
+#: .\core\templates\appointment\emails\new_appointment_admin_notification.html:30
+msgid "Please ensure that"
+msgstr ""
+
+#: .\core\templates\appointment\emails\new_appointment_admin_notification.html:30
+msgid "reviews this appointment request and takes the necessary action."
+msgstr ""
+
+#: .\core\templates\appointment\emails\new_appointment_admin_notification.html:33
 #: .\core\templates\appointment\emails\reminder_email.html:32
 msgid ""
 "This is an automated message. Please do not reply directly to this email."
 msgstr ""
+"L'envoi de ce message est automatisé. Prière de ne pas répondre directement "
+"à cet email."
 
 #: .\core\templates\appointment\emails\reminder_email.html:9
 msgid "Appointment Reminder"
-msgstr "Date du rendez-vous"
+msgstr "Rappel du rendez-vous"
 
 #: .\core\templates\appointment\emails\reminder_email.html:13
 msgid "Dear Administrator,"
-msgstr ""
+msgstr "Cher Manager,"
 
 #: .\core\templates\appointment\emails\reminder_email.html:15
 msgid "This is a reminder for your upcoming appointment."
-msgstr ""
-
-#: .\core\templates\appointment\emails\reminder_email.html:17
-msgid "Service"
-msgstr "Détail du massage"
-
-#: .\core\templates\appointment\emails\reminder_email.html:18
-msgid "Date"
-msgstr ""
+msgstr "Voici un rappel pour votre rendez-vous à venir"
 
 #: .\core\templates\appointment\emails\reminder_email.html:20
 msgid "Location"
-msgstr ""
+msgstr "Lieu"
 
 #: .\core\templates\appointment\enter_verification_code.html:10
 #: .\core\templates\appointment\enter_verification_code.html:11
@@ -1435,77 +1496,77 @@ msgstr ""
 "Mot de passe oublié ? Entrez votre adresse email et nous vous enverrons les "
 "instructions pour en créer un nouveau."
 
-#: .\core\templatetags\core_extras.py:20
+#: .\core\templatetags\core_extras.py:22
 msgctxt "Duration Operator"
 msgid "w"
 msgid_plural "w"
 msgstr[0] "w"
 msgstr[1] "w"
 
-#: .\core\templatetags\core_extras.py:21
+#: .\core\templatetags\core_extras.py:23
 msgctxt "Duration Operator"
 msgid "d"
 msgid_plural "d"
 msgstr[0] "d"
 msgstr[1] "d"
 
-#: .\core\templatetags\core_extras.py:22
+#: .\core\templatetags\core_extras.py:24
 msgctxt "Duration Operator"
 msgid "h"
 msgid_plural "h"
 msgstr[0] "h"
 msgstr[1] "h"
 
-#: .\core\templatetags\core_extras.py:23
+#: .\core\templatetags\core_extras.py:25
 msgctxt "Duration Operator"
 msgid "min"
 msgid_plural "min"
 msgstr[0] "min"
 msgstr[1] "min"
 
-#: .\core\templatetags\core_extras.py:24
+#: .\core\templatetags\core_extras.py:26
 msgctxt "Duration Operator"
 msgid "s"
 msgid_plural "s"
 msgstr[0] "s"
 msgstr[1] "s"
 
-#: .\core\templatetags\core_extras.py:28
+#: .\core\templatetags\core_extras.py:30
 msgctxt "Duration Operator"
 msgid "week"
 msgid_plural "weeks"
 msgstr[0] "semaine"
 msgstr[1] "semaines"
 
-#: .\core\templatetags\core_extras.py:29
+#: .\core\templatetags\core_extras.py:31
 msgctxt "Duration Operator"
 msgid "day"
 msgid_plural "days"
 msgstr[0] "jour"
 msgstr[1] "jours"
 
-#: .\core\templatetags\core_extras.py:30
+#: .\core\templatetags\core_extras.py:32
 msgctxt "Duration Operator"
 msgid "hour"
 msgid_plural "hours"
 msgstr[0] "heure"
 msgstr[1] "heures"
 
-#: .\core\templatetags\core_extras.py:31
+#: .\core\templatetags\core_extras.py:33
 msgctxt "Duration Operator"
 msgid "minute"
 msgid_plural "minutes"
 msgstr[0] "minute"
 msgstr[1] "minutes"
 
-#: .\core\templatetags\core_extras.py:32
+#: .\core\templatetags\core_extras.py:34
 msgctxt "Duration Operator"
 msgid "second"
 msgid_plural "seconds"
 msgstr[0] "seconde"
 msgstr[1] "secondes"
 
-#: .\core\templatetags\core_extras.py:58
+#: .\core\templatetags\core_extras.py:60
 #, python-format
 msgctxt "Duration Operator"
 msgid "%(name)s"
@@ -1522,3 +1583,37 @@ msgstr "Vos informations ont bien été mises à jour."
 msgctxt "Form Validation"
 msgid "There was an error in your submission :"
 msgstr "Vous avez une erreur dans votre formulaire :"
+
+#~ msgctxt "DJA Client Info"
+#~ msgid "(* required)"
+#~ msgstr "(* champ requis)"
+
+#~ msgctxt "DJA Client Info"
+#~ msgid "Name"
+#~ msgstr "Nom"
+
+#~ msgctxt "DJA Client Info"
+#~ msgid "Email"
+#~ msgstr "Email"
+
+#~ msgctxt "DJA Client Info"
+#~ msgid "Service Details"
+#~ msgstr "Détail du massage"
+
+#~ msgctxt "DJA Client Info"
+#~ msgid "Continue"
+#~ msgstr "Continuer"
+
+#~ msgctxt "DJA Client Info"
+#~ msgid "Down Payment"
+#~ msgstr "Acompte"
+
+#~ msgctxt "DJA Client Info"
+#~ msgid "Book"
+#~ msgstr "Réserver"
+
+#~ msgid "Next"
+#~ msgstr "Suivant"
+
+#~ msgid "for faster booking."
+#~ msgstr "pour une réservation plus rapide !"

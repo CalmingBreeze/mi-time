@@ -1,0 +1,16 @@
+{% extends "core/mail/new_order_client_confirm.html" %}        
+{% load static %}
+{% load core_extras %}
+
+{% block orderconfirmmsg %}
+    <p style="line-height: 150%;"><span style="color: rgb(158, 127, 94); line-height: 24px;">Je vous remercie pour votre confiance et votre réservation.<br>Vous trouverez ci-dessous les détails de votre réservation.<br></span></p>
+    <p style="line-height: 150%;">&nbsp;</p>
+    {%if product %}
+    <p style="line-height: 150%;"><span style="color: rgb(158, 127, 94); line-height: 24px;"><u>Massage :</u> <strong>{{product.name}}</strong></span></p>
+    {% endif %}
+    {%if appointment %}
+    <p style="line-height: 150%;"><span style="color: rgb(158, 127, 94); line-height: 24px;"><u>Date :</u> <strong>{{appointment_request.date}}</strong></span></p>
+    <p style="line-height: 150%;"><span style="color: rgb(158, 127, 94); line-height: 24px;"><u>Horaire :</u> <strong>{{appointment_request.start_time}}</strong></span></p>
+    <p style="line-height: 150%;"><span style="color: rgb(158, 127, 94); line-height: 24px;"><u>Rappel email:</u> <strong>{{appointment.want_reminder|yesno:"Oui,Non"}}</strong></span></p>
+    {% endif %}
+{% endblock %}

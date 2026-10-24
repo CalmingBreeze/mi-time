@@ -14,5 +14,8 @@ def menu_processor(request):
     first_practice = Practice.objects.first()
     return {'pages': pages, 'menu_pages': menu_pages, 'footer_links': footer_links, 'legal_links': legal_links, 'practices_count': practices_count, 'first_practice': first_practice}
 
-def gmap_api_key_processor(request):
-    return {'gmap_api_key': settings.GMAP_API_KEY}
+def settings_processor(request):
+    return {
+        'gmap_api_key': settings.GMAP_API_KEY,
+        'site_url': settings.SITE_URL,
+    }

@@ -15,9 +15,9 @@ const calendar = new FullCalendar.Calendar(calendarEl, {
     locale: locale,
     firstDay: firstDayOfWeek, //Use locale format from django
     headerToolbar: {
-        left: '',
-        center: 'prev,title,next',
-        right:''
+        left: 'prev',
+        center: 'title',
+        right: 'next'
     },
     buttonText: {
         today: todayBtnText,
@@ -288,7 +288,6 @@ function getAvailableSlots(selectedDate, staffId = null) {
                 const selectedD = selectedDateObj.toDate();
                 const today = new Date();
                 today.setHours(0, 0, 0, 0);
-                console.log(selectedDateObj, selectedD)
 
                 if (selectedD < today) {
                     // Show an error message
@@ -336,7 +335,8 @@ function getAvailableSlots(selectedDate, staffId = null) {
 
                     // Continue with the existing logic
                     const selectedSlot = $(this);
-                    $('#service-datetime-chosen').text(data.date_chosen + ' ' + selectedSlot.text());
+                    $('#service-datetime-chosen').text(data.date_chosen)
+                        .append($('<span class="djappt-summary-time">').text(selectedSlot.text()));
                     // Pass isoformat datetime from selected timeslot
                     $('#service-datetime-chosen').data('timeslot', selectedSlot.data("timeslot"));
                 });
@@ -404,7 +404,7 @@ function requestNextAvailableSlot(serviceId) {
 
             // Make the calendar go to next available date.
             if(dateToJump) {
-                //console.log('Jump to next available day : date :', dateToJump)
+                console.log('Jump to next available date :', dateToJump)
                 jumpToDate(dateToJump.format('YYYY-MM-DD'))
             }
         }

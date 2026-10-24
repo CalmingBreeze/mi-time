@@ -28,8 +28,9 @@ SECRET_KEY = config("SECRET_KEY")
 DEBUG = config("DEBUG", default=False, cast=bool)
 
 WEBSITE_NAME = config("WEBSITE_NAME") # Mi-time.fr
-DOMAIN = config("DOMAIN") # mi-time.fr
+DOMAIN = config("DOMAIN") # www.mi-time.fr
 PROTOCOL = config("PROTOCOL") # https
+SITE_URL = f"{config("PROTOCOL")}://{config("DOMAIN")}"
 
 GMAP_API_KEY = config("GMAP_API_KEY")
 STRIPE_PUBLIC_KEY = config("STRIPE_PUBLIC_KEY")
@@ -115,7 +116,7 @@ TEMPLATES = [
 # App CORE custom context processors
 TEMPLATES[0]['OPTIONS']['context_processors'].append("core.context_processors.siteconfig_processor")
 TEMPLATES[0]['OPTIONS']['context_processors'].append("core.context_processors.menu_processor")
-TEMPLATES[0]['OPTIONS']['context_processors'].append("core.context_processors.gmap_api_key_processor")
+TEMPLATES[0]['OPTIONS']['context_processors'].append("core.context_processors.settings_processor")
 
 WSGI_APPLICATION = 'Mitime.wsgi.application'
 
