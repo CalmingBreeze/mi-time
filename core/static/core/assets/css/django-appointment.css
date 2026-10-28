@@ -1,6 +1,7 @@
 .djappt {
-  --djappt-accent: #0C354D;
+  --djappt-accent: #9E7F5E;
   --djappt-accent-soft: #7FBAB4;
+  --djappt-ink: #9E7F5E;
   --djappt-ink-soft: #F9DEB2;
 }
 .djappt h2 {
@@ -23,10 +24,17 @@
   height: 2rem;
   font-size: 1.2rem;
 }
+.djappt .djappt-step {
+  color: var(--djappt-accent-soft);
+  font-size: 1.1rem;
+}
+.djappt .djappt-card-title {
+  font-size: 1.4rem;
+}
 .djappt #staff_id {
   padding: 0.25rem 1rem;
-  color: var(--djappt-ink);
-  background-color: var(--djappt-accent-soft);
+  color: var(--djappt-accent-contrast);
+  background-color: var(--djappt-ink);
   font-weight: 700;
 }
 .djappt .djappt-booking .fc .fc-toolbar-title {
@@ -38,6 +46,9 @@
   justify-content: space-between;
   align-items: center;
 }
+.djappt .fc-toolbar-chunk .fc-toolbar-title {
+  text-align: center;
+}
 .djappt .fc td, .djappt .fc th {
   vertical-align: middle;
 }
@@ -47,14 +58,22 @@
 .djappt .fc-col-header-cell-cushion {
   border-bottom: none;
 }
-.djappt .djangoAppt_date_chosen {
-  font-size: 1.5rem;
-}
 .djappt .djappt-booking .fc .selected-cell .fc-daygrid-day-number {
   border: 2px solid var(--djappt-ink-soft);
 }
+.djappt .djappt-booking .fc .selected-cell a:hover {
+  color: var(--djappt-accent-soft) !important;
+}
+.djappt .djappt-booking .djangoAppt_appointment-slot {
+  font-size: 1.1rem;
+}
 .djappt .djappt-booking .djangoAppt_btn-request-next-slot {
   background-color: var(--djappt-accent-soft);
+}
+.djappt .djangoAppt_date_chosen {
+  font-size: 1.5rem;
+  color: var(--djappt-accent);
+  text-transform: capitalize;
 }
 .djappt .djappt-summary > div {
   gap: inherit;
@@ -69,11 +88,17 @@
 .djappt .djappt-summary dt {
   font-size: 1.1rem;
 }
+.djappt .btn-submit-appointment {
+  background-color: var(--djappt-accent-soft);
+}
+.djappt .service-datetime-chosen {
+  text-transform: capitalize;
+}
 .djappt .djappt-notice {
   padding: 0.25rem 0.75rem;
 }
-.djappt .djappt-form .form-label {
-  color: var(--djappt-accent);
+.djappt .djappt-form .form-label, .djappt .djappt-form .form-check-label, .djappt .djappt-form .giftcard-helper {
+  color: var(--djappt-muted);
 }
 .djappt .djappt-form .form-control {
   width: 100%;

@@ -12,10 +12,6 @@ from django.utils import timezone
 from .addtext2pdf import AddTextToPDF
 from .utils.mails import send_html_and_plaintext_mail
 
-# from django.core.mail import EmailMessage, EmailMultiAlternatives
-# from django.template.loader import render_to_string
-# from django.utils.html import strip_tags
-
 import logging
 logger = logging.getLogger('__name__')
 
@@ -23,7 +19,8 @@ stripe.api_key = settings.STRIPE_SECRET_KEY
 
 class CreateCheckoutSessionView(View):
     def get_domain_url(self):
-        return "http://127.0.0.1:8000" if settings.DEBUG else "https://www.mi-time.fr"
+        # return "http://127.0.0.1:8000" if settings.DEBUG else "https://www.mi-time.fr"
+        return settings.SITE_URL
     
     def apply_discount_event(self, product):
         """
@@ -75,9 +72,11 @@ class CreateCheckoutSessionView(View):
         discount_event = self.apply_discount_event(product)
 
         #generate metadata
-        product_metadata = self.generate_metadatas(product)
+        order_metadata = self.generate_metadatas(product)
         #add appointment to meta data to change status to paid when done
-        product_metadata["paymentinfo_id"] = self.kwargs["object_id"]
+        order_metadata["paymentinfo_id"] = self.kwargs["object_id"]
+        #add current logged user to metadata
+        order_metadata["buyer_user_id"] = request.user.id if request.user else None
 
         #create stripe checkout object
         checkout_session = stripe.checkout.Session.create(
@@ -93,7 +92,7 @@ class CreateCheckoutSessionView(View):
             discounts = discount_event,
             success_url=domain + reverse("stripe:success"),
             cancel_url=domain + reverse("stripe:cancel"),
-            metadata=product_metadata
+            metadata=order_metadata
         )
         return redirect(checkout_session.url)
 
@@ -110,7 +109,7 @@ class CreateCheckoutSessionView(View):
         discount_event = self.apply_discount_event(product)
 
         #generate metadata
-        product_metadata = self.generate_metadatas(product)
+        order_metadata = self.generate_metadatas(product)
 
         #create stripe checkout object
         checkout_session = stripe.checkout.Session.create(
@@ -126,7 +125,7 @@ class CreateCheckoutSessionView(View):
             discounts = discount_event,
             success_url=domain + reverse("stripe:success"),
             cancel_url=domain + reverse("stripe:cancel"),
-            metadata=product_metadata
+            metadata=order_metadata
         )
         return redirect(checkout_session.url)
 
@@ -157,7 +156,7 @@ def fetch_product_infos(app_origin, model_name, object_id):
 
         return product
 
-def fetch_appointment_infos(object_id):
+def fetch_appointment_infos(paymentinfo_id):
         """
         Retrieve an appointment from its paymentinfo_id
 
@@ -166,7 +165,7 @@ def fetch_appointment_infos(object_id):
         """
         
         model = apps.get_model('appointment', 'PaymentInfo')
-        paymentinfo = model.objects.get(id=object_id)
+        paymentinfo = model.objects.get(id=paymentinfo_id)
         appointment = paymentinfo.appointment
 
         return appointment
@@ -236,7 +235,7 @@ def send_neworder_confirmation(customer_email, customer_name, stripe_payment_id,
 
     # Fetch massage infos
     if order_type == "massage":
-        product = fetch_product_infos('appointment', 'PaymentInfo', metadata["object_id"])
+        product = fetch_product_infos('appointment', 'PaymentInfo', metadata["paymentinfo_id"])
         appointment = fetch_appointment_infos(metadata["paymentinfo_id"])
         context["product"] = product
         context["appointment"] = appointment
@@ -252,7 +251,7 @@ def send_neworder_confirmation(customer_email, customer_name, stripe_payment_id,
     except Exception as e:
         logger.error("Stripe : send_neworder_confirmation : Error : %s", e)
 
-def send_neworder_selfmail(customer_email, customer_name, stripe_payment_id, metadata):
+def send_neworder_selfmail(customer_email, customer_name, stripe_payment_id, metadatas = None, discounts = None):
     """
         Send an automated mail when a command is validated to facilitate manual handling of appointments until automation is online.
     """
@@ -260,7 +259,7 @@ def send_neworder_selfmail(customer_email, customer_name, stripe_payment_id, met
     # Template
     subject = f"[à traiter] Nouvelle commande : {customer_name} - {customer_email} - {stripe_payment_id}"
     template_name = "core/mail/new_order_validated.html"
-    context = {"customer_email": customer_email,"customer_name" : customer_name, "stripe_payment_id" : stripe_payment_id}
+    context = {"customer_email": customer_email, "customer_name": customer_name, "stripe_payment_id": stripe_payment_id, "metadatas" : metadatas, "discounts": discounts}
 
     try:
         send_html_and_plaintext_mail(
@@ -314,9 +313,10 @@ def stripe_webhook(request):
         customer_email = session["customer_details"]["email"]
         customer_name = session["customer_details"]["name"]
         payment_intent = session["payment_intent"]
+        discounts = session["discounts"]
         metadata = session["metadata"]
 
-        logger.debug(f"Webhook triggered : {session}, {customer_email}, {payment_intent}, {metadata}")
+        # logger.debug(f"Webhook triggered : {session}, {customer_email}, {payment_intent}, {metadata}")
 
         if metadata :
         # Update payment status
@@ -325,7 +325,7 @@ def stripe_webhook(request):
                 # Set appoint status to paid
                 confirm_massage_paid(metadata["paymentinfo_id"])
                 # Send Confirmation Mail to Client
-                send_neworder_confirmation(customer_email, customer_name, session["payment_intent"], metadata)
+                send_neworder_confirmation(customer_email, customer_name, payment_intent, metadata)
 
             #Handle Giftcard generation workflow (new coupon, pdf generation, and email)
             if metadata["model_name"] == "giftcard":
@@ -352,10 +352,10 @@ def stripe_webhook(request):
             if metadata["model_name"] == "bundle":
                 logger.info(f"Bundle bought")
                 # Send Confirmation Mail to Client
-                send_neworder_confirmation(customer_email, customer_name, session["payment_intent"], metadata)
+                send_neworder_confirmation(customer_email, customer_name, payment_intent, metadata)
 
         # Alert Mi-time manager by mail that a new order has been processed by Stripe
-        send_neworder_selfmail(customer_email, customer_name, session["payment_intent"], metadata["model_name"])
+        send_neworder_selfmail(customer_email, customer_name, payment_intent, metadata, discounts)
 
             
     return HttpResponse(status=200)

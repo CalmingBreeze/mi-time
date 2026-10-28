@@ -635,7 +635,7 @@ msgstr ""
 #: .\core\templates\appointment\appointments.html:107
 msgctxt "DJA Client Info"
 msgid "Your appointment"
-msgstr "Votre rendez-vous"
+msgstr "Rendez-vous"
 
 #: .\core\templates\appointment\appointment_client_information.html:114
 #: .\core\templates\appointment\appointments.html:110
@@ -725,7 +725,7 @@ msgstr "Continuer"
 
 #: .\core\templates\appointment\appointments.html:160
 msgid "Request next available slot"
-msgstr "Prochaine disponibilité"
+msgstr "Prochain créneau"
 
 #: .\core\templates\appointment\appointments.html:161
 msgid "No staff member selected."

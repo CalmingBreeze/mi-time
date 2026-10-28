@@ -1,7 +1,7 @@
 .djappt {
-    // --djappt-accent: #{_palette(accent1)};
-    --djappt-accent: #{_palette(accent5)};
+    --djappt-accent: #{_palette(accent1)};
     --djappt-accent-soft: #{_palette(accent3)};
+    --djappt-ink: #{_palette(accent1)};
     --djappt-ink-soft: #{_palette(accent2)};
 
     // --djappt-accent: #7cb3ff;
@@ -41,15 +41,20 @@
         font-size: 1.2rem;
     }
 
-    // .djappt-card-title {
-    //     margin: 0;
-    // }
+    .djappt-step {
+        color: var(--djappt-accent-soft);
+        font-size: 1.1rem;
+    }
+
+    .djappt-card-title {
+        font-size: 1.4rem;
+    }
 
     //Part 1
     #staff_id {
         padding: .25rem 1rem;
-        color: var(--djappt-ink);
-        background-color: var(--djappt-accent-soft);
+        color: var(--djappt-accent-contrast);
+        background-color: var(--djappt-ink);
         font-weight: _font(weight-bold-alt);
     }
 
@@ -65,6 +70,10 @@
             justify-content: space-between;
             align-items: center;
         }
+
+        .fc-toolbar-title {
+            text-align: center;
+        }
     }
 
     .fc td, .fc th {
@@ -78,20 +87,30 @@
     .fc-col-header-cell-cushion {
         border-bottom: none;
     }
-
-    .djangoAppt_date_chosen {
-        font-size: 1.5rem;
-    }
-
+    
     .djappt-booking .fc .selected-cell .fc-daygrid-day-number {
         border: 2px solid var(--djappt-ink-soft);
     }
 
+    .djappt-booking .fc .selected-cell a:hover {
+        color: var(--djappt-accent-soft) !important; //not ideal. Need to refactor template to avoid using important.
+    }
+
+    .djappt-booking .djangoAppt_appointment-slot {
+        font-size: 1.1rem;
+    }
+    
     .djappt-booking .djangoAppt_btn-request-next-slot {
         background-color: var(--djappt-accent-soft);
     }
-
+    
     //Part 3
+    .djangoAppt_date_chosen {
+        font-size: 1.5rem;
+        color: var(--djappt-accent);
+        text-transform: capitalize;
+    }
+
     .djappt-summary > div {
         // flex-direction: column;
         gap: inherit;
@@ -109,14 +128,24 @@
         font-size: 1.1rem;
     }
 
+    .btn-submit-appointment {
+        background-color: var(--djappt-accent-soft);
+    }
+
+    //Appointment details
+    .service-datetime-chosen {
+        text-transform: capitalize;
+    }
+
     //Client Info
     .djappt-notice {
         padding: .25rem .75rem;
     }
 
     .djappt-form {
-        .form-label {
-            color: var(--djappt-accent)
+        .form-label, .form-check-label, .giftcard-helper {
+            // color: var(--djappt-accent);
+            color: var(--djappt-muted);
         }
 
         .form-control {

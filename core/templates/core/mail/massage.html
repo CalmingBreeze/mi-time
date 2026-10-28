@@ -1,9 +1,10 @@
 {% extends "core/mail/new_order_client_confirm.html" %}        
 {% load static %}
+{% load i18n %}
 {% load core_extras %}
 
 {% block orderconfirmmsg %}
-    <p style="line-height: 150%;"><span style="color: rgb(158, 127, 94); line-height: 24px;">Je vous remercie pour votre confiance et votre réservation.<br>Vous trouverez ci-dessous les détails de votre réservation.<br></span></p>
+    <p style="line-height: 150%;"><span style="color: rgb(158, 127, 94); line-height: 24px;">Je vous remercie pour votre confiance et votre réservation.<br>Retrouvez ci-dessous les détails du rendez-vous.<br></span></p>
     <p style="line-height: 150%;">&nbsp;</p>
     {%if product %}
     <p style="line-height: 150%;"><span style="color: rgb(158, 127, 94); line-height: 24px;"><u>Massage :</u> <strong>{{product.name}}</strong></span></p>

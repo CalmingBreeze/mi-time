@@ -79,6 +79,9 @@ $(document).ready(function () {
     dayEl : the day element in the calendar
 */ 
 function selectDate(date, dayEl = null) {
+    //Always disable submit on date select.
+    $('.btn-submit-appointment').attr('disabled', 'disabled');
+
     const day = date.getDay();
 
     if (nonWorkingDays.includes(day)) {

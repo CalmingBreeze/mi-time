@@ -7,9 +7,41 @@
     <p style="line-height: 150%;">&nbsp;</p>
     <p style="line-height: 150%;"><span style="color: rgb(158, 127, 94); line-height: 24px;">Une nouvelle commande vient d'&ecirc;tre valid&eacute;e !</span></p>
     <p style="line-height: 150%;">&nbsp;</p>
-    <p style="line-height: 150%;"><span style="color: rgb(158, 127, 94); line-height: 24px;"><u>Info Stripe :</span></p>
+    <p style="line-height: 150%;"><span style="color: rgb(158, 127, 94); line-height: 24px;"><u>Info Stripe :</u></span></p>
     <p style="line-height: 150%;"><span style="color: rgb(158, 127, 94); line-height: 24px;"><u>Client :</u> <strong>{{customer_name}}</strong></span></p>
     <p style="line-height: 150%;"><span style="color: rgb(158, 127, 94); line-height: 24px;"><u>Email :</u> <strong>{{customer_email}}</strong></span></p>
-    <p style="line-height: 150%;"><span style="color: rgb(158, 127, 94); line-height: 24px;"><u>PaymentIntent ID :</u> <strong>{{stripe_payment_id}}</strong></span></p>
+    {% if metadatas.model_name %}
+    <p style="line-height: 150%;"><span style="color: rgb(158, 127, 94); line-height: 24px;"><u>Info Stripe :</u></span></p>
+    <p style="line-height: 150%;"><span style="color: rgb(158, 127, 94); line-height: 24px;"><u>Type d'achat :</u> <strong>
+        {% if metadatas.model_name == 'massage' %}
+            Massage
+        {% elif metadatas.model_name == 'bundle' %}
+            Forfait
+        {% elif metadatas.model_name == 'giftcard' %}
+            Carte Cadeau
+        {% else %}
+            Inconnu ! Erreur à analyser !
+        {% endif %}
+    </strong></span></p>
+    {% endif %}
     <p style="line-height: 150%;">&nbsp;</p>
+    {% if discounts %}
+        {% for discount in discounts %}
+            {% if discount.coupon %}
+            <p style="line-height: 150%;"><span style="color: rgb(158, 127, 94); line-height: 24px;"><u>Promotion calendaire :</u></span></p>
+            <p style="line-height: 150%;"><span style="color: rgb(158, 127, 94); line-height: 24px;"><u>Réduction :</u> <strong>{{discount.coupon}}</strong></span></p>
+            <p style="line-height: 150%;">&nbsp;</p>
+            {% endif %}
+            {% if discount.promotion_code %}
+            <p style="line-height: 150%;"><span style="color: rgb(158, 127, 94); line-height: 24px;"><u>Carte cadeau :</u></span></p>
+            <p style="line-height: 150%;"><span style="color: rgb(158, 127, 94); line-height: 24px;"><u>Promotion Code ID :</u> <strong>{{discount.promotion_code}}</strong></span></p>
+            <p style="line-height: 150%;">&nbsp;</p>
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+    {% if stripe_payment_id %}
+    <p style="line-height: 150%;"><span style="color: rgb(158, 127, 94); line-height: 24px;"><u>Paiement :</u> CB</span></p>
+    <p style="line-height: 150%;"><span style="color: rgb(158, 127, 94); line-height: 24px;"><u>PaymentIntent ID :</u> <strong>{{stripe_payment_id}}</strong></span></p>
+    {% endif %}
+    
 {% endblock %} 

@@ -1,6 +1,7 @@
 {% extends "core/mail/base.html" %}        
 
 {% load static %}
+{% load i18n %}
 {% load core_extras %}
 
 {% block content %} 
@@ -10,7 +11,7 @@
     {% block orderconfirmmsg %}
     {% endblock %}
     <p style="line-height: 150%;">&nbsp;</p>
-    <p style="line-height: 150%;"><span style="color: rgb(158, 127, 94); line-height: 24px;">Pour toute question, n'h&eacute;sitez pas &agrave; me contacter &agrave; cette adresse ou par t&eacute;l&eacute;phone au {{mail.siteconfig.header_mobile|phone_format:'spaced'}}.</span></p>
+    <p style="line-height: 150%;"><span style="color: rgb(158, 127, 94); line-height: 24px;">Pour toute question, n'h&eacute;sitez pas &agrave; me contacter &agrave; cette adresse <strong><a href="mailto:{{mail.siteconfig.site_email}}">{{mail.siteconfig.site_email}}</a></strong> ou par t&eacute;l&eacute;phone au <strong>{{mail.siteconfig.header_mobile|phone_format:'spaced'}}</strong>.</span></p>
     <p style="line-height: 150%;">&nbsp;</p>
     <p style="line-height: 150%;"><span style="color: rgb(158, 127, 94); line-height: 24px;">Au plaisir de vous recevoir,</span><br><span style="color: rgb(158, 127, 94); line-height: 24px;">Mireille</span></p>
     <p style="line-height: 150%;">&nbsp;</p>

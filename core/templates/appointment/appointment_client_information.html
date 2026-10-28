@@ -102,7 +102,7 @@
                 <section class="service-description-and-pay">
                     <aside class="djappt-card djappt-aside">
                         <h2 class="djappt-card-title">{% trans "Giftcard" context "DJA Client Info" %}</h2>
-                        <div>
+                        <div class="giftcard-helper">
                             {% trans "Have a gift card? You can redeem it in the last payment step." context "DJA Client Info" %}
                         </div>
                     </aside>
@@ -134,7 +134,7 @@
                             <div class="d-grid gap-2 service-payment payment-options">
                                 <button type="submit" class="btn djappt-btn djappt-btn-primary btn-pay-full"
                                         name="payment_type" value="full">
-                                    {% trans "Pay" %}
+                                        {% trans "Proceed" context "DJA Client Info" %}
                                 </button>
                                 {% if ar.accepts_down_payment %}
                                     <button type="submit" class="btn djappt-btn djappt-btn-outline btn-pay-down-payment"
